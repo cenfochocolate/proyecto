@@ -1,0 +1,48 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alfred</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general.css">
+
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logo.png" id="logo" alt="">
+        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="" id="perfil" class="header_derecha">Perfil</a>
+        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+      </nav>
+      <img src="imgs/banner.jpg" id="img_banner" alt="">
+    </header>
+    <main>
+      <h1>Instituciones Cercanas</h1>
+      <table id="tbl_ubicacion">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Institución</th>
+            <th>Grado</th>
+            <th>Clase</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
+  </body>
+</html>

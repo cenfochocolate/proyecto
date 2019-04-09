@@ -1,0 +1,15 @@
+
+#backbtn:hover{
+  color: #c0392b;
+}
+#tbl_pcomercial{
+width: 40%;
+height: auto;
+margin-left: 30%;
+}
+#tbl_pcomercial tbody{
+  font-family: 'Roboto Slab', serif;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #2F7585;
+}

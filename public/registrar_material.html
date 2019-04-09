@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registrar material_informativo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/material.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <div class="menu_1_registro_material">
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="listar_instituciones.html">Instituciones</a>
+      <a href="top_10_instituciones.html">Rankings</a>
+      <img src="imgs/logo.png" id="logo" alt="">
+      <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+      <a href="" id="perfil" class="header_derecha">Perfil</a>
+      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+    </nav>
+    </div>
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+  </header>
+  <main>
+    <div class="titulo">
+    <h1>Material informativo</h1>
+    </div>
+    <form class="formulario" id="frm_contacto">
+      <div>
+        <!--falta agregar la imagen el profe ayudara con el viernes-->
+      </div>
+      <div class="frm_mi">
+
+        <label for="txt_nombre_de_la_institucion">Nombre de la institución</label>
+        <input type="text" id="txt_nombre_de_la_institucion">
+      </div>
+      <div class="frm_mi">
+        <label for="txt_descripcion">Descripción</label>
+        <textarea id="txt_descripcion"></textarea>
+      </div>
+
+      <div id="btn_registro_material">
+      <button type="button" id="btn_registrar">Registrar</button>
+  </div>
+    </form>
+    <div id="btn_listar_material">
+        <button type="button" id="btn_listar"onclick=" location.href='listar_material.html'">Ver lista</button>
+    </div>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_material.js"></script>
+  <script src="js/controlador_material.js"></script>
+  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE Html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/verificar_codigo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>Verificar código</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="landingpage.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div id="div_contenedor">
+
+            <div id="div_texto">
+                <span>Ingrese el código</span>
+            </div>
+            <div>
+                <input id="txt_codigo" type="text" name="name" value="" />
+            </div>
+            <div id="btn_verificar">
+                <button id="btn_verifica"><span>Verificar</span></button>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p> Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="js/controlador_verificar_codigo.js"></script>
+    <script src="js/servicio_peticion_registro.js"></script>
+</body>
+
+</html>

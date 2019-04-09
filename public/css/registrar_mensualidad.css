@@ -1,0 +1,86 @@
+
+#titulo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    text-decoration: none;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #2d3436;
+    text-align: center;
+   }
+
+   form input{
+       float: right;
+       margin-right: 30%;
+   }
+
+   form select{
+    float: right;
+    margin-right: 30%;
+}
+
+   button{
+    display: inline-block;
+    background:  #B82601 ;
+    padding: 10px;
+    width: 170px;
+    outline: none;
+    font-size: 20px;
+    margin-left:410px;
+    border-radius: 5px;
+    margin-top: 30px;
+   }
+   #txt_info{
+       display: inline-block;
+       margin-left: 10px;
+       border-radius: 5px;
+       width: 300px;
+       height: 60px;
+       margin-top: 10px;
+   }
+   #txt_grado{
+     display: inline-block;
+     margin-left: 10px;
+     border-radius: 5px;
+     width: 310px;
+     height: 40px;
+     margin-top: 10px;
+   }
+   .registro_mensualidad label{
+    display: inline-block;   
+    padding-top: 15px;
+   }
+   #info label{
+       display: inline-block;
+       margin-left: 2px;
+       font-family: 'Roboto Slab', serif;
+       margin-bottom: 5px;
+   }
+   
+   #frm_mensualidad div{
+       margin-bottom: 15px;
+   
+   }
+   #frm_mensualidad label{
+       font-family: 'Roboto Slab', serif;
+       display: inline-block;
+       margin-bottom: 20px;
+       margin-left: 25%;
+   }
+   #banner_institucion{
+       width: 100%;
+       height: auto;
+   }
+   #frm_mensualidad input::placeholder {
+       font-size: 12px;
+       padding: 5px;
+   }
+   #btn_listar{
+    background-color: #FFF;
+    border: 1px solid #BDBDBD;
+    color: #16a085;
+    float: left;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

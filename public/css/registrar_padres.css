@@ -1,0 +1,38 @@
+
+  .central{
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  }
+  .centro{
+  padding: 25px 400px;
+  font-size: 20px;
+  margin-right: 230px;
+  }
+
+  #btn_listar{
+  background-color: #FFF;
+  border: 2px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 0%;
+  margin-top: -124px;
+  padding: 10px;
+}
+#btn_registrar{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  background-color: #B82601;
+  margin-top: 50px;
+  width: 130px;
+  height: 60px;
+  color: white;
+  margin-left: 100px;
+}
+#previewimg{
+  width: 250px;
+  height: 250px;
+  padding-top: 15px;
+}

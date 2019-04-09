@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Registrar Institución</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_institucion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="landingpage.html">Inicio</a>
+        </nav>
+        <img src="imgs/banner.jpg" id="img_banner" alt="">
+    </header>
+
+
+    <main id="seccion_formulario">
+
+        <div id="titulo_box">
+            <div><span>Registrar Usuario</span></div>
+
+        </div id="estilo">
+        <fieldset>
+            <select class="select" name="" id="slt_rol">
+                <option value="null">Seleccione un tipo de registro:</option>
+                <option value="padre">Padre</option>
+                <option value="institucion">Institución</option>
+            </select>
+        </fieldset>
+        <form id="box" class="hideInput">
+
+            <!--foto-->
+          <div>
+            <div id="div_foto" class="div_linea"  >
+                <div class="form_texto"><p>Seleccionar Foto</p></div>
+                <div class="input" id="div_image">
+                  <figure class="image_holder">
+                  <img src="imgs/imgph.jpg" alt="Seleccionar imagen" id="previewimg">
+                  </figure>
+
+                    <button type= button id="btn_cargar_img" >Cargar Foto</button>
+                    <!--<input id="btn_cargar_img" type="button" name="name" value="" placeholder="sfjlkdsfjkdsfj"/>-->
+            </div>
+          </div>
+
+                        <!--<input id="btn_cargar_img" type="button" name="name" value="" placeholder="sfjlkdsfjkdsfj"/>-->
+
+
+                <!--Nombre-->
+                <div id="nombre" class="div_linea">
+                    <div class="form_texto">
+                        <p>Nombre</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="txt_nombre" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <div id="papellido" class="div_linea">
+                    <div class="form_texto">
+                        <p>Primer Apellido</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="txt_primer_apellido" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <div id="sapellido" class="div_linea">
+                    <div class="form_texto">
+                        <p>Segundo Apellido</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="txt_segundo_apellido" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <div id="identificacion" class="div_linea">
+                    <div class="form_texto">
+                        <p>Identificacion</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="txt_identificacion" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <div id="nacionalidad" class="div_linea">
+                    <div class="form_texto">
+                        <p>Nacionalidad</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="txt_nacionalidad" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <div id="num_hijos" class="div_linea">
+                    <div class="form_texto">
+                        <p>Cantidad de Hijos</p>
+                    </div>
+                    <div class="input" id="input_nombre">
+                        <input id="numero_hijos" type="number" name="name" value="" />
+                    </div>
+                </div>
+                <!--Nombre comercial-->
+                <div id="nombreComercial" class="div_linea">
+                    <div class="form_texto">
+                        <p>Nombre comercial</p>
+                    </div>
+                    <div class="input" id="input_nombre_comercial">
+                        <input id="txt_nombre_comercial" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <!--Año Fundacion-->
+                <div id="anio_fundacion" class="div_linea">
+                    <div class="form_texto">
+                        <p>Año de fundación</p>
+                    </div>
+                    <div class="input" id="anio_fundacion">
+                        <input id="txt_anio" type="number" name="name" value="" placeholder="2019" />
+                    </div>
+
+                </div>
+                <!--Grado-->
+                <div id="grado" class="div_linea">
+                    <div class="form_texto">
+                        <p>Grado</p>
+                    </div>
+                    <div class="input" id="input_grado">
+                        <input type="radio" name="grado" value="Escuela" checked> <span>Escuela</span>
+                        <input type="radio" name="grado" value="Colegio"> <span>Colegio</span>
+                        <input type="radio" name="grado" value="Escuela_y_colegio"> <span>Ambos</span>
+                    </div>
+                </div>
+                <!--clase-->
+                <div id="clase" class="div_linea">
+                    <div class="form_texto">
+                        <p>Clase</p>
+                    </div>
+                    <div class="input" id="input_clase">
+                        <input type="radio" name="clase" value="publico" checked> <span>Publico</span>
+                        <input type="radio" name="clase" value="privado"> <span>Privado</span>
+
+                    </div>
+                </div>
+                <!--Genero-->
+                <div id="genero" class="div_linea">
+                    <div class="form_texto">
+                        <p>Genero</p>
+                    </div>
+                    <div class="input" id="input_genero">
+                        <input type="radio" name="genero" value="mixto" checked> <span>Mixto</span>
+                        <input type="radio" name="genero" value="mujeres"> <span>Solo Mujeres</span>
+                        <input type="radio" name="genero" value="hombres"> <span>Solo Hombres</span>
+                    </div>
+                </div>
+                <!--especialidad-->
+                <div id="especialidad" class="div_linea">
+                    <div class="form_texto">
+                        <p>Especialidad</p>
+                    </div>
+                    <div class="input" id="input_especialidad">
+                        <select id="select_especialidad">
+                            <option value="0">Seleccione</option>
+                            <option valespecialue="academico">Académico</option>
+                            <option value="tecnico">Tecnico</option>
+                            <option value="cientifico">Cientifico</option>
+                            <option value="bachilleraro_madurez">Bachillerato por madurez</option>
+                            <option value="pedagogico">Pedagogico</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Referencia Historica-->
+                <div id="div_ref_historica" class="div_linea">
+                    <div class="form_texto">
+                        <p>Referencia Historica</p>
+                    </div>
+                    <div class="input" id="input_ref">
+                        <textarea id="txt_ref"></textarea>
+                    </div>
+                </div>
+                <!--provincia-->
+                <div id="provincia" class="div_linea">
+                    <div class="form_texto">
+                        <p>Provincia</p>
+                    </div>
+                    <div class="input" id="input_provincia">
+                        <select id="select_provincia">
+                            <option value="0">Seleccione</option>
+
+                        </select>
+                        <!--<input type="text" name="name" value="" />-->
+                    </div>
+                </div>
+                <!--Canton-->
+                <div id="canton" class="div_linea">
+                    <div class="form_texto">
+                        <p>Canton</p>
+                    </div>
+                    <div class="input" id="div_canton">
+                        <select id="select_canton">
+                            <option value="value">Seleccione</option>
+                        </select>
+                    </div>
+                </div>
+                <!--distrito-->
+                <div id="distrito" class="div_linea">
+                    <div class="form_texto">
+                        <p>Distrito</p>
+                    </div>
+                    <div class="input" id="div_distrito">
+                        <select id="select_distrito">
+                            <option value="value">Seleccione</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Direccion-->
+                <div id="direccion" class="div_linea">
+                    <div class="form_texto">
+                        <p>Dirección</p>
+                    </div>
+                    <div class="input" id="input_direccion">
+                        <input id="txt_direccion" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <!--mail-->
+                <div id="correo" class="div_linea">
+                    <div class="form_texto">
+                        <p>Correo Electrónico</p>
+                    </div>
+                    <div class="input" id="input_correo">
+                        <input id="txt_mail" type="email" name="name" value="" />
+                    </div>
+
+                </div>
+                <div id="contrasenna" class="div_linea">
+                    <div class="form_texto">
+                        <p>Contraseña</p>
+                    </div>
+                    <div class="input" id="input_contrasenna">
+                        <input id="txt_contrasenna" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <!--Telefono-->
+                <div id="div_telefono" class="div_linea">
+
+                    <div class="form_texto">
+                        <p>Teléfono</p>
+                    </div>
+                    <div id="display_extencion">
+                        <div class="input" id="div_telefono">
+                            <input id="txt_telefono" type="text" name="name" value="" placeholder="(506)___-____" />
+                        </div>
+
+                        <div class="form_texto" id="name_extencion">
+                            <p>Extencion</p>
+                        </div>
+
+                        <div class="input">
+                            <input id="txt_extencion" type="number" name="name" value="" />
+                        </div>
+                    </div>
+                </div>
+                <!--Fax-->
+                <div id="fax" class="div_linea">
+                    <div class="form_texto">
+                        <p>Fax</p>
+                    </div>
+                    <div class="input">
+                        <input id="txt_fax" type="number" name="name" value="" />
+                    </div>
+                </div>
+                <!--Pagina web-->
+                <div id="pagina" class="div_linea">
+                    <div class="form_texto">
+                        <p>Página web</p>
+                    </div>
+                    <div class="input">
+                        <input id="txt_pagina_web" type="text" name="name" value="" />
+                    </div>
+                </div>
+                <!--adjuntar documentos-->
+                <div id="documentos" class="div_linea">
+                    <div class="form_texto">
+                        <p>Adjuntar Documentos</p>
+                    </div>
+                    <div class="input" id="input_cargar_doc">
+                        <button id="btn_cargar_doc" onclick="return false;"><span id="txt_btn_foto">Cargar
+                                Archivos</span></button>
+                    </div>
+                </div>
+                <div id="div_submit">
+                    <div>
+                        <button id="btn_enviar" onclick="return false;">
+                            <span>Enviar Formulario</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+          </div>
+        </form>
+
+    </main>
+    <footer>
+        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="js/servicio_usuario.js"></script>
+    <script src="js/servicio_localidades.js"></script>
+    <script src="js/controlador_localidades.js"></script>
+    <script src="js/controlador_registrar_usuario.js"></script>
+    <script src="js/verificador.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+    <!--Scripts Cloudinary-->
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"
+        type="text/javascript"></script>
+
+
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+    <script src="js/servicio_imagen_usuarios.js"></script>
+    <script src="js/servicio_elemento_inicio_sesion.js"></script>
+
+</body>
+
+</html>

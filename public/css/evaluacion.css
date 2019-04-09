@@ -1,0 +1,46 @@
+
+#titulo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    text-align: center;
+    margin-right: 300px;
+    color: #2d3436;
+}
+#tbl_criterio{
+    margin-left: 0px;
+}
+#frm_criterio{
+    padding-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 25%;
+}
+#frm_criterio div{
+    margin-bottom: 15px;
+}
+#frm_criterio label{
+  font-family: 'Roboto Slab', serif;
+    display: inline-block;
+    width: 110px;
+}
+
+#frm_criterio input{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+#frm_criterio button{
+    display: inline-block;
+    background:  #B82601 ;
+    padding: 10px;
+    width: 170px;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-left: 180px;
+    border-radius: 5px;
+}
+#btn_listar button{
+  display:inline-block;
+  margin-left: 25%;
+}

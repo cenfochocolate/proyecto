@@ -1,0 +1,200 @@
+#menu_institucion{
+    background: #B33771;
+    text-align: center;
+  }
+
+  #menu_institucion nav{
+    padding-top: 10px;
+    height: 40px;
+  }
+
+  #menu_institucion a{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;
+  }
+
+  #menu_institucion a:hover{
+    color: #B82601;
+  }
+
+  #banner_institucion{
+    width: 100%;
+    height: auto;
+
+  }
+  #titulo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    text-decoration: none;
+    padding-left: 70px;     
+    padding-right: 20px;
+    color: #2d3436;
+  }
+
+  #submenu #titulo{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+  }
+  #frm_idioma{
+    padding-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 25%;
+}
+#frm_idioma div{
+    margin-bottom: 15px;
+}
+#frm_idioma label{
+  font-family: 'Roboto Slab', serif;
+    display: inline-block;
+    width: 110px;
+}
+.input_registrar{
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  outline: none;
+}
+
+#frm_idioma input{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+
+}
+.btn_registra{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+    font-size: 15px;
+}
+#frm_idioma input::placeholder {
+   font-size: 12px;
+   padding: 5px;
+}
+#frm_idioma textarea{
+    width: 250px;
+    height: 100px;
+    resize: none;
+}
+#frm_idioma button{
+    display: inline-block;
+    background:  #B82601 ;
+    padding: 10px;
+    width: 170px;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-left: 100px;
+    border-radius: 5px;
+}
+#frm_idioma button:hover{
+
+    background:  white;
+}
+#frm_idioma input[type=radio]{
+  font-family: 'Roboto Slab', serif;
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+}
+#frm_idioma input::placeholder {
+ font-size: 12px;
+ padding: 5px;
+}
+#frm_idioma fieldset{
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 15px;
+  padding-top: 15px;
+}
+
+h2{
+  font-family: 'Roboto Slab', serif;
+}
+
+#add{
+  margin-left: 49.5%;
+  color: black;
+}
+
+p{
+  font-family: 'Roboto Slab', serif;
+}
+
+h3{
+  font-family: 'Roboto Slab', serif;
+  font-size: 28px;
+  text-align: center;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.opciones{
+  width: auto;
+  height: 5px;
+  margin: none;
+}
+
+#tbl_redes_sociales{
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+#tbl_redes_sociales thead{
+    background-color: WHITE;
+}
+
+#tbl_redes_sociales img{
+  width: 50px;
+  height: auto;
+}
+
+#tbl_redes_sociales tbody{
+  background-color: white;
+}
+
+#btn_reporte{
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 50px;
+}
+
+#slt_utiles{
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 50px;
+  background-color: #FFF;
+  border: 2px solid #BDBDBD;
+  height: 50px;
+}
+
+.frm{
+  float: left;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 100px;
+}
+
+.frm label{
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  width: 80%;
+  margin-left: 23%;
+  margin-bottom: 50px;
+}
+
+.frm button{
+  width: 20%;
+  margin-left: 40%;
+}

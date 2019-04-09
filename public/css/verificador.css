@@ -1,0 +1,18 @@
+form{
+  width: 80%;
+  height: auto;
+  padding: 50px;
+  margin-left: 10%;
+}
+
+form .registro label{
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  margin-left: 15%;
+}
+
+form button{
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 80px;
+}

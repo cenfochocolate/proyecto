@@ -1,0 +1,72 @@
+#frm_registrar{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+
+}
+#frm_registrar div{
+    margin-bottom: 10px;
+}
+#frm_registrar label{
+    display: inline-block;
+    width: 110px;
+    font-family: 'Roboto Slab', serif;
+}
+#frm_registrar input{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+#frm_registrar textarea{
+  width: 250px;
+  height: 100px;
+  resize:none;
+}
+#btn_guardar{
+    display: inline-block;
+    font-family: 'Roboto Slab', serif;
+    background:  #B82601;
+    color: white;
+    padding: 10px;
+    width: 140px;
+    font-size: 16px;
+    margin-left: 17%;
+    margin-bottom: 100px;
+    border:none;
+}
+
+#btn_listar{
+  background-color: #FFF;
+  border: 2px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 0%;
+  margin-top: -124px;
+  padding: 10px;
+  }
+#previewimg{
+  height: 25%;
+  width: 25%;
+  margin-left: 13%;
+}
+
+#btn_img{
+  display: inline-block;
+  font-family: 'Roboto Slab', serif;
+  background:  #B82601;
+  color: white;
+  padding: 10px;
+  width: 140px;
+  margin-top: 3%;
+  font-size: 16px;
+  margin-left: 17%;
+  margin-bottom: 100px;
+  border:none;
+}
+#frm_registrar button:hover{
+
+    background:  #062F4F;
+}

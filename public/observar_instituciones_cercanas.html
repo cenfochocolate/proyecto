@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<head>
+    <title>Geolocation</title>
+    <script src="./js/geolocation.js"></script>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="listar_instituciones.html">Instituciones</a>
+      <a href="top_10_instituciones.html">Rankings</a>
+      <img src="imgs/logo.png" id="logo" alt="">
+      <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+      <a href="" id="perfil" class="header_derecha">Perfil</a>
+      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+    </nav>
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+  </header>
+    <section id="ubicacion">     <button id="obtener">Obtener mi Ubicaci�n</button>   </section>
+    <section>
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=15_4xfII0fxdfszlaTj2kuFyw8jwOqEil" width="640" height="480"></iframe>
+    </section>
+    <script src="controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
+</body>
+</html>

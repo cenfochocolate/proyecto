@@ -1,0 +1,23 @@
+main {
+
+}
+#div_contenedor {
+    margin: 100px 150px;
+    padding: 50px 100px;
+    border: 1px solid #c9c9c9;
+    box-shadow: 1px 1px 50px 0 rgba(0,0,0,0.08)
+}
+
+
+#div_contenedor {
+text-align: center; 
+}
+#txt_codigo {
+    border: 1px solid #c9c9c9;
+}
+
+#btn_verificar, #div_texto {
+    margin: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+}

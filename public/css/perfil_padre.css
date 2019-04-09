@@ -1,0 +1,35 @@
+body img{
+  width: 20%;
+  height: auto;
+  margin-left: 40%;
+  margin-bottom: 100px;
+}
+
+body .btn_modificar_perfil button{
+  width: 20%;
+  height: auto;
+  padding: 20px;
+  margin-left: 40%;
+  background-color: red;
+  color: white;
+}
+
+.nombre h4{
+  display:inline;
+  margin-right: 10px;
+  font-size: 25px;
+  font-family: font-family: 'Roboto Slab', serif;
+}
+
+.nombre{
+  width: 36%;
+  margin-left: 40%;
+}
+
+h3{
+  font-size: 25px;
+  font-family: font-family: 'Roboto Slab', serif;
+  width: 20%;
+  margin-left: 40%;
+  text-align: center;
+}

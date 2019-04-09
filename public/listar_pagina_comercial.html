@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/perfil_institucion.css">
+  <link rel="stylesheet" href="css/listarpc.css">
+  <link rel="stylesheet" href="css/perfil_in.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <div class="lista_comercial">
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logo.png" id="logo" alt="">
+        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="" id="perfil" class="header_derecha">Perfil</a>
+        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+      </nav>
+    </div>
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+  </header>
+    <main>
+      <div id="menu_institucion">
+        <ul class="nav">
+          <li><i class="fas fa-align-justify"></i>
+            <ul>
+              <li><a href="perfil_institucion.html">Institución</a></li>
+              <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+              <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+              <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+              <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+              <li><a href="listar_citas.html">Citas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    <nav id="submenu">
+      <h1 id="titulo">Página comercial</h1>
+    </nav>
+    <table id="tbl_pcomercial">
+      <tbody>
+
+      </tbody>
+    </table>
+    <div id="btn_direccion">
+      <button type="button" id="btn_listar"
+        onclick=" location.href='registrar_pagina_comercial.html'">Registrar</button>
+    </div>
+  </main>
+  <footer>
+    <p>Chocolate copyright
+      2019
+      Cenfotec
+      Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/serviciopc.js"></script>
+  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_listarpc.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
+</body>
+
+</html>

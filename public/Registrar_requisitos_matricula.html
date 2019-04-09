@@ -1,0 +1,102 @@
+!DOCTYPE html>
+html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alfred</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registar_requisitos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+      <div class="menu_1_registar_matricula">
+        <div class= "menu_1_registrar_requisitos_matricula">
+    <nav>
+
+      <a href="inicio.html">Inicio</a>
+      <a href="listar_instituciones.html">Instituciones</a>
+      <a href="top_10_instituciones.html">Rankings</a>
+      <img src="imgs/logo.png" id="logo" alt="">
+      <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+      <a href="" id="perfil" class="header_derecha">Perfil</a>
+      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+
+    </nav>
+    </div>
+
+</div>
+
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+
+  </header>
+    <main>
+        <form class="columna_derecha" id="frm_requisito">
+
+            <div id="titulo">
+                <h2>Registrar Requisitos de Matrícula</h2>
+            </div>
+
+            <div class="registro_matricula">
+                <fieldset>
+                <label for="Categorias">Niveles:</label>
+                <select class="input_registrar" id="txt_nivel">
+
+                    <option value="">Escoja un nivel</option>
+                    <option value="1">Primero</option>
+                    <option value="2">Segundo</option>
+                    <option value="3">Tercero</option>
+                    <option value="4"> Cuarto</option>
+                    <option value="5">Quinto</option>
+                    <option value="6">Sexto</option>
+                    <option value="7">Setimo</option>
+                    <option value="8">octavo</option>
+                    <option value="9">noveno</option>
+                    <option value="10">decimo</option>
+                    <option value="11">undecimo</option>
+                    <option value="12">duodecimo</option>
+
+                </select>
+            </fieldset>
+            </div>
+            <div id="info">
+                <label for="txt_info">Descripción:</label>
+                <input name="txt_info" id="txt_info" placeholder="Ej. Cuadernos Norma "></input>
+            </div>
+
+            <div id="btn_registar_requisito">
+                <button type="button" id="btn_registrar">Registrar</button>
+            </div>
+        </form>
+
+        <div id="btn_listar_requisito">
+            <div id="btn_registrar_requisitom">
+                <button type="button" id="btn_registrar">Registrar</button>
+            </div>
+
+        <div id= "btn_listar_requisitom">
+            <button type="button" id="btn_listar"onclick=" location.href='listar_requisitos.html'">Ver lista</button>
+        </div>
+    </main>
+    <footer>
+        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="js/servicio_requisito.js"></script>
+    <script src="js/controlador_requisito.js"></script>
+    <script src="controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
+
+
+</body>
+
+</html>

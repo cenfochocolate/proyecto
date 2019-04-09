@@ -1,0 +1,54 @@
+input{
+  margin-top: 2px;
+  border: 1px solid #062F4F;
+  width: 300px;
+  height: 30px;
+  padding-left: 5px;
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+}
+
+form{
+  float: right;
+  padding-top: 25px;
+  padding-right: 10%;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+h1{
+  font-size: 40px;
+  color: BLACK;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  padding-top: 100px;
+}
+
+
+
+#btn_registrar_contacto{
+  display: inline-block;
+  width: 15%;
+  height: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 10%;
+  margin-bottom: 100px;
+}
+
+#btn_registrar_contacto:hover{
+    background:  #062F4F;
+}
+.imagenTabla{
+  height: 200px;
+  width: 200px;
+}
+#btn_listar{
+  background-color: #FFF;
+  border: 1px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

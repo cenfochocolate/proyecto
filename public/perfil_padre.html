@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alfred</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfil_padre.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <img src="imgs/Banner_1.jpg" id="img_banner" alt="">
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logo.png" id="logo" alt="">
+        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="" id="perfil" class="header_derecha">Perfil</a>
+        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+      </nav>
+
+    </header>
+    <main>
+      <img id="img_padre" src="imgs/soporte_1.jpg" alt="">
+      <div class="nombre">
+        <h4 id="nombre_padre"></h4>
+        <h4 id="primer_apellido"></h4>
+        <h4 id="segundo_apellido"></h4>
+      </div>
+
+      <h3 id="cantidad_de_hijos"></h3>
+      <h3 id="num_telefono"></h3>
+      <div class="btn_modificar_perfil">
+      <button type="button" id="btn_modificar" onclick="location.href='modificar_perfil.html'" name="button">Modificar Perfil</button>
+      </div>
+
+    </main>
+    <footer>
+      <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
+  </body>
+  </body>
+</html>

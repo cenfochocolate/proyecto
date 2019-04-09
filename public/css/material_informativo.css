@@ -1,0 +1,26 @@
+#tbl_material{
+    border: 1px solid;
+    width: 500px;
+    background-color: white;
+    margin-left: 256px;
+  }
+  
+  
+  #tbl_material th,td{
+    border: 1px solid ;
+  }
+  
+  #tbl_material th,td:hover{
+    background-color: #3498db;
+  }
+  #btn_listar{
+    background-color: #FFF;
+    border: 2px solid #BDBDBD;
+    color: #16a085;
+    float: left;
+    width: 20%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 100px;
+    padding: 124px;
+    }

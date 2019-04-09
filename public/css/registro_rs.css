@@ -1,0 +1,89 @@
+h1{
+  font-size: 40px;
+  color: BLACK;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  padding-top: 100px;
+}
+
+form{
+  width: 50%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-left: 25%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+}
+
+form p {
+  text-align: center;
+  color: #062F4F;
+  padding-top: 20px;
+  font-size: 30px;
+  padding-left: 70px;
+  padding-right: 70px;
+  line-height: 50px;
+  font-family: 'Roboto Slab', serif;
+}
+
+label{
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;
+  padding-left: 100px;
+}
+
+input{
+  float: right;
+  margin-right: 20%;
+  margin-top: 2px;
+  border: none;
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+}
+
+div{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+form img{
+  width: 50px;
+  height: auto;
+  float: left;
+  margin-left: 40px;
+}
+
+textarea{
+  float: right;
+  margin-right: 20%;
+  margin-top: 2px;
+  border: none;
+  width: 300px;
+  height: 200px;
+  padding-left: 5px;
+  font-size: 20px;
+  resize: none;
+  font-family: 'Roboto Slab', serif;
+  text-align: justify;
+}
+
+button{
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;
+  background-color: #B82601;
+  border: none;
+  margin-top: 100px;
+  width: 25%;
+  height: 75px;
+  margin-left: 37.5%;
+  color: white;
+  margin-bottom: 100px;
+}
+
+button:hover{
+  background-color: #062F4F;
+}

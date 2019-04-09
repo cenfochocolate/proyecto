@@ -1,0 +1,15 @@
+form{
+  float: right;
+  padding-top: 25px;
+  padding-right: 10%;
+}
+
+#buscar button{
+  background-color: #FFF;
+  border: 2px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  margin-left: 10%;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}

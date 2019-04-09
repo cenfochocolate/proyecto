@@ -1,0 +1,22 @@
+{
+  "name": "proyectoindividual",
+  "version": "1.0.0",
+  "description": "Proyecto de Ing. Software 1 del equipo Chocolates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.14",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.0.0",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

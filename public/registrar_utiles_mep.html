@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/registro_utiles_mep.css">
+</head>
+
+<body>
+  <header>
+    <div class="menu_1_mep">
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logo.png" id="logo" alt="">
+        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="" id="perfil" class="header_derecha">Perfil</a>
+        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+      </nav>
+    </div>
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+  </header>
+  <main>
+
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="titulo_mep">
+      <h1>Registro de Útiles Escolares</h1>
+    </div>
+    <form>
+      <div class="registro_util_mep">
+        <label for="txt_util">Útil Escolar:</label>
+        <input type="text" name="txt_util" id="txt_util" value="" placeholder="Ej. Cuaderno">
+      </div>
+      <div class="registro_util_mep">
+        <label for="txt_descripcion">Descripción:</label>
+        <textarea name="txt_descripcion" id="txt_descripcion"
+          placeholder="Ej. Cuadernos Norma de cien hojas"></textarea>
+      </div>
+      <div class="registro_util_mep_diferente">
+        <label for="numero_util" id="lbl_cantidad">Cantidad:</label>
+        <input type="number" name="numero_util" id="numero_util" value="" placeholder="Ej. 4">
+      </div>
+      <div class="registro_util_mep">
+        <fieldset>
+          <label for="select_nivel_mep">Nivel:</label>
+          <select class="select_nivel" id="select_nivel" name="select_nivel">
+            <option value="null">Escoja un nivel</option>
+            <option value="primero">Primero</option>
+            <option value="segundo">Segundo</option>
+            <option value="tercero">Tercero</option>
+            <option value="cuarto">Cuarto</option>
+            <option value="quinto">Quinto</option>
+            <option value="sexto">Sexto</option>
+            <option value="setimo">Setimo</option>
+            <option value="octavo">Octavo</option>
+            <option value="noveno">Noveno</option>
+            <option value="decimo">Decimo</option>
+            <option value="undecimo">Undecimo</option>
+            <option value="duodecimo">Duodecimo</option>
+          </select>
+        </fieldset>
+      </div>
+      <div id="btn_util_mep">
+        <button type="button" id="btn_registrar_util" name="btn_registrar_util">Registrar</button>
+      </div>
+    </form>
+    <div class="btn_listar_mep">
+      <button type="button" id="btn_listar" onclick=" location.href='listar_utiles_mep.html'">Ver lista</button>
+    </div>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_util_mep.js"></script>
+  <script src="js/controlador_util_mep.js"></script>
+  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
+
+</body>
+
+</html>

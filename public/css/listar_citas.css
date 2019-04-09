@@ -1,0 +1,46 @@
+#menu_institucion{
+    background: #062F4F;
+    text-align: center;
+  }
+  
+  #menu_institucion nav{
+    padding-top: 10px;
+    height: 40px;
+  }
+  
+  #menu_institucion a{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;
+  }
+
+  #form_buscar{
+    margin-right: 10%;
+  }
+  
+  #menu_institucion a:hover{
+    color: #B82601;
+  }
+  
+  #banner_institucion{
+    width: 100%;
+    height: auto;
+  }
+  
+#tbl_citas{
+  width: 80%;
+  height: auto;
+}
+#btn_listar{
+  background-color: #FFF;
+  border: 1px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

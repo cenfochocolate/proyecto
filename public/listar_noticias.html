@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alfred</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/listar_noticias.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <header>
+    <div class="lista_noticia">
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="listar_instituciones.html">Instituciones</a>
+      <a href="top_10_instituciones.html">Rankings</a>
+      <img src="imgs/logo.png" id="logo" alt="">
+      <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+      <img src="imgs/img_perfil.png" class="header_derecha" href=".html">
+      <a href="panel_control.html" class="hideInput">Panel de Control</a>
+    </nav>
+    </div>
+    <img src="imgs/banner.jpg" id="img_banner" alt="">
+  </header>
+  <main>
+
+    <div class="titulo_noticia">
+      <h1>Noticias</h1>
+    </div>
+
+    <div class="frm">
+      <form class="frm_buscar" action="" method="post">
+        <div class="buscar_noticia">
+          <label for="buscar_noticia_institucion">Buscar:</label>
+          <input type="search" name="buscar_noticia" id="buscar_noticia_institucion" placeholder="Ej. Becas" value="">
+        </div>
+      </form>
+    </div>
+
+    <table id="tbl_noticias">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <div id="btn_direccion">
+      <button type="button" id="btn_registrar_noticia" onclick=" location.href='registrar_noticias.html' "
+        name="button">Registrar nueva noticia</button>
+    </div>
+
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_noticias.js"></script>
+  <script src="js/controlador_listarn.js"></script>
+  <script src="controlador_cerrar_sesion.js"></script>
+</body>
+
+</html>

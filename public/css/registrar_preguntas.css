@@ -1,0 +1,134 @@
+  #menu_institucion{
+    margin-top: -55px;
+    background: #062F4F;
+    text-align: center;
+  }
+
+  #menu_institucion nav{
+    padding-top: 10px;
+    height: 40px;
+  }
+
+  #menu_institucion a{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;
+  }
+
+  #menu_institucion a:hover{
+    color: #B82601;
+  }
+
+  #banner_institucion{
+    width: 100%;
+    height: auto;
+  }
+
+  #submenu{
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  #submenu img{
+    width: 50px;
+    height: auto;
+    float: right;
+    padding-right: 100px;
+  }
+
+  #submenu #titulo{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+  }
+  .columna_B {
+    display: inline-block;
+    width: 300px;
+    height: 100%;
+    Margin-left: 36%;
+
+  }
+
+  .columna_B div{
+    margin-bottom: 15px;
+}
+
+#frm_registrar label{
+  font-family: 'Roboto Slab', serif;
+  display: inline-block;
+  margin:5%;
+  Margin-left: 20px;
+  width: 110px;
+  font-size: 30px;
+
+
+}
+
+
+#frm_registrar textarea{
+    width: 250px;
+    height: 100px;
+    Margin-left: 20px;
+    resize: none;
+
+}
+
+#frm_registrar input{
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  outline: none;
+  Margin-left: 20px;
+
+}
+#frm_registrar button{
+  display: block;
+  background-color: #B82601;
+  padding: 10px;
+  width: 170px;
+  margin: 0 auto;
+  color: white;
+  font-size: 16px;
+ Margin-left: 10%;
+}
+#frm_registrar button:hover{
+
+  background:  #40739e;
+
+}
+
+main {
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    background-color: rgba(255, 255, 255,0.9);
+}
+
+
+
+form {
+    width: 50%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-left: 25%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+body {
+    line-height: 1;
+}
+#btn_listar_utiles{
+  background-color: #FFF;
+  border: 2px solid #BDBDBD;
+  color: #16a085;
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 0%;
+  margin-top: -124px;
+  padding: 10px;
+}

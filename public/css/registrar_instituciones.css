@@ -1,0 +1,51 @@
+#frm_institucion{
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+
+}
+#frm_institucion label{
+    display: inline-block;
+    margin-top: 20px;
+    width: 110px;
+    font-family: 'Roboto Slab', serif;
+}
+
+#frm_institucion select{
+    width: 305px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 24%;
+
+}
+
+#frm_institucion textarea{
+  margin-top: 20px;
+  width: 302px;
+  height: 110px;
+  resize:none;
+}
+
+#previewarc{
+  width: 90px;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: 42%;
+  margin-top: 20px;
+}
+#btn_arc{
+  margin-left: 30%;
+}
+#btn_registrar{
+  margin-left: 30%;
+  margin-top: 5%;
+}
+button:hover{
+background-color: #81ecec;
+}
+h1{
+  font-size: 40px;
+  color: BLACK;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  padding-top: 100px;
+}
