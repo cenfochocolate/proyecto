@@ -7,6 +7,10 @@
   color: white;
 }
 
+#mainLP{
+  padding: 0px;
+}
+
 #presentacion p{
   text-align: center;
 }
@@ -32,7 +36,8 @@
 #tres{
   background-image: url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-repeat: no-repeat;
-  height: 400px;
+  background-size: 100%;
+  width: 100%;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -55,7 +60,8 @@
 #tres button{
   margin-top: 200px;
   width: 20%;
-  margin-left: 20%
+  margin-left: 20%;
+  border-radius: 5px;
 }
 
 main p{
