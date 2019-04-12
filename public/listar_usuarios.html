@@ -36,20 +36,26 @@
         <input type="text" id="txtfitro">
       </div>
     </form>
-    <table id="tbl_padres">
+    <div class="slt_tipo_usuario">
+      <fieldset>
+        <label for="">Tipo de Usuario</label>
+        <select class="" name="">
+          <option value="null">Seleccione un tipo</option>
+          <option value="padre">Padre</option>
+          <option value="institucion">Institucion</option>
+        </select>
+      </fieldset>
+    </div>
+    <table id="tbl_usuarios">
       <thead>
         <tr>
           <th>Nombre</th>
-          <th>Primer apellido</th>
-          <th>Segundo apellido</th>
-          <th>Identificacion</th>
-          <th>Nacionalidad</th>
-          <th>Distrito</th>
-          <th>Cantón</th>
           <th>Provincia</th>
-          <th>Cantidad de hijos</th>
+          <th>Cantón</th>
+          <th>Distrito</th>
           <th>Correo</th>
           <th>Foto</th>
+          <th>Telefono</th>
         </tr>
       </thead>
       <tbody>
@@ -68,9 +74,9 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="js/servicio.js"></script>
-  <script src="js/controlador_listar.js"></script>
-  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/servicio_usuario.js"></script>
+  <script src="js/controlador_listar_usuarios.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
   <script src="js/controlador_validar_tusuario.js"></script>
 </body>
 
