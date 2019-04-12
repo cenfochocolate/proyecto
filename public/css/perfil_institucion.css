@@ -198,3 +198,21 @@ h3{
   width: 20%;
   margin-left: 40%;
 }
+
+#tbl_contacto th{
+  width: 50%;
+}
+#btn_registrar_contacto{
+  background-color: #B82601 ;;
+  border: 2px solid #BDBDBD;
+  color: #E9F0E9;
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 40%;
+  margin-top: -5%;
+  padding: 10px;
+}
+#btn_registrar_contacto:hover{
+  background-color: #16a085;
+}

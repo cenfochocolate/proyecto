@@ -9,7 +9,6 @@ h1{
 form{
   width: 50%;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.2);
   margin-left: 25%;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -67,35 +66,39 @@ textarea{
   resize: none;
   font-family: 'Roboto Slab', serif;
   text-align: justify;
+  border: 1px solid black;
 }
 
 button{
   font-family: 'Roboto Slab', serif;
-  font-size: 30px;
+  font-size: 20px;
   background-color: #B82601;
   border: none;
   margin-top: 100px;
-  width: 35%;
-  height: 75px;
+  width: 45%;
+  height: 65px;
   margin-left: 32.5%;
-  color: white;
+  color: #E9F0E9;
   margin-bottom: 100px;
 }
 
 #btn_listar{
-  background-color: #FFF;
+  background-color: #16a085;
   border: 2px solid #BDBDBD;
-  color: #16a085;
+  color: #E9F0E9;
   float: left;
   width: 20%;
   height: auto;
   margin-left: 0%;
   margin-top: -124px;
   padding: 10px;
-  }
-  
+}
+
 button:hover{
-  background-color: #062F4F;
+  background-color: #16a085;
+}
+#btn_listar:hover{
+  background-color: #B82601 ;
 }
 
 ul, ol {
@@ -159,4 +162,7 @@ main #menu_institucion li ul li a:hover {
 
 #menu_institucion .nav ul li a{
   font-family: 'Roboto Slab', serif;
+}
+#logo{
+  width: 40px;
 }

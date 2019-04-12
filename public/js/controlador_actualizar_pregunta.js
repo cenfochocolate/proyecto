@@ -1,9 +1,41 @@
 'use strict';
 
+
+
 const input_preguntas = document.querySelector('#txt_pregunta');
 const input_respuestas = document.querySelector('#txt_respuesta');
-const boton_insertar = document.querySelector('#btn_insertar');
+const boton_actualizar = document.querySelector('#btn_actualizar');
 const id_ins = sessionStorage.getItem('idu');
+
+let get_param = (param)=> {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let id= url.searchParams.get(param);
+
+    return id;
+};
+
+let _id= get_param('id_pregunta');
+
+let preguntas= buscar_pregunta(_id);
+
+let mostrar_datos = () =>{
+
+
+    input_preguntas.value = preguntas[0]['preguntas'];
+    input_respuestas.value = preguntas[0]['respuestas'];
+    
+    
+    
+
+    } 
+
+
+if(preguntas){
+    mostrar_datos()
+}
+
+
 
 let validar = () => {
     let error = false;
@@ -19,12 +51,10 @@ let validar = () => {
     } else {
         input_respuestas.classList.remove('error_input');
     }
- 
+
 
     return error;
 };
-
-
 let obtener_datos = () => {
 
     if (validar() == false) {
@@ -35,12 +65,12 @@ let obtener_datos = () => {
 
 
 
-        registrar_preguntas(id_institucion,preguntas,respuestas);
+        registrar_preguntas(id_institucion,preguntas,respuestas, _id);
 
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La pregunta no fue enviada',
+            title: 'La pregunta no fue actualizada',
             text: 'Por favor revise los campos resaltados'
         });
     }
@@ -50,5 +80,4 @@ let obtener_datos = () => {
 
 
 
-boton_insertar.addEventListener('click', obtener_datos);
- 
+boton_actualizar.addEventListener('click', obtener_datos);

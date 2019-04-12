@@ -6,14 +6,16 @@ h1{
   padding-top: 100px;
 }
 
-form{
+#frm_rs{
   width: 50%;
   height: auto;
   background-color: rgba(0, 0, 0, 0.2);
-  margin-left: 25%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-right: 24%;
+
   padding-bottom: 50px;
+}
+.frm input{
+  border: solid 1px black;
 }
 
 form p {
@@ -21,8 +23,6 @@ form p {
   color: #062F4F;
   padding-top: 20px;
   font-size: 30px;
-  padding-left: 70px;
-  padding-right: 70px;
   line-height: 50px;
   font-family: 'Roboto Slab', serif;
 }
@@ -31,6 +31,7 @@ label{
   font-family: 'Roboto Slab', serif;
   font-size: 30px;
   padding-left: 100px;
+  
 }
 
 input{
@@ -70,20 +71,22 @@ textarea{
   font-family: 'Roboto Slab', serif;
   text-align: justify;
 }
+#logo{
+  width: 40px;
+}
 
 button{
   font-family: 'Roboto Slab', serif;
-  font-size: 30px;
+  font-size: 20px;
   background-color: #B82601;
   border: none;
-  margin-top: 100px;
-  width: 25%;
-  height: 75px;
-  margin-left: 37.5%;
+  margin-top: 40px;
+  width: 20%;
+  height: 70px;
+  margin-left: 40.5%;
   color: white;
-  margin-bottom: 100px;
 }
 
 button:hover{
-  background-color: #062F4F;
+  background-color: #16a085;
 }

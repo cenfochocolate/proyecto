@@ -22,8 +22,7 @@ body{
     color: white;
     font-family: 'Roboto Slab', serif;
     font-size: 22px;
-    padding-top: 10px;
-    padding-left: 25px;
+    padding: 14px;
     text-decoration: none;
   }
 
@@ -59,7 +58,11 @@ body{
   main{
     width: 80%;
     height: auto;
+    padding-top: 30px;
+    padding-bottom: 80px;
     margin-left: 10%;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: white;
   }
 
@@ -110,7 +113,6 @@ body{
       font-family: 'Roboto Slab', serif;
       font-size: 20px;
       background-color: #FFF;
-      border: 2px solid #BDBDBD;
       color: #16a085;
       width: 200px;
       height: auto;
