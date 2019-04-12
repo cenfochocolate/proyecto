@@ -445,6 +445,7 @@ let registrar = () => {
         registrar_institucion(
           tipo,
           identificacion,
+          nombre,
           nombre_comercial,
           anio_fundacion,
           grado,

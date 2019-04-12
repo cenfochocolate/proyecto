@@ -3,6 +3,7 @@
 let registrar_institucion = (
     ptipo,
     pidentificacion,
+    pnombre,
     pnombre_comercial,
     panio_funadacion,
     pgrado,
@@ -30,6 +31,7 @@ let registrar_institucion = (
         data: {
             tipo:ptipo,
             identificacion: pidentificacion,
+            nombre: pnombre,
             nombre_comercial: pnombre_comercial,
             anio_fundacion: panio_funadacion,
             grado: pgrado,
