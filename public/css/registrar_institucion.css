@@ -6,7 +6,6 @@
     height: auto;
     /*margin: 25px 50px;*/
     background-color: white;
-    box-shadow: 0 1px 50px 0 rgba(0,0,0,0.08);
     font-family: 'Roboto Slab', serif;
 }
 
@@ -33,7 +32,6 @@ fieldset select{
     /*border: 2px solid green;*/
     text-align: center;
     height: 56px;
-    background-color: #f7f5f5;
     padding-top: 30px;
 }
 
