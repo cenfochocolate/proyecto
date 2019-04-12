@@ -19,12 +19,21 @@ function mostrar_datos () {
                 let fila = tabla.insertRow();
                 fila.insertCell().innerHTML = preguntas[i]['preguntas'];
                 fila.insertCell().innerHTML = preguntas[i]['respuestas'];
+
+                let celda_configuracion = fila.insertCell();
+
+                let boton_editar = document.createElement('a');
+                boton_editar.textContent ='Editar';
+                boton_editar.href=`actualizar_pregunta.html?id_pregunta=${preguntas[i]['_id']}`
+             
+                celda_configuracion.appendChild(boton_editar);
+                
         }
       }
 
 
 };
-
+ 
 };
 
 mostrar_datos();
