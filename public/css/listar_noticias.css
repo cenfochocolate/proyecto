@@ -5,8 +5,6 @@
   text-decoration: none;
   margin-left: 5%;
   margin-top: 1%;
-
-
 }
 #backbtn:hover{
   color: #c0392b;
@@ -38,24 +36,47 @@ h1{
   padding-top: 100px;
 }
 
-button{
+#btn_registrar_noticia{
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     background-color: #B82601;
-    border: none;
-    height: 30px;
-    color: white;
+    height: 50%;
+    width: 20%;
+    margin-left: 40%;
+    color: #E9F0E9;
+}
+#btn_registrar_noticia:hover{
+  background-color: #16a085;
 }
 
-#btn_registrar_noticia{
-  width: 15%;
-  height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 42.5%;
-  margin-bottom: 100px;
-}
 .imagentablaNoticias{
   height: 200px;
   width: 200px;
+}
+
+#btn_pref_utiles{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  background-color: #B82601;
+  height: 60%;
+  width: 30%;
+  margin-top: -20px;
+  margin-left: 35%;
+  color: #E9F0E9;
+}
+#btn_pref_utiles:hover{
+  background-color: #16a085; 
+}
+#btn_reporte{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  background-color: #B82601;
+  height: 60%;
+  width: 30%;
+  margin-top: -20px;
+  margin-left: 35%;
+  color: #E9F0E9;
+}
+#btn_reporte:hover{
+  background-color: #16a085;
 }

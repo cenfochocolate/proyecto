@@ -32,15 +32,29 @@
 }
 #frm_criterio button{
     display: inline-block;
+    font-family: 'Roboto Slab', serif;
     background:  #B82601 ;
-    padding: 10px;
+    color: #E9F0E9;
     width: 170px;
-    margin: 0 auto;
+    height: 55px;
     font-size: 20px;
     margin-left: 180px;
     border-radius: 5px;
 }
-#btn_listar button{
-  display:inline-block;
-  margin-left: 25%;
+#frm_criterio button:hover{
+    background-color: #16a085;   
+}
+#btn_listar_criterio button{
+    background: #16a085;
+    border: 2px solid #BDBDBD;
+    color: #E9F0E9;
+    float: left;
+    width: 20%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: -124px;
+    padding: 10px;
+}
+#btn_listar_criterio button:hover{
+    background-color: #B82601 ;   
 }
