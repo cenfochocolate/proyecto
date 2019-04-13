@@ -1,4 +1,4 @@
-  #menu_institucion{
+#menu_institucion{
     margin-top: -55px;
     background: #062F4F;
     text-align: center;
@@ -46,12 +46,15 @@
     font-family: 'Roboto Slab', serif;
   }
   .columna_B {
-    display: inline-block;
-    height: 100%;
-    Margin-left: 26%;
-
-  }
-
+    
+    
+      display: inline-block;
+     
+      height: 100%;
+      Margin-left: 26%;
+  
+    }
+    
   .columna_B div{
     margin-bottom: 15px;
 }
@@ -67,6 +70,7 @@
 
 
 }
+
 
 #frm_registrar textarea{
   font-family: 'Roboto Slab', serif;
@@ -113,11 +117,12 @@ main {
 
 
 form {
-  width: 50%;
-  height: auto;
-  margin-left: 25%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+    width: 50%;
+    height: auto;
+   
+    margin-left: 25%;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 body {
     line-height: 1;

@@ -4,16 +4,13 @@
 
     <meta charset="utf-8">
     <title>Registrar - preguntas</title>
-
-    
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/registrar_preguntas.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfil_in.css">
+    <link rel="stylesheet" href="css/actualizar_preguntas.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   </head>
   <body>
@@ -49,7 +46,7 @@
           </li>
         </ul>
       </div>
-        <h1 id="titulo">Registro de preguntas frecuentes</h1>
+        <h1 id="titulo">Actualizar preguntas frecuentes</h1>
 
       </nav>
 
@@ -65,14 +62,11 @@
                   <textarea id="txt_respuesta"></textarea>
               </div>
 
-
-                  <button type="button" id="btn_insertar">Insertar pregunta</button>
-
+              <div id="btn_actualizar">
+                  <button type="button" id="btn_actualizar">Actualizar</button>
+              </div>
 
         </form>
-        <button type="button" id="btn_listar_preguntas" onclick=" location.href='listar_preguntas_frecuentes.html'">Ver
-            lista</button>
-
     </main>
     <footer>
       <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
@@ -80,9 +74,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="js/servicio_registrar_preguntas.js"></script>
-    <script src="js/controlador_registrar_preguntas.js"></script>
+   
     <script src="controlador_cerrar_sesion.js"></script>
     <script src="js/controlador_validar_tusuario.js"></script>
+    <script src="js/controlador_actualizar_pregunta.js"></script>
 
 
 

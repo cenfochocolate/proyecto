@@ -1,91 +1,101 @@
 
  #banner_institucion{
- width: 100%;
- height: auto;
-}
-#titulo{
- font-family: 'Roboto Slab', serif;
- font-size: 50px;
- text-decoration: none;
- padding-left: 70px;
- padding-right: 20px;
- color: #2d3436;
-}
-
-#frm_idioma{
- padding-top: 40px;
- margin-top: 20px;
- margin-bottom: 20px;
- margin-left: 25%;
-}
-#frm_idioma div{
-    margin-bottom: 15px;
-}
-#frm_idioma label{
+  width: 100%;
+  height: auto;
+ }
+ #titulo{
   font-family: 'Roboto Slab', serif;
-    display: inline-block;
-    width: 110px;
-}
-.input_registrar{
-  display: inline-block;
-  width: 250px;
-  height: 30px;
-  outline: none;
-}
-
-#frm_idioma input{
-    display: inline-block;
-    width: 250px;
-    height: 30px;
-    outline: none;
-    
-}
-.btn_registra{
-    display: inline-block;
-    width: 250px;
-    height: 30px;
-    outline: none;
-    font-size: 15px;
-}
-#frm_idioma input::placeholder {
-   font-size: 12px;
-   padding: 5px;
-}
-#frm_idioma textarea{
-    width: 250px;
-    height: 100px;
-    resize: none;
-}
-#frm_idioma button{
-    display: inline-block;
-    background:  #B82601 ;
-    padding: 10px;
-    width: 170px;
-    margin: 0 auto;
-    font-size: 20px;
-    margin-left: 100px;
-    border-radius: 5px;
-}
-#btn_listar button{
-  display:inline-block;
+  font-size: 50px;
+  text-decoration: none;
+  padding-left: 70px;
+  padding-right: 20px;
+  color: #2d3436;
+ }
+ 
+ #frm_idioma{
+  padding-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 25%;
-}
-#frm_idioma button:hover{
-
-    background:  white;
-}
-#frm_idioma input[type=radio]{
-  font-family: 'Roboto Slab', serif;
-  display: inline-block;
-  width: 12px;
-  height: 13px;
-}
-#frm_idioma input::placeholder {
- font-size: 12px;
- padding: 5px;
-}
-#frm_idioma fieldset{
-  font-family: 'Roboto Slab', serif;
-  margin-bottom: 15px;
-  padding-top: 15px;
-}
+ }
+ #frm_idioma div{
+     margin-bottom: 15px;
+ }
+ #frm_idioma label{
+   font-family: 'Roboto Slab', serif;
+     display: inline-block;
+     width: 110px;
+ }
+ .input_registrar{
+   display: inline-block;
+   width: 250px;
+   height: 30px;
+   outline: none;
+ }
+ 
+ #frm_idioma input{
+     display: inline-block;
+     width: 250px;
+     height: 30px;
+     outline: none;
+     
+ }
+ .btn_registra{
+     display: inline-block;
+     width: 250px;
+     height: 30px;
+     outline: none;
+     font-size: 15px;
+ }
+ #frm_idioma input::placeholder {
+    font-size: 12px;
+    padding: 5px;
+ }
+ #frm_idioma textarea{
+     width: 250px;
+     height: 100px;
+     resize: none;
+ }
+ #btn_registrar{
+     display: inline-block;
+     font-family: 'Roboto Slab', serif;
+     font-size: 20px;
+     background-color: #B82601;
+     margin-top: 10px;
+     width: 25%;
+     height: 55px;
+     color: #E9F0E9;
+     margin-left: 15%;
+ }
+ #btn_registrar:hover{
+   background-color: #16a085;
+ }
+ #btn_listar{
+   background-color: #16a085;
+   border: 2px solid #BDBDBD;
+   color: #E9F0E9;
+   float: left;
+   width: 20%;
+   height: auto;
+   margin-left: 0%;
+   margin-top: -124px;
+   padding: 10px;
+ }
+ #btn_listar:hover{
+   background-color: #B82601 ;
+ }
+ #frm_idioma input[type=radio]{
+   font-family: 'Roboto Slab', serif;
+   display: inline-block;
+   width: 12px;
+   height: 13px;
+ }
+ #frm_idioma input::placeholder {
+  font-size: 12px;
+  padding: 5px;
+ }
+ #frm_idioma fieldset{
+   font-family: 'Roboto Slab', serif;
+   margin-bottom: 15px;
+   padding-top: 15px;
+ }

@@ -3,13 +3,11 @@
   width: 200px;
   height: 100%;
   display: flow-root;
-  position: fixed;
   overflow: hidden;
-  
-
+  position: fixed;
 }
 main {
-  height: 270px;
+  height: 330px;
 }
 .nav {
   width: 100%;
@@ -41,13 +39,18 @@ ul li a{
 ul li a:hover{
   background-color: #16a085;
 }
-.btn_direccion{
+#btn_listar{
     display: inline-block;
-    padding: 10px;
-    width: 170px;
-    margin: 0 auto;
+    width: 20%;
+    height: 50px;
     font-size: 20px;
-    margin-left: 400px;
+    margin-left: 470px;
     border-radius: 5px;
     margin-top: 130px;
+    background-color: #B82601;
+    font-family: 'Roboto Slab', serif;
+    color: #E9F0E9;
+}
+#btn_listar:hover{
+  background-color: #16a085;
 }
