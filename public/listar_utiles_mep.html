@@ -1,100 +1,110 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/listar_utiles_mep.css">
-    <link rel="stylesheet" href="css/perfil_in.css">
-  </head>
-  <body>
-    <header>
-      <div class="lista_utiles_mep">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/listar_utiles_mep.css">
+  <link rel="stylesheet" href="css/perfil_in.css">
+</head>
+
+<body>
+  <header>
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
+    <div class="lista_utiles_mep">
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
         <a href="top_10_instituciones.html">Rankings</a>
         <img src="imgs/logo.png" id="logo" alt="">
-        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
         <a href="" id="perfil" class="header_derecha">Perfil</a>
         <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
       </nav>
-      </div>
-      <img src="imgs/banner.jpg" id="img_banner" alt="">
-    </header>
-      <main>
-        <div id="menu_institucion">
-          <ul class="nav">
-            <li><i class="fas fa-align-justify"></i>
-              <ul>
-                <li><a href="perfil_institucion.html">Institución</a></li>
-                <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-                <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-                <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
-                <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-                <li><a href="listar_citas.html">Citas</a></li>
-              </ul>
-            </li>
+    </div>
+
+  </header>
+  <main>
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
           </ul>
-        </div>
+        </li>
+      </ul>
+    </div>
 
-      <nav id="buscar">
-        <button type="button" id="btn_registrar_nuevo" onclick=" location.href='registrar_utiles_mep.html' " name="button">Registrar Nuevo Útil</button>
+    <nav id="buscar">
 
-        <div class="frm">
+
+      <div class="frm">
         <form class="formulario_busqueda_util" action="" method="post">
-            <div class="buscar_utiles">
-          <label for="buscar_util">Filtrar</label>
-          <input type="search" name="buscar_util" id="buscar_util" placeholder="Ej. Cuaderno" value="">
-        </div>
+          <div class="buscar_utiles">
+            <label for="buscar_util">Filtrar</label>
+            <input type="search" name="buscar_util" id="buscar_util" placeholder="Ej. Cuaderno" value="">
+          </div>
         </form>
-        </div>
+      </div>
 
-      </nav>
-      <table id="tbl_utiles">
-        <thead>
-          <tr>
-            <th>
-              Nombre:
-            </th>
-            <th>Descripción:</th>
-            <th>Cantidad:</th>
-            <th>
-              <fieldset>
-                <select class="select" id="filtrar_util" name="">
-                  <option value="null">Nivel</option>
-                  <option value="primero">Primero</option>
-                  <option value="segundo">Segundo</option>
-                  <option value="tercero">Tercero</option>
-                  <option value="cuarto">Cuarto</option>
-                  <option value="quinto">Quinto</option>
-                  <option value="sexto">Sexto</option>
-                  <option value="setimo">Setimo</option>
-                  <option value="octavo">Octavo</option>
-                  <option value="noveno">Noveno</option>
-                  <option value="decimo">Decimo</option>
-                  <option value="undecimo">Undecimo</option>
-                  <option value="duodecimo">Duodecimo</option>
-                </select>
-              </fieldset>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </main>
-      <footer>
-        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-      <script src="js/servicio_util_mep.js"></script>
-      <script src="js/controlador_listar_mep.js"></script>
-      <script src="controlador_cerrar_sesion.js"></script>
-      <script src="js/controlador_validar_tusuario.js"></script>
-    </footer>
-  </body>
+    </nav>
+    <table id="tbl_utiles">
+      <thead>
+        <tr>
+          <th>
+            Nombre:
+          </th>
+          <th>Descripción:</th>
+          <th>Cantidad:</th>
+          <th>
+            <fieldset>
+              <select class="select" id="filtrar_util" name="">
+                <option value="null">Nivel</option>
+                <option value="primero">Primero</option>
+                <option value="segundo">Segundo</option>
+                <option value="tercero">Tercero</option>
+                <option value="cuarto">Cuarto</option>
+                <option value="quinto">Quinto</option>
+                <option value="sexto">Sexto</option>
+                <option value="setimo">Setimo</option>
+                <option value="octavo">Octavo</option>
+                <option value="noveno">Noveno</option>
+                <option value="decimo">Decimo</option>
+                <option value="undecimo">Undecimo</option>
+                <option value="duodecimo">Duodecimo</option>
+              </select>
+            </fieldset>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <button type="button" id="btn_registrar_nuevo" onclick=" location.href='registrar_utiles_mep.html' "
+      name="button">Registrar Nuevo Útil</button>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_util_mep.js"></script>
+  <script src="js/controlador_listar_mep.js"></script>
+  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
+  </footer>
+</body>
+
 </html>

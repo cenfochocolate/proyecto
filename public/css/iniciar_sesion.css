@@ -89,9 +89,9 @@ body {
 
     .login_panel img {
         height: auto;
-        width: 200px;
-        margin: 0px;
-        margin-top: 15px
+        width: 180px;
+        margin-top: -1px;
+        margin-right: 50px;
     }
 
 
