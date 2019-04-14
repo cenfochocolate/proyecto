@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/actualizar_citas.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -14,6 +15,7 @@
   </head>
   <body>
     <header>
+      <img src="imgs/banner_1.jpg" id="img_banner" alt="">      
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
@@ -22,7 +24,7 @@
         <img src="imgs/img_perfil.png" class="header_derecha" href=".html">
         <a href=".html" class="header_derecha">Panel de Control</a>
       </nav>
-      <img src="imgs/banner.jpg" id="img_banner" alt="">
+
     </header>
     <main>
 
@@ -30,24 +32,16 @@
         <h1 id="titulo">Editar citas</h1>
 
       </nav>
-
       <form class="columna_B" id="frm_registrar">
 
         <div>
             <label for="txt_nombre">Nombre</label>
             <input type="text" id="txt_nombre">
         </div>
-
-
             <div>
                 <label for="txt_fecha">Fecha</label>
                 <input id="txt_fecha" type="date" />​
               </div>
-
-
-
-
-
         <div>
                 <label  for="txt_hora">Hora</label>
                 <input  type="time" id="txt_hora">
@@ -55,9 +49,6 @@
         <div>
                 <button type="button" id="btn_actualizar">Actualizar Cita</button>
         </div>
-
-
-
 
       </form>
 
