@@ -6,19 +6,14 @@ const inputcriterio_1 = document.querySelector('#criterio_1');
 const tabla = document.querySelector('#tbl_criterio tbody');
 let contador = 0;
 
-
 const botonRegistrar = document.querySelector('#btn_registrar');
 
 let llenar_lista = () => {
     document.getElementById('txt_alerta').style.display = "none";
 
-
-
     let evaluacion = listar_evaluacion();
 
     if (evaluacion) {
-
-
 
         contador = evaluacion.length;
 

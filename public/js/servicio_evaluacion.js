@@ -46,3 +46,64 @@ let listar_evaluacion = () => {
 
     return lista_evaluacion;
 };
+
+let buscar_criterio = (id_criterio) => {
+    
+    let criterio  = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscar_criterio/"+id_criterio,
+        method: "GET",
+        data: {
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+   criterio = res.criterio;
+       
+    });
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return criterio;
+};
+
+let actualizar_criterio = (pnombre, pcalificacion, pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_criterio",
+        method: "POST",
+        data: {
+    
+            nombre: pnombre,
+            calificacion: pcalificacion,
+            id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json"
+    });
+    
+
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: 'Evaluacion actualizada correctamente',
+            text:res.msg
+           
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Evalucion no actualizada',
+            text: res.msg
+           
+        });
+    });
+};

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Alfred</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/evaluacion.css">
+
+
+</head>
+
+<body>
+    <header>
+        <img src="imgs/banner_1.jpg" id="img_banner" alt="">        
+            <div class="menu_1_registro_criterio">
+        <nav>
+          <a href="inicio.html">Inicio</a>
+          <a href="listar_instituciones.html">Instituciones</a>
+          <a href="top_10_instituciones.html">Rankings</a>
+          <img src="imgs/logo.png" id="logo" alt="">
+          <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+          <a href="" id="perfil" class="header_derecha">Perfil</a>
+          <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+        </nav>
+    </div>
+
+    </header>
+    <main>
+        <form class="columna_derecha" id="frm_criterio">
+
+            <div id="titulo">
+                <h2>Evaluación Centro educativo</h2>
+            </div>
+            <div>
+                <table id="tbl_criterio">
+                    <thead>
+                    <th>Nombre</th>
+                    <th>Calificación</th>
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div id="txt_alerta">
+                <span>Ya se registraron las 10</span>
+            </div>
+            <div id="inputs">
+                <input type="text" id="txt_criterio_1">
+                <input type="number" id="criterio_1">
+            </div>
+
+
+
+            <div id="btn_registro_criterio">
+                <button type="button" id="btn_actualizar" onclick=" location.href='listar_criterio.html'">Actualizar</button>
+            </div>
+        </form>
+
+    </main>
+    <footer>
+        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_evaluacion.js"></script>
+    <script src="js/controlador_actualizar_evaluacion.js"></script>
+    <script src="controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
+
+</body>
+
+</html>
