@@ -45,7 +45,7 @@ let buscar_pregunta = (id_pregunta) => {
 
     });
     return preguntas;
-};
+}; 
 
 let actualizar_pregunta = (pid_institucion,ppreguntas, prespuestas, pid) => {
     let request = $.ajax({
