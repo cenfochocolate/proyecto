@@ -1,8 +1,8 @@
-body img{
+body #img_padre{
   width: 20%;
   height: auto;
   margin-left: 40%;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 body .btn_modificar_perfil button{
@@ -12,6 +12,12 @@ body .btn_modificar_perfil button{
   margin-left: 40%;
   background-color: red;
   color: white;
+}
+
+h2{
+  margin-left: 30%;
+  color: #16a085;
+  margin-top: 50px;
 }
 
 .nombre h4{
@@ -32,4 +38,8 @@ h3{
   width: 20%;
   margin-left: 40%;
   text-align: center;
+}
+
+#btn_modificar{
+  margin-top: 70px;
 }
