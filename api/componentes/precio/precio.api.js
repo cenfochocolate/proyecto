@@ -7,7 +7,8 @@ module.exports.registrar = (req,res) =>{
             numero : req.body.numero,
             formato : req.body.formato,
             precio : req.body.precio,
-            pago : req.body.pago
+            pago : req.body.pago,
+            estado : 'Activo'
         }
     );
     nuevo_precio.save(function(error){
@@ -50,3 +51,48 @@ module.exports.listar_todos = (req, res) => {
         }
     )
 };
+module.exports.buscar_por_id = (req, res) => {
+    precio_model.find({_id : req.body.id_precio}).then(
+        function (precio) {
+            if (precio) {
+                res.json(
+                    {
+                        success: true,
+                        precio : precio
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        precio: 'No se encontro la matricula'
+                    }
+                )
+            }
+        }
+    )
+};
+module.exports.actualizar_precio= function (req, res)  {
+    precio_model.findByIdAndUpdate(req.body.id, {$set: req.body},
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar la matricula`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: true,
+                        precio: `Se actualizó correctamente la matricula.`
+                    }
+                );
+            }
+        }
+        
+        );
+    
+}
+

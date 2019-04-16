@@ -68,6 +68,19 @@
 #btn_registrar:hover{
   background-color: #16a085;
 }
+#btn_actualizar{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  background-color: #B82601;
+  margin-top: 10px;
+  width: 25%;
+  height: 55px;
+  color: #E9F0E9;
+  margin-left: 15%;
+}
+#btn_actualizar:hover{
+  background-color: #16a085;
+}
 #btn_listar{
   background-color: #16a085;
   border: 2px solid #BDBDBD;
