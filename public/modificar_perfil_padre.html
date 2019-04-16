@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Alfred</title>
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfil_padre.css">
+    <link rel="stylesheet" href="css/modificar_perfil_padre.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
   </head>
@@ -23,50 +23,59 @@
 
     </header>
     <main>
-      <img id="img_padre" alt="">
+      <div class="img_padre">
+        <figure class="image_holder">
+        <img src="imgs/imgph.jpg" alt="Seleccionar imagen" id="previewimg">
+        </figure>
+        <button type="button"id="btn_img">Subir imagen</button>
+      </div>
       <nav>
         <h2>Nombre: </h2>
         <div class="nombre">
-          <h4 id="nombre_padre"></h4>
-          <h4 id="primer_apellido"></h4>
-          <h4 id="segundo_apellido"></h4>
+          <input type="text" name="" id="nombre" class="inputs" value="">
+          <input type="text" name="" id="papellido" value="" class="inputs">
+          <input type="text" name="" id="sapellido" value="" class="inputs">
         </div>
       </nav>
 
       <div class="">
         <h2>Cantida de hijos:</h2>
-        <h3 id="cantidad_de_hijos"></h3>
+        <input type="number" name="" id="num_hijos" value="" class="inputs" class="diferentes">
       </div>
 
       <div class="">
         <h2>Número de télefono:</h2>
-        <h3 id="num_telefono"></h3>
+        <input type="number" name="" id="num_tel" value="" class="inputs" class="diferentes">
       </div>
 
-      <div class="">
-        <h2>Correo:</h2>
-        <h3 id="email"></h3>
-      </div>
 
       <div class="">
         <h2>Dirección</h2>
-        <h3 id="direccion"></h3>
+        <input type="text" name="" id="direccion" value="" class="inputs" class="diferentes">
+      </div>
+
+      <div class="">
+        <h2>Contraseña:</h2>
+        <input type="text" name="" id="contrasenna" value="" class="inputs" class="diferentes">
       </div>
       <div class="btn_modificar_perfil">
-      <button type="button" id="btn_modificar" onclick="location.href='modificar_perfil_padre.html'" name="button">Modificar Perfil</button>
+      <button type="button" name="button" id="g_cambios">Guardar</button>
       </div>
 
     </main>
     <footer>
       <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="js/servicio_perfil_padre.js"></script>
-    <script src="js/controlador_perfil_padres.js"></script>
+    <script src="js/controlador_actualizar_perfil_padre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_imagen.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/controlador_validar_tusuario.js"></script>
 
 
-  </body>
   </body>
 </html>

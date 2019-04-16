@@ -1,0 +1,62 @@
+body #img_padre{
+  width: 20%;
+  height: auto;
+  margin-left: 45%;
+  margin-bottom: 60px;
+}
+
+body .btn_modificar_perfil button{
+  width: 20%;
+  height: auto;
+  padding: 20px;
+  margin-left: 40%;
+  background-color: red;
+  color: white;
+}
+
+h2{
+  margin-left: 30%;
+  color: #16a085;
+  margin-top: 50px;
+}
+
+.nombre h4{
+  display:inline;
+  margin-right: 10px;
+  font-size: 25px;
+  font-family: font-family: 'Roboto Slab', serif;
+}
+
+.inputs{
+  width: 400px;
+  height: 45px;
+  font-size: 30px;
+  padding: 5px;
+  font-family: font-family: 'Roboto Slab', serif;
+  color: black;
+}
+
+div .inputs{
+  margin-left: 40%;
+}
+
+.nombre{
+  width: 36%;
+  margin-left: 25.5%;
+
+}
+.nombre input{
+    margin-top: 25px;
+}
+
+.img_padre{
+  width: 40%;
+  margin-left: 30%;
+}
+
+.img_padre button{
+  margin-left: 34%;
+}
+#g_cambios{
+  margin-top: 70px;
+}
