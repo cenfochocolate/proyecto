@@ -71,7 +71,7 @@ app.use(function (req, res, next) {
 const utiles_institucion = require('./componentes/utiles_institucion/utiles_institucion.route');
 const cita = require('./componentes/cita/cita.route');
 const pcomercial = require('./componentes/pagina_comercial/pcomercial.route');
-const idioma = require('./componentes/idioma/idioma.route');
+const idiomas = require('./componentes/idiomas/idiomas_route');
 const precio = require('./componentes/precio/precio.route');
 const requisito = require('./componentes/requisitos/requisito.route');
 const utiles_mep = require('./componentes/utiles_mep/utiles_mep.route');
@@ -94,7 +94,7 @@ const evaluacion = require('./componentes/evaluacion/evaluacion.route');
 app.use('/api', pref_utiles);
 app.use('/api', redes_sociales);
 app.use('/api', utiles_mep);
-app.use('/api', idioma);
+app.use('/api', idiomas);
 app.use('/api', precio);
 app.use('/api', requisito);
 app.use('/api', pcomercial);
