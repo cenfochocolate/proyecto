@@ -44,6 +44,14 @@ let validar = () => {
 
 
 let obtener_datos = () => {
+    
+    let rdb = document.querySelectorAll('#fieldset_pago input[type=radio]');
+
+        if (rdb.value == 'si') {
+            rdb[0].checked = true;
+        } else {
+            rdb[1].checked = true;
+        }
 
     if (validar()== false){
 
@@ -51,6 +59,8 @@ let obtener_datos = () => {
     let formato = inputformato.value;
     let precio = Number(inputprecio.value);
     let pago = document.querySelector('#fieldset_pago input[type=radio]:checked').value;
+
+
 
      registrar_precio(numero, formato, precio, pago);
      

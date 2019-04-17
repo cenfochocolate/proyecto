@@ -23,6 +23,14 @@ function mostrar_datos(){
 
             fila.insertCell().innerHTML = requisito[i]['nivel'];
             fila.insertCell().innerHTML = requisito[i]['descripcion'];
+
+            let celda_configuracion = fila.insertCell();
+
+            let boton_editar = document.createElement('a');
+            boton_editar.textContent ='Editar';
+            boton_editar.href=`actualizar_requisitos_matricula.html?id_requisito=${requisito[i]['_id']}`
+         
+            celda_configuracion.appendChild(boton_editar);
         }
     };
 };

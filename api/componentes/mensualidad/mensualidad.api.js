@@ -7,7 +7,8 @@ module.exports.registrar = (req, res) => {
         {
             grado: req.body.grado,
             institucion: req.body.institucion,
-            descripcion: req.body.descripcion
+            descripcion: req.body.descripcion,
+            estado : 'Activo'
         }
     );
     nuevo_mensualidad.save(function (error) {
@@ -51,3 +52,48 @@ module.exports.listar_todos = (req, res) => {
         }
     )
 };
+module.exports.buscar_por_id = (req, res) => {
+    mensualidad_model.find({_id : req.body.id_mensualidad}).then(
+        function (mensualidad) {
+            if (mensualidad) {
+                res.json(
+                    {
+                        success: true,
+                        mensualidad : mensualidad
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        mensualidad : 'No se encontro la mensualidad'
+                    }
+                )
+            }
+        }
+    )
+};
+module.exports.actualizar_mensualidad = function (req, res)  {
+    mensualidad_model.findByIdAndUpdate(req.body.id, {$set: req.body},
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar la mensualidad.`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: true,
+                        mensualidad: `Se actualizó correctamente la mensualidad.`
+                    }
+                );
+            }
+        }
+        
+        );
+    
+}
+

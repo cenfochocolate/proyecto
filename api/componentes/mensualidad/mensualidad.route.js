@@ -5,6 +5,13 @@ const express = require ('express');
 const router = express.Router();
 const api_mensualidad = require('./mensualidad.api');
 
+router.param('id_cita', function(req, res, next, id_mensualidad){
+
+    req.body.id_mensualidad = id_mensualidad;
+    next();
+
+});
+
 router.route('/registrar_mensualidad')
     .post(
         function(req,res){
@@ -17,4 +24,17 @@ router.route('/registrar_mensualidad')
             api_mensualidad.listar_todos(req,res);
         }
     );
+    router.route('/actualizar_mensualidad')
+    .post(
+        function (req, res) {
+            api_mensualidad.actualizar_mensualidad(req, res);
+        }
+    );
+    router.route('/buscar_mensulidad/:id_mensualidad')
+    .get(
+        function (req, res) {
+            api_mensualidad.buscar_por_id(req, res);
+        }
+    );
+
 module.exports = router;

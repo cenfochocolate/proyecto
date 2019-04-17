@@ -19,6 +19,7 @@ let obtener_datos = () => {
         let pagina_comercial = input_paginacomercial.value;
         registrar_paginacomercial(id_institucion,pagina_comercial);
 
+        console.log('La pagina es' +  pagina_comercial );
 
     } else {
         swal.fire({

@@ -1,12 +1,13 @@
 'use strict';
 const requisito_model = require ('./requisito.model');
 
-module.exports.registrar = (req,res) =>{
+module.exports.registrar = function (req,res){
     let nuevo_requisito = new requisito_model(
         {
-            id: req.body.id,
+           
             nivel : req.body.nivel,
-            descripcion : req.body.descripcion
+            descripcion : req.body.descripcion,
+            estado : 'Activo'
         }
     );
     nuevo_requisito.save(function(error){
@@ -28,7 +29,7 @@ module.exports.registrar = (req,res) =>{
     });
 };
 
-module.exports.listar_todos = (req, res) => {
+module.exports.listar_todos = function (req, res) {
     requisito_model.find().then(
         function(requisito){
             if (requisito.length > 0) {
@@ -49,3 +50,48 @@ module.exports.listar_todos = (req, res) => {
         }
     )
 };
+module.exports.buscar_por_id = function (req, res){
+    requisito_model.find({_id : req.body.id_requisito}).then(
+        function (requisito) {
+            if (requisito) {
+                res.json(
+                    {
+                        success: true,
+                        requisito : requisito
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        requisito: 'No se encontraron requisitos'
+                    }
+                )
+            }
+        }
+    )
+};
+module.exports.actualizar_requisito = function (req, res)  {
+    requisito_model.findByIdAndUpdate(req.body.id, {$set: req.body},
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar el requisito.`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: true,
+                        msg: `Se actualizó correctamente el requisito.`
+                    }
+                );
+            }
+        }
+        
+        );
+    
+}
+

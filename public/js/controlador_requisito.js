@@ -23,11 +23,11 @@ let validar = () => {
     return error;
 };
 
-let obtener_datos = () => {
+function obtener_datos  (){
 
     if (validar()== false){
 
-    let nivel = inputnivel.value;
+    let nivel = inputnivel.selectedOptions[0].textContent;;
     let descripcion = inputdescripcion.value;
 
     registar_requisito(nivel, descripcion);

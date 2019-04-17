@@ -21,6 +21,15 @@ function mostrar_datos() {
       fila.insertCell().innerHTML = mensualidad[i]['grado'];
       fila.insertCell().innerHTML = mensualidad[i]['institucion'];
       fila.insertCell().innerHTML = mensualidad[i]['descripcion'];
+
+      let celda_configuracion = fila.insertCell();
+
+      let boton_editar = document.createElement('a');
+      boton_editar.textContent ='Editar';
+      boton_editar.href=`actualizar_informacion_mensualidad.html?id_mensualidad=${mensualidad[i]['_id']}`
+   
+      celda_configuracion.appendChild(boton_editar);
+      
     }
   };
 };

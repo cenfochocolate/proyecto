@@ -19,7 +19,6 @@ let pagina = buscar_pagina(_id);
 let mostrar_datos = () => {
 
     input_paginacomercial.value = pagina[0]['pagina'];
- 
 }
 
 
@@ -32,11 +31,11 @@ let validar = () => {
     if (
         input_paginacomercial.value == '') {
         error = true;
-        
-    input_paginacomercial.classList.add('error_input');
+
+        input_paginacomercial.classList.add('error_input');
     } else {
-       
-    input_paginacomercial.classList.remove('error_input');
+
+        input_paginacomercial.classList.remove('error_input');
     }
 
 
@@ -50,9 +49,21 @@ let obtener_datos = () => {
         // Se ejecuta solo si la validación no da error
         let id_institucion = id_ins;
         let pagina_comercial = input_paginacomercial.value;
-    
-        registrar_paginacomercial (id_institucion,pagina_comercial, _id);
 
+
+        Swal.fire({
+            title: 'Está seguro que desea actualizar el inmueble?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
+            
+                registrar_paginacomercial(id_institucion, pagina_comercial, _id);
+            }
+        })
     } else {
         swal.fire({
             type: 'warning',

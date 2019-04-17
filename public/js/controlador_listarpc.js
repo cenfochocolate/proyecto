@@ -8,7 +8,9 @@ function mostrar_datos() {
   for (let i = 0; i < pcomercial.length; i++) {
 
     if (id_institucion == pcomercial[i]['id_institucion']) {
+
       let fila = tabla.insertRow();
+
       fila.insertCell().innerHTML = pcomercial[i]['pcomercial'];
 
       let celda_configuracion = fila.insertCell();
@@ -18,11 +20,7 @@ function mostrar_datos() {
       boton_editar.href = `actualizar_pagina_comercial.html?id_pagina=${pcomercial[i]['_id']}`
 
       celda_configuracion.appendChild(boton_editar);
-
-
     }
-
-
   };
 };
 
