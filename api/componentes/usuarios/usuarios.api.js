@@ -228,3 +228,43 @@ module.exports.buscar_institucion = function (req, res) {
         }
     )
 };
+
+module.exports.buscar_por_id =(req,res)=>{
+  usuarioModel.find({_id : req.body.id}).then(
+    function(usuarios){
+      if (usuarios) {
+        res.json(
+          {
+            success:true,
+            usuarios:usuarios
+          }
+        )
+      } else {
+        res.json(
+          {
+            success:false,
+            usuarios:'No se han encontrado usuarios'
+          }
+        )
+      }
+    }
+  )
+};
+
+module.exports.actualizar_perfil = function(req,res){
+  usuarioModel.findByIdAndUpdate(req.body.id,{$set:req.body},
+    function (error){
+      if (error) {
+        res.json({
+          success:false,
+          msj:`No se puede actualizar este perfil`
+        });
+      } else {
+        res.json({
+          success:true,
+          usuarios:`El perfil ha sido actualizado correctamente.`
+        });
+      }
+    }
+  );
+};

@@ -8,8 +8,9 @@ let usuarios = listar_instituciones();
 
 mostrar_usuarios();
 
-inputFiltro.addEventListener('keyup', mostrar_usuarios);
 slt_tusuario.addEventListener('change', mostrar_usuarios);
+inputFiltro.addEventListener('keyup', mostrar_usuarios);
+
 
 function mostrar_usuarios(){
 	let usuarios = listar_instituciones();
@@ -18,7 +19,7 @@ function mostrar_usuarios(){
 	tabla.innerHTML='';
 
 	for (let i = 0; i < usuarios.length; i++) {
-		if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) || tusuario.includes(usuarios[i]["tipo"])) {
+		if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['tipo']!= "admin" && tusuario == "null") {
 			let fila = tabla.insertRow();
 			let celdaNombre = fila.insertCell();
 
@@ -49,7 +50,7 @@ function mostrar_usuarios(){
 
 			fila.insertCell().innerHTML = usuarios[i]['telefono'];
 		} else {
-			if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['tipo'].includes('tusuario')) {
+			if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['tipo'].includes(tusuario)){
 				let fila = tabla.insertRow();
 				let celdaNombre = fila.insertCell();
 

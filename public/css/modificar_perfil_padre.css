@@ -1,7 +1,7 @@
 body #img_padre{
   width: 20%;
   height: auto;
-  margin-left: 40%;
+  margin-left: 45%;
   margin-bottom: 60px;
 }
 
@@ -27,19 +27,36 @@ h2{
   font-family: font-family: 'Roboto Slab', serif;
 }
 
+.inputs{
+  width: 400px;
+  height: 45px;
+  font-size: 30px;
+  padding: 5px;
+  font-family: font-family: 'Roboto Slab', serif;
+  color: black;
+}
+
+div .inputs{
+  margin-left: 40%;
+}
+
 .nombre{
   width: 36%;
-  margin-left: 40%;
+  margin-left: 25.5%;
+
+}
+.nombre input{
+    margin-top: 25px;
 }
 
-h3{
-  font-size: 25px;
-  font-family: font-family: 'Roboto Slab', serif;
-  width: 20%;
-  margin-left: 40%;
-  text-align: center;
+.img_padre{
+  width: 40%;
+  margin-left: 30%;
 }
 
-#btn_modificar{
+.img_padre button{
+  margin-left: 34%;
+}
+#g_cambios{
   margin-top: 70px;
 }

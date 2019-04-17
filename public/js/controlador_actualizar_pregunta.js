@@ -65,7 +65,7 @@ let obtener_datos = () => {
 
 
 
-        registrar_preguntas(id_institucion,preguntas,respuestas, _id);
+        actualizar_pregunta(id_institucion,preguntas,respuestas, _id);
 
     } else {
         swal.fire({

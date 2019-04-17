@@ -26,6 +26,18 @@ router.route('/buscar_institucion')
         function (req, res) {
             usuarioApi.buscar_institucion(req, res);
         });
+router.route('/buscar_usuarios')
+  .get(
+    function (req,res) {
+      usuarioApi.buscar_por_id(req,res);
+    }
+  );
 
+router.route('/actualizar_perfil_padre')
+  .post(
+    function(req,res){
+      usuarioApi.actualizar_perfil(req,res);
+    }
+  );
 
 module.exports = router;
