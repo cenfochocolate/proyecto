@@ -1,118 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
-
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_idioma.css">
-    <link rel="stylesheet" href="css/general.css">
-
-</head>
-
-<body>
-    <header>
-        <img src="imgs/banner_1.jpg" id="img_banner" alt="">        
-        <div class="menu_1_idioma">
-            <nav>
-                <a href="inicio.html">Inicio</a>
-                <a href="listar_instituciones.html">Instituciones</a>
-                <a href="top_10_instituciones.html">Rankings</a>
-                <img src="imgs/logo.png" id="logo" alt="">
-                <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt"
-                        id="cerrar_sesion"></i></a>
-                <a href="" id="perfil" class="header_derecha">Perfil</a>
-                <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
-            </nav>
-        </div>
-
-    </header>
-    <main>
-        <form class="columna_derecha" id="frm_idioma">
-
-            <div id="titulo">
-                <h2>Registrar Idioma</h2>
-            </div>
-            <div>
-                <label for="Categorias">Idiomas</label>
-                <select class="input_registrar" id="txt_idioma">
-                    <option value=""></option>
-                    <option value="Español">
-                        Español
-                    </option>
-                    <option value="Inglés">
-                        Inglés
-                    </option>
-                    <option value="Francés">
-                        Francés
-                    </option>
-                    <option value="Alemán">
-                        Alemán
-                    </option>
-                    <option value="Italiano">
-                        Italiano
-                    </option>
-                    <option value="Mandarín">
-                        Mandarín
-                    </option>
-                    <option value="Japonés">
-                        Japonés
-                    </option>
-                    <option value="Portugués">
-                        Portugués
-                    </option>
-
-                </select>
-            </div>
-
-
-            <div class="duracion_idioma">
-                <label for="txt_duracion">Duración</label>
-                <input type="text" id="txt_duracion" placeholder=" Ej: 4 horas por semana">
-            </div>
-
-            <fieldset id="fieldset_titulo">
-                <legend>Título de curso</legend>
-
-                <input type="radio" id="rbt_si" name="rbt_titulo" value="si">
-                <label for="rbt_si">Si</label>
-
-                <input type="radio" id="rbt_no" name="rbt_titulo" value="no">
-                <label for="rbt_no">No</label>
-            </fieldset>
-
-            <div id="btn_registrar_idioma">
-                <button type="button" id="btn_registrar">Registrar</button>
-            </div>
-        </form>
-        <div id="btn_listar_idioma">
-            <button type="button" id="btn_listar" onclick=" location.href='lista_idioma.html'">Ver lista</button>
-        </div>
-
-    </main>
-    <footer>
-        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <script src="js/servicio_idiomas.js"></script>
-    <script src="js/controlador_idioma.js"></script>
-    <script src="controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_validar_tusuario.js"></script>
-
-</body>
-
-=======
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -120,6 +5,7 @@
         <title>Alfred</title>
         <link  rel="stylesheet" href="css/reset.css">
         <link  rel="stylesheet" href="css/general.css">
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
         <link  rel="stylesheet" href="css/registrar.css">
     </head>
     <body>
@@ -357,9 +243,5 @@
       <script src="js/controlador_idiomas.js"></script>
       <script src="js/servicio_idiomas.js"></script>
       <script src="js/servicio_imagen_idiomas.js"></script>
-      <script src="controlador_cerrar_sesion.js"></script>
-  <script src="js/controlador_validar_tusuario.js"></script>
-
     </body>
->>>>>>> master
 </html>
