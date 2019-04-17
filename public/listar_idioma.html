@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Listar idiomas</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/listar.css">
+        
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                    <a href="inicio.html">Inicio</a>
+                    <a href="listar_instituciones.html">Instituciones</a>
+                    <a href="top_10_instituciones.html">Rankings</a>
+                    <img src="imgs/logo.png" id="logo" alt="">
+                    <a href="iniciar_sesion.html" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+                    <img src="imgs/img_perfil.png" class="header_derecha" href=".html">
+                    <a href="panel_control.html" class="header_derecha">Panel de Control</a>
+          </nav>
+          <img src="imgs/banner.jpg" id="img_banner" alt="">
+        </header>
+
+    </body>
+    <main>
+
+        <form>
+            <div class="filtro">
+              <label for="txtfiltro">Filtrar</label>
+              <input type="text" id="txtfiltro">  
+            </div>
+         <table id="tbl_idiomas">     
+            <thead>
+             <tr>
+                <th>Idioma</th>
+                <th>Codigo iso </th>
+                <th>Bandera</th>
+             </tr>
+             </thead>
+             <tbody>
+            </tbody>
+            </table>
+        </form>
+        <div>
+            <button type="button" id="btn_listar"onclick=" location.href='registrar_idioma.html'">Registro nuevo</button>
+           </div>
+    </main>
+    <footer>
+        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+          <script src="js/servicio_idiomas.js" ></script>
+    <script src="js/controlador_idioma_listar.js"></script>
+    <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
+
+    
+    </html>
