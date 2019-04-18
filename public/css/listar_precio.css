@@ -46,13 +46,13 @@ input{
 }
 #tbl_precio{
   width: 40%;
-  height: auto;
+  height: 200px;
   margin-left: 30%;
   }
   #tbl_precio tbody{
     font-family: 'Roboto Slab', serif;
     border-style: solid;
-    border-width: 5px;
+    border-width: 1px;
     border-color: #2F7585;
   }
   #tbl_precio tbody a {
@@ -69,6 +69,7 @@ input{
     border-collapse: collapse;
     display:block;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   thead{
    color:white;

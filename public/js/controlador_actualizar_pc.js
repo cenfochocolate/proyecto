@@ -52,7 +52,7 @@ let obtener_datos = () => {
 
 
         Swal.fire({
-            title: 'Está seguro que desea actualizar el inmueble?',
+            title: 'Está seguro que desea actualizar la pagina?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

@@ -88,7 +88,8 @@ let actualizar_pagina = (pid_institucion, ppagina_comercial, pid) => {
     },
 
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-    dataType: "json"
+    dataType: "json",
+    async: false
   });
 
   request.done(function (res) {

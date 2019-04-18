@@ -60,7 +60,7 @@ let obtener_datos = () => {
         let descripcion = inputdescripcion.value;
 
         Swal.fire({
-            title: 'Está seguro que desea actualizar el inmueble?',
+            title: 'Está seguro que desea actualizar la matrícula?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

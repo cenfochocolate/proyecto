@@ -4,6 +4,7 @@
 const tabla = document.querySelector('#tbl_precio tbody');
 const inputFiltro = document.querySelector('#buscar_precio');
 
+let precio = listar_precio();
 mostrar_datos();
 
 inputFiltro.addEventListener('keyup',mostrar_datos);

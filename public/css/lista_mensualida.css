@@ -50,14 +50,14 @@ form{
 }
 
 #tbl_grado{
-  width: 40%;
-  height: auto;
+  width: 80%;
+  height: 200px;
   margin-left: 30%;
   }
   #tbl_grado tbody{
     font-family: 'Roboto Slab', serif;
     border-style: solid;
-    border-width: 5px;
+    border-width: 1px;
     border-color: #2F7585;
   }
   #tbl_grado tbody a {
@@ -70,10 +70,10 @@ form{
   }
   #tbl_grado{
     margin: 10% auto;
-    width: 80%;
     border-collapse: collapse;
     display:block;
     overflow-y: scroll;
+    overflow-x: hidden;
 
   }
   thead{

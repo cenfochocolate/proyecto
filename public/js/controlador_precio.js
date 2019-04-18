@@ -43,7 +43,7 @@ let validar = () => {
 };
 
 
-let obtener_datos = () => {
+function obtener_datos ()  {
     
     let rdb = document.querySelectorAll('#fieldset_pago input[type=radio]');
 
@@ -55,9 +55,9 @@ let obtener_datos = () => {
 
     if (validar()== false){
 
-    let numero = Number(inputnumero.value);
-    let formato = inputformato.value;
-    let precio = Number(inputprecio.value);
+    let numero = inputnumero.value;
+    let formato = inputformato.selectedOptions[0].textContent;
+    let precio = inputprecio.value;
     let pago = document.querySelector('#fieldset_pago input[type=radio]:checked').value;
 
 

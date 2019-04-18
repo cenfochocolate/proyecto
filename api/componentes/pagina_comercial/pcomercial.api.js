@@ -1,7 +1,7 @@
 'use strict'; 
 const modelo_pc = require('./pcomercial.model'); 
  
-module.exports.registrar = (req, res) => { 
+module.exports.registrar = function (req, res) { 
   let nueva_pagina = new modelo_pc( 
     { 
       id_institucion: req.body.id_institucion, 
@@ -15,20 +15,20 @@ module.exports.registrar = (req, res) => {
       res.json( 
         { 
           success: false, 
-          msj: `No se pudo registrar la página, ocurriò el siguiente error ${error}` 
+          msg: `No se pudo registrar la página, ocurriò el siguiente error ${error}` 
         } 
       ); 
     } else { 
       res.json( 
         { 
           success: true, 
-          msj: `Se registró  satisfactoriamente la página` 
+          msg: `` 
         } 
       ); 
     } 
   }); 
 }; 
-module.exports.listar_todos = (req, res) => { 
+module.exports.listar_todos = function(req, res) { 
   modelo_pc.find().then( 
     function (pcomercial) { 
       if (pcomercial.length > 0) { 
@@ -50,7 +50,7 @@ module.exports.listar_todos = (req, res) => {
   ) 
 }; 
  
-module.exports.buscar_por_id = (req, res) => { 
+module.exports.buscar_por_id = function (req, res) { 
   modelo_pc.find({ _id: req.body.id_pagina }).then( 
     function (pcomercial) { 
       if (pcomercial) { 
@@ -73,7 +73,7 @@ module.exports.buscar_por_id = (req, res) => {
 }; 
  
 module.exports.actualizar_pagina = function (req, res) { 
-  modelo_pc.findByIdAndUpdate(req.body.id_pagina, { $set: req.body }, 
+  modelo_pc.findByIdAndUpdate(req.body.id, { $set: req.body }, 
     function (error) { 
       if (error) { 
         res.json( 
@@ -86,7 +86,7 @@ module.exports.actualizar_pagina = function (req, res) {
         res.json( 
           { 
             success: true, 
-            pcomercial: `Se actualizó correctamente la pregunta y repuesta.` 
+            msg: `Se actualizó correctamente la pregunta y repuesta.` 
           } 
         ); 
       } 
