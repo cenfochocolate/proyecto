@@ -49,7 +49,6 @@ if (precio) {
 
 
 let obtener_datos = () => {
-    if (validar() == false) {
 
         let numero = inputnumero.value;
         let formato = inputformato.selectedOptions[0].textContent;
@@ -71,13 +70,6 @@ let obtener_datos = () => {
 
             }
         })
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'No se pudo actualizar',
-            text: 'Por favor revise los campos resaltados'
-        });
-    }
 
 
 

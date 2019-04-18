@@ -79,7 +79,7 @@ let actualizar_precio = ( pnumero, pformato, pprecio, ppago,pid ) => {
       
         swal.fire({
             type: 'success',
-            title: 'Matricula actualizada correctamente',
+            title: 'Matricula actualizada correctamente'+res.msg ,
             text:res.msg,
             onClose: () =>{
                 window.location.href ='lista_precio_matricula.html';
