@@ -2,13 +2,14 @@
 'use strict';
 const mensualidad_model = require('./mensualidad.model');
 
-module.exports.registrar = (req, res) => {
+module.exports.registrar = function (req, res) {
     let nuevo_mensualidad = new mensualidad_model(
         {
-            grado: req.body.grado,
+          
             institucion: req.body.institucion,
             descripcion: req.body.descripcion,
-            estado : 'Activo'
+            grado: req.body.grado,
+            estado: 'Activo'
         }
     );
     nuevo_mensualidad.save(function (error) {
@@ -30,7 +31,7 @@ module.exports.registrar = (req, res) => {
     });
 };
 
-module.exports.listar_todos = (req, res) => {
+module.exports.listar_todos = function (req, res) {
     mensualidad_model.find().then(
         function (mensualidad) {
             if (mensualidad.length > 0) {
@@ -45,36 +46,36 @@ module.exports.listar_todos = (req, res) => {
                 res.json(
                     {
                         success: false,
-                       mensualidad: 'No se encontraron resultados'
+                        mensualidad: 'No se encontraron resultados'
                     }
                 )
             }
         }
     )
 };
-module.exports.buscar_por_id = (req, res) => {
-    mensualidad_model.find({_id : req.body.id_mensualidad}).then(
+module.exports.buscar_por_id = function (req, res) {
+    mensualidad_model.find({ _id: req.body.id_mensualidad }).then(
         function (mensualidad) {
             if (mensualidad) {
                 res.json(
                     {
                         success: true,
-                        mensualidad : mensualidad
+                        mensualidad: mensualidad
                     }
                 )
             } else {
                 res.json(
                     {
                         success: false,
-                        mensualidad : 'No se encontro la mensualidad'
+                        mensualidad: 'No se encontro la mensualidad'
                     }
                 )
             }
         }
     )
 };
-module.exports.actualizar_mensualidad = function (req, res)  {
-    mensualidad_model.findByIdAndUpdate(req.body.id, {$set: req.body},
+module.exports.actualizar_mensualidad = function (req, res) {
+    mensualidad_model.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error) {
             if (error) {
                 res.json(
@@ -87,13 +88,13 @@ module.exports.actualizar_mensualidad = function (req, res)  {
                 res.json(
                     {
                         success: true,
-                        mensualidad: `Se actualizó correctamente la mensualidad.`
+                        msg: `Se actualizó correctamente la mensualidad.`
                     }
                 );
             }
         }
-        
-        );
-    
+
+    );
+
 }
 

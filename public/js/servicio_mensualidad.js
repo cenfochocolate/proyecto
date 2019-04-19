@@ -1,30 +1,36 @@
 
 'use strict';
 
-let registrar_mensualidad = (pgrado, pinstitucion, pdescripcion) => {
+let registrar_mensualidad = ( pinstitucion, pdescripcion,pgrado) => {
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_mensualidad",
     method: "POST",
     data: {
-        grado : pgrado,
+        
         institucion : pinstitucion,
-        descripcion : pdescripcion
+        descripcion : pdescripcion,
+        grado : pgrado,
+        estado: "Activo"
       },
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json"
   });
-  request.done(function (msg) {
+  request.done(function (res) {
 
       swal.fire({
         type: 'success',
-        title: 'Su registro se envio correctamente',
+        title: 'Su registro se envio correctamente'+ res.msg,
         text: `El grado deseado es ${pgrado}en la cual se tiene la institucion de ${pinstitucion} con la descripcion de ${pdescripcion}`
       });
 
   });
-    request.fail(function (jqXHR, textStatus) {
-
+  request.fail(function(res){
+    swal.fire({
+        type : 'error',
+        title : 'Proceso no realizado',
+        text : res.msg
     });
+  });
 };
 
 let listar_mensualidad = () => {
@@ -52,42 +58,46 @@ let listar_mensualidad = () => {
     return lista_mensualidad;
 };
 let buscar_mensualidad = (id_mensualidad) => {
-    
   let mensualidad = [];
 
   let request = $.ajax({
-      url: "http://localhost:4000/api/buscar_mensualidad/"+id_mensualidad,
-      method: "GET",
-      data: {
-      },
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType: "json",
-      async: false
+    url: "http://localhost:4000/api/buscar_mensualidad/"+ id_mensualidad,
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
   });
 
   request.done(function (res) {
- mensualidad = res.mensualidad;
-     
+      mensualidad = res.mensualidad;
+    
   });
-  request.fail(function (jqXHR, textStatus) {
 
+  request.fail(function (jqXHR, textStatus) {
+    
   });
   return mensualidad;
+ 
 };
 
-let actualizar_mensualidad = (pgrado, pinstitucion, pdescripcion, pid) => {
+
+let actualizar_mensualidad = ( pinstitucion, pdescripcion,pgrado, pid) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_cita",
+      url: "http://localhost:4000/api/actualizar_mensualidad",
       method: "POST",
       data: {
-        grado : pgrado,
+       
         institucion : pinstitucion,
         descripcion : pdescripcion,
+        grado : pgrado,
          id: pid
            },
            
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      dataType: "json"
+      dataType: "json",
+      async: false
   });
 
   request.done(function (res) {
@@ -95,8 +105,10 @@ let actualizar_mensualidad = (pgrado, pinstitucion, pdescripcion, pid) => {
       swal.fire({
           type: 'success',
           title: 'Mensualidad actualizada correctamente',
-          text:res.msg
-         
+          text:res.msg,
+          onClose: () => {
+            window.location.href = 'lista_mensualidad.html';
+          }    
       });
 
   });

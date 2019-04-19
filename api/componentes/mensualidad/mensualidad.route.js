@@ -5,7 +5,7 @@ const express = require ('express');
 const router = express.Router();
 const api_mensualidad = require('./mensualidad.api');
 
-router.param('id_cita', function(req, res, next, id_mensualidad){
+router.param('id_mensualidad', function(req, res, next, id_mensualidad){
 
     req.body.id_mensualidad = id_mensualidad;
     next();
