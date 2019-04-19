@@ -1,13 +1,12 @@
 'use strict';
 
-let registrar_paginacomercial = (pid_institucion, ppagina_comercial) => {
+function registrar_paginacomercial  (pid_institucion, ppagina_comercial)  {
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_pcomercial",
     method: "POST",
     data: {
       id_institucion: pid_institucion,
       pcomercial: ppagina_comercial,
-      estado: "Activo"
     },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
@@ -89,6 +88,7 @@ let actualizar_pagina = (pid_institucion, ppagina_comercial, pid) => {
 
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
+   
   });
 
   request.done(function (res) {

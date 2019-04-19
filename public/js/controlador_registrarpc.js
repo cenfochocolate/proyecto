@@ -1,6 +1,9 @@
 'use strict'
 const input_paginacomercial = document.querySelector('#txt_paginac');
+const btn_guardar = document.querySelector('#btn_guardar');
 const id_ins = sessionStorage.getItem('idu');
+
+
 let validar = () => {
     let error = false;
 
@@ -12,7 +15,7 @@ let validar = () => {
     }
 return error;
 };
-let obtener_datos = () => {
+function obtener_datos  (){
 
     if (validar() == false) {
         let id_institucion = id_ins;

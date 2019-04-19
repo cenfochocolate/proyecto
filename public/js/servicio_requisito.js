@@ -5,7 +5,8 @@ let registar_requisito = (pnivel, pdescripcion) => {
         method: "POST",
         data: {
             nivel: pnivel,
-            descripcion: pdescripcion
+            descripcion: pdescripcion,
+            estado: "Activo"
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"

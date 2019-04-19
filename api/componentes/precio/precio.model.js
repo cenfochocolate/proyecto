@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 
-let schema_precio = new mongoose.Schema(
+let schema_precio = mongoose.Schema(
     {
         numero :{type : Number, required : true},
         formato :{type : String, required : true},

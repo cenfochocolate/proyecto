@@ -1,7 +1,7 @@
 'use strict';
 const precio_model = require ('./precio.model');
 
-module.exports.registrar = (req,res) =>{
+module.exports.registrar = function (req,res) {
     let nuevo_precio = new precio_model(
         {
             numero : req.body.numero,
@@ -23,14 +23,14 @@ module.exports.registrar = (req,res) =>{
             res.json(
                 {
                     success : true,
-                    msg : `Se envió correctamente el registro`
+                    msg : ``
                 }
             )
         }
     });
 };
 
-module.exports.listar_todos = (req, res) => {
+module.exports.listar_todos = function (req, res){
     precio_model.find().then(
         function(precio){
             if (precio.length > 0) {
@@ -51,7 +51,7 @@ module.exports.listar_todos = (req, res) => {
         }
     )
 };
-module.exports.buscar_por_id = (req, res) => {
+module.exports.buscar_por_id = function (req, res){
     precio_model.find({_id : req.body.id_precio}).then(
         function (precio) {
             if (precio) {
@@ -65,7 +65,7 @@ module.exports.buscar_por_id = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        precio: 'No se encontro la matricula'
+                        precio: precio
                     }
                 )
             }
@@ -86,7 +86,7 @@ module.exports.actualizar_precio= function (req, res)  {
                 res.json(
                     {
                         success: true,
-                        precio: `Se actualizó correctamente la matricula.`
+                        msg: `Se actualizó correctamente la matricula.`
                     }
                 );
             }

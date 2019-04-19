@@ -2,8 +2,10 @@
 const tabla = document.querySelector('#tbl_pcomercial tbody');
 const id_institucion = sessionStorage.getItem('id_lugar');
 
-function mostrar_datos() {
-  let pcomercial = listar_pcomercial();
+let pcomercial = listar_pcomercial();
+
+let mostrar_datos =() => {
+  
 
   for (let i = 0; i < pcomercial.length; i++) {
 
@@ -17,7 +19,7 @@ function mostrar_datos() {
 
       let boton_editar = document.createElement('a');
       boton_editar.textContent = 'Editar';
-      boton_editar.href = `actualizar_pagina_comercial.html?id_pagina=${pcomercial[i]['_id']}`
+      boton_editar.href = `actualizar_pagina_comercial.html?id_pagina=${pcomercial[i]['_id']}`;
 
       celda_configuracion.appendChild(boton_editar);
     }

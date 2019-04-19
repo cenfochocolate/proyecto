@@ -1,7 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
 
-let schema_pcomercial = new mongoose.Schema(
+let schema_pcomercial = mongoose.Schema(
   {
     id_institucion: {type : String, required : true},
     pcomercial : {type : String, required : true},

@@ -1,5 +1,5 @@
 'use strict';
-let registrar_precio = (pid, pnumero, pformato, pprecio, ppago ) => {
+function registrar_precio (pnumero, pformato, pprecio, ppago ) {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_precio",
@@ -8,25 +8,29 @@ let registrar_precio = (pid, pnumero, pformato, pprecio, ppago ) => {
             numero : pnumero,
             formato : pformato,
             precio : pprecio,
-            pago: ppago
+            pago: ppago,
+         
 
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
 
-    request.done(function (msg) {
+    request.done(function (res) {
 
         swal.fire({
             type: 'success',
-            title: 'Su registro se envio correctamente',
+            title: 'Su registro se envio correctamente'+ res.msg,
             text: `La cuenta es ${pnumero} selcciona el tipo de fotmato de ${pformato},la cual tendra un precio de ${pprecio} y su pago ${ppago} sera presencial`
         });
 
     });
-
-    request.fail(function (jqXHR, textStatus) {
-
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
     });
 };
 
@@ -54,7 +58,7 @@ let listar_precio = () => {
 
     return lista_precio;
 };
-let actualizar_precio = (pid, pnumero, pformato, pprecio, ppago ) => {
+let actualizar_precio = ( pnumero, pformato, pprecio, ppago,pid ) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_precio",
         method: "POST",
@@ -67,7 +71,7 @@ let actualizar_precio = (pid, pnumero, pformato, pprecio, ppago ) => {
              },
              
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json"
+        dataType: "json",
     });
     
 
@@ -75,8 +79,11 @@ let actualizar_precio = (pid, pnumero, pformato, pprecio, ppago ) => {
       
         swal.fire({
             type: 'success',
-            title: 'Matricula actualizada correctamente',
-            text:res.msg
+            title: 'Matricula actualizada correctamente'+res.msg ,
+            text:res.msg,
+            onClose: () =>{
+                window.location.href ='lista_precio_matricula.html';
+            }
            
         });
 

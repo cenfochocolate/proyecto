@@ -3,7 +3,7 @@ const express = require ('express');
 const router = express.Router();
 const api_precio = require('./precio.api');
 
-router.param('id_pregunta', function(req, res, next, id_precio){
+router.param('id_precio', function(req, res, next, id_precio){
 
     req.body.id_precio = id_precio;
     next();
