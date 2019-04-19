@@ -47,3 +47,67 @@ let listar_sadicional = () => {
     });
     return lista_sadicional;
 };
+
+let buscar_servicio = (id_servicio) => {
+  let servicio = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/buscar_servicio/"+ id_servicio,
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+    servicio = res.servicio;
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return servicio;
+ 
+};
+let actualizar_servicio = (pnombre, pdescripcion,psadional, pid) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/actualizar_servicio',
+        method : "POST",
+        data : {
+            nombre : pnombre,
+            descripcion : pdescripcion,
+            sadicional : psadional,
+            
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+    });
+
+    request.done(function(res){
+        
+       
+        swal.fire({
+            type : 'success',
+            title : 'servicio actualizado con éxito',
+            text : res.msg,
+            onClose: () => {
+                window.location.href = 'listar_servicios_adicionales.html';
+              }    
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'Proceso no realizado',
+            text : res.msg
+        });
+
+    });
+
+};

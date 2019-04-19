@@ -47,3 +47,67 @@ let listar_noticias = () => {
     });
     return lista_noticias;
 };
+
+let buscar_noticia = (id_noticia) => {
+  let noticia = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/buscar_noticia/"+ id_noticia,
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+      noticia = res.noticia;
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return noticia;
+ 
+}; 
+
+let  actualizar_noticia = (pnombre, pdescripcion, pnoticia, pid) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/actualizar_noticia',
+      method : "POST",
+      data : {
+          nombre : pnombre,
+          descripcion : pdescripcion,
+          noticia : pnoticia,
+          id : pid
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      
+     
+      swal.fire({
+          type : 'success',
+          title : 'noticia actualizada con éxito',
+          text : res.msg,
+          onClose: () => {
+              window.location.href = 'listar_noticias.html';
+            }    
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};

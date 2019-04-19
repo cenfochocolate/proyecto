@@ -30,10 +30,15 @@ function mostrar_datos(){
         }
         fila.insertCell().appendChild(imagen);
 
+        let celda_configuracion = fila.insertCell();
+      
+        let boton_editar = document.createElement('a');
+        boton_editar.textContent = 'Editar';
+        boton_editar.href = `actualizar_servicio.html?id_servicio=${sadicional[i]['_id']}`;
 
-      }
+        celda_configuracion.appendChild(boton_editar);
     }
-
+  }
   };
 };
 

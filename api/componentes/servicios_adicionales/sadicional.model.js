@@ -6,8 +6,8 @@ let schema_sadicional = new mongoose.Schema(
     id_institucion: {type : String, required : true},
     nombre : {type : String, required : true},
     descripcion : {type : String, required : true},
-    imagen : {type : String, required : false}
-
+    imagen : {type : String, required : false},
+    estado : {type : String, required : true}
   }
 );
 

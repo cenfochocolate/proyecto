@@ -7,8 +7,8 @@ module.exports.registrar = (req, res) =>{
       id_institucion: req.body.id_institucion,
       nombre : req.body.nombre,
       descripcion : req.body.descripcion,
-      imagen: req.body.imagen
-
+      imagen: req.body.imagen,
+      estado : 'Activo'
     }
   );
   nueva_noticia.save(function(error){
@@ -50,3 +50,28 @@ module.exports.listar_todos = (req, res) =>{
     }
   )
 };
+module.exports.buscar_por_id = function (req, res){
+  modelo_noticia.find({_id : req.body.id_noticia}).then(
+      function(noticia){
+          if(noticia){
+              res.json({success: true, noticia : noticia});
+          }else{
+              res.json({success: false, noticia : noticia});
+          }
+      }
+  );
+};
+
+
+module.exports.actualizar = function(req, res){
+   
+  modelo_noticia.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar la noticia'});
+          }else{
+              res.json({success: true , msg : 'La noticia se actualizó con éxito'});
+          }
+      }
+  );
+}

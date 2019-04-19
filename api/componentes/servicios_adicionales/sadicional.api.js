@@ -7,8 +7,8 @@ module.exports.registrar = (req, res) =>{
       id_institucion: req.body.id_institucion,
       nombre : req.body.nombre,
       descripcion : req.body.descripcion,
-      imagen: req.body.imagen
-
+      imagen: req.body.imagen,
+      estado : 'Activo'
     }
   );
   nuevo_sadicional.save(function(error){
@@ -50,3 +50,30 @@ module.exports.listar_todos = (req, res) =>{
     }
   )
 };
+
+module.exports.buscar_por_id = function (req, res){
+  modelo_sadicional.find({_id : req.body.id_servicio}).then(
+      function(servicio){
+          if(servicio){
+              res.json({success: true, servicio : servicio});
+          }else{
+              res.json({success: false, servicio : servicio});
+          }
+      }
+
+  );
+
+};
+module.exports.actualizar = function(req, res){
+   
+  modelo_sadicional.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar los servicios adicionales '});
+          }else{
+              res.json({success: true , msg : 'Los servicio adicionales se actualizaron con éxito'});
+          }
+      }
+  
+  );
+}
