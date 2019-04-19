@@ -1,7 +1,7 @@
 'use strict'; 
 const modelo_pc = require('./pcomercial.model'); 
  
-module.exports.registrar = function (req, res) { 
+module.exports.registrar = (req, res) => { 
   let nueva_pagina = new modelo_pc( 
     { 
       id_institucion: req.body.id_institucion, 
@@ -22,13 +22,13 @@ module.exports.registrar = function (req, res) {
       res.json( 
         { 
           success: true, 
-          msg: `` 
+          msg: `Se registró correctamente`
         } 
       ); 
     } 
   }); 
 }; 
-module.exports.listar_todos = function(req, res) { 
+module.exports.listar_todos = (req, res) =>  { 
   modelo_pc.find().then( 
     function (pcomercial) { 
       if (pcomercial.length > 0) { 
@@ -50,7 +50,7 @@ module.exports.listar_todos = function(req, res) {
   ) 
 }; 
  
-module.exports.buscar_por_id = function (req, res) { 
+module.exports.buscar_por_id = (req, res) => { 
   modelo_pc.find({ _id: req.body.id_pagina }).then( 
     function (pcomercial) { 
       if (pcomercial) { 
