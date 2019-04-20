@@ -135,6 +135,14 @@ function mostrar_contacto(){
           fila.insertCell().innerHTML = rs[i]['twitter'];
           fila.insertCell().innerHTML = rs[i]['email'];
           fila.insertCell().innerHTML = rs[i]['youtube'];
+
+          let celda_configuracion = fila.insertCell();
+
+                let boton_editar = document.createElement('a');
+                boton_editar.textContent ='Editar';
+                boton_editar.href=`actualizar_rs.html?id_rs=${rs[i]['_id']}`
+             
+                celda_configuracion.appendChild(boton_editar);
         }
 
       };

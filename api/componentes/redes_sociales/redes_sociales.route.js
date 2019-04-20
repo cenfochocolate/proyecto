@@ -17,4 +17,19 @@ router.route('/registrar_redes_sociales')
       }
     );
 
+    router.route('/buscar_rs/:id_rs')
+    .get(
+        function (req, res) {
+            api_registrar_rs.buscar_por_id(req, res);
+        }
+    )
+
+    router.route('/actualizar_rs')
+    .post(
+        function (req, res) {
+            api_registrar_rs.actualizar_rs(req, res);
+        }
+    );
+
   module.exports = router;
+ 

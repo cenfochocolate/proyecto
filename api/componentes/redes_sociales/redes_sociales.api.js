@@ -9,13 +9,14 @@ module.exports.registrar = (req, res) =>{
       instagram : req.body.instagram,
       twitter: req.body.twitter,
       email : req.body.email,
-      youtube : req.body.youtube
+      youtube : req.body.youtube,
+      estado : 'Activo'
     }
   );
   nuevas_rs.save(function(error){
     if (error) {
       res.json(
-        {
+        { 
           success : false,
           msj : `No se han podido registrar las redes sociales, ha ocurrido el siguiente error ${error}`
         }
@@ -52,3 +53,49 @@ module.exports.listar_rs = (req, res) =>{
     }
   )
 };
+module.exports.buscar_por_id = (req, res) => {
+  modelo_rs.find({_id : req.body.id_rs}).then(
+      function (rs) {
+          if (rs) {
+              res.json(
+                  {
+                      success: true,
+                      rs: rs
+                  }
+              )
+          } else {
+              res.json(
+                  {
+                      success: false,
+                     rs: 'No se encontraron redes sociales'
+                  }
+              )
+          }
+      }
+  )
+};
+module.exports.actualizar_rs = function (req, res)  {
+  modelo_rs.findByIdAndUpdate(req.body.id, {$set: req.body},
+      function (error) {
+          if (error) {
+              res.json(
+                  {
+                      success: false,
+                      msg: `No se pudo actualizar la red social.`
+                  }
+              );
+          } else {
+              res.json(
+                  {
+                      success: true,
+                      preguntas: `Se actualizó correctamente la red social.`
+                  }
+              );
+          }
+      }
+      
+      );
+  
+}
+
+
