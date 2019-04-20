@@ -20,8 +20,16 @@ let verificar_codigo = (pcompania, pcodigo) => {
         let c = msg;
 
         if (msg.success) {
+          swal.fire({
+              type: 'success',
+              title: 'Registrado correctamente',
+              text: msg.mensaje,
+              onClose: () => {
+              window.location.href = 'iniciar_sesion.html';
+            }
+          });
 
-            window.location.href='inicio.html'
+
 
         } else {
             swal.fire({

@@ -475,9 +475,9 @@ let registrar = () => {
         let identificacion = input_identificacion.value;
         let nacionalidad = input_nacionalidad.value;
         let cantidad_de_hijos = input_nhijos.value;
-        let provincia = lst_provincia.value;
-        let canton = lst_canton.value;
-        let distrito = lst_distrito.value;
+        let provincia = lst_provincia.selectedOptions[0].textContent;
+        let canton = lst_canton.selectedOptions[0].textContent;
+        let distrito = lst_distrito.selectedOptions[0].textContent;
         let direccion = input_direccion.value;
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;

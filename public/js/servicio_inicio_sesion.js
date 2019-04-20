@@ -35,7 +35,37 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
             window.location = "inicio.html";
 
 
+          }else{
+            if(msg.tipo == "padre"){
+              if(msg.contrasenna == pcontrasenia){
+                swal.fire({
+                    type: 'error',
+                    title: 'cuenta baneada',
+                    text: 'Su cuenta fue baneada'
+
+              })
+            }else{
+              swal.fire({
+                  type: 'error',
+                  title: 'contraseña incorrecta',
+                  text: 'Revise su contraseña'
+
+            })
             }
+
+          }else{
+            if(msg.tipo == "institucion"){
+            swal.fire({
+                type: 'error',
+                title: 'cuenta no aceptada',
+                text: 'Su cuenta no ha sido aceptada'
+
+          })
+          }
+        }
+
+        }
+
 
 
         });

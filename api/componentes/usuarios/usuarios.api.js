@@ -150,7 +150,7 @@ module.exports.validar = function (req, res) {
         function (usuario) {
 
 
-            if ((usuario) && (usuario.contrasenna == req.body.contrasenna)) {
+            if ((usuario) && (usuario.contrasenna == req.body.contrasenna) && (usuario.aprobada == true) || (usuario.tipo == 'admin')) {
 
                 res.json({
                     success: true,
@@ -160,8 +160,12 @@ module.exports.validar = function (req, res) {
                 });
             } else {
                 res.json({
-                    success: false,
+                    tipo:usuario.tipo,
+                    contrasenna:usuario.contrasenna,
+                    success: false
+
                 });
+
             }
 
 

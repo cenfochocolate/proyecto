@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const usuarioApi = require('./usuarios.api');
 
-router.route('/registrar_usuario').post(
+router.route('/registrar_usuario')
+    .post(
     function (req, res) {
         usuarioApi.registrar(req, res);
     });

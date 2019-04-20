@@ -18,6 +18,12 @@ function obtenerDatos() {
     if (validarDatos()) {
         console.log("Entre");
         validar_inicio_sesion(correo, clave);
+    }else{
+      swal.fire({
+          type: 'error',
+          title: 'Ha ocurrido un error',
+          text: 'Por favor complete los campos resaltados en rojo'
+      });
     }
 };
 
