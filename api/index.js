@@ -86,11 +86,12 @@ const pref_utiles = require('./componentes/seleccion_lista_utiles/seleccion_list
 const peticiones_registro = require('./componentes/peticiones_registro/peticiones_registro.route');
 const usuario = require('./componentes/usuarios/usuarios.route');
 const evaluacion = require('./componentes/evaluacion/evaluacion.route');
+const comentarios = require('./componentes/comentarios/comentarios.route');
 
 
 
 
-
+app.use('/api', comentarios);
 app.use('/api', pref_utiles);
 app.use('/api', redes_sociales);
 app.use('/api', utiles_mep);
