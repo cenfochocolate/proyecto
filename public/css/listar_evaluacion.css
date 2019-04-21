@@ -44,7 +44,7 @@ h1{
   #tbl_criterio tbody{
     font-family: 'Roboto Slab', serif;
     border-style: solid;
-    border-width: 5px;
+    border-width: 1px;
     border-color: #2F7585;
   }
   #tbl_criterio tbody a {
@@ -58,9 +58,11 @@ h1{
   #tbl_criterio{
     margin: 10% auto;
     width: 80%;
+    height: 30%;
     border-collapse: collapse;
     display:block;
     overflow-y: scroll;
+    overflow-x: hidden;
   
   }
   thead{

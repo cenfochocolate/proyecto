@@ -12,11 +12,23 @@ let registrar_evaluacion = (pnombre, pcalificacion) =>{
     });
     request.done(function (msg) {
 
+        swal.fire({ 
+            type: 'success',
+            title: 'Su registro se envio correctamente ' + res.msg,
+            text: `El nombre deseado en la institucion es ${pnombre} con la calificacion de ${pcalificacion}`
+        });
+
         console.log('guardo bien');  
         // no retorma mensaje
     });
 
     request.fail(function (jqXHR, textStatus) {
+
+        swal.fire({
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
+        });
 
         console.log(textStatus);  
     });
@@ -49,7 +61,7 @@ let listar_evaluacion = () => {
 
 let buscar_criterio = (id_criterio) => {
     
-    let criterio  = [];
+    let evaluacion  = [];
 
     let request = $.ajax({
         url: "http://localhost:4000/api/buscar_criterio/"+id_criterio,
@@ -62,13 +74,13 @@ let buscar_criterio = (id_criterio) => {
     });
 
     request.done(function (res) {
-   criterio = res.criterio;
+        evaluacion = res.evaluacion;
        
     });
     request.fail(function (jqXHR, textStatus) {
 
     });
-    return criterio;
+    return evaluacion;
 };
 
 let actualizar_criterio = (pnombre, pcalificacion, pid) => {
@@ -83,7 +95,8 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
              },
              
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json"
+        dataType: "json", 
+        async: false
     });
     
 
@@ -92,8 +105,10 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
         swal.fire({
             type: 'success',
             title: 'Evaluacion actualizada correctamente',
-            text:res.msg
-           
+            text:res.msg,
+            onClose: () =>{
+                window.location.href ='listar_criterio.html';
+            }
         });
 
     });
