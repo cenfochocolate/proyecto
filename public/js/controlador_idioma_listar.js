@@ -2,7 +2,7 @@
 
 const tabla = document.querySelector('#tbl_idiomas tbody');
 const input_filtro = document.querySelector('#txtfiltro');
-let idiomas=listar_idiomas();
+let idiomas=listar_idioma();
 
 let mostrar_datos = () => {
     let filtro=input_filtro.value;

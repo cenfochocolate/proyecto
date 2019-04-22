@@ -33,7 +33,7 @@ let listar_idioma = () => {
     let lista_idioma = [];
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/listar_idioma",
+        url: "http://localhost:4000/api/listar_idiomas",
         method: "GET",
         data: {
         },

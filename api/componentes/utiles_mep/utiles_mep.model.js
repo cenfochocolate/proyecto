@@ -7,7 +7,8 @@ let schema_util_mep = new mongoose.Schema(
     util : {type : String, required : true},
     descripcion : {type : String, required: true},
     cantidad : {type : String, required : true},
-    nivel : {type: String, required : true}
+    nivel : {type : String, required : true},
+    estado : {type : String, required : true}
   }
 );
 
