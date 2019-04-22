@@ -62,14 +62,17 @@ let validar = () => {
         error = false;
         document.getElementById('criterio_1').style.borderColor = "blue";
     }
+    return error;
 
 };
 
 let obtener_datos = () => {
 
     if (!validar()) {
+        let nombre = txt_criterio1.value;
+        let calificacion = inputcriterio_1.value;
 
-        registrar_evaluacion(txt_criterio1.value, inputcriterio_1.value);
+        registrar_evaluacion(nombre,calificacion);
 
         document.location.reload();
 

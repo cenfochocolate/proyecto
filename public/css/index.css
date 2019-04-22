@@ -3,7 +3,7 @@ body{
   font-family: Josefin Sans, sans-serif;
 }
 
-#menu{
+header{
   overflow: hidden;
   background-color: #16a085;
   width: 80%;
@@ -12,12 +12,15 @@ body{
   margin-top: 100px;
   height: auto;
 }
-
-#menu #derecha{
+header nav a:hover{
+  color: #B82601;
+  transition: all 400ms;
+}
+header #derecha{
   float: right;
 }
 
-#menu a{
+header a{
   float: left;
   display: block;
   color: white;
@@ -104,9 +107,9 @@ h3{
 }
 
 .sub_tit_2 {
-  position: inherit;
+  position: absolute;
   display: inline-block;
-  width: 40%;
+  width: 30%;
   height: auto;
   text-align: center;
   margin-left: 9%;
@@ -115,6 +118,7 @@ h3{
 }
 
 .inf_gen{
+  margin-top: 10%;
   text-align: center;
 }
 
@@ -125,11 +129,9 @@ h5{
 footer{
   overflow: hidden;
   background-color: #16a085;
-  width: 80%;
   display: block;
   margin: auto;
   margin-top: 0px;
-  margin-bottom: 100px;
   height: auto;
   text-align: center;
   color: white;

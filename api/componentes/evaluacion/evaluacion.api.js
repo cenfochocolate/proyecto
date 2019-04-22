@@ -2,7 +2,7 @@
 'use strict';
 const evalucion_model = require('./evaluacion.model');
 
-module.exports.registrar = (req, res) => {
+module.exports.registrar = function (req, res)  {
 
     console.log('***+' + req.body.nombre);
     console.log('***+' + req.body.calificacion); 
@@ -18,7 +18,7 @@ module.exports.registrar = (req, res) => {
             res.json(
                 {
                     success: false,
-                    msg: `No se pudo registrar el comentario, ocurrió el siguiente error ${error}`
+                    msg: `No se pudo registrar la evaluacion , ocurrió el siguiente error ${error}`
                 }
             );
         } else {
@@ -27,13 +27,13 @@ module.exports.registrar = (req, res) => {
             res.json(
                 {
                     success: true,
-                    msg: `Se envió correctamente el comentario`
+                    msg: `Se envió correctamente el registro`
                 }
             );
         }
     });
 };
-module.exports.listar_todos = (req, res) => {
+module.exports.listar_todos = function (req, res) {
     evalucion_model.find().then(
         function (evaluacion) {
             if (evaluacion.length > 0) {
@@ -47,28 +47,28 @@ module.exports.listar_todos = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        idioma: 'No se encontraron comentarios'
+                        evaluacion: 'No se encontraron comentarios'
                     }
                 )
             }
         }
     )
 };
-module.exports.buscar_por_id = (req, res) => {
+module.exports.buscar_por_id = function (req, res) {
 evalucion_model.find({_id : req.body.id_criterio}).then(
-        function (criterio) {
-            if (criterio) {
+        function ( evaluacion) {
+            if ( evaluacion) {
                 res.json(
                     {
                         success: true,
-                       criterio : criterio
+                        evaluacion :  evaluacion
                     }
                 )
             } else {
                 res.json(
                     {
                         success: false,
-                        criterio: 'No se encontraron evaluaciones'
+                        evaluacion: 'No se encontraron evaluaciones'
                     }
                 )
             }
@@ -76,7 +76,7 @@ evalucion_model.find({_id : req.body.id_criterio}).then(
     )
 };
 module.exports.actualizar_criterio = function (req, res)  {
-    evalucion_model.findByIdAndUpdate(req.body.id_criterio, {$set: req.body},
+    evalucion_model.findByIdAndUpdate(req.body.id, {$set: req.body},
         function (error) {
             if (error) {
                 res.json(
@@ -89,7 +89,7 @@ module.exports.actualizar_criterio = function (req, res)  {
                 res.json(
                     {
                         success: true,
-                        criterio: `Se actualizó correctamente la evaluacion.`
+                        msg: `Se actualizó correctamente la evaluacion.`
                     }
                 );
             }

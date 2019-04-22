@@ -49,12 +49,24 @@ let obtener_datos = () => {
         // Se ejecuta solo si la validación no da error
         let nombre = txt_criterio1.value;
         let calificacion = inputcriterio_1.value;
-        registrar_preguntas(nombre ,calificacion, _id);
 
+        Swal.fire({
+            title: 'Está seguro que desea actualizar la matrícula?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
+            
+                actualizar_criterio(nombre ,calificacion, _id);
+            }
+        })
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La pregunta no fue actualizada',
+            title: 'La evaluacion no fue actualizada',
             text: 'Por favor revise los campos resaltados'
         });
     }

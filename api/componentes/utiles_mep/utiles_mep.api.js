@@ -8,7 +8,8 @@ module.exports.registrar_utiles_mep = (req, res) =>{
       util : req.body.util,
       descripcion : req.body.descripcion,
       cantidad : req.body.cantidad,
-      nivel : req.body.nivel
+      nivel : req.body.nivel,
+      estado : 'Activo'
     }
   );
   nuevo_util_mep.save(function(error){
@@ -50,4 +51,17 @@ module.exports.listar_todos = (req, res) =>{
       }
     }
   )
+};
+module.exports.buscar_por_id = function (req, res){
+  modelo_util_mep.find({_id : req.body.id_mep}).then(
+      function(util){
+          if(util){
+              res.json({success: true, util : util});
+          }else{
+              res.json({success: false, utile : util});
+          }
+      }
+
+  );
+
 };

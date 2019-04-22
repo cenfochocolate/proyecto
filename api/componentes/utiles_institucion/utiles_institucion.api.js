@@ -8,7 +8,8 @@ module.exports.registrar = (req, res) =>{
       util : req.body.util,
       descripcion : req.body.descripcion,
       cantidad : req.body.cantidad,
-      nivel : req.body.nivel
+      nivel : req.body.nivel,
+      estado : 'Activo'
     }
   );
   nuevo_util_institucion.save(function(error){
@@ -51,3 +52,31 @@ module.exports.listar_todos = (req, res) =>{
     }
   )
 };
+
+module.exports.buscar_por_id = function (req, res){
+  modelo_util_institucino.find({_id : req.body.id_utiles}).then(
+      function(util){
+          if(util){
+              res.json({success: true, util : util});
+          }else{
+              res.json({success: false, utile : util});
+          }
+      }
+
+  );
+
+};
+
+module.exports.actualizar = function(req, res){
+   
+  modelo_util_institucino.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el util '});
+          }else{
+              res.json({success: true , msg : 'El util se actualizó con éxito'});
+          }
+      }
+  
+  );
+}
