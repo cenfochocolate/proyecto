@@ -3,21 +3,18 @@
 const tabla = document.querySelector('#tbl_citas tbody');
 const inputFiltro = document.querySelector('#buscar_cita');
  
-
-
-mostrar_datos();
- 
 inputFiltro.addEventListener('keyup' , mostrar_datos);
 
-
+let cita = listar_citas();
 
 function mostrar_datos(){
-        let cita = listar_citas();
+       
         let filtro = inputFiltro.value;
         tabla.innerHTML='';
       
         for(let i = 0; i <cita.length; i++){
           if(cita[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+           
           let fila = tabla.insertRow();
     
         fila.insertCell().innerHTML = cita[i]['nombre'];
@@ -60,11 +57,11 @@ function confirmar_borrado(){
     borrar_cita(id);
     cita = listar_citas();
     mostrar_datos();
-    Swal.fire(
-      '¡Cita eliminada!',
-       'La cita fue eliminada con éxito.',
-       'succes'
-    )
+    Swal.fire({
+      title:'¡Cita eliminada!',
+      text:'La cita fue eliminada con éxito.',
+      type:'success'
+    })
   }
 })
 

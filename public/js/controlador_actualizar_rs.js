@@ -8,37 +8,27 @@ const input_youtube = document.querySelector('#url_yt');
 const btn_guardar = document.querySelector('#guardar_rs');
 const id_ins = sessionStorage.getItem('idu');
 
+let id_institucion = sessionStorage.getItem('id_lugar');
 
-let get_param = (param)=> {
-    let url_string = window.location.href;
-    let url = new URL(url_string);
-    let id= url.searchParams.get(param);
-
-    return id;
-};
-
-let _id= get_param('id_rs');
-
-let rs= buscar_rs(_id);
+// let rs= buscar_rs(_id);
+let lista_rs = listar_rs();
 
 let mostrar_datos = () =>{
 
-
-    input_facebook.value= rs[0]['facebook'];
-    input_instagram.value= rs[0]['instagram'];
-    input_twitter.value= rs[0]['twitter'];
-    input_email.value= rs[0]['email'];
-    input_youtube.value= rs[0]['youtube'];
+    for(let i = 0; i < lista_rs.length; i++){
+      if(lista_rs[i]['id_institucion'].includes(id_institucion)){
+        input_facebook.value= lista_rs[i]['facebook'];
+        input_instagram.value= lista_rs[i]['instagram'];
+        input_twitter.value= lista_rs[i]['twitter'];
+        input_email.value= lista_rs[i]['email'];
+        input_youtube.value= lista_rs[i]['youtube']; 
+      }
+    }
 
     
-    
-
     } 
 
 
-if(rs){
-    mostrar_datos()
-}
 
 
 
@@ -86,14 +76,14 @@ let validar = () => {
 let obtener_datos = () => {
 
   if (validar() == false) {
-    let id_institucion = id_ins;
+    let id = id_institucion;
     let facebook = input_facebook.value;
     let instagram = input_instagram.value;
     let twitter = input_twitter.value;
     let email = input_email.value;
     let youtube = input_youtube.value;
 
-    actualizar_rs(id_institucion,facebook, instagram, twitter, email, youtube);
+    actualizar_rs(id,facebook, instagram, twitter, email, youtube);
   }else{
     swal.fire({
       type: 'warning',
@@ -104,3 +94,6 @@ let obtener_datos = () => {
 };
 
 btn_guardar.addEventListener('click', obtener_datos);
+
+
+  mostrar_datos();

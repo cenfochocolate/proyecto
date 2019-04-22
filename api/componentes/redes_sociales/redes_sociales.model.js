@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const mongoose = require('mongoose');
 
 let schema_redes_sociales = new mongoose.Schema(
