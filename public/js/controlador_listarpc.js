@@ -4,10 +4,11 @@ const id_institucion = sessionStorage.getItem('id_lugar');
 
 let pcomercial = listar_pcomercial();
 
-let mostrar_datos =() => {
+function mostrar_datos ()  {
   
 
   for (let i = 0; i < pcomercial.length; i++) {
+    let pcomercial = listar_pcomercial();
 
     if (id_institucion == pcomercial[i]['id_institucion']) {
 

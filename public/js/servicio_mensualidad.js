@@ -1,16 +1,16 @@
 
 'use strict';
 
-let registrar_mensualidad = ( pinstitucion, pdescripcion,pgrado) => {
+function registrar_mensualidad ( pgrado,pinstitucion, pdescripcion,) {
+
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_mensualidad",
     method: "POST",
     data: {
-        
+        grado : pgrado,
         institucion : pinstitucion,
         descripcion : pdescripcion,
-        grado : pgrado,
-        estado: "Activo"
+
       },
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json"
@@ -83,15 +83,14 @@ let buscar_mensualidad = (id_mensualidad) => {
 };
 
 
-let actualizar_mensualidad = ( pinstitucion, pdescripcion,pgrado, pid) => {
+let actualizar_mensualidad = ( pgrado,pinstitucion, pdescripcion, pid) => {
   let request = $.ajax({
       url: "http://localhost:4000/api/actualizar_mensualidad",
       method: "POST",
       data: {
-       
+        grado : pgrado,
         institucion : pinstitucion,
         descripcion : pdescripcion,
-        grado : pgrado,
          id: pid
            },
            
@@ -105,7 +104,7 @@ let actualizar_mensualidad = ( pinstitucion, pdescripcion,pgrado, pid) => {
       swal.fire({
           type: 'success',
           title: 'Mensualidad actualizada correctamente',
-          text:res.msg,
+          text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
           }    

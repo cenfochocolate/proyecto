@@ -19,9 +19,9 @@ function mostrar_datos  ()  {
 
       let fila = tabla.insertRow();
 
+      fila.insertCell().innerHTML = mensualidad[i]['grado'];
       fila.insertCell().innerHTML = mensualidad[i]['institucion'];
       fila.insertCell().innerHTML = mensualidad[i]['descripcion'];
-      fila.insertCell().innerHTML = mensualidad[i]['grado'];
 
       let celda_configuracion = fila.insertCell();
 
