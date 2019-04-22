@@ -18,19 +18,19 @@ router.route('/registrar_mensualidad')
             api_mensualidad.registrar(req,res);
         }
     );
-    router.route('/listar_mensualidad')
+router.route('/listar_mensualidad')
     .get(
         function(req,res){
             api_mensualidad.listar_todos(req,res);
         }
     );
-    router.route('/actualizar_mensualidad')
+router.route('/actualizar_mensualidad')
     .post(
         function (req, res) {
             api_mensualidad.actualizar_mensualidad(req, res);
         }
     );
-    router.route('/buscar_mensulidad/:id_mensualidad')
+router.route('/buscar_mensualidad/:id_mensualidad')
     .get(
         function (req, res) {
             api_mensualidad.buscar_por_id(req, res);

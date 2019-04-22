@@ -1,9 +1,8 @@
 
 'use strict';
-
+const inputgrado = document.querySelector('#txt_grado');
 const inputinstitucion = document.querySelector('#txt_institucion');
 const inputdescripcion = document.querySelector('#txt_info');
-const inputgrado = document.querySelector('#txt_grado');
 const boton_actualizar = document.querySelector('#btn_actualizar');
 
 let get_param = (param) => {
@@ -20,10 +19,7 @@ let mensualidad = buscar_mensualidad(_id);
 
 let mostrar_datos = () => {
 
-    inputinstitucion.value = mensualidad[0]['institucion'];
-    inputdescripcion.value = mensualidad[0]['descripcion'];
-
-    let opciones_grado = document.querySelectorAll('#txt_grado opcion');
+    let opciones_grado = document.querySelectorAll('#txt_grado option');
 
     for (let i = 0; i < opciones_grado.length; i++) {
         if (opciones_grado[i].textContent == mensualidad[0]['grado']) {
@@ -32,6 +28,9 @@ let mostrar_datos = () => {
         }
 
     }
+
+    inputinstitucion.value = mensualidad[0]['institucion'];
+    inputdescripcion.value = mensualidad[0]['descripcion'];
 }
 
 if (mensualidad) {
@@ -40,6 +39,12 @@ if (mensualidad) {
 let validar = () => {
     let error = false;
 
+    if (inputgrado.value == '') {
+        error = true;
+        inputgrado.classList.add('error_input');
+    } else {
+        inputgrado.classList.remove('error_input');
+    }
     if (inputinstitucion.value == '') {
         error = true;
         inputinstitucion.classList.add('error_input');
@@ -52,21 +57,16 @@ let validar = () => {
     } else {
         inputdescripcion.classList.remove('error_input');
     }
-    if (inputgrado.value == '') {
-        error = true;
-        inputgrado.classList.add('error_input');
-    } else {
-        inputgrado.classList.remove('error_input');
-    }
+
     return error;
 };
 
 let obtener_datos = () => {
     if (validar() == false) {
-
+        let grado = inputgrado.selectedOptions[0].textContent;
         let institucion = inputinstitucion.value;
         let descripcion = inputdescripcion.value;
-        let grado = inputgrado.selectedOption[0].textContent;
+
 
         Swal.fire({
             title: 'Está seguro que desea actualizar la mensualidad?',
@@ -77,7 +77,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                actualizar_mensualidad( institucion, descripcion,grado, _id);
+                actualizar_mensualidad(grado,institucion, descripcion, _id);
             }
         })
     } else {

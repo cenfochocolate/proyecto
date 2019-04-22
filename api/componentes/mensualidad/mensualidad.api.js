@@ -6,9 +6,9 @@ module.exports.registrar = function (req, res) {
     let nuevo_mensualidad = new mensualidad_model(
         {
           
+            grado: req.body.grado,
             institucion: req.body.institucion,
             descripcion: req.body.descripcion,
-            grado: req.body.grado,
             estado: 'Activo'
         }
     );

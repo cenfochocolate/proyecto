@@ -1,6 +1,6 @@
 'use strict';
 
-function registrar_paginacomercial  (pid_institucion, ppagina_comercial)  {
+let registrar_paginacomercial = (pid_institucion, ppagina_comercial) => {
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_pcomercial",
     method: "POST",
@@ -12,21 +12,23 @@ function registrar_paginacomercial  (pid_institucion, ppagina_comercial)  {
     dataType: "json"
   });
 
-  request.done(function (res) {
+  request.done(function (msg) {
 
     swal.fire({
       type: 'success',
-      title: 'La página se registro correctamente'+ res.msg,
+      title: 'La página se registro correctamente',
       text: `La página comercial de su institución fue registrada, su dirección es: ${ppagina_comercial}`
     });
   });
 
-  request.fail(function (res) {
+  request.fail(function (jqXHR, textStatus) {
+
     swal.fire({
       type: 'error',
       title: 'Proceso no realizado',
       text: res.msg
     });
+
   });
 };
 let listar_pcomercial = () => {
@@ -67,7 +69,7 @@ let buscar_pagina = (id_pagina) => {
   });
 
   request.done(function (res) {
-    pagina = res.pagina;
+    pagina = res.pcomercial;
 
   });
   request.fail(function (jqXHR, textStatus) {
@@ -76,19 +78,20 @@ let buscar_pagina = (id_pagina) => {
   return pagina;
 };
 
-let actualizar_pagina = (pid_institucion, ppagina_comercial, pid) => {
+let actualizar_pagina = (ppagina_comercial, pid) => {
   let request = $.ajax({
-    url: "http://localhost:4000/api/actualizar_pregunta",
+    url: "http://localhost:4000/api/actualizar_pagina",
     method: "POST",
     data: {
-      id_institucion: pid_institucion,
+
       pcomercial: ppagina_comercial,
       id: pid
     },
 
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-    dataType: "json"
-   
+    dataType: "json",
+    async: false
+
   });
 
   request.done(function (res) {
@@ -96,10 +99,10 @@ let actualizar_pagina = (pid_institucion, ppagina_comercial, pid) => {
     swal.fire({
       type: 'success',
       title: 'Pagina actualizada correctamente',
-      text: res.msg,
+      text: 'Pagina actualizada correctamente',
       onClose: () => {
         window.location.href = 'listar_pagina_comercial.html';
-      }  
+      }
     });
 
   });
