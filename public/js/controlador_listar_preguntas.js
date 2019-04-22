@@ -4,6 +4,8 @@ const tabla = document.querySelector('#tbl_preguntas tbody');
 const inputFiltro = document.querySelector('#buscar_preguntas')
 let id_institucion = sessionStorage.getItem('id_lugar');
 
+
+
 mostrar_datos();
 
 inputFiltro.addEventListener('keyup' , mostrar_datos);
