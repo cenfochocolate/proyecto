@@ -84,6 +84,27 @@ let actualizar_pregunta = (pid_institucion,ppreguntas, prespuestas, pid) => {
     });
 };
 
+function borrar_pregunta(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_pregunta',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id: pid
+        },
+        beforeSend: function beforeSend(){
+
+        },
+        success: function success(response){
+
+        },
+        error: function error(_error){
+            console.log("Request fail error: " + _error);
+
+        }
+    });
+};
+
 let registrar_preguntas = (pid_institucion,ppreguntas, prespuestas) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_preguntas",
@@ -118,3 +139,4 @@ let registrar_preguntas = (pid_institucion,ppreguntas, prespuestas) => {
 
 
 };
+ 

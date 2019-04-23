@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/logoalfred.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/material.css">
@@ -20,23 +20,23 @@
 
 <body>
   <header>
-    <img src="imgs/banner_1.jpg" id="img_banner" alt="">    
+    <img src="imgs/Banner_1.jpg" id="img_banner" alt="">
     <div class="menu_1_registro_material">
-    <nav>
-      <a href="inicio.html">Inicio</a>
-      <a href="listar_instituciones.html">Instituciones</a>
-      <a href="top_10_instituciones.html">Rankings</a>
-      <img src="imgs/logo.png" id="logo" alt="">
-      <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
-      <a href="" id="perfil" class="header_derecha">Perfil</a>
-      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
-    </nav>
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logoalfred.png" id="logo" alt="">
+        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
+        <img src="imgs/img_perfil.png" class="header_derecha" href=".html">
+        <a href="panel_control.html" class="header_derecha">Panel de Control</a>
+      </nav>
     </div>
 
   </header>
   <main>
     <div class="titulo">
-    <h1>Material informativo</h1>
+      <h1>Material informativo</h1>
     </div>
     <form class="formulario" id="frm_contacto">
       <div>
@@ -44,8 +44,8 @@
       </div>
       <div class="frm_mi">
 
-        <label for="txt_nombre_de_la_institucion">Nombre de la institución</label>
-        <input type="text" id="txt_nombre_de_la_institucion">
+        <label for="txt_nombre_institucion">Nombre de la institución</label>
+        <input type="text" id="txt_nombre_institucion">
       </div>
       <div class="frm_mi">
         <label for="txt_descripcion">Descripción</label>
@@ -53,11 +53,12 @@
       </div>
 
       <div id="btn_registro_material">
-      <button type="button" id="btn_registrar">Registrar</button>
-  </div>
+        <button type="button" id="btn_registrar">Registrar</button>
+      </div>
     </form>
+
     <div id="btn_listar_material">
-        <button type="button" id="btn_listar"onclick=" location.href='listar_material.html'">Ver lista</button>
+      <button type="button" id="btn_listar" onclick=" location.href='listar_material.html'">Ver lista</button>
     </div>
   </main>
   <footer>
@@ -68,8 +69,7 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/servicio_material.js"></script>
   <script src="js/controlador_material.js"></script>
-  <script src="controlador_cerrar_sesion.js"></script>
-  <script src="js/controlador_validar_tusuario.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
 
 </body>
 

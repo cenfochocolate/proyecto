@@ -38,5 +38,10 @@ router.route('/listar_preguntas')
         }
     )
 
+    router.route('/borrar_pregunta')
+    .post(function(req, res){
+        api_preguntas.borrar(req, res);
+    });
+
  
 module.exports = router;
