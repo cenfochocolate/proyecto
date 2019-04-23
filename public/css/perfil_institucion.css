@@ -8,6 +8,7 @@
     height: 40px;
   }
 
+
   #menu_institucion a{
     color: white;
     font-family: 'Roboto Slab', serif;
@@ -17,6 +18,35 @@
     padding-right: 20px;
     color: #FFFFFF;
   }
+  .seccion_estrellas{
+    width: 80%;
+  }
+
+  #btn_estrellas{
+    margin-left: 55%;
+  }
+
+  .usuarios{
+    width: 20%;
+  }
+
+  .usuarios nav{
+    margin: 20px;
+  }
+
+ .check{
+   width: 25px;
+ }
+
+ .star{
+   font-size: 35px;
+   color: #EFB810;
+ }
+
+ .usuarios{
+   margin-left: 20%;
+ }
+
 
   .registrar_comentario{
     width: 80%;
