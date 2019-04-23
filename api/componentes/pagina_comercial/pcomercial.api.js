@@ -95,3 +95,17 @@ module.exports.actualizar_pagina = function (req, res) {
   ); 
  
 } 
+
+
+module.exports.borrar = (req, res) =>{
+  modelo_pc.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar la página.'});
+              
+          }else{
+              res.json({ success : true, msg: 'La página fue eliminada.'});
+          }
+      }
+  )
+};

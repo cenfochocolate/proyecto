@@ -57,7 +57,7 @@ let obtener_datos = () => {
         }).then((result) => {
             if (result.value) {
             
-                actualizar_pagina(pagina_comercial, _id);
+                actualizar_pagina(id_institucion, pagina_comercial, _id);
             }
         })
     } else {
