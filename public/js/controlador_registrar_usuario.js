@@ -436,7 +436,7 @@ let registrar = () => {
         let direccion = input_direccion.value;
 
         let ubicacion0 = onDragEnd();
-        let ubicacion1 = ubicacion.split(",")
+        let ubicacion1 = ubicacion0.split(",")
 
         let longitud = ubicacion1[0];
         let latitud = ubicacion1[1];
@@ -464,6 +464,8 @@ let registrar = () => {
           canton,
           distrito,
           direccion,
+          longitud,
+          latitud,
           url_mail,
           telefono,
           telefono_extencion,
@@ -486,6 +488,11 @@ let registrar = () => {
         let canton = lst_canton.selectedOptions[0].textContent;
         let distrito = lst_distrito.selectedOptions[0].textContent;
         let direccion = input_direccion.value;
+        let ubicacion0 = onDragEnd();
+        let ubicacion1 = ubicacion0.split(",")
+
+        let longitud = ubicacion1[0];
+        let latitud = ubicacion1[1];
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;
         let telefono = input_telefono.value;
@@ -502,6 +509,8 @@ let registrar = () => {
           canton,
           distrito,
           direccion,
+          longitud,
+          latitud,
           url_mail,
           telefono,
           url_foto,

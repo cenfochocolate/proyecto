@@ -136,9 +136,9 @@ function mostrar_comentarios(){
         div.classList.add('comentario');
 
         let img = document.createElement('img');
-        img.src=usuariosFiltrados[j]['url_foto'];
+        img.src=todosLosUsuarios[j]['url_foto'];
         let nombre = document.createElement('h4');
-        nombre.innerHTML=usuariosFiltrados[j]['nombre'];
+        nombre.innerHTML=todosLosUsuarios[j]['nombre'];
         let comen = document.createElement('p');
         comen.innerHTML=comentario_filtrados[i]['comentario'];
 
@@ -175,14 +175,14 @@ function mostrar_comentarios(){
 //       if (listarcontacto[i]['imagen']!= null) {
 //         imagen.src= listarcontacto[i][  let div = document.createElement('div');
 //         div.classList.add('comentario');
-      
+
 //         let img = document.createElement('img');
 //         img.src=todosLosUsuarios[i]['url_foto'];
 //         let nombre = document.createElement('h4');
 //         nombre.innerHTML=todosLosUsuarios[i]['nombre'];
 //         let comen = document.createElement('p');
 //         comen.innerHTML=todos_coment[i]['comentario'];
-      
+
 //         div.appendChild(img);
 //         div.appendChild(nombre);
 //         div.appendChild(comen);
@@ -197,9 +197,9 @@ function mostrar_comentarios(){
 //       let boton_editar = document.createElement('a');
 //       boton_editar.textContent ='Editar';
 //       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
-   
+
 //       celda_configuracion.appendChild(boton_editar);
-      
+
 //     }
 //   }
 //   };
