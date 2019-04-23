@@ -156,9 +156,15 @@ h3{
   width: 20%;
   margin-left: 40%;
 }
+#tbl_contacto{
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+}
 
-#tbl_contacto th{
-  width: 50%;
+#tbl_contacto img{
+  width: 200px;
+  height: auto;
 }
 #btn_registrarContacto{
   background-color: #B82601 ;;
@@ -175,4 +181,33 @@ h3{
   background-color: #16a085;
 }
 
+#seccion_comentarios{
+  width: 60%;
+  margin-left: 20%;
+  height: auto;
+}
 
+#seccion_comentarios div{
+  width: 100%;
+  height: auto;
+  margin: 10px;
+}
+
+#seccion_comentarios div img{
+  width: 50px;
+  height: auto;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+#seccion_comentarios div h4{
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+  margin: 10px;
+}
+
+#seccion_comentarios div p {
+  font-size: 17px;
+  font-family: 'Roboto Slab', serif;
+  width: 70%;
+  float: right;
+}
