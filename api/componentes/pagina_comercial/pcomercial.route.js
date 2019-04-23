@@ -38,5 +38,10 @@ router.route('/registrar_pcomercial')
           api_pcomercial.buscar_por_id(req, res); 
         } 
       ); 
+
+  router.route('/borrar_pagina')
+      .post(function(req, res){
+        api_pcomercial.borrar(req, res);
+      });
        
 module.exports = router; 

@@ -36,5 +36,8 @@ router.route('/buscar_mensualidad/:id_mensualidad')
             api_mensualidad.buscar_por_id(req, res);
         }
     );
-
+    router.route('/borrar_mensualidad')
+    .post(function(req, res){
+        api_mensualidad.borrar(req, res);
+    });
 module.exports = router;

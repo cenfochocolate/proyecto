@@ -44,7 +44,7 @@ descripcion.innerHTML = institucion['direccion'];
 
 validarRegistrar();
 mostrar_noticias();
-mostrar_contacto();
+// mostrar_contacto();
 mostrar_rs();
 mostrar_comentarios();
 
@@ -127,73 +127,83 @@ function mostrar_comentarios(){
 
   const div_comentario = document.querySelector('#seccion_comentarios');
 
-  for (let i = 0; i < todosLosUsuarios.length; i++) {
+  for (let i = 0; i < todos_coment.length; i++) {
+    comentario_filtrados.push(todos_coment[i]);
+    for (let j = 0; j < todosLosUsuarios.length; j++) {
+      if (comentario_filtrados[i]['id_usuario'] == todosLosUsuarios[j]['_id']) {
+        usuariosFiltrados.push(todosLosUsuarios[j]);
+        let div = document.createElement('div');
+        div.classList.add('comentario');
 
-    if (todosLosUsuarios[i]['_id']==todos_coment[i]['id_institucion']) {
-      comentario_filtrados.push(todos_coment[i]);
+        let img = document.createElement('img');
+        img.src=todosLosUsuarios[j]['url_foto'];
+        let nombre = document.createElement('h4');
+        nombre.innerHTML=todosLosUsuarios[j]['nombre'];
+        let comen = document.createElement('p');
+        comen.innerHTML=comentario_filtrados[i]['comentario'];
 
-      for (let j = 0; j < todosLosUsuarios.length; j++) {
-        usuariosFiltrados.push(todosLosUsuarios[j]['_id']);
+        div.appendChild(img);
+        div.appendChild(nombre);
+        div.appendChild(comen);
+        div_comentario.appendChild(div);
       }
-
-      let div = document.createElement('div');
-      div.classList.add('comentario');
-
-      let img = document.createElement('img');
-      img.src=todosLosUsuarios[i]['url_foto'];
-      let nombre = document.createElement('h4');
-      nombre.innerHTML=todosLosUsuarios[i]['nombre'];
-      let comen = document.createElement('p');
-      comen.innerHTML=todos_coment[i]['comentario'];
-
-      div.appendChild(img);
-      div.appendChild(nombre);
-      div.appendChild(comen);
-      div_comentario.appendChild(div);
-    }
-  }
-}
-
-
-filtro_contacto.addEventListener('keyup', mostrar_contacto);
-
-function mostrar_contacto(){
-  let listarcontacto = listar_contacto();
-  let filtro_contact = filtro_contacto.value;
-  tabla_listar.innerHTML='';
-
-  for (let i = 0; i < listarcontacto.length; i++) {
-  if(id_institucion == listarcontacto[i]['id_institucion']){
-    if(listarcontacto[i]['nombre'].toLowerCase().includes(filtro_contact.toLowerCase())){
-      let fila = tabla_listar.insertRow();
-
-      fila.insertCell().innerHTML = listarcontacto[i]['nombre'];
-      fila.insertCell().innerHTML = listarcontacto[i]['id'];
-      fila.insertCell().innerHTML = listarcontacto[i]['departamento'];
-      fila.insertCell().innerHTML = listarcontacto[i]['telefono'];
-      fila.insertCell().innerHTML = listarcontacto[i]['correo'];
-      fila.insertCell().innerHTML = listarcontacto[i]['extension'];
-      let imagen = document.createElement('img');
-      imagen.classList.add('imagenTabla');
-      if (listarcontacto[i]['imagen']!= null) {
-        imagen.src= listarcontacto[i]['imagen'];
-      } else {
-        imagen.src= './imgs/imgph.jpg';
-      }
-      fila.insertCell().appendChild(imagen);
-
-      let celda_configuracion = fila.insertCell();
-
-      let boton_editar = document.createElement('a');
-      boton_editar.textContent ='Editar';
-      boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
-   
-      celda_configuracion.appendChild(boton_editar);
-      
-    }
-  }
+    };
   };
 };
+
+
+// filtro_contacto.addEventListener('keyup', mostrar_contacto);
+
+// function mostrar_contacto(){
+//   let listarcontacto = listar_contacto();
+//   let filtro_contact = filtro_contacto.value;
+//   tabla_listar.innerHTML='';
+
+//   for (let i = 0; i < listarcontacto.length; i++) {
+//   if(id_institucion == listarcontacto[i]['id_institucion']){
+//     if(listarcontacto[i]['nombre'].toLowerCase().includes(filtro_contact.toLowerCase())){
+//       let fila = tabla_listar.insertRow();
+
+//       fila.insertCell().innerHTML = listarcontacto[i]['nombre'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['id'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['departamento'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['telefono'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['correo'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['extension'];
+//       let imagen = document.createElement('img');
+//       imagen.classList.add('imagenTabla');
+//       if (listarcontacto[i]['imagen']!= null) {
+//         imagen.src= listarcontacto[i][  let div = document.createElement('div');
+//         div.classList.add('comentario');
+
+//         let img = document.createElement('img');
+//         img.src=todosLosUsuarios[i]['url_foto'];
+//         let nombre = document.createElement('h4');
+//         nombre.innerHTML=todosLosUsuarios[i]['nombre'];
+//         let comen = document.createElement('p');
+//         comen.innerHTML=todos_coment[i]['comentario'];
+
+//         div.appendChild(img);
+//         div.appendChild(nombre);
+//         div.appendChild(comen);
+//         div_comentario.appendChild(div);'imagen'];
+//       } else {
+//         imagen.src= './imgs/imgph.jpg';
+//       }
+//       fila.insertCell().appendChild(imagen);
+
+//       let celda_configuracion = fila.insertCell();
+
+//       let boton_editar = document.createElement('a');
+//       boton_editar.textContent ='Editar';
+//       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
+
+//       celda_configuracion.appendChild(boton_editar);
+
+//     }
+//   }
+//   };
+// };
 
 
 

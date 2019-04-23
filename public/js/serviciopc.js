@@ -116,3 +116,23 @@ let actualizar_pagina = (ppagina_comercial, pid) => {
     });
   });
 };
+function borrar_pagina(pid){
+  $.ajax({
+      url: 'http://localhost:4000/api/borrar_pagina',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+          id: pid
+      },
+      beforeSend: function beforeSend(){
+
+      },
+      success: function success(response){
+
+      },
+      error: function error(_error){
+          console.log("Request fail error: " + _error);
+
+      }
+  });
+};

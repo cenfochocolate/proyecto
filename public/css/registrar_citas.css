@@ -86,19 +86,19 @@ margin-left: 200%;
 
 background: #16a085;
 }
-#btn_listar{
-background-color: #16a085;
-border: 2px solid #BDBDBD;
-color: #E9F0E9;
-float: left;
-width: 20%;
-height: auto;
-margin-left: 0%;
-margin-top: -5%;
-padding: 10px;
+#btn_citas{
+  background-color: #16a085;
+  border: 2px solid #BDBDBD;
+  color: #E9F0E9;
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 0%;
+  margin-top: -124px;
+  padding: 10px;
 }
 
-#btn_listar:hover{
+#btn_citas:hover{
 background-color: #B82601;
 }
 ul, ol {
@@ -163,3 +163,4 @@ main #menu_institucion li ul li a:hover {
 #menu_institucion .nav ul li a{
   font-family: 'Roboto Slab', serif;
 }
+

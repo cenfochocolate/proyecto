@@ -95,3 +95,15 @@ module.exports.actualizar_requisito = function (req, res)  {
     
 }
 
+module.exports.borrar = (req, res) =>{
+    requisito_model.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({ success : false, msg: 'No se pudo eliminar la matrícula.'});
+                
+            }else{
+                res.json({ success : true, msg: 'La matrícula fue eliminada.'});
+            }
+        }
+    )
+};

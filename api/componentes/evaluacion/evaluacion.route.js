@@ -35,5 +35,8 @@ router.route('/buscar_criterio/:id_criterio')
         api_evaluacion.buscar_por_id(req, res);
     }
 )
-
+router.route('/borrar_criterio')
+.post(function(req, res){
+    api_evaluacion.borrar(req, res);
+});
 module.exports = router;

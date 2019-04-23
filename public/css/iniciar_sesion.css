@@ -56,17 +56,18 @@ body {
 .inputs {
     border: none;
     width: 280px;
-    height: 18px;
+    height: auto;
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: 15px;
     outline: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #btn_enviar {
     width: 303px;
     height: 35px;
-    padding:0; 
+    padding:0;
     margin-left: 38px;
     margin-top: 0px;
     border-radius: 0.25rem;

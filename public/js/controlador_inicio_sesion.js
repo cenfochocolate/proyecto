@@ -4,10 +4,7 @@ const input_correo = document.querySelector('#txt_correo');
 const input_clave = document.querySelector('#txt_clave');
 const btn_inicia_sesion = document.querySelector('#btn_enviar');
 
-function validateEmail(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-};
+
 
 
 function obtenerDatos() {
@@ -32,7 +29,7 @@ function validarDatos() {
 
     let retorno = true;
 
-    if ((validateEmail(input_correo.value)) && (input_correo.value != '')) {
+    if ((input_correo.value != '')) {
 
         document.getElementById('div_correo').style.borderColor = "#c9c9c9";
         retorno = true;

@@ -121,3 +121,24 @@ let actualizar_mensualidad = ( pgrado,pinstitucion, pdescripcion, pid) => {
       });
   });
 };
+
+function borrar_mensualidad(pid){
+  $.ajax({
+      url: 'http://localhost:4000/api/borrar_mensualidad',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+          id: pid
+      },
+      beforeSend: function beforeSend(){
+
+      },
+      success: function success(response){
+
+      },
+      error: function error(_error){
+          console.log("Request fail error: " + _error);
+
+      }
+  });
+};
