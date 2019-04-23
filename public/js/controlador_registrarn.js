@@ -29,7 +29,7 @@ let obtener_datos = () => {
         let nombre = input_nombre.value;
         let descripcion = input_descripcion.value;
         let imagen = imgNoticia.src;
-        registrar_noticia(id_ins,nombre,descripcion,imagen);
+        registrar_noticia(id_institucion,nombre,descripcion,imagen);
 
 
     } else {

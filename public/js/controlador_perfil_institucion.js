@@ -19,7 +19,7 @@ const slt_utiles = document.querySelector('#slt_utiles');
 const btn_registrar = document.querySelector('#btn_pref_utiles');
 const pref_util = document.querySelector('#lista_seleccionada_utiles');
 const tabla = document.querySelector('#tbl_redes_sociales');
-const tbl_contacto = document.querySelector('#tbl_contacto');
+const tbl_contacto = document.querySelector('#tbl_contacto tbody');
 const tablaNoticias = document.querySelector('#tbl_noticias tbody');
 let noticias = listar_noticias();
 //botones del perfil
@@ -164,7 +164,6 @@ function mostrar_datos(){
     let fila =tbl_contacto.insertRow();
 
       fila.insertCell().innerHTML = contacto[i]['nombre'];
-      fila.insertCell().innerHTML = contacto[i]['id'];
       fila.insertCell().innerHTML = contacto[i]['departamento'];
       fila.insertCell().innerHTML = contacto[i]['telefono'];
       fila.insertCell().innerHTML = contacto[i]['correo'];
@@ -183,17 +182,17 @@ function mostrar_datos(){
       let boton_editar = document.createElement('a');
       boton_editar.textContent ='Editar';
       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
-   
+
       celda_configuracion.appendChild(boton_editar);
-      
-  
+
+
       }
-  
+
     };
   };
-  
+
   mostrar_datos();
-  
+
 
 
 

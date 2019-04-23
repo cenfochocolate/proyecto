@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/perfil_institucion.css">
     <link rel="stylesheet" href="css/perfil_in.css">
     <link rel="stylesheet" href="css/listar_noticias.css">
-    <link rel="stylesheet" href="css/listar_contacto.css">
 
   </head>
   <body>
@@ -41,6 +40,7 @@
                   <li><a id="lista_seleccionada_utiles" href="">Útiles</a></li>
                   <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
                   <li><a href="listar_citas.html">Citas</a></li>
+                  <li><a href="lista_mensualidad.html">Mensualidad</a></li>
               </ul>
           </li>
         </ul>
@@ -80,6 +80,7 @@
         <h2>Dirección</h2>
         <p id="direccion"></p>
       </div>
+      <div class="contacto">
         <h2>Contacto</h2>
         <form class="frm_buscar" action="" method="post">
           <div class="buscar_contacto">
@@ -92,12 +93,12 @@
             <tr>
 
               <th> Nombre:</th>
-              <th>ID:</th>
               <th>Departamento:</th>
               <th>Teléfono:</th>
               <th>Correo:</th>
               <th>Extensión:</th>
               <th>Foto:</th>
+              <th>Opciones</th>
 
 
 
@@ -109,9 +110,10 @@
           </tbody>
         </table>
 
-        <button type="button" id="btn_registrarContacto" onclick=" location.href='registrar_contacto.html'">Registrar</button>
 
 
+      </div>
+      <button type="button" id="btn_registrarContacto" onclick=" location.href='registrar_contacto.html'">Registrar</button>
       <div class="redes_sociales">
         <h3>Redes Sociales</h3>
         <a class="opciones" href="registro_rs.html"><i class="fas fa-plus-square" id="add" href="registro_rs.html"></i></a>

@@ -5,6 +5,7 @@ const inputgrado = document.querySelector('#txt_grado');
 const inputinstitucion = document.querySelector('#txt_institucion');
 const inputdescripcion = document.querySelector('#txt_info');
 const botonRegistrar = document.querySelector('#btn_registrar');
+const id_institucion = sessionStorage.getItem('idu');
 
 let validar = () => {
   let error = false;
@@ -32,12 +33,13 @@ let validar = () => {
 
 function obtener_datos() {
   if (validar() == false) {
+    let id = id_institucion;
     let grado = inputgrado.selectedOptions[0].textContent;
     let institucion = inputinstitucion.value;
     let descripcion = inputdescripcion.value;
 
 
-    registrar_mensualidad(grado,institucion, descripcion);
+    registrar_mensualidad(id,grado,institucion, descripcion);
 
     console.log('El grado de la institucion es ' + grado + 'la institucion registrada es ' + institucion + ' contiene la descripcion de ' + descripcion);
   } else {
