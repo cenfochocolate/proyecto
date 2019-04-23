@@ -5,7 +5,7 @@ const mensualidad_model = require('./mensualidad.model');
 module.exports.registrar = function (req, res) {
     let nuevo_mensualidad = new mensualidad_model(
         {
-          
+            id_institucion:req.body.id_institucion,
             grado: req.body.grado,
             institucion: req.body.institucion,
             descripcion: req.body.descripcion,

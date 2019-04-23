@@ -19,6 +19,7 @@ const slt_utiles = document.querySelector('#slt_utiles');
 const btn_registrar = document.querySelector('#btn_pref_utiles');
 const pref_util = document.querySelector('#lista_seleccionada_utiles');
 const tabla = document.querySelector('#tbl_redes_sociales');
+const tbl_contacto = document.querySelector('#tbl_contacto tbody');
 const tablaNoticias = document.querySelector('#tbl_noticias tbody');
 let noticias = listar_noticias();
 //botones del perfil
@@ -151,59 +152,47 @@ function mostrar_comentarios(){
   };
 };
 
+filtro_contacto.addEventListener('keyup' , mostrar_datos);
 
-// filtro_contacto.addEventListener('keyup', mostrar_contacto);
+function mostrar_datos(){
+  let contacto = listar_contacto();
+  let filtro = filtro_contacto.value;
+  tbl_contacto.innerHTML='';
 
-// function mostrar_contacto(){
-//   let listarcontacto = listar_contacto();
-//   let filtro_contact = filtro_contacto.value;
-//   tabla_listar.innerHTML='';
+  for(let i = 0; i <contacto.length; i++){
+    if(contacto[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+    let fila =tbl_contacto.insertRow();
 
-//   for (let i = 0; i < listarcontacto.length; i++) {
-//   if(id_institucion == listarcontacto[i]['id_institucion']){
-//     if(listarcontacto[i]['nombre'].toLowerCase().includes(filtro_contact.toLowerCase())){
-//       let fila = tabla_listar.insertRow();
+      fila.insertCell().innerHTML = contacto[i]['nombre'];
+      fila.insertCell().innerHTML = contacto[i]['departamento'];
+      fila.insertCell().innerHTML = contacto[i]['telefono'];
+      fila.insertCell().innerHTML = contacto[i]['correo'];
+      fila.insertCell().innerHTML = contacto[i]['extension'];
+      let imagen = document.createElement('img');
+      imagen.classList.add('imagenTabla');
+      if(contacto[i]['imagen']){
+        imagen.src = contacto[i]['imagen'];
+      }else{
+        imagen.src = './imgs/imgph.jpg';
+      }
+      fila.insertCell().appendChild(imagen);
 
-//       fila.insertCell().innerHTML = listarcontacto[i]['nombre'];
-//       fila.insertCell().innerHTML = listarcontacto[i]['id'];
-//       fila.insertCell().innerHTML = listarcontacto[i]['departamento'];
-//       fila.insertCell().innerHTML = listarcontacto[i]['telefono'];
-//       fila.insertCell().innerHTML = listarcontacto[i]['correo'];
-//       fila.insertCell().innerHTML = listarcontacto[i]['extension'];
-//       let imagen = document.createElement('img');
-//       imagen.classList.add('imagenTabla');
-//       if (listarcontacto[i]['imagen']!= null) {
-//         imagen.src= listarcontacto[i][  let div = document.createElement('div');
-//         div.classList.add('comentario');
+      let celda_configuracion = fila.insertCell();
 
-//         let img = document.createElement('img');
-//         img.src=todosLosUsuarios[i]['url_foto'];
-//         let nombre = document.createElement('h4');
-//         nombre.innerHTML=todosLosUsuarios[i]['nombre'];
-//         let comen = document.createElement('p');
-//         comen.innerHTML=todos_coment[i]['comentario'];
+      let boton_editar = document.createElement('a');
+      boton_editar.textContent ='Editar';
+      boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
 
-//         div.appendChild(img);
-//         div.appendChild(nombre);
-//         div.appendChild(comen);
-//         div_comentario.appendChild(div);'imagen'];
-//       } else {
-//         imagen.src= './imgs/imgph.jpg';
-//       }
-//       fila.insertCell().appendChild(imagen);
+      celda_configuracion.appendChild(boton_editar);
 
-//       let celda_configuracion = fila.insertCell();
 
-//       let boton_editar = document.createElement('a');
-//       boton_editar.textContent ='Editar';
-//       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
+      }
 
-//       celda_configuracion.appendChild(boton_editar);
+    };
+  };
 
-//     }
-//   }
-//   };
-// };
+  mostrar_datos();
+
 
 
 

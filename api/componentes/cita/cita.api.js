@@ -108,7 +108,7 @@ module.exports.borrar = (req, res) =>{
                 res.json({ success : false, msg: 'No se pudo eliminar la cita.'});
                 
             }else{
-                res.json({ success : true, msg: 'La pregunta fue eliminada.'});
+                res.json({ success : true, msg: 'La cita fue eliminada.'});
             }
         }
     )
