@@ -24,7 +24,7 @@ h2{
   display:inline;
   margin-right: 10px;
   font-size: 25px;
-  font-family: font-family: 'Roboto Slab', serif;
+  font-family:'Roboto Slab' serif;
 }
 
 .nombre{
@@ -34,7 +34,7 @@ h2{
 
 h3{
   font-size: 25px;
-  font-family: font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab' serif;
   width: 20%;
   margin-left: 40%;
   text-align: center;
