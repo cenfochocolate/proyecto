@@ -74,7 +74,7 @@ let buscar_rs = (id_rs) => {
   return rs;
 }; 
 
-let actualizar_rs = (pid_institucion,pfacebook, pinstagram, ptwitter, pemail, pyoutube, pid) => {
+let actualizar_rs = (pid_institucion,pfacebook, pinstagram, ptwitter, pemail, pyoutube) => {
   let request = $.ajax({
       url: "http://localhost:4000/api/actualizar_rs",
       method: "POST",
@@ -84,8 +84,7 @@ let actualizar_rs = (pid_institucion,pfacebook, pinstagram, ptwitter, pemail, py
         instagram: pinstagram,
         twitter : ptwitter,
         email : pemail,
-        youtube : pyoutube,
-        id : pid
+        youtube : pyoutube
            },
            
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

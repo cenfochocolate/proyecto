@@ -83,6 +83,27 @@ let actualizar_cita = (pnombre, ptime, pdate, pid) => {
     });
 };
 
+function borrar_cita(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_cita',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id: pid
+        },
+        beforeSend: function beforeSend(){
+
+        },
+        success: function success(response){
+
+        },
+        error: function error(_error){
+            console.log("Request fail error: " + _error);
+
+        }
+    });
+};
+
 let registrar_citas = (pid_institucion,pnombre, ptime, pdate) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_cita",

@@ -75,7 +75,7 @@ module.exports.buscar_por_id = (req, res) => {
   )
 };
 module.exports.actualizar_rs = function (req, res)  {
-  modelo_rs.findByIdAndUpdate(req.body.id, {$set: req.body},
+  modelo_rs.update({id_institucion : req.body.id_institucion}, {$set: req.body},
       function (error) {
           if (error) {
               res.json(
@@ -88,7 +88,7 @@ module.exports.actualizar_rs = function (req, res)  {
               res.json(
                   {
                       success: true,
-                      preguntas: `Se actualizó correctamente la red social.`
+                      msg: `Se actualizó correctamente la red social.`
                   }
               );
           }

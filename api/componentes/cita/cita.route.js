@@ -38,4 +38,9 @@ router.route('/listar_cita')
         }
     )
 
+    router.route('/borrar_cita')
+    .post(function(req, res){
+        api_cita.borrar(req, res);
+    });
+
 module.exports = router;

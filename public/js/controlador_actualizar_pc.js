@@ -12,24 +12,36 @@ let get_param = (param) => {
     return id;
 };
 
+
 let _id = get_param('id_pagina');
 
-let pagina = buscar_pagina(_id); 
+let pagina = buscar_pagina(_id);
 
 
 
 let mostrar_datos = () => {
 
-    input_paginacomercial.value = pagina[0]['pagina'];
+    input_paginacomercial.value = pagina[0]['pcomercial'];
 }
 if (pagina) {
     mostrar_datos()
 }
 
+let validar = () => {
+    let error = false;
+    if (input_paginacomercial.value == '') {
+        error = true;
+        input_paginacomercial.classList.add('error_input');
+    } else {
+        input_paginacomercial.classList.remove('error_input');
+    }
+
+    return error;
+};
 
 
 let obtener_datos = () => {
-
+    if (validar() == false) {
 
         let id_institucion = id_ins;
         let pagina_comercial = input_paginacomercial.value;
@@ -45,10 +57,16 @@ let obtener_datos = () => {
         }).then((result) => {
             if (result.value) {
             
-                registrar_paginacomercial(id_institucion, pagina_comercial, _id);
+                actualizar_pagina(pagina_comercial, _id);
             }
         })
-
+    } else {
+        swal.fire({
+            type: 'warning',
+            title: 'La evaluacion no fue actualizada',
+            text: 'Por favor revise los campos resaltados'
+        });
+    }
 
 };
 
