@@ -30,6 +30,10 @@ let selectUtiles = document.querySelector('#slt_utiles');
 let generarReporte = document.querySelector('#btn_reporte');
 let utilesT = document.querySelector('#label_titulo');
 
+//variables de Comentarios
+let text_comentario = document.querySelector('#ta_comentario');
+let btn_comentario = document.querySelector('#btn_comentario');
+
 nombre_inistitucion.innerHTML = institucion['nombre_comercial'];
 referenciaH.innerHTML = institucion['refencia_historica'];
 imagen.src = institucion['url_foto'];
@@ -42,6 +46,33 @@ validarRegistrar();
 mostrar_noticias();
 mostrar_contacto();
 mostrar_rs();
+mostrar_comentarios();
+
+let validar_comentario = () =>{
+  let error = false;
+  if (text_comentario.value=='') {
+    error=true;
+    text_comentario.classList.add('error_input');
+  } else {
+    text_comentario.classList.remove('error_input');
+  }
+  return error;
+};
+
+let obtener_comentario = () =>{
+  if (validar_comentario()==false) {
+    let id_usuario = idr;
+    let id_insti = id_institucion;
+    let comentario = text_comentario.value;
+    registrar_comentario(id_usuario, id_insti, comentario);
+  } else {
+    swal.fire({
+      type: 'warning',
+      title: 'El comentario no fue registrado',
+      text: 'Por favor revise los campos resaltados'
+    });
+  }
+};
 
 function validarRegistrar(){
   if(id_institucion == idr){
@@ -87,7 +118,41 @@ function mostrar_noticias(){
   };
 };
 
+function mostrar_comentarios(){
 
+  let todos_coment = listar_comentarios();
+  let comentario_filtrados = [];
+  let todosLosUsuarios = listar_instituciones();
+  let usuariosFiltrados = [];
+
+  const div_comentario = document.querySelector('#seccion_comentarios');
+
+  for (let i = 0; i < todosLosUsuarios.length; i++) {
+
+    if (todosLosUsuarios[i]['_id']==todos_coment[i]['id_institucion']) {
+      comentario_filtrados.push(todos_coment[i]);
+
+      for (let j = 0; j < todosLosUsuarios.length; j++) {
+        usuariosFiltrados.push(todosLosUsuarios[j]['_id']);
+      }
+
+      let div = document.createElement('div');
+      div.classList.add('comentario');
+
+      let img = document.createElement('img');
+      img.src=todosLosUsuarios[i]['url_foto'];
+      let nombre = document.createElement('h4');
+      nombre.innerHTML=todosLosUsuarios[i]['nombre'];
+      let comen = document.createElement('p');
+      comen.innerHTML=todos_coment[i]['comentario'];
+
+      div.appendChild(img);
+      div.appendChild(nombre);
+      div.appendChild(comen);
+      div_comentario.appendChild(div);
+    }
+  }
+}
 
 
 filtro_contacto.addEventListener('keyup', mostrar_contacto);
@@ -141,7 +206,7 @@ function mostrar_contacto(){
                 let boton_editar = document.createElement('a');
                 boton_editar.textContent ='Editar';
                 boton_editar.href=`actualizar_rs.html?id_rs=${rs[i]['_id']}`
-             
+
                 celda_configuracion.appendChild(boton_editar);
         }
 
@@ -178,3 +243,4 @@ function mostrar_contacto(){
   };
 
   btn_registrar.addEventListener('click', obtener_datos);
+  btn_comentario.addEventListener('click',obtener_comentario);

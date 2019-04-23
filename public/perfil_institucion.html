@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <img src="imgs/banner_1.jpg" id="img_banner" alt="">      
+      <img src="imgs/banner_1.jpg" id="img_banner" alt="">
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
@@ -143,6 +143,14 @@
             <button type="button" id="btn_pref_utiles" name="button">Registrar</button>
         </form>
       </div>
+      <div class="comentarios" id="seccion_comentarios">
+        <h2>Comentarios</h2>
+
+      </div>
+      <div class="registrar_comentario">
+        <textarea name="name" id="ta_comentario" rows="8" cols="80"></textarea>
+        <button type="button" id="btn_comentario" name="button">Registrar</button>
+      </div>
       <div class="btns_institucion">
         <button type="button" id="btn_reporte">Generar reporte</button>
       </div>
@@ -153,8 +161,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="js/servicio_perfil_institucion.js"></script>
+    <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador_perfil_institucion.js"></script>
-    <script src="controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/controlador_validar_tusuario.js"></script>
 
   </body>

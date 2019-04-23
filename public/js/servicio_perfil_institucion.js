@@ -9,37 +9,10 @@ let registrar_noticia = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
       nombre:pnombre,
       descripcion:pdescripcion,
       imagen:pimagen
-
-     },
+    },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
-    });
-
-    request.done(function( msg ) {
-
-      window.location="perfil_institucion.html";
-    });
-
-    request.fail(function( jqXHR, textStatus ) {
-
-    });
-};
-let listar_noticias = () => {
-  let lista_noticias = [];
-
-  let request = $.ajax({
-    url: "http://localhost:4000/api/listar_noticias",
-    method: "GET",
-    data: {
-     },
-    dataType: "json",
-    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-    async: false
-    });
-    request.done(function(res) {
-      lista_noticias = res.noticias;
-
-    });
+  });
     request.fail(function( jqXHR, textStatus ) {
 
     });
@@ -75,7 +48,7 @@ let registrar_contacto = (pid, pnombre, pidentificacion, pdepartamento, ptelefon
         method: "POST",
         data: {
 
-           nombre: pnombre,
+          nombre: pnombre,
           identificacion: pidentificacion,
           departamento : pdepartamento,
           telefono : ptelefono,
@@ -120,7 +93,7 @@ let registrar_rs = (pfacebook, pinstagram, ptwitter, pemail, pyoutube) =>{
       twitter : ptwitter,
       email : pemail,
       youtube : pyoutube
-     },
+    },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
     });
@@ -159,6 +132,50 @@ let listar_rs = () => {
   return lista_rs;
 };
 
+let registrar_comentario = (pid_usuario, pid_institucion, pcomentario)=>{
+  let request = $.ajax({
+    url: "http://localhost:4000/api/registrar_comentario",
+    method: "POST",
+    data: {
+      id_usuario:pid_usuario,
+      id_institucion:pid_institucion,
+      comentario:pcomentario
+     },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json"
+  });
+  request.done(function(msg){
+    swal.fire({
+      type: 'success',
+      title: 'Comentario registrado satisfactoriamente',
+    });
+  });
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+};
+
+let listar_comentarios = () =>{
+  let lista_comentarios =[];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/listar_comentarios",
+    method: "GET",
+    data: {},
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async: false
+  });
+
+  request.done(function(res){
+    lista_comentarios=res.comentarios;
+  });
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+  return lista_comentarios;
+};
+
 
 let registrar_pref=(pid, pslt_utiles)=>{
   let request = $.ajax({
@@ -184,6 +201,51 @@ let registrar_pref=(pid, pslt_utiles)=>{
 
     });
 }
+
+function buscar_institucion(pid) {
+
+    let lugar = [];
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscar_institucion",
+        method: "POST",
+        data: {
+            id: pid
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function( msg ) {
+
+      window.location="perfil_institucion.html";
+    });
+
+    request.fail(function( jqXHR, textStatus ) {
+
+    });
+};
+let listar_noticias = () => {
+  let lista_noticias = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/listar_noticias",
+    method: "GET",
+    data: {
+     },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async: false
+    });
+    request.done(function(res) {
+      lista_noticias = res.noticias;
+
+    });
+    request.fail(function( jqXHR, textStatus ) {
+
+    });
+    return lista_noticias;
+};
 
 function buscar_institucion(pid) {
 
