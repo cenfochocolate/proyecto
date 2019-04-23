@@ -37,4 +37,9 @@ router.route('/registrar_util_mep')
       }
   );
   
+  router.route('/borrar_util')
+    .post(function(req, res){
+        api_utiles_mep.borrar(req, res);
+    });
+    
   module.exports = router;

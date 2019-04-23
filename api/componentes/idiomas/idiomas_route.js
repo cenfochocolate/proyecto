@@ -3,6 +3,11 @@ const express=require('express');
 const router=express.Router();
 const api_idiomas=require('./idiomas_api')
 
+router.param('id_idioma', function(req, res, next, id_idioma){
+    req.body.id_idioma = id_idioma;
+    next();
+});
+
 router.route('/registrar_idiomas')
 .post(
     function(req,res)
@@ -16,4 +21,11 @@ router.route('/listar_idiomas')
         api_idiomas.listar_idiomas(req,res);
     }
 )
+
+router.route('/buscar_idioma/:id_idioma')
+.get(
+    function(req , res){
+        api_idiomas.buscar_por_id(req, res);
+    }
+);
 module.exports=router;
