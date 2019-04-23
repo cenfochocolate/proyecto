@@ -6,8 +6,8 @@ const model_material = require('./material_informativo.model')
 module.exports.registrar = (req, res)=>{
 let nuevo_material = new model_material(
     {
-      id:req.body.id,
-     nombre_de_la_institucion:req.body.nombre_de_la_institucion,
+    id:req.body.id,  
+     nombre_institucion: req.body.nombre_institucion,
      descripcion : req.body.descripcion
     }
     );

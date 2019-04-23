@@ -1,4 +1,4 @@
-'use stric'
+'use stric';
 
 
 let registrar_materiales = (pnombre_institucion, pdescripcion) => {

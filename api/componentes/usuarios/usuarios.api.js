@@ -275,3 +275,16 @@ module.exports.actualizar_perfil = function(req,res){
     }
   );
 };
+
+module.exports.borrar = (req, res) =>{
+    mensualidad_model.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({ success : false, msg: 'No se pudo denegar la institucion.'});
+                
+            }else{
+                res.json({ success : true, msg: 'institucion denegada.'});
+            }
+        }
+    )
+};

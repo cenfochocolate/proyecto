@@ -19,7 +19,10 @@ let mostrar_datos = () =>{
 
     input_nombre.value=noticia[0]['nombre'];
     input_descripcion.value=noticia[0]['descripcion'];
-    imgNoticia.value=noticia[0]['noticia'];
+    
+
+    let idIMG = noticia[0]['imagen'].split('upload/')[1];
+    imgNoticia.src = 'http://res.cloudinary.com/cenfochocolate/image/upload/' + idIMG;
 
 }
 
@@ -30,8 +33,8 @@ if(noticia){
 let obtener_datos = () =>{
     let nombre = input_nombre.value;
     let descripcion = input_descripcion.value;
-    let noticia= imgNoticia.value;
-
+    let imagen= imgNoticia.src;
+    
     Swal.fire({
         title: 'Está seguro que desea actualizar la noticia?',
         type: 'warning',
@@ -41,7 +44,7 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_noticia(nombre, descripcion, noticia, _id);
+            actualizar_noticia(nombre, descripcion, imagen, _id);
         }
       })
      
