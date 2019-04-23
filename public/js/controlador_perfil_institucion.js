@@ -30,6 +30,10 @@ let selectUtiles = document.querySelector('#slt_utiles');
 let generarReporte = document.querySelector('#btn_reporte');
 let utilesT = document.querySelector('#label_titulo');
 
+//variables de Comentarios
+let text_comentario = document.querySelector('#ta_comentario');
+let btn_comentario = document.querySelector('#btn_comentario');
+
 nombre_inistitucion.innerHTML = institucion['nombre_comercial'];
 referenciaH.innerHTML = institucion['refencia_historica'];
 imagen.src = institucion['url_foto'];
@@ -40,8 +44,35 @@ descripcion.innerHTML = institucion['direccion'];
 
 validarRegistrar();
 mostrar_noticias();
-mostrar_contacto();
+// mostrar_contacto();
 mostrar_rs();
+mostrar_comentarios();
+
+let validar_comentario = () =>{
+  let error = false;
+  if (text_comentario.value=='') {
+    error=true;
+    text_comentario.classList.add('error_input');
+  } else {
+    text_comentario.classList.remove('error_input');
+  }
+  return error;
+};
+
+let obtener_comentario = () =>{
+  if (validar_comentario()==false) {
+    let id_usuario = idr;
+    let id_insti = id_institucion;
+    let comentario = text_comentario.value;
+    registrar_comentario(id_usuario, id_insti, comentario);
+  } else {
+    swal.fire({
+      type: 'warning',
+      title: 'El comentario no fue registrado',
+      text: 'Por favor revise los campos resaltados'
+    });
+  }
+};
 
 function validarRegistrar(){
   if(id_institucion == idr){
@@ -87,48 +118,92 @@ function mostrar_noticias(){
   };
 };
 
+function mostrar_comentarios(){
 
+  let todos_coment = listar_comentarios();
+  let comentario_filtrados = [];
+  let todosLosUsuarios = listar_instituciones();
+  let usuariosFiltrados = [];
 
+  const div_comentario = document.querySelector('#seccion_comentarios');
 
-filtro_contacto.addEventListener('keyup', mostrar_contacto);
+  for (let i = 0; i < todos_coment.length; i++) {
+    comentario_filtrados.push(todos_coment[i]);
+    for (let j = 0; j < todosLosUsuarios.length; j++) {
+      if (comentario_filtrados[i]['id_usuario'] == todosLosUsuarios[j]['_id']) {
+        usuariosFiltrados.push(todosLosUsuarios[j]);
+        let div = document.createElement('div');
+        div.classList.add('comentario');
 
-function mostrar_contacto(){
-  let listarcontacto = listar_contacto();
-  let filtro_contact = filtro_contacto.value;
-  tabla_listar.innerHTML='';
+        let img = document.createElement('img');
+        img.src=usuariosFiltrados[j]['url_foto'];
+        let nombre = document.createElement('h4');
+        nombre.innerHTML=usuariosFiltrados[j]['nombre'];
+        let comen = document.createElement('p');
+        comen.innerHTML=comentario_filtrados[i]['comentario'];
 
-  for (let i = 0; i < listarcontacto.length; i++) {
-  if(id_institucion == listarcontacto[i]['id_institucion']){
-    if(listarcontacto[i]['nombre'].toLowerCase().includes(filtro_contact.toLowerCase())){
-      let fila = tabla_listar.insertRow();
-
-      fila.insertCell().innerHTML = listarcontacto[i]['nombre'];
-      fila.insertCell().innerHTML = listarcontacto[i]['id'];
-      fila.insertCell().innerHTML = listarcontacto[i]['departamento'];
-      fila.insertCell().innerHTML = listarcontacto[i]['telefono'];
-      fila.insertCell().innerHTML = listarcontacto[i]['correo'];
-      fila.insertCell().innerHTML = listarcontacto[i]['extension'];
-      let imagen = document.createElement('img');
-      imagen.classList.add('imagenTabla');
-      if (listarcontacto[i]['imagen']!= null) {
-        imagen.src= listarcontacto[i]['imagen'];
-      } else {
-        imagen.src= './imgs/imgph.jpg';
+        div.appendChild(img);
+        div.appendChild(nombre);
+        div.appendChild(comen);
+        div_comentario.appendChild(div);
       }
-      fila.insertCell().appendChild(imagen);
-
-      let celda_configuracion = fila.insertCell();
-
-      let boton_editar = document.createElement('a');
-      boton_editar.textContent ='Editar';
-      boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
-   
-      celda_configuracion.appendChild(boton_editar);
-      
-    }
-  }
+    };
   };
 };
+
+
+// filtro_contacto.addEventListener('keyup', mostrar_contacto);
+
+// function mostrar_contacto(){
+//   let listarcontacto = listar_contacto();
+//   let filtro_contact = filtro_contacto.value;
+//   tabla_listar.innerHTML='';
+
+//   for (let i = 0; i < listarcontacto.length; i++) {
+//   if(id_institucion == listarcontacto[i]['id_institucion']){
+//     if(listarcontacto[i]['nombre'].toLowerCase().includes(filtro_contact.toLowerCase())){
+//       let fila = tabla_listar.insertRow();
+
+//       fila.insertCell().innerHTML = listarcontacto[i]['nombre'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['id'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['departamento'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['telefono'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['correo'];
+//       fila.insertCell().innerHTML = listarcontacto[i]['extension'];
+//       let imagen = document.createElement('img');
+//       imagen.classList.add('imagenTabla');
+//       if (listarcontacto[i]['imagen']!= null) {
+//         imagen.src= listarcontacto[i][  let div = document.createElement('div');
+//         div.classList.add('comentario');
+      
+//         let img = document.createElement('img');
+//         img.src=todosLosUsuarios[i]['url_foto'];
+//         let nombre = document.createElement('h4');
+//         nombre.innerHTML=todosLosUsuarios[i]['nombre'];
+//         let comen = document.createElement('p');
+//         comen.innerHTML=todos_coment[i]['comentario'];
+      
+//         div.appendChild(img);
+//         div.appendChild(nombre);
+//         div.appendChild(comen);
+//         div_comentario.appendChild(div);'imagen'];
+//       } else {
+//         imagen.src= './imgs/imgph.jpg';
+//       }
+//       fila.insertCell().appendChild(imagen);
+
+//       let celda_configuracion = fila.insertCell();
+
+//       let boton_editar = document.createElement('a');
+//       boton_editar.textContent ='Editar';
+//       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
+   
+//       celda_configuracion.appendChild(boton_editar);
+      
+//     }
+//   }
+//   };
+// };
 
 
 
@@ -150,7 +225,7 @@ function mostrar_contacto(){
                 let boton_editar = document.createElement('a');
                 boton_editar.textContent ='Editar';
                 boton_editar.href=`actualizar_rs.html?id_rs=${rs[i]['_id']}`
-             
+
                 celda_configuracion.appendChild(boton_editar);
         }
 
@@ -187,3 +262,4 @@ function mostrar_contacto(){
   };
 
   btn_registrar.addEventListener('click', obtener_datos);
+  btn_comentario.addEventListener('click',obtener_comentario);

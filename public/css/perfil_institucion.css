@@ -18,6 +18,36 @@
     color: #FFFFFF;
   }
 
+  .registrar_comentario{
+    width: 80%;
+    margin-left: 10%;
+    margin: 100px;
+  }
+
+  .registrar_comentario textarea{
+    width: 60%;
+    height: 200px;
+    margin-left: 20%;
+    margin-right: 20%;
+    resize: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+  }
+
+  .registrar_comentario button{
+    margin-left: 45%;
+    margin-top: 50px;
+    border: 1px solid green;
+  }
+
+  .comentarios{
+    width: 80%;
+    height: auto;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left: 10%;
+  }
+
   #menu_institucion a:hover{
     color: #B82601;
   }
@@ -31,7 +61,7 @@
     font-family: 'Roboto Slab', serif;
     font-size: 50px;
     text-decoration: none;
-    padding-left: 70px;     
+    padding-left: 70px;
     padding-right: 20px;
     color: #2d3436;
   }
