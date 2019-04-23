@@ -87,10 +87,10 @@ const peticiones_registro = require('./componentes/peticiones_registro/peticione
 const usuario = require('./componentes/usuarios/usuarios.route');
 const evaluacion = require('./componentes/evaluacion/evaluacion.route');
 const comentarios = require('./componentes/comentarios/comentarios.route');
+const estrellasUsuarios = require('./componentes/estrellasUsuarios/estrellasUsuarios.route');
 
 
-
-
+app.use('/api', estrellasUsuarios);
 app.use('/api', comentarios);
 app.use('/api', pref_utiles);
 app.use('/api', redes_sociales);

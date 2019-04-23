@@ -37,6 +37,10 @@ router.route('/buscar_por_id/:id_perfil')
     }
   );
 
+  router.route('/borrar_institucion')
+    .post(function(req, res){
+        usuarioApi.borrar(req, res);
+    });
 router.route('/actualizar_perfil_padre')
   .post(
     function(req,res){

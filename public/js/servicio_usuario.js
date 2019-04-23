@@ -173,3 +173,52 @@ let listar_instituciones = () => {
     });
     return lista_instituciones;
 };
+
+let aceptar_institucion = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_perfil_padre",
+        method: "POST",
+        data: {
+          aprobada : true,
+           id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+  
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: 'Institucion activada correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listas.html';
+            }    
+        });
+  
+    });
+};
+
+function eliminar_institucion(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_institucion',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id: pid
+        },
+        beforeSend: function beforeSend(){
+  
+        },
+        success: function success(response){
+  
+        },
+        error: function error(_error){
+            console.log("Request fail error: " + _error);
+  
+        }
+    });
+  };
