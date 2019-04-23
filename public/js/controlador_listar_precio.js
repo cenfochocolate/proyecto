@@ -29,7 +29,7 @@ function mostrar_datos(){
       let celda_configuracion = fila.insertCell();
        
         let boton_editar = document.createElement('a');
-        boton_editar.textContent ='Editar';
+        boton_editar.innerHTML ='<i class="fas fa-edit"></i>';
         boton_editar.href=`actualizar_precio_matricula.html?id_precio=${precio[i]['_id']}`
      
         celda_configuracion.appendChild(boton_editar);
@@ -37,7 +37,7 @@ function mostrar_datos(){
 
         let boton_eliminar = document.createElement('a');
         boton_eliminar.href= '#';
-        boton_eliminar.innerHTML= 'Eliminar';
+        boton_eliminar.innerHTML= '<i class="fas fa-trash-alt"></i>';
         boton_eliminar.dataset.id= precio[i]['_id'];
         boton_eliminar.addEventListener('click', confirmar_borrado);
         celda_eliminar.appendChild(boton_eliminar);

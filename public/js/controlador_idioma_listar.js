@@ -2,7 +2,7 @@
 
 const tabla = document.querySelector('#tbl_idiomas tbody');
 const input_filtro = document.querySelector('#txtfiltro');
-let idiomas=listar_idioma();
+let idiomas=listar_idiomas();
 
 let mostrar_datos = () => {
     let filtro=input_filtro.value;
@@ -24,6 +24,15 @@ let mostrar_datos = () => {
            imagen.src='./imgs/imgph.jpg';
        }
        fila.insertCell().appendChild(imagen);
+
+       let celda_configuracion = fila.insertCell();
+
+       // Creación del botón de editar
+       let boton_editar = document.createElement('a');
+       boton_editar.textContent = 'Editar';
+       boton_editar.href = `actualizar_idioma.html?id_idioma=${idiomas[i]['_id']}`;
+
+       celda_configuracion.appendChild(boton_editar);
     }    
     }
     

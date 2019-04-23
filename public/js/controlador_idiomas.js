@@ -42,7 +42,7 @@ function obtenerDatos(){
     let imagen=imgbandera.src;
 
     if (validar() == false) {
-        registrar_idioma(idioma,codigo_iso,imagen)
+        registra_idiomas(idioma,codigo_iso,imagen)
         swal.fire({
             type: 'success',
             title: 'El registro se correctamente',
