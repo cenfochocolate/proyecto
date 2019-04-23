@@ -34,6 +34,10 @@ router.route('/registrar_precio')
             api_precio.buscar_por_id(req, res);
         }
     );
+    router.route('/borrar_precio')
+    .post(function(req, res){
+        api_precio.borrar(req, res);
+    });
 
 
 module.exports = router;

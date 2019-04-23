@@ -28,13 +28,48 @@ function mostrar_datos() {
         let celda_configuracion = fila.insertCell();
 
         let boton_editar = document.createElement('a');
-        boton_editar.textContent ='Editar';
-        boton_editar.href=`actualizar_criterio_evaluacion.html?id_criterio=${evaluacion[i]['_id']}`
-     
+        boton_editar.textContent = 'Editar';
+        boton_editar.href = `actualizar_criterio_evaluacion.html?id_criterio=${evaluacion[i]['_id']}`
+
         celda_configuracion.appendChild(boton_editar);
 
-      }
+
+        let celda_eliminar = fila.insertCell();
+
+        let boton_eliminar = document.createElement('a');
+        boton_eliminar.href = '#';
+        boton_eliminar.innerHTML = 'Eliminar';
+        boton_eliminar.dataset.id = evaluacion[i]['_id'];
+        boton_eliminar.addEventListener('click', confirmar_borrado);
+        celda_eliminar.appendChild(boton_eliminar);
+
+
+      };
+
     }
+  };
+  function confirmar_borrado() {
+    let id = this.dataset.id;
+    Swal.fire({
+      title: '¿Está seguro que desea eliminar la evaluación?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, estoy seguro.'
+    }).then((result) => {
+      if (result.value) {
+        borrar_criterio(id);
+        evaluacion = listar_evaluacion();
+        mostrar_datos();
+        Swal.fire({
+          title: '¡Evaluación eliminada!',
+          text: 'La evaliación fue eliminada con éxito.',
+          type: 'success'
+        })
+      }
+    })
+
   }
 };
 
