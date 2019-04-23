@@ -31,7 +31,7 @@ let obtener_datos = () =>{
     let nivel = select_nivel.value;
 
     Swal.fire({
-        title: 'Está seguro que desea actualizar el inmueble?',
+        title: 'Está seguro que desea actualizar el útil?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -39,9 +39,11 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_inmueble( util, descripcion, numero,nivel, _id);
+          actualizar_utiles( util, descripcion, numero,nivel, _id);
         }
       })
      
     
 };
+
+boton_actualizar.addEventListener('click', obtener_datos);

@@ -15,6 +15,7 @@ function borrar_sesion(){
  }).then((result) =>{
    if(result.value){
     localStorage.clear();
+    sessionStorage.clear();
      window.location.href = 'iniciar_sesion.html';
    }
  }

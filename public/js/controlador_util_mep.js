@@ -5,6 +5,7 @@ const textarea_descripcion = document.querySelector('#txt_descripcion');
 const input_numero = document.querySelector('#numero_util');
 const select_nivel = document.querySelector('#select_nivel');
 const boton_enviar = document.querySelector('#btn_registrar_util');
+const id_mep = sessionStorage.getItem('idu');
 
 let validar = () => {
     let error = false;
@@ -43,12 +44,13 @@ let obtener_datos = () => {
 
     if (validar() == false) {
         // Se ejecuta solo si la validación no da error
+        let id = id_mep;
         let util = input_util.value;
         let descripcion = textarea_descripcion.value;
         let numero = input_numero.value;
         let nivel = select_nivel.value;
 
-        registrar_util(util, descripcion, numero, nivel);
+        registrar_util(id,util, descripcion, numero, nivel);
 
     } else {
         swal.fire({

@@ -80,7 +80,7 @@ function confirmar_borrado(){
   if(result.value){
     borrar_util(id);
     utiles = listar_utiles_mep();
-    mostrar_datos();
+    mostrar_utiles_mep();
     Swal.fire({
       title:'¡El util fue eliminado!',
       text:'El util fue eliminado con éxito.',

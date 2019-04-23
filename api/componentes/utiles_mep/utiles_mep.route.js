@@ -19,7 +19,7 @@ router.route('/registrar_util_mep')
   router.route('/actualizar_utiles')
   .post(
       function(req , res){
-          api_utiles_institucion.actualizar(req, res);
+          api_utiles_mep.actualizar(req, res);
       }
   );
 

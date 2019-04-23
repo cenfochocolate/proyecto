@@ -1,11 +1,11 @@
 'use strict';
 
-let registrar_util = ( putil, pdescripcion, pnumero, pnivel) =>{
+let registrar_util = ( pid,putil, pdescripcion, pnumero, pnivel) =>{
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_util_mep",
     method: "POST",
     data: {
-      
+      id:pid,
       util : putil,
       descripcion : pdescripcion,
       cantidad : pnumero,
@@ -51,11 +51,11 @@ let listar_utiles_mep = () => {
     });
     return lista_utiles;
 };
-let buscar_utile = (id_utiles) => {
+let buscar_utile = (id_mep) => {
   let util = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_utile/"+id_utiles,
+    url: "http://localhost:4000/api/buscar_utile/"+id_mep,
     method: "GET",
     data: {
     },
@@ -75,7 +75,7 @@ let buscar_utile = (id_utiles) => {
   return util;
 };
 
-let actualizar_inmueble = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
+let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizar_utiles',
       method : "POST",
