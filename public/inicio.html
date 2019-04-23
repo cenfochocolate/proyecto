@@ -3,19 +3,19 @@
     <meta charset="utf-8">
     <title>Alfred</title>
 
-    
+
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
-    <link rel="stylesheet" href="css/reset.css">    
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/perfil_in.css">
 
   </head>
   <body>
     <header>
-      <img src="imgs/banner_1.jpg" id="img_banner" alt="">      
+      <img src="imgs/banner_1.jpg" id="img_banner" alt="">
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
@@ -29,14 +29,26 @@
     </header>
     <main>
       <h1>Instituciones Cercanas</h1>
+    </div>
+    <nav id="buscar">
+    <div class="frm">
+      <form class="frm_buscar" action="" method="post">
+        <div class="buscar_institucion">
+          <label for="buscar_institucion">Buscar:</label>
+          <input type="search" name="buscar_institucion" id="buscar_institucion" placeholder="Liceo de Costa Rica" value="">
+          </div>
+      </form>
+    </div>
+    </nav>
       <table id="tbl_ubicacion">
         <thead>
           <tr>
-            <th>Imagen</th>
-            <th>Institución</th>
+            <th>Nombre</th>
             <th>Grado</th>
-            <th>Clase</th>
-            <th>Tipo</th>
+            <th>Provincia</th>
+            <th>Canton</th>
+            <th>Distrito</th>
+            <th>Imagen</th>
           </tr>
         </thead>
         <tbody>
@@ -47,7 +59,13 @@
     <footer>
       <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
     </footer>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/servicio_usuario.js"></script>
+
     <script src="js/controlador_validar_tusuario.js"></script>
+    <script src="js/controlador_listar_icercanas.js"></script>
+
   </body>
 </html>

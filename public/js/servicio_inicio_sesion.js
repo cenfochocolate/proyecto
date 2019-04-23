@@ -32,6 +32,7 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
             sessionStorage.setItem('conectado', msg.success);
             sessionStorage.setItem('tipo_usuario', msg.tipo);
             sessionStorage.setItem('idu', msg._id);
+            sessionStorage.setItem('distritol', msg.distrito)
             window.location = "inicio.html";
 
 
@@ -55,12 +56,22 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
 
           }else{
             if(msg.tipo == "institucion"){
-            swal.fire({
-                type: 'error',
-                title: 'cuenta no aceptada',
-                text: 'Su cuenta no ha sido aceptada'
+              if(msg.contrasenna == pcontrasenia){
+                swal.fire({
+                    type: 'error',
+                    title: 'cuenta no aceptada',
+                    text: 'Su cuenta no ha sido aceptada'
 
-          })
+              })
+            }else{
+              swal.fire({
+                  type: 'error',
+                  title: 'contraseña incorrecta',
+                  text: 'Revise sus datos'
+
+            })
+            }
+
           }
         }
 
