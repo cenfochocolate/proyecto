@@ -65,3 +65,30 @@ module.exports.buscar_por_id = function (req, res){
   );
 
 };
+
+module.exports.actualizar = function(req, res){
+   
+  modelo_util_mep.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el util '});
+          }else{
+              res.json({success: true , msg : 'El util se actualizó con éxito'});
+          }
+      }
+  
+  );
+}
+
+module.exports.borrar = (req, res) =>{
+  modelo_util_mep.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar el util.'});
+              
+          }else{
+              res.json({ success : true, msg: 'El util fue eliminado.'});
+          }
+      }
+  )
+};

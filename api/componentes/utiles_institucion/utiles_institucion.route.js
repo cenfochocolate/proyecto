@@ -37,4 +37,8 @@ router.route('/registrar_util_institucion')
     }
 );
 
+router.route('/borrar_util')
+    .post(function(req, res){
+        api_utiles_institucion.borrar(req, res);
+    });
   module.exports = router;

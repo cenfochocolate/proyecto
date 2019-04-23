@@ -35,8 +35,41 @@ function mostrar_datos(){
     boton_editar.href = `actualizar_noticia.html?id_noticia=${noticias[i]['_id']}`;
 
     celda_configuracion.appendChild(boton_editar);
+
+    let celda_eliminar = fila.insertCell();
+
+   let boton_eliminar = document.createElement('a');
+   boton_eliminar.href= '#';
+   boton_eliminar.innerHTML= 'Eliminar';
+   boton_eliminar.dataset.id= noticias[i]['_id'];
+   boton_eliminar.addEventListener('click', confirmar_borrado);
+   celda_eliminar.appendChild(boton_eliminar);
     }
   };
+};
+
+function confirmar_borrado(){
+  let id= this.dataset.id;
+  Swal.fire({
+    title:'¿Está seguro que desea eliminar la noticia?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, estoy seguro.'
+}).then((result)=>{
+  if(result.value){
+    borrar_noticia(id);
+    noticias = listar_noticias();
+    mostrar_datos();
+    Swal.fire({
+      title:'¡Noticia eliminada!',
+      text:'La noticia fue eliminada con éxito.',
+      type:'success'
+    })
+  }
+})
+
 };
 
 mostrar_datos();

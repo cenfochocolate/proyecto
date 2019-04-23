@@ -80,3 +80,17 @@ module.exports.actualizar = function(req, res){
   
   );
 }
+
+module.exports.borrar = (req, res) =>{
+  modelo_util_institucino.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar el util.'});
+              
+          }else{
+              res.json({ success : true, msg: 'El util fue eliminado.'});
+          }
+      }
+  )
+};
+

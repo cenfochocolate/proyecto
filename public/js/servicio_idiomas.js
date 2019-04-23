@@ -1,55 +1,71 @@
 'use strict';
-let registrar_idioma = (pid,pcedula, pidioma, pduracion, ptitulo) => {
+let registra_idiomas=(pidioma,pcodigo_iso,pimagen)=>{
     let request = $.ajax({
-        url: "http://localhost:4000/api/registrar_idioma",
+        url: "http://localhost:4000/api/registrar_idiomas",
         method: "POST",
         data: {
-            id:pid,
-            cedula: pcedula,
-            idioma: pidioma,
-            duracion: pduracion,
-            titulo: ptitulo
-        },
+            idioma:pidioma,
+            codigo_iso:pcodigo_iso,
+            imagen: pimagen,
+            
+         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
-    });
-
-    request.done(function (msg) {
-
-        swal.fire({
-            type: 'success',
-            title: 'Comentario enviado correctamente',
-            text: `La identificacion es${pcedula}seleccionó el idioma${pidioma},la cual tendrá una duración de${pduracion} y se le informa que${ptitulo} tendra título`
         });
-
-    });
-
-    request.fail(function (jqXHR, textStatus) {
-
-    });
+    
+        request.done(function( msg ) {
+          
+        });
+    
+        request.fail(function( jqXHR, textStatus ) {
+                console.log("Request fail error" + textStatus)
+        });
 };
-
-let listar_idioma = () => {
-    let lista_idioma = [];
-
+let listar_idiomas = () => {
+    let listar_idiomas=[];
     let request = $.ajax({
         url: "http://localhost:4000/api/listar_idiomas",
         method: "GET",
         data: {
-        },
-        dataType: "json",
+    
+         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        async: false
-    });
+        dataType: "json",
+        async:false
+        });
+    
+        request.done(function(res) {
+            listar_idiomas= res.idiomas;
+          
+        });
+    
+        request.fail(function( jqXHR, textStatus ) {
 
-    request.done(function (res) {
-        lista_idioma = res.idioma;
+        });
+        return listar_idiomas;
+}
 
-    });
-
-    request.fail(function (jqXHR, textStatus) {
-
-    });
-
-    return lista_idioma;
-};
+let buscar_idioma = (id_idioma) => {
+        let idioma = [];
+      
+        let request = $.ajax({
+          url: "http://localhost:4000/api/buscar_idioma/"+ id_idioma,
+          method: "GET",
+          data: {
+          },
+          dataType: "json",
+          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+          async : false
+        });
+      
+        request.done(function (res) {
+            idioma = res.idioma;
+          
+        });
+      
+        request.fail(function (jqXHR, textStatus) {
+          
+        });
+        return idioma;
+       
+      };

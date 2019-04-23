@@ -38,4 +38,9 @@ router.route('/registrar_sadicional')
     }
 );
 
+router.route('/borrar_servicio')
+    .post(function(req, res){
+        api_sadicional.borrar(req, res);
+    });
+
   module.exports = router;
