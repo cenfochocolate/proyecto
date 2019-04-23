@@ -14,7 +14,7 @@ let registrar_evaluacion = (pnombre, pcalificacion) =>{
 
         swal.fire({ 
             type: 'success',
-            title: 'Su registro se envio correctamente ' + res.msg,
+            title: 'Su registro se envio correctamente ',
             text: `El nombre deseado en la institucion es ${pnombre} con la calificacion de ${pcalificacion}`
         });
 
@@ -98,8 +98,6 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
         dataType: "json", 
         async: false
     });
-    
-
     request.done(function (res) {
       
         swal.fire({
@@ -110,9 +108,7 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
                 window.location.href ='listar_criterio.html';
             }
         });
-
     });
-
     request.fail(function (res) {
         swal.fire({
             type: 'error',
@@ -120,5 +116,26 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
             text: res.msg
            
         });
+    });
+};
+
+function borrar_criterio(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_criterio',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id: pid
+        },
+        beforeSend: function beforeSend(){
+
+        },
+        success: function success(response){
+
+        },
+        error: function error(_error){
+            console.log("Request fail error: " + _error);
+
+        }
     });
 };

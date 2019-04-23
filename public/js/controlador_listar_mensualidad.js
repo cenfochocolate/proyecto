@@ -31,8 +31,42 @@ function mostrar_datos  ()  {
    
       celda_configuracion.appendChild(boton_editar);
       
-    }
-  };
+      let celda_eliminar = fila.insertCell();
+
+      let boton_eliminar = document.createElement('a');
+      boton_eliminar.href= '#';
+      boton_eliminar.innerHTML= 'Eliminar';
+      boton_eliminar.dataset.id= mensualidad[i]['_id'];
+      boton_eliminar.addEventListener('click', confirmar_borrado);
+      celda_eliminar.appendChild(boton_eliminar);
+      
+   
+   };
+   
+   }
+   };
+   function confirmar_borrado(){
+     let id= this.dataset.id;
+     Swal.fire({
+       title:'¿Está seguro que desea eliminar la mensualida?',
+       type: 'warning',
+       showCancelButton: true,
+       confirmButtonColor: '#3085d6',
+       cancelButtonColor: '#d33',
+       confirmButtonText: 'Sí, estoy seguro.'
+   }).then((result)=>{
+     if(result.value){
+      borrar_mensualidad(id);
+       mensualidad = listar_mensualidad();
+       mostrar_datos();
+       Swal.fire({
+         title:'¡Mensualidad eliminada!',
+         text:'La mensualidad fue eliminada con éxito.',
+         type:'success'
+       })
+     }
+   })
+   
 };
 
 mostrar_datos();
