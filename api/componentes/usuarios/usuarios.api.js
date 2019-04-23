@@ -155,7 +155,8 @@ module.exports.validar = function (req, res) {
                 res.json({
                     success: true,
                     tipo: usuario.tipo,
-                    _id: usuario._id
+                    _id: usuario._id,
+                    distrito: usuario.distrito
 
                 });
             } else {
@@ -234,7 +235,7 @@ module.exports.buscar_institucion = function (req, res) {
 };
 
 module.exports.buscar_por_id =(req,res)=>{
-  usuarioModel.find({_id : req.body.id}).then(
+  usuarioModel.find({_id : req.body.id_perfil}).then(
     function(usuarios){
       if (usuarios) {
         res.json(
