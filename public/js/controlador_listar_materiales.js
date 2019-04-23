@@ -15,11 +15,11 @@ function mostrar_datos() {
     tabla.innerHTML = '';
 
     for (let i = 0; i < material.length; i++) {
-        if (material[i]['nombre_de_la_institucion'].toLowerCase().includes(filtro.toLowerCase())) {
+        if (material[i]['nombre_institucion'].toLowerCase().includes(filtro.toLowerCase())) {
 
             let fila = tabla.insertRow();
 
-            fila.insertCell().innerHTML = material[i]['nombre_de_la_institucion'];
+            fila.insertCell().innerHTML = material[i]['nombre_institucion'];
             fila.insertCell().innerHTML = material[i]['descripcion'];
         }
     };
