@@ -35,4 +35,9 @@ router.route('/registrar_requisito')
             api_requisito.buscar_por_id(req, res);
         }
     )
+    router.route('/borrar_requisito')
+    .post(function(req, res){
+        api_requisito.borrar(req, res);
+    });
+
 module.exports = router;
