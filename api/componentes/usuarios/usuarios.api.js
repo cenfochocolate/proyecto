@@ -32,6 +32,8 @@ module.exports.registrar = function (req, res) {
             canton: req.body.canton,
             distrito: req.body.distrito,
             direccion: req.body.direccion,
+            longitud: req.body.longitud,
+            latitud: req.body.latitud,
             correo: req.body.correo,
             telefono: req.body.telefono,
             extencion_telefono: req.body.extencion_telefono,

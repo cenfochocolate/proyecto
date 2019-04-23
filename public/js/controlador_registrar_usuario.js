@@ -434,6 +434,13 @@ let registrar = () => {
         let canton = lst_provincia.value;
         let distrito = lst_distrito.value;
         let direccion = input_direccion.value;
+
+        let ubicacion0 = onDragEnd();
+        let ubicacion1 = ubicacion.split(",")
+
+        let longitud = ubicacion1[0];
+        let latitud = ubicacion1[1];
+
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;
         let telefono = input_telefono.value;
