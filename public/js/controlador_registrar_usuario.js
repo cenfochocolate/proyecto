@@ -430,10 +430,17 @@ let registrar = () => {
         let genero = getRadioButtonValue(input_genero);
         let especialidad = input_especialidad.value;
         let refencia_historica = input_historica.value;
-        let provincia = lst_provincia.value;
-        let canton = lst_provincia.value;
-        let distrito = lst_distrito.value;
+        let provincia = lst_provincia.selectedOptions[0].textContent;
+        let canton = lst_provincia.selectedOptions[0].textContent;
+        let distrito = lst_distrito.selectedOptions[0].textContent;
         let direccion = input_direccion.value;
+
+        let ubicacion0 = onDragEnd();
+        let ubicacion1 = ubicacion.split(",")
+
+        let longitud = ubicacion1[0];
+        let latitud = ubicacion1[1];
+
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;
         let telefono = input_telefono.value;

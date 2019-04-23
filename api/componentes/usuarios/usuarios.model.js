@@ -21,6 +21,8 @@ let usuarioSchema = new mongoose.Schema(
     canton: { type: String, required: false },
     distrito: { type: String, required: false },
     direccion: { type: String, required: false },
+    longitud: {type: String, required:false},
+    latitud: {type: String, required:false},
     correo: { type: String, required: true},
     telefono: { type: String, required: true },
     extencion_telefono: { type: Number, required: false },
