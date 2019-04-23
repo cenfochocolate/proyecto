@@ -77,3 +77,16 @@ module.exports.actualizar = function(req, res){
   
   );
 }
+
+module.exports.borrar = (req, res) =>{
+  modelo_sadicional.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar la cita.'});
+              
+          }else{
+              res.json({ success : true, msg: 'La pregunta fue eliminada.'});
+          }
+      }
+  )
+};

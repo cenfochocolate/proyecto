@@ -1,11 +1,11 @@
 'use strict';
 
-let registrar_util = (pid, putil, pdescripcion, pnumero, pnivel) =>{
+let registrar_util = ( putil, pdescripcion, pnumero, pnivel) =>{
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_util_mep",
     method: "POST",
     data: {
-      id:pid,
+      
       util : putil,
       descripcion : pdescripcion,
       cantidad : pnumero,
@@ -113,4 +113,24 @@ let actualizar_inmueble = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
 
   });
 
+};
+function borrar_util(pid){
+  $.ajax({
+      url: 'http://localhost:4000/api/borrar_util',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+          id: pid
+      },
+      beforeSend: function beforeSend(){
+
+      },
+      success: function success(response){
+
+      },
+      error: function error(_error){
+          console.log("Request fail error: " + _error);
+
+      }
+  });
 };

@@ -37,4 +37,9 @@ router.route('/registrar_noticia')
     }
   );
 
+  router.route('/borrar_noticia')
+    .post(function(req, res){
+        api_noticia.borrar(req, res);
+    });
+
   module.exports = router;
