@@ -73,14 +73,14 @@ let buscar_noticia = (id_noticia) => {
  
 }; 
 
-let  actualizar_noticia = (pnombre, pdescripcion, pnoticia, pid) =>{
+let  actualizar_noticia = (pnombre, pdescripcion, pimagen, pid) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizar_noticia',
       method : "POST",
       data : {
           nombre : pnombre,
           descripcion : pdescripcion,
-          noticia : pnoticia,
+          imagen : pimagen,
           id : pid
       },
       dataType : "json",

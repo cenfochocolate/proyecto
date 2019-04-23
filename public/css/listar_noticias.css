@@ -109,3 +109,22 @@ th, td, tr{
   vertical-align: middle;
   text-align: center
 }
+
+#tbl_noticias{
+  overflow-y: scroll;
+    overflow-x: hidden;
+  height: 480px;
+  }
+  #tbl_noticias tbody{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2F7585;
+  }
+  #tbl_noticias tbody a {
+    text-decoration: none;
+    color: white;
+  }
+  #tbl_noticias tbody a:hover{
+    color: #c0392b;
+    transition: all 300ms;
+  }
