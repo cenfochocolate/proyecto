@@ -53,6 +53,17 @@ fieldset select{
 }
 
 
+#mapa{
+  width: 60%;
+  margin-left: 20%;
+  height: 400px;
+}
+
+#mapa canvas{
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .form_texto {
     text-align: right;
     width: 35%;

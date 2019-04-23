@@ -1,5 +1,3 @@
-const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-
 mapboxgl.accessToken = 'pk.eyJ1IjoidHJpY2tlcmVkNG1lIiwiYSI6ImNqdXQ5b3l2YzA1cWgzeW5yeW96MnJtZ3UifQ.fDvMOAViMZcglVBy0MFunQ';
 let map = new mapboxgl.Map({
   container: 'mapa',
@@ -8,7 +6,7 @@ let map = new mapboxgl.Map({
   zoom: 8
 });
 
-let marker = new mapboxgl.marker({
+let marker = new mapboxgl.Marker({
   draggable:true
 })
 
