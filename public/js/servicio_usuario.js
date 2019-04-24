@@ -211,12 +211,40 @@ let aceptar_institucion = (pid) => {
     });
 };
 
+let habilitar_usuario = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_perfil_padre",
+        method: "POST",
+        data: {
+          estado : "Activo",
+           id: pid
+             },
+
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Institucion activada correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listas.html';
+            }
+        });
+
+    });
+};
+
 let deshabilitar_usuario = (pid) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_perfil_padre",
         method: "POST",
         data: {
-          aprobada : false,
+          estado : "Desactivado",
            id: pid
              },
 

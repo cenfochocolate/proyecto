@@ -19,7 +19,7 @@ function mostrar_usuarios(){
 	tabla.innerHTML='';
 
 	for (let i = 0; i < usuarios.length; i++) {
-		if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['tipo']!= "admin" && tusuario == "null") {
+		if (usuarios[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['tipo']!= "admin" && tusuario == "null" && usuarios[i]['aprobada']== true) {
 			let fila = tabla.insertRow();
 			let celdaNombre = fila.insertCell();
 
@@ -34,7 +34,7 @@ function mostrar_usuarios(){
 					}
 				}
 			);
-			fila.insertCell().innerHTML = usuarios[i]['aprobada'];
+			fila.insertCell().innerHTML = usuarios[i]['estado'];
 			fila.insertCell().innerHTML = usuarios[i]['correo'];
 
 			let imagen = document.createElement('img');
@@ -184,7 +184,7 @@ function confirmar_habilitar(){
     confirmButtonText: 'Sí, estoy seguro.'
 }).then((result)=>{
   if(result.value){
-   aceptar_institucion(id);
+   habilitar_usuario(id);
     usuarios = listar_instituciones();
     mostrar_usuarios();
     Swal.fire({

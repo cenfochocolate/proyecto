@@ -42,6 +42,7 @@ module.exports.registrar = function (req, res) {
             url_archivo: req.body.url_archivo,
             url_foto: req.body.url_foto,
             aprobada: req.body.aprobada,
+            estado: "Activo",
             contrasenna: req.body.contrasenna
         }
     );
@@ -152,7 +153,7 @@ module.exports.validar = function (req, res) {
         function (usuario) {
 
 
-            if ((usuario) && (usuario.contrasenna == req.body.contrasenna) && (usuario.aprobada == true) || (usuario.tipo == 'admin')) {
+            if ((usuario) && (usuario.contrasenna == req.body.contrasenna) && (usuario.aprobada == true) && (usuario.estado == "Activo")) {
 
                 res.json({
                     success: true,
@@ -163,8 +164,6 @@ module.exports.validar = function (req, res) {
                 });
             } else {
                 res.json({
-                    tipo:usuario.tipo,
-                    contrasenna:usuario.contrasenna,
                     success: false
 
                 });
