@@ -16,7 +16,7 @@ router.route('/registrar_redes_sociales')
         api_registrar_rs.listar_rs(req, res)
       }
     );
-
+ 
     router.route('/buscar_rs/:id_rs')
     .get(
         function (req, res) {
@@ -30,6 +30,11 @@ router.route('/registrar_redes_sociales')
             api_registrar_rs.actualizar_rs(req, res);
         }
     );
+    router.route('/borrar_rs')
+    .post(function(req, res){
+        api_registrar_rs.borrar(req, res);
+    });
+
 
   module.exports = router;
  
