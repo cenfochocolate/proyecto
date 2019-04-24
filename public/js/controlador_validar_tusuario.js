@@ -18,14 +18,6 @@ function validarhref(){
 
 };
 
-
-function validarSesion () {
-  if (sessionStorage.getItem('conectado')== undefined) {
-    console.log("Prueba");
-    window.location.href="iniciar_sesion.html"
-  }
-};
-
 function validarInicio() {
   if(input_tipo == 'admin'){
     paneldec.classList.remove('hideInput');
@@ -34,6 +26,6 @@ function validarInicio() {
   }
 };
 
-validarSesion();
+
 validarInicio();
 perf.addEventListener('click', validarhref);
