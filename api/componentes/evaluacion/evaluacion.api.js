@@ -27,7 +27,7 @@ module.exports.registrar = function (req, res) {
             res.json(
                 {
                     success: true,
-                    msg: `Se envió correctamente el registro`
+                    msg: `¡Se registró correctamente!`
                 }
             );
         }
@@ -82,14 +82,14 @@ module.exports.actualizar_criterio = function (req, res) {
                 res.json(
                     {
                         success: false,
-                        msg: `No se pudo actualizar la evaluacion.`
+                        msg:`No se pudo actualizar.`
                     }
                 );
             } else {
                 res.json(
                     {
                         success: true,
-                        msg: `Se actualizó correctamente la evaluacion.`
+                        msg: ``
                     }
                 );
             }
@@ -105,7 +105,7 @@ module.exports.borrar = (req, res) => {
                 res.json({ success: false, msg: 'No se pudo eliminar la evaluación.' });
 
             } else {
-                res.json({ success: true, msg: 'La pregunta fue evaluación.' });
+                res.json({ success: true, msg: '¡Eliminado correctamente!' });
             }
         }
     )
