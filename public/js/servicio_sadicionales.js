@@ -18,7 +18,7 @@ let registrar_sadicional = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
       swal.fire({
         type: 'success',
         title: 'El servicio adicional se registro correctamente',
-        text: `El servicio adicional fue registrado bajo el nombre de ${pnombre} , su descripción es: ${pdescripcion}`
+        text: `El servicio adicional fue registrado`
       });
     });
 
@@ -92,7 +92,7 @@ let actualizar_servicio = (pnombre, pdescripcion,pimagen, pid) =>{
        
         swal.fire({
             type : 'success',
-            title : 'servicio actualizado con éxito',
+            title : 'Servicio actualizado con éxito',
             text : res.msg,
             onClose: () => {
                 window.location.href = 'listar_servicios_adicionales.html';

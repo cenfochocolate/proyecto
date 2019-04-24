@@ -12,7 +12,7 @@ let get_param = (param) => {
   return id;
 };
 
-let _id = get_param('id_utiles');
+let _id = get_param('id');
 
 let util = buscar_utiles(_id); 
 
@@ -42,7 +42,7 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_utiles( util, descripcion, numero,nivel, _id);
+          actualizar_utiles( util, descripcion, numero,nivel, _id);
         }
       })
      
