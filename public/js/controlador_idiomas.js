@@ -34,14 +34,16 @@ let mostrar_datos=()=>{
  obtenerDatos();
 };
 
-boton_registrar.addEventListener('click',mostrar_datos)
+
 
 function obtenerDatos(){
-    let idioma=input_idioma.value;
-    let codigo_iso=sltcodigo.value;
-    let imagen=imgbandera.src;
 
     if (validar() == false) {
+
+        let idioma=input_idioma.value;
+        let codigo_iso= sltcodigo.selectedOptions[0].textContent;
+        let imagen=imgbandera.src;
+
         registra_idiomas(idioma,codigo_iso,imagen)
         swal.fire({
             type: 'success',
@@ -56,3 +58,4 @@ function obtenerDatos(){
         });
     }
 }
+boton_registrar.addEventListener('click',mostrar_datos)

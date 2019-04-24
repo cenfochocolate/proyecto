@@ -14,7 +14,7 @@ let get_param = (param) => {
 
 let _id = get_param('id_utiles');
 
-let util = buscar_utile(_id); 
+let util = buscar_utiles(_id); 
 
 let mostrar_datos = () =>{
   input_util.value=util[0]['util'];
