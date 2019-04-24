@@ -14,8 +14,7 @@ let registrar_evaluacion = (pnombre, pcalificacion) =>{
 
         swal.fire({ 
             type: 'success',
-            title: 'Su registro se envio correctamente ',
-            text: `El nombre deseado en la institucion es ${pnombre} con la calificacion de ${pcalificacion}`
+            title: '¡Registro correctamente!'
         });
 
         console.log('guardo bien');  
@@ -102,7 +101,7 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
       
         swal.fire({
             type: 'success',
-            title: 'Evaluacion actualizada correctamente',
+            title: '¡Actualizada correctamente!',
             text:res.msg,
             onClose: () =>{
                 window.location.href ='listar_criterio.html';
@@ -159,7 +158,7 @@ let deshabilitar_criterio = (pid) => {
       
         swal.fire({
             type: 'success',
-            title: 'Evaluación deshabiitada correctamente',
+            title: '¡Deshabiitada correctamente!',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_criterio.html';
@@ -196,7 +195,7 @@ let deshabilitar_criterio = (pid) => {
       
         swal.fire({
             type: 'success',
-            title: 'Evaluación activada correctamente',
+            title:'¡Activada correctamente!',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_criterio.html';
@@ -208,7 +207,7 @@ let deshabilitar_criterio = (pid) => {
     request.fail(function (res) {
         swal.fire({
             type: 'error',
-            title: 'Evaluación Activada',
+            title: 'Evaluación no activada',
             text: res.msg
            
         });

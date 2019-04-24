@@ -6,25 +6,25 @@ const select_nivel = document.querySelector('#select_nivel');
 const boton_actualizar = document.querySelector('#btn_actualizar');
 
 let get_param = (param) => {
-    let url_string =  window.location.href;
-    let url = new URL(url_string);
-    let id = url.searchParams.get(param);//Toma el parámetro id_inmueble del url y retorna el valor
-    return id;
+  let url_string =  window.location.href;
+  let url = new URL(url_string);
+  let id = url.searchParams.get(param);
+  return id;
 };
 
 let _id = get_param('id_utiles');
 
-let util =  buscar_utile(_id); 
+let util = buscar_utile(_id); 
 
 let mostrar_datos = () =>{
-    input_util.value=util[0]['util'];
-    textarea_descripcion.value=util[0]['descripcion'];
-    input_numero.value= util[0]['cantidad'];
-    select_nivel.value=util[0]['nivel'];
+  input_util.value=util[0]['util'];
+  textarea_descripcion.value=util[0]['descripcion'];
+  input_numero.value= util[0]['cantidad'];
+  select_nivel.value=util[0]['nivel'];
 }
 
 if(util){
-    mostrar_datos();
+  mostrar_datos();
 }
 
 let obtener_datos = () =>{
@@ -34,7 +34,7 @@ let obtener_datos = () =>{
     let nivel = select_nivel.value;
 
     Swal.fire({
-        title: 'Está seguro que desea actualizar el inmueble?',
+        title: 'Está seguro que desea actualizar el útil?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -42,11 +42,11 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_inmueble( util, descripcion, numero,nivel, _id);
+            actualizar_utiles( util, descripcion, numero,nivel, _id);
         }
       })
      
     
 };
 
-btn_actualizar.addEventListener('click', obtener_datos);
+boton_actualizar.addEventListener('click', obtener_datos);

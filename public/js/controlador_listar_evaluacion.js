@@ -82,7 +82,7 @@ function mostrar_datos() {
   function confirmar_borrado() {
     let id = this.dataset.id;
     Swal.fire({
-      title: '¿Está seguro que desea eliminar la evaluación?',
+      title: '¿Está seguro que desea eliminar?',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -94,8 +94,7 @@ function mostrar_datos() {
         evaluacion = listar_evaluacion();
         mostrar_datos();
         Swal.fire({
-          title: '¡Evaluación eliminada!',
-          text: 'La evaliación fue eliminada con éxito.',
+          title: '¡Eliminada con éxito!',
           type: 'success'
         })
       }
@@ -106,7 +105,7 @@ function mostrar_datos() {
 function confirmar_deshabilitar(){
   let id= this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea deshabilitar la evaluación?',
+    title:'¿Está seguro que desea deshabilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -118,8 +117,7 @@ function confirmar_deshabilitar(){
    evaluacion = listar_evaluacion();
     mostrar_datos();
     Swal.fire({
-      title:'¡Evaluación deshabilitada!',
-      text:'La evaluación fue deshabilitada con éxito.',
+      title:'¡Deshabilitada con éxito!',
       type:'success'
     })
   }
@@ -130,7 +128,7 @@ function confirmar_deshabilitar(){
 function confirmar_habilitar(){
   let id= this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea habilitar la evaluación?',
+    title:'¿Está seguro que desea habilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -142,8 +140,7 @@ function confirmar_habilitar(){
    evaluacion = listar_evaluacion();
     mostrar_datos();
     Swal.fire({
-      title:'¡Evaluación habilitada!',
-      text:'La evaluación fue habilitada con éxito.',
+      title:'¡Habilitada con éxito!',
       type:'success'
     })
   }

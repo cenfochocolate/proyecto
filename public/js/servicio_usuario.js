@@ -1,6 +1,7 @@
 'use strict'
 
 let registrar_institucion = (
+    paprobada,
     ptipo,
     pidentificacion,
     pnombre,
@@ -31,6 +32,7 @@ let registrar_institucion = (
         url: "http://localhost:4000/api/registrar_usuario",
         method: "POST",
         data: {
+            aprobada:paprobada,
             tipo:ptipo,
             identificacion: pidentificacion,
             nombre: pnombre,
@@ -63,7 +65,7 @@ let registrar_institucion = (
     request.done(function (msg) {
 
         if (msg.success) {
-
+        let tipo = sessionStorage.getItem('tipo_usuario');
             //swal.fire({
             //    type: 'success',
             //    title: 'Solicitud enviada',
@@ -71,7 +73,12 @@ let registrar_institucion = (
             //});
             //to go pagina verificacion
             sessionStorage.setItem('id_registro', pidentificacion);
-            window.location = "verificar_codigo.html";
+            if(tipo == "admin"){
+              window.location = "listar_usuarios.html";
+            }else{
+              window.location = "verificar_codigo.html";
+            }
+
 
         } else {
 
@@ -86,6 +93,7 @@ let registrar_institucion = (
     request.fail(function (jqXHR, textStatus) { });
 };
 let registrar_padre = (
+    paprobada,
     ptipo,
     pidentificacion,
     pnombre,
@@ -109,6 +117,7 @@ let registrar_padre = (
         url: "http://localhost:4000/api/registrar_usuario",
         method: "POST",
         data: {
+            aprobada:paprobada,
             tipo:ptipo,
             identificacion:pidentificacion,
             nombre: pnombre,
@@ -182,23 +191,79 @@ let aceptar_institucion = (pid) => {
           aprobada : true,
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Institucion activada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listas.html';
-            }    
+            }
         });
-  
+
+    });
+};
+
+let habilitar_usuario = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_perfil_padre",
+        method: "POST",
+        data: {
+          estado : "Activo",
+           id: pid
+             },
+
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Institucion activada correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listas.html';
+            }
+        });
+
+    });
+};
+
+let deshabilitar_usuario = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_perfil_padre",
+        method: "POST",
+        data: {
+          estado : "Desactivado",
+           id: pid
+             },
+
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'usuario deshabilitado correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listas.html';
+            }
+        });
+
     });
 };
 
@@ -211,14 +276,14 @@ function eliminar_institucion(pid){
             id: pid
         },
         beforeSend: function beforeSend(){
-  
+
         },
         success: function success(response){
-  
+
         },
         error: function error(_error){
             console.log("Request fail error: " + _error);
-  
+
         }
     });
   };

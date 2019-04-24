@@ -18,7 +18,10 @@ let servicio = buscar_servicio(_id);
 let mostrar_datos = () =>{
     input_nombre.value=servicio[0]['nombre'];
     input_descripcion.value=servicio[0]['descripcion'];
-    img_sadicional.value=servicio[0]['sadional'];
+    
+    let idIMG = servicio[0]['imagen'].split('upload/')[1];
+    img_sadicional.src = 'http://res.cloudinary.com/cenfochocolate/image/upload/' + idIMG;
+
 }
 if(servicio){
     mostrar_datos();
@@ -27,7 +30,7 @@ if(servicio){
 let obtener_datos = () =>{
     let nombre=input_nombre.value;
     let descripcion= input_descripcion.value;
-    let sadional=img_sadicional.value;
+    let imagen=img_sadicional.src;
 
     Swal.fire({
         title: 'Está seguro que desea actualizar los servicios adicionales?',
@@ -38,7 +41,7 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_servicio(nombre, descripcion,sadional, _id);
+            actualizar_servicio(nombre, descripcion,imagen, _id);
         }
       })
 }

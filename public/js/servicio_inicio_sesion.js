@@ -37,48 +37,14 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
 
 
           }else{
-            if(msg.tipo == "padre"){
-              if(msg.contrasenna == pcontrasenia){
-                swal.fire({
-                    type: 'error',
-                    title: 'cuenta baneada',
-                    text: 'Su cuenta fue baneada'
-
-              })
-            }else{
-              swal.fire({
-                  type: 'error',
-                  title: 'contraseña incorrecta',
-                  text: 'Revise su contraseña'
-
-            })
-            }
-
-          }else{
-            if(msg.tipo == "institucion"){
-              if(msg.contrasenna == pcontrasenia){
-                swal.fire({
-                    type: 'error',
-                    title: 'cuenta no aceptada',
-                    text: 'Su cuenta no ha sido aceptada'
-
-              })
-            }else{
-              swal.fire({
-                  type: 'error',
-                  title: 'contraseña incorrecta',
-                  text: 'Revise sus datos'
-
-            })
-            }
+            swal.fire({
+              type: 'error',
+              title: '¡Algo salio mal!',
+              text: 'Revise sus datos o pongase en contacto con el admin'
+             
+          });
 
           }
-        }
-
-        }
-
-
-
         });
 
         peticion.fail(function (jqXHR, textStatus) {

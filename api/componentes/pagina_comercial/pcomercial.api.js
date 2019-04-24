@@ -22,7 +22,7 @@ module.exports.registrar = (req, res) => {
       res.json( 
         { 
           success: true, 
-          msg: `Se registró correctamente`
+          msg: `¡Se registró correctamente!`
         } 
       ); 
     } 
@@ -78,15 +78,15 @@ module.exports.actualizar_pagina = function (req, res) {
       if (error) { 
         res.json( 
           { 
-            success: false, 
-            msg: `No se pudo actualizar la pregunta.` 
+            success: true, 
+            msg: `No se pudo actualizar.` 
           } 
         ); 
       } else { 
         res.json( 
           { 
-            success: true, 
-            msg: `Se actualizó correctamente la pregunta y repuesta.` 
+            success:false , 
+            msg: `¡Se actualizó correctamente!` 
           } 
         ); 
       } 
@@ -104,7 +104,7 @@ module.exports.borrar = (req, res) =>{
               res.json({ success : false, msg: 'No se pudo eliminar la página.'});
               
           }else{
-              res.json({ success : true, msg: 'La página fue eliminada.'});
+              res.json({ success : true, msg: '¡Eliminado correctamente!'});
           }
       }
   )

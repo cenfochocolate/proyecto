@@ -69,7 +69,7 @@ let obtener_datos = () => {
 
 
         Swal.fire({
-            title: 'Está seguro que desea actualizar la mensualidad?',
+            title: '¿Está seguro que desea actualizar?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

@@ -27,6 +27,7 @@ const input_url_doc = document.querySelector('#btn_cargar_doc');
 const input_documentos = '//TODO ';
 const input_contrasenna = document.querySelector('#txt_contrasenna');
 const btn_enviar = document.querySelector('#btn_enviar');
+const tc = sessionStorage.getItem('tipo_usuario');
 
 $(function validar_select(){ /*this.setMasks();
  DOM ready */
@@ -434,13 +435,16 @@ let registrar = () => {
         let canton = lst_provincia.selectedOptions[0].textContent;
         let distrito = lst_distrito.selectedOptions[0].textContent;
         let direccion = input_direccion.value;
-
+        let aprobada = false;
+        if(tc == "admin"){
+         aprobada = true;
+        }
+        console.log(tc);
+        console.log(aprobada);
         let ubicacion0 = onDragEnd();
-        let ubicacion1 = ubicacion0.split(",")
-
+        let ubicacion1 = ubicacion0.split(",");
         let longitud = ubicacion1[0];
         let latitud = ubicacion1[1];
-
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;
         let telefono = input_telefono.value;
@@ -450,6 +454,7 @@ let registrar = () => {
         let url_archivo = input_url_doc.src;
 
         registrar_institucion(
+          aprobada,
           tipo,
           identificacion,
           nombre,
@@ -490,7 +495,7 @@ let registrar = () => {
         let direccion = input_direccion.value;
         let ubicacion0 = onDragEnd();
         let ubicacion1 = ubicacion0.split(",")
-
+        let aprobada = true;
         let longitud = ubicacion1[0];
         let latitud = ubicacion1[1];
         let url_mail = input_mail.value;
@@ -498,6 +503,7 @@ let registrar = () => {
         let telefono = input_telefono.value;
 
         registrar_padre(
+          aprobada,
           tipo,
           identificacion,
           nombre,

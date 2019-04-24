@@ -15,7 +15,7 @@ function mostrar_instituciones(){
   tabla.innerHTML='';
 
   for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i]['tipo'].includes('institucion') && usuarios[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())) {
+    if (usuarios[i]['tipo'].includes('institucion') && usuarios[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())&& usuarios[i]['aprobada']==true && usuarios[i]['estado']=="Activo") {
       let fila = tabla.insertRow();
       let celdaNombre = fila.insertCell();
 

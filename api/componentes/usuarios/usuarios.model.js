@@ -31,6 +31,7 @@ let usuarioSchema = new mongoose.Schema(
     url_archivo: { type: String, required: false },
     url_foto: { type: String, required: false },
     aprobada: { type: Boolean, default: false },
+    estado: {type: String, required:true},
     contrasenna:{ type:String, required: true}
   }
 );
