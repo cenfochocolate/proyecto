@@ -16,8 +16,7 @@ let registrar_paginacomercial = (pid_institucion, ppagina_comercial) => {
 
     swal.fire({
       type: 'success',
-      title: 'La página se registro correctamente',
-      text: `La página comercial de su institución fue registrada, su dirección es: ${ppagina_comercial}`
+      title: '¡Registro correctamente!'
     });
   });
 
@@ -98,8 +97,8 @@ let actualizar_pagina = (ppagina_comercial, pid) => {
 
     swal.fire({
       type: 'success',
-      title: 'Pagina actualizada correctamente',
-      text: 'Pagina actualizada correctamente',
+      title: '¡Actualizada correctamente!',
+      text: '',
       onClose: () => {
         window.location.href = 'listar_pagina_comercial.html';
       }
@@ -143,7 +142,7 @@ let deshabilitar_pagina = (pid) => {
       url: "http://localhost:4000/api/actualizar_pagina",
       method: "POST",
       data: {
-        estado : "desactivo",
+        estado : "Desactivo",
          id: pid
            },
            
@@ -156,7 +155,7 @@ let deshabilitar_pagina = (pid) => {
     
       swal.fire({
           type: 'success',
-          title: 'Página deshabiitada correctamente',
+          title: '¡Deshabiitada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
@@ -193,7 +192,7 @@ let habilitar_pagina = (pid) => {
     
       swal.fire({
           type: 'success',
-          title: 'Página activada correctamente',
+          title: '¡Activada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
@@ -205,7 +204,7 @@ let habilitar_pagina = (pid) => {
   request.fail(function (res) {
       swal.fire({
           type: 'error',
-          title: 'Página Activada',
+          title: '¡Página  no activada!',
           text: res.msg
          
       });
