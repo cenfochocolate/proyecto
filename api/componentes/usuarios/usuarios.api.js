@@ -41,7 +41,7 @@ module.exports.registrar = function (req, res) {
             web: req.body.web,
             url_archivo: req.body.url_archivo,
             url_foto: req.body.url_foto,
-            aprobada: false,
+            aprobada: req.body.aprobada,
             contrasenna: req.body.contrasenna
         }
     );
