@@ -72,14 +72,14 @@ let buscar_servicio = (id_servicio) => {
   return servicio;
  
 };
-let actualizar_servicio = (pnombre, pdescripcion,psadional, pid) =>{
+let actualizar_servicio = (pnombre, pdescripcion,pimagen, pid) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/actualizar_servicio',
         method : "POST",
         data : {
             nombre : pnombre,
             descripcion : pdescripcion,
-            sadicional : psadional,
+            imagen : pimagen,
             
             id : pid
         },

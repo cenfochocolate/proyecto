@@ -59,7 +59,7 @@ module.exports.buscar_por_id = function (req, res){
           if(util){
               res.json({success: true, util : util});
           }else{
-              res.json({success: false, utile : util});
+              res.json({success: false, util : util});
           }
       }
 
