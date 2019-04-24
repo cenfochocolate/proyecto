@@ -52,28 +52,28 @@ let listar_utiles = () => {
     return lista_utiles;
 };
 
-let buscar_utile = (id_utiles) => {
-  let util = [];
+let buscar_utiles = (id) => {
+  let utiles = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_utile/"+id_utiles,
+    url: "http://localhost:4000/api/buscar_utiles/" + id,
     method: "GET",
     data: {
     },
-    dataType: "json",
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
     async : false
   });
 
-  request.done(function (res) {
-    util = res.util;
+  request.done(function (msg) {
+    utiles= msg.utiles;
     
   });
 
   request.fail(function (jqXHR, textStatus) {
     
   });
-  return util;
+  return utiles;
 };
 
 let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{

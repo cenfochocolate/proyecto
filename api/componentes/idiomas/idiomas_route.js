@@ -15,6 +15,14 @@ router.route('/registrar_idiomas')
      api_idiomas.idiomas(req,res);
     }
 );
+
+router.route('/actualizar_idioma')
+.post(
+    function(req , res){
+        api_idiomas.actualizar(req, res);
+    }
+);
+
 router.route('/listar_idiomas')
 .get(
     function(req,res){
