@@ -139,3 +139,78 @@ function borrar_criterio(pid){
         }
     });
 };
+
+
+let deshabilitar_criterio = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_criterio",
+        method: "POST",
+        data: {
+          estado : "Desactivo",
+           id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+  
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: 'Evaluación deshabiitada correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listar_criterio.html';
+            }    
+        });
+  
+    });
+  
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Evaluación no deshabilitada',
+            text: res.msg
+           
+        });
+    });
+  };
+  
+  let habilitar_criterio = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_criterio",
+        method: "POST",
+        data: {
+          estado : "Activo",
+           id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+  
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: 'Evaluación activada correctamente',
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listar_criterio.html';
+            }    
+        });
+  
+    });
+  
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Evaluación Activada',
+            text: res.msg
+           
+        });
+    });
+  };
