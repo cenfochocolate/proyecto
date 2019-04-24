@@ -64,14 +64,14 @@ function mostrar_datos  ()  {
       
       let celda_deshabilitar = fila.insertCell();
       let boton_deshabilitar = document.createElement('a');
-      boton_deshabilitar.innerHTML= '<i class="fas fa-trash-alt"></i>';
+      boton_deshabilitar.innerHTML= '<i class="fas fa-eye-slash"></i>';
       boton_deshabilitar.dataset.id = mensualidad[i]['_id'];
       boton_deshabilitar.addEventListener('click', confirmar_deshabilitar);
       celda_deshabilitar.appendChild(boton_deshabilitar);
 
       let celda_habilitar = fila.insertCell();
       let boton_habilitar = document.createElement('a');
-      boton_habilitar.innerHTML= '<i class="fas fa-trash-alt"></i>';
+      boton_habilitar.innerHTML= '<i class="fas fa-eye"></i>';
       boton_habilitar.dataset.id = mensualidad[i]['_id'];
       boton_habilitar.addEventListener('click', confirmar_habilitar);
       celda_habilitar.appendChild(boton_habilitar);

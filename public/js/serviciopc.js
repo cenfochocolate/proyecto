@@ -136,3 +136,78 @@ function borrar_pagina(pid){
       }
   });
 };
+
+
+let deshabilitar_pagina = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_pagina",
+      method: "POST",
+      data: {
+        estado : "desactivo",
+         id: pid
+           },
+           
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+    
+      swal.fire({
+          type: 'success',
+          title: 'Página deshabiitada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'lista_mensualidad.html';
+          }    
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'Página no deshabilitada',
+          text: res.msg
+         
+      });
+  });
+};
+
+let habilitar_pagina = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_pagina",
+      method: "POST",
+      data: {
+        estado : "Activo",
+         id: pid
+           },
+           
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+    
+      swal.fire({
+          type: 'success',
+          title: 'Página activada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'lista_mensualidad.html';
+          }    
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'Página Activada',
+          text: res.msg
+         
+      });
+  });
+};
