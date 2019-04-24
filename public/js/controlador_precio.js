@@ -6,6 +6,7 @@ const inputformato = document.querySelector('#txt_formato');
 const inputprecio = document.querySelector('#txt_precio');
 const fieldset_pago = document.querySelector('#fieldset_pago');
 const botonRegistrar = document.querySelector('#btn_registrar');
+const id_institucion = sessionStorage.getItem('idu');
 
 let validar = () => {
     let error = false;
@@ -44,17 +45,9 @@ let validar = () => {
 
 
 function obtener_datos ()  {
-    
-    let rdb = document.querySelectorAll('#fieldset_pago input[type=radio]');
-
-        if (rdb.value == 'si') {
-            rdb[0].checked = true;
-        } else {
-            rdb[1].checked = true;
-        }
 
     if (validar()== false){
-
+    let id = id_institucion;
     let numero = inputnumero.value;
     let formato = inputformato.selectedOptions[0].textContent;
     let precio = inputprecio.value;
@@ -62,7 +55,7 @@ function obtener_datos ()  {
 
 
 
-     registrar_precio(numero, formato, precio, pago);
+     registrar_precio(id,numero, formato, precio, pago);
      
      console.log('Su número de cuenta es' + numero + 'el formato que se escogio es' + formato + 'con el precio de ' + precio + 'su pago' + pago + 'sera presencial');
      

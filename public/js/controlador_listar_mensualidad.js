@@ -88,10 +88,10 @@ function mostrar_datos  ()  {
 
   
 
-   }
+      }
+    }
   }
-   }
-   };
+};
 
 
    function confirmar_borrado(){
