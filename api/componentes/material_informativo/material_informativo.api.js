@@ -54,3 +54,47 @@ module.exports.listar_materiales=(req, res)=>{
         }
     )
 };
+module.exports.buscar_por_id = (req, res) => {
+    modelo_material.find({_id : req.body.id_material}).then(
+        function (material) {
+            if (material) {
+                res.json(
+                    {
+                        success: true,
+                        material: material
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        material: 'No se encontraró material informativo.'
+                    }
+                )
+            }
+        }
+    )
+};
+module.exports.actualizar_material = function (req, res)  {
+    modelo_material.findByIdAndUpdate(req.body.id, {$set: req.body},
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar el material informativo.`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        success: true,
+                        material: `Se actualizó correctamente el material informativo.`
+                    }
+                );
+            }
+        }
+        
+        );
+    
+}

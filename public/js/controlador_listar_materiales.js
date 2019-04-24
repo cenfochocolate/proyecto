@@ -21,9 +21,17 @@ function mostrar_datos() {
 
             fila.insertCell().innerHTML = material[i]['nombre_institucion'];
             fila.insertCell().innerHTML = material[i]['descripcion'];
+
+            let celda_configuracion = fila.insertCell();
+
+      let boton_editar = document.createElement('a');
+      boton_editar.innerHTML ='<i class="fas fa-edit"></i>';
+      boton_editar.href=`actualizar_material.html?id_material=${material[i]['_id']}`
+   
+      celda_configuracion.appendChild(boton_editar);
         }
     };
 
-};
+}; 
 
 mostrar_datos();

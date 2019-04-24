@@ -21,7 +21,7 @@ function mostrar_datos(){
        
         let filtro = inputFiltro.value;
         tabla.innerHTML='';
-      
+       
         for(let i = 0; i <cita.length; i++){
           if(cita[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
            
