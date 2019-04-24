@@ -13,10 +13,20 @@ let registrar_noticia = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
   });
+
+  request.done(function (msg) {
+
+    swal.fire({
+        type: 'success',
+        title: 'Noticia registrada'
+
+    });
+
+});
     request.fail(function( jqXHR, textStatus ) {
 
     });
-    return lista_noticias;
+    
 };
 
 
