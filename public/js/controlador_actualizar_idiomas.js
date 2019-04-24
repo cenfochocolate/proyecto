@@ -17,10 +17,40 @@ let idioma = buscar_idioma(_id);
 
 let mostrar_datos = () =>{
     input_idioma.value=idioma[0]['idioma'];
-    sltcodigo.value=idioma[0]['codigo iso'];
-    imgbandera.value=idioma[0]['bandera'];
+    
+    let opciones_codigo = document.querySelectorAll('#sltcodigo option');
+
+    for (let i = 0; i < opciones_codigo.length; i++) {
+        if (opciones_codigo[i].textContent == idioma[0]['codigo']) {
+            opciones_codigo[i].selected = true;
+        }
+    }
+    
+    let idIMG = idioma[0]['imagen'].split('upload/')[1];
+    imgbandera.src = 'http://res.cloudinary.com/cenfochocolate/image/upload/' + idIMG;
 }
 
 if(idioma){
     mostrar_datos();
 }
+
+let obtener_datos = () =>{
+    
+    let idioma=input_idioma.value;
+    let codigo_iso=sltcodigo.selectedOptions[0].textContent;
+    let imagen=imgbandera.src;
+   
+    Swal.fire({
+        title: 'Está seguro que desea actualizar el idioma?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+      }).then((result) => {
+        if (result.value) {
+            actualizar_idioma(idioma,codigo_iso, imagen, _id);
+        }
+      })
+}
+btn_actualizar.addEventListener('click', obtener_datos);

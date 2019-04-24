@@ -69,3 +69,17 @@ module.exports.buscar_por_id = function (req, res){
     );
 
 };
+
+module.exports.actualizar = function(req, res){
+   
+    modelo_idiomas.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el idioma'});
+            }else{
+                res.json({success: true , msg : 'El idioma se actualizó con éxito'});
+            }
+        }
+    
+    );
+}

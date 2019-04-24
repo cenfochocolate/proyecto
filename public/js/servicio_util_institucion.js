@@ -20,7 +20,7 @@ let registrar_util = (pid_institucion, putil, pdescripcion, pnumero, pnivel) =>{
       swal.fire({
         type: 'success',
         title: 'Registro realizado satisfactoriamente',
-        text: `Hola, el útil: ${putil} con la descripción ${pdescripcion} y su cantidad: ${pnumero} para el siguiente nivel: ${pnivel} se ha registrado completamente`
+        text: `El útil se ha registrado completamente`
       });
     });
 
@@ -52,11 +52,11 @@ let listar_utiles = () => {
     return lista_utiles;
 };
 
-let buscar_utile = (id_utiles) => {
+let buscar_utiles = (id) => {
   let util = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_utile/"+id_utiles,
+    url: "http://localhost:4000/api/buscar_utile/" +id,
     method: "GET",
     data: {
     },
@@ -66,7 +66,7 @@ let buscar_utile = (id_utiles) => {
   });
 
   request.done(function (res) {
-    util = res.util;
+    util= res.util;
     
   });
 
@@ -96,7 +96,7 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
      
       swal.fire({
           type : 'success',
-          title : 'util actualizado con éxito',
+          title : 'Útil actualizado con éxito',
           text : res.msg,
           onClose: () => {
               window.location.href = 'listar_utiles.html';

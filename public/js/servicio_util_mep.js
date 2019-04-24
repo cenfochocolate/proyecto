@@ -20,7 +20,7 @@ let registrar_util = ( pid,putil, pdescripcion, pnumero, pnivel) =>{
       swal.fire({
         type: 'success',
         title: 'Registro realizado satisfactoriamente',
-        text: `Hola, el útil: ${putil} con la descripción ${pdescripcion} y su cantidad: ${pnumero} para el siguiente nivel: ${pnivel} se ha registrado completamente`
+        text: `El útil se ha registrado completamente`
       });
     });
 
@@ -95,7 +95,7 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
      
       swal.fire({
           type : 'success',
-          title : 'util actualizado con éxito',
+          title : 'Util actualizado con éxito',
           text : res.msg,
           onClose: () => {
               window.location.href = 'listar_utiles.html';

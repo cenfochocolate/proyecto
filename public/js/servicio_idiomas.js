@@ -69,3 +69,42 @@ let buscar_idioma = (id_idioma) => {
         return idioma;
        
       };
+
+      let actualizar_idioma = (pidioma,pcodigo, pimagen, pid) =>{
+        let request = $.ajax({
+            url : 'http://localhost:4000/api/actualizar_idioma',
+            method : "POST",
+            data : {
+                idioma : pidioma,
+                codigo : pcodigo,
+                imagen : pimagen,
+                id : pid
+            },
+            dataType : "json",
+            contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        });
+    
+        request.done(function(res){
+            
+           
+            swal.fire({
+                type : 'success',
+                title : 'Idioma actualizado con éxito',
+                text : res.msg,
+                onClose: () => {
+                    window.location.href = 'listar_idioma.html';
+                  }    
+            });
+    
+        });
+    
+        request.fail(function(res){
+            swal.fire({
+                type : 'error',
+                title : 'Proceso no realizado',
+                text : res.msg
+            });
+    
+        });
+    
+    };    

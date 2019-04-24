@@ -4,6 +4,7 @@ const precio_model = require('./precio.model');
 module.exports.registrar = function (req, res) {
     let nuevo_precio = new precio_model(
         {
+            id_institucion:req.body.id_institucion,
             numero: req.body.numero,
             formato: req.body.formato,
             precio: req.body.precio,
@@ -23,7 +24,7 @@ module.exports.registrar = function (req, res) {
             res.json(
                 {
                     success: true,
-                    msg: ``
+                    msg:`¡Se registró correctamente!`
                 }
             )
         }
@@ -79,14 +80,14 @@ module.exports.actualizar_precio = function (req, res) {
                 res.json(
                     {
                         success: false,
-                        msg: `No se pudo actualizar la matricula`
+                        msg: `No se pudo actualizar.` 
                     }
                 );
             } else {
                 res.json(
                     {
                         success: true,
-                        msg: `Se actualizó correctamente la matricula.`
+                        msg:  `` 
                     }
                 );
             }
@@ -100,10 +101,10 @@ module.exports.borrar = (req, res) => {
     precio_model.findByIdAndDelete(req.body.id,
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar la matrícula.' });
+                res.json({ success: false, msg: 'No se pudo eliminar' });
 
             } else {
-                res.json({ success: true, msg: 'La matrícula fue eliminada.' });
+                res.json({ success: true, msg: '¡Eliminado correctamente!' });
             }
         }
     )

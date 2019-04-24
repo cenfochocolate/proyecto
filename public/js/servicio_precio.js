@@ -1,10 +1,11 @@
 'use strict';
-function registrar_precio (pnumero, pformato, pprecio, ppago ) {
+function registrar_precio (pid,pnumero, pformato, pprecio, ppago ) {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_precio",
         method: "POST",
         data: {
+            id_institucion:pid,
             numero : pnumero,
             formato : pformato,
             precio : pprecio,
@@ -20,8 +21,7 @@ function registrar_precio (pnumero, pformato, pprecio, ppago ) {
 
         swal.fire({
             type: 'success',
-            title: 'Su registro se envio correctamente'+ res.msg,
-            text: `La cuenta es ${pnumero} selcciona el tipo de fotmato de ${pformato},la cual tendra un precio de ${pprecio} y su pago ${ppago} sera presencial`
+            title: '¡Registro correctamente!'
         });
 
     });
@@ -79,7 +79,7 @@ let actualizar_precio = ( pnumero, pformato, pprecio, ppago,pid ) => {
       
         swal.fire({
             type: 'success',
-            title: 'Matricula actualizada correctamente'+res.msg ,
+            title:  '¡Actualizada correctamente!',
             text:res.msg,
             onClose: () =>{
                 window.location.href ='lista_precio_matricula.html';
@@ -142,3 +142,75 @@ function borrar_precio(pid){
         }
     });
 };
+
+let deshabilitar_precio = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_precio",
+        method: "POST",
+        data: {
+          estado : "Desactivo",
+           id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+  
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: '¡Deshabiitada correctamente!',
+            text: res.msg,
+            onClose: () =>{
+                window.location.href ='lista_precio_matricula.html';
+            }    
+        });
+  
+    });
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Matricula no deshabilitada',
+            text: res.msg
+           
+        });
+    });
+  };
+  
+  let habilitar_precio = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_precio",
+        method: "POST",
+        data: {
+          estado : "Activo",
+           id: pid
+             },
+             
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+  
+    request.done(function (res) {
+      
+        swal.fire({
+            type: 'success',
+            title: '¡Activada correctamente!',
+            text: res.msg,
+            onClose: () =>{
+                window.location.href ='lista_precio_matricula.html';
+            }    
+        });
+  
+    });
+  
+    request.fail(function (res) {
+        swal.fire({
+            type: 'Matricula no activada',
+            text: res.msg
+           
+        });
+    });
+  };

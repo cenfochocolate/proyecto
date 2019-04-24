@@ -54,12 +54,12 @@ module.exports.listar_todos = (req, res) =>{
 };
 
 module.exports.buscar_por_id = function (req, res){
-  modelo_util_institucino.find({_id : req.body.id_utiles}).then(
+  modelo_util_institucino.find({_id : req.body.id}).then(
       function(util){
           if(util){
-              res.json({success: true, util : util});
+              res.json({success: true, util : util})
           }else{
-              res.json({success: false, util : util});
+              res.json({success: false, util : util})
           }
       }
 
