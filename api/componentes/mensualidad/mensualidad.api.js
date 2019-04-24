@@ -24,7 +24,7 @@ module.exports.registrar = function (req, res) {
             res.json(
                 {
                     success: true,
-                    msg: `Se envió correctamente el registro`
+                    msg: `¡Se registró correctamente!`
                 }
             );
         }
@@ -81,14 +81,14 @@ module.exports.actualizar_mensualidad = function (req, res) {
                 res.json(
                     {
                         success: false,
-                        msg: `No se pudo actualizar la mensualidad.`
+                        msg: `No se pudo actualizar.` 
                     }
                 );
             } else {
                 res.json(
                     {
                         success: true,
-                        msg: `Se actualizó correctamente la mensualidad.`
+                        msg: `¡Se actualizó correctamente!` 
                     }
                 );
             }
@@ -102,10 +102,10 @@ module.exports.borrar = (req, res) =>{
     mensualidad_model.findByIdAndDelete(req.body.id,
         function(error){
             if(error){
-                res.json({ success : false, msg: 'No se pudo eliminar la cita.'});
+                res.json({ success : false, msg: 'No se pudo eliminar'});
                 
             }else{
-                res.json({ success : true, msg: 'La pregunta fue eliminada.'});
+                res.json({ success : true, msg: '¡Eliminado correctamente!'});
             }
         }
     )

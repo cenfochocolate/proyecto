@@ -20,8 +20,7 @@ function registrar_mensualidad (pid, pgrado,pinstitucion, pdescripcion,) {
 
       swal.fire({
         type: 'success',
-        title: 'Su registro se envio correctamente'+ res.msg,
-        text: `El grado deseado es ${pgrado}en la cual se tiene la institucion de ${pinstitucion} con la descripcion de ${pdescripcion}`
+        title: '¡Registro correctamente!'
       });
 
   });
@@ -104,8 +103,8 @@ let actualizar_mensualidad = ( pgrado,pinstitucion, pdescripcion, pid) => {
     
       swal.fire({
           type: 'success',
-          title: 'Mensualidad actualizada correctamente',
-          text: res.msg,
+          title: '¡Actualizada correctamente!',
+          text: '',
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
           }    
@@ -149,7 +148,7 @@ let deshabilitar_mensualidad = (pid) => {
       url: "http://localhost:4000/api/actualizar_mensualidad",
       method: "POST",
       data: {
-        estado : "desactivo",
+        estado : "Desactivo",
          id: pid
            },
            
@@ -162,7 +161,7 @@ let deshabilitar_mensualidad = (pid) => {
     
       swal.fire({
           type: 'success',
-          title: 'Mensualidad deshabiitada correctamente',
+          title: '¡Deshabiitada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
@@ -199,7 +198,7 @@ let habilitar_mensualidad = (pid) => {
     
       swal.fire({
           type: 'success',
-          title: 'Mensualidad activada correctamente',
+          title: '¡Activada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
@@ -211,7 +210,7 @@ let habilitar_mensualidad = (pid) => {
   request.fail(function (res) {
       swal.fire({
           type: 'error',
-          title: 'Mensualidad Activada',
+          title: 'Mensualidad no activada',
           text: res.msg
          
       });

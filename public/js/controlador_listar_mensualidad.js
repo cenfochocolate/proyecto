@@ -97,7 +97,7 @@ function mostrar_datos  ()  {
    function confirmar_borrado(){
      let id= this.dataset.id;
      Swal.fire({
-       title:'¿Está seguro que desea eliminar la mensualida?',
+       title:'¿Está seguro que desea eliminar?',
        type: 'warning',
        showCancelButton: true,
        confirmButtonColor: '#3085d6',
@@ -109,8 +109,7 @@ function mostrar_datos  ()  {
        mensualidad = listar_mensualidad();
        mostrar_datos();
        Swal.fire({
-         title:'¡Mensualidad eliminada!',
-         text:'La mensualidad fue eliminada con éxito.',
+        title: '¡Eliminada con éxito!',
          type:'success'
        })
      }
@@ -121,7 +120,7 @@ function mostrar_datos  ()  {
 function confirmar_deshabilitar(){
   let id= this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea deshabilitar la mensualidad?',
+    title:'¿Está seguro que desea deshabilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -133,8 +132,7 @@ function confirmar_deshabilitar(){
     mensualidad = listar_mensualidad();
     mostrar_datos();
     Swal.fire({
-      title:'¡Mensualidad deshabilitada!',
-      text:'La mensualidad fue deshabilitada con éxito.',
+      title:'¡Deshabilitada con éxito!',
       type:'success'
     })
   }
@@ -145,7 +143,7 @@ function confirmar_deshabilitar(){
 function confirmar_habilitar(){
   let id= this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea habilitar la mensualidad?',
+    title:'¿Está seguro que desea habilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -157,8 +155,7 @@ function confirmar_habilitar(){
     mensualidad = listar_mensualidad();
     mostrar_datos();
     Swal.fire({
-      title:'¡Mensualidad habilitada!',
-      text:'La mensualidad fue habilitada con éxito.',
+      title:'¡Habilitada con éxito!',
       type:'success'
     })
   }
