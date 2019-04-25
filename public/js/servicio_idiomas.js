@@ -76,7 +76,7 @@ let buscar_idioma = (id_idioma) => {
             method : "POST",
             data : {
                 idioma : pidioma,
-                codigo : pcodigo,
+                codigo_iso : pcodigo,
                 imagen : pimagen,
                 id : pid
             },
@@ -108,3 +108,4 @@ let buscar_idioma = (id_idioma) => {
         });
     
     };    
+    

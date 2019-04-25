@@ -18,11 +18,12 @@ let idioma = buscar_idioma(_id);
 let mostrar_datos = () =>{
     input_idioma.value=idioma[0]['idioma'];
     
-    let opciones_codigo = document.querySelectorAll('#sltcodigo option');
+    let opciones_codigo = document.querySelector('#sltcodigo');
 
     for (let i = 0; i < opciones_codigo.length; i++) {
-        if (opciones_codigo[i].textContent == idioma[0]['codigo']) {
-            opciones_codigo[i].selected = true;
+        if (opciones_codigo[i].value == idioma[0]['codigo_iso']) {
+            opciones_codigo.selectedIndex = i;
+            break;
         }
     }
     
@@ -37,7 +38,9 @@ if(idioma){
 let obtener_datos = () =>{
     
     let idioma=input_idioma.value;
-    let codigo_iso=sltcodigo.selectedOptions[0].textContent;
+    let codigo_iso=sltcodigo.value;
+    console.log(codigo_iso);
+    
     let imagen=imgbandera.src;
    
     Swal.fire({
