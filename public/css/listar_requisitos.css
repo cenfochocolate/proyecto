@@ -47,3 +47,60 @@ th, td, tr{
   vertical-align: middle;
   text-align: center
 }
+#menu_institucion .nav {
+  padding: 25px;
+  float:right;
+  background-color:#16a085;
+  color:#fff;
+  border-radius: 50%;
+}
+#menu_institucion{
+  margin-right: 4%;
+  position: sticky;
+top: 15px;
+}
+
+.nav li a {
+  background-color:#327190;
+  color:#fff;
+  text-decoration:none;
+  padding:12px;
+  display:block;
+}
+
+.nav li a:hover {
+  background-color:#16a085;
+
+}
+
+main #menu_institucion li ul li a:hover {
+  color:#fff;
+}
+
+.nav li ul {
+  display:none;
+  position:absolute;
+  min-width:140px;
+}
+
+.nav:hover  ul {
+  display:block;
+
+}
+
+.nav:hover{
+  background-color:#327190;
+}
+
+.nav li ul li {
+  position:relative;
+}
+
+.nav li ul li ul {
+  right:-140px;
+  top:0px;
+}
+
+#menu_institucion .nav ul li a{
+  font-family: 'Roboto Slab', serif;
+}

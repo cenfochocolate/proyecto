@@ -3,6 +3,7 @@
 const inputnivel = document.querySelector('#txt_nivel');
 const inputdescripcion = document.querySelector('#txt_info');
 const botonRegistrar = document.querySelector('#btn_registrar');
+const id_institucion = sessionStorage.getItem('idu');
 
 let validar = () => {
     let error = false;
@@ -26,11 +27,11 @@ let validar = () => {
 function obtener_datos  (){
 
     if (validar()== false){
-
+    let id = id_institucion;
     let nivel = inputnivel.selectedOptions[0].textContent;;
     let descripcion = inputdescripcion.value;
 
-    registar_requisito(nivel, descripcion);
+    registar_requisito(id,nivel, descripcion);
      
      console.log('El nivel de la institucion es' + nivel + 'la descripcion es' + descripcion );
      

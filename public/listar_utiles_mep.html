@@ -41,6 +41,9 @@
             <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
             <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
             <li><a href="listar_citas.html">Citas</a></li>
+            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+            <li><a href="lista_precio_matricula.html">Precio</a></li>
+            <li><a href="listar_requisitos.html">Requisito</a></li>
           </ul>
         </li>
       </ul>
@@ -67,6 +70,7 @@
           </th>
           <th>Descripción:</th>
           <th>Cantidad:</th>
+          
           <th>
             <fieldset>
               <select class="select" id="filtrar_util" name="">
@@ -86,8 +90,11 @@
               </select>
             </fieldset>
           </th>
-          <th>Editar</th>
-           <th>Eliminar</th>
+          <th>Estado:</th>
+        <th id="editar">Editar:</th>
+        <th id="eliminar">Eliminar:</th>
+        <th id="deshab">Deshabilitar:</th>
+        <th id="hab">Habilitar</th>
         </tr>
       </thead>
       <tbody>
@@ -104,7 +111,7 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/servicio_util_mep.js"></script>
   <script src="js/controlador_listar_mep.js"></script>
-  <script src="controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
   <script src="js/controlador_validar_tusuario.js"></script>
   </footer>
 </body>

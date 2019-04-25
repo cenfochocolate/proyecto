@@ -9,7 +9,8 @@ let registrar_util = ( pid,putil, pdescripcion, pnumero, pnivel) =>{
       util : putil,
       descripcion : pdescripcion,
       cantidad : pnumero,
-      nivel : pnivel
+      nivel : pnivel,
+      estado: "Activo"
      },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
@@ -19,8 +20,7 @@ let registrar_util = ( pid,putil, pdescripcion, pnumero, pnivel) =>{
       console.log(msg);
       swal.fire({
         type: 'success',
-        title: 'Registro realizado satisfactoriamente',
-        text: `Hola, el útil: ${putil} con la descripción ${pdescripcion} y su cantidad: ${pnumero} para el siguiente nivel: ${pnivel} se ha registrado completamente`
+        title: '¡Registro correctamente!'
       });
     });
 
@@ -87,7 +87,8 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
           id : pid
       },
       dataType : "json",
-      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' ,
+      async: false
   });
 
   request.done(function(res){
@@ -95,11 +96,11 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
      
       swal.fire({
           type : 'success',
-          title : 'util actualizado con éxito',
+          title : '¡Útil actualizado correctamente!',
           text : res.msg,
           onClose: () => {
-              window.location.href = 'listar_utiles.html';
-            }    
+            window.location.href = 'listar_utiles_mep.html';
+        } 
       });
 
   });
@@ -132,5 +133,83 @@ function borrar_util(pid){
           console.log("Request fail error: " + _error);
 
       }
+  });
+};
+let habilitar_utiles = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_utiles",
+      method: "POST",
+      data: {
+
+          estado: "Activo",
+          id: pid
+      },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: '¡Activada correctamente!',
+          text: res.msg,
+          onClose: () => {
+              window.location.href = 'listar_utiles_mep.html';
+          }
+
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'Útil no actualizado',
+          text: res.msg
+
+      });
+  });
+};
+let deshabilitar_utiles = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_utiles",
+      method: "POST",
+      data: {
+
+          estado: "Desactivo",
+          id: pid
+      },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: '¡Deshabilitada correctamente!',
+          text: res.msg,
+          onClose: () => {
+              window.location.href = 'listar_utiles_mep.html';
+          }
+
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'Útil no actualizado',
+          text: res.msg
+
+      });
   });
 };
