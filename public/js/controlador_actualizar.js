@@ -36,7 +36,7 @@ let obtener_datos = () =>{
     let imagen= imgNoticia.src;
     
     Swal.fire({
-        title: 'Está seguro que desea actualizar la noticia?',
+        title: '¿Está seguro que desea actualizar la noticia?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

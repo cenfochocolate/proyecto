@@ -20,7 +20,12 @@ let registrar_util = ( pid,putil, pdescripcion, pnumero, pnivel) =>{
       console.log(msg);
       swal.fire({
         type: 'success',
+<<<<<<< HEAD
         title: '¡Registro correctamente!'
+=======
+        title: 'Registro realizado satisfactoriamente',
+        text: `El útil se ha registrado completamente`
+>>>>>>> master
       });
     });
 
@@ -96,7 +101,11 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
      
       swal.fire({
           type : 'success',
+<<<<<<< HEAD
           title : '¡Útil actualizado correctamente!',
+=======
+          title : 'Util actualizado con éxito',
+>>>>>>> master
           text : res.msg,
           onClose: () => {
             window.location.href = 'listar_utiles_mep.html';

@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista - Citas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lista - Citas</title>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
-    <link rel="stylesheet" href="css/general.css">
-      <link rel="stylesheet" href="css/perfil_in.css">
-    <link rel="stylesheet" href="css/listar_citas.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/perfil_in.css">
+  <link rel="stylesheet" href="css/listar_citas.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
 
@@ -26,67 +27,72 @@
       <a href="listar_instituciones.html">Instituciones</a>
       <a href="top_10_instituciones.html">Rankings</a>
       <img src="imgs/logo.png" id="logo" alt="">
-      <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+      <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
       <a href="" id="perfil" class="header_derecha">Perfil</a>
       <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
     </nav>
 
   </header>
-        <main>
-          <div id="menu_institucion">
-            <ul class="nav">
-              <li><i class="fas fa-align-justify"></i>
-                <ul>
-                  <li><a href="perfil_institucion.html">Institución</a></li>
-                  <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-                  <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-                  <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
-                  <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-                  <li><a href="listar_citas.html">Citas</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <nav id="submenu">
-            <h1 id="titulo">Lista de Citas</h1>
+  <main>
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
+            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <nav id="submenu">
+      <h1 id="titulo">Lista de Citas</h1>
 
-          </nav>
-          <form class="frm_buscar" action="" method="post">
-            <div class="buscar_cita">
-              <label for="buscar_cita">Buscar:</label>
-              <input type="search" name="buscar_cita" id="buscar_cita"  value="">
-              </div>
-              </form>
-        <table id="tbl_citas">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Hora</th>
-                    <th>Fecha</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
+    </nav>
+    <form class="frm_buscar" action="" method="post">
+      <div class="buscar_cita">
+        <label for="buscar_cita">Buscar:</label>
+        <input type="search" name="buscar_cita" id="buscar_cita" value="">
+      </div>
+    </form>
+    <table id="tbl_citas">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Hora</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th id="editar">Editar:</th>
+          <th id="eliminar">Eliminar:</th>
+          <th id="deshab">Deshabilitar:</th>
+          <th id="hab">Habilitar</th>
 
-                </tr>
-            </thead>
-            <tbody>
+        </tr>
+      </thead>
+      <tbody>
 
-            </tbody>
-        </table>
-        <div id="btn_cita">
-          <button type="button" id="btn_registrar_cita" onclick=" location.href='registrar_citas.html' "
-            name="button">Registrar nueva cita</button>
-        </div>
-    </main>
-	<footer>
-        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-    </footer>
-    <script src="js/controlador_validar_tusuario.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-    <script src="js/servicio_registrar.js"></script>
-    <script src="js/controlador_listar_registrar.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-   
+      </tbody>
+    </table>
+    <div id="btn_cita">
+      <button type="button" id="btn_registrar_cita" onclick=" location.href='registrar_citas.html' "
+        name="button">Registrar nueva cita</button>
+    </div>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="js/controlador_validar_tusuario.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_registrar.js"></script>
+  <script src="js/controlador_listar_registrar.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+
 </body>
 
 </html>

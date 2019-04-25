@@ -25,13 +25,13 @@
 }
 #btn_img{
   font-family: 'Roboto Slab', serif;
-  font-size: 15px;
+  font-size: 20px;
   background-color: #B82601;
   margin-top: 10px;
-  width: 15%;
-  height: 45px;
+  width: 25%;
+  height: 55px;
   color: #E9F0E9;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 #btn_img:hover{
   background-color: #16a085;

@@ -55,17 +55,18 @@ module.exports.listar_todos = (req, res) =>{
 
 module.exports.buscar_por_id = function (req, res){
   modelo_util_institucino.find({_id : req.body.id}).then(
-      function(utiles){
-          if(utiles){
-              res.json({success: true, utiles : utiles})
+      function(util){
+          if(util){
+              res.json({success: true, util : util})
           }else{
-              res.json({success: false, utiles : 'no seencontraron utiles'})
+              res.json({success: false, util : util})
           }
       }
 
   );
 
 };
+
 module.exports.actualizar = function(req, res){
    
   modelo_util_institucino.findByIdAndUpdate(req.body.id, { $set: req.body },

@@ -20,7 +20,7 @@ let registrar_util = (pid_institucion, putil, pdescripcion, pnumero, pnivel) =>{
       swal.fire({
         type: 'success',
         title: 'Registro realizado satisfactoriamente',
-        text: `Hola, el útil: ${putil} con la descripción ${pdescripcion} y su cantidad: ${pnumero} para el siguiente nivel: ${pnivel} se ha registrado completamente`
+        text: `El útil se ha registrado completamente`
       });
     });
 
@@ -53,27 +53,27 @@ let listar_utiles = () => {
 };
 
 let buscar_utiles = (id) => {
-  let utiles = [];
+  let util = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_utiles/" + id,
+    url: "http://localhost:4000/api/buscar_utile/" +id,
     method: "GET",
     data: {
     },
-    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     async : false
   });
 
-  request.done(function (msg) {
-    utiles= msg.utiles;
+  request.done(function (res) {
+    util= res.util;
     
   });
 
   request.fail(function (jqXHR, textStatus) {
     
   });
-  return utiles;
+  return util;
 };
 
 let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
@@ -96,7 +96,7 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
      
       swal.fire({
           type : 'success',
-          title : 'util actualizado con éxito',
+          title : 'Útil actualizado con éxito',
           text : res.msg,
           onClose: () => {
               window.location.href = 'listar_utiles.html';

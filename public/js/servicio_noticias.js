@@ -18,7 +18,7 @@ let registrar_noticia = (pid,pnombre,pdescripcion,pimagen) =>{
       swal.fire({
         type: 'success',
         title: 'La noticia se registro correctamente',
-        text: `La noticia fue registrada bajo el nombre de ${pnombre} , su descripción es: ${pdescripcion}`
+        text: `La noticia fue registrada`
       });
     });
 
@@ -92,7 +92,7 @@ let  actualizar_noticia = (pnombre, pdescripcion, pimagen, pid) =>{
      
       swal.fire({
           type : 'success',
-          title : 'noticia actualizada con éxito',
+          title : 'Noticia fue  actualizada con éxito',
           text : res.msg,
           onClose: () => {
               window.location.href = 'listar_noticias.html';
