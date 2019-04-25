@@ -99,3 +99,15 @@ module.exports.actualizar_rs = function (req, res)  {
 }
 
 
+module.exports.borrar = (req, res) =>{
+  modelo_rs.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar.'});
+              
+          }else{
+              res.json({ success : true, msg: 'Fue eliminada.'});
+          }
+      }
+  )
+};

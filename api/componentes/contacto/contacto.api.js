@@ -88,3 +88,15 @@ module.exports.actualizar_contacto = function(req, res) {
   );
 
 }
+module.exports.borrar = (req, res) =>{
+  modelo_contacto.findByIdAndDelete(req.body.id,
+      function(error){
+          if(error){
+              res.json({ success : false, msg: 'No se pudo eliminar el contacto.'});
+              
+          }else{
+              res.json({ success : true, msg: 'El contacto fue eliminada.'});
+          }
+      }
+  )
+};

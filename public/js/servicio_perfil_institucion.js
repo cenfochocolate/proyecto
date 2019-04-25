@@ -26,7 +26,7 @@ let registrar_noticia = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
     request.fail(function( jqXHR, textStatus ) {
 
     });
-    
+
 };
 
 
@@ -161,7 +161,32 @@ let registrar_comentario = (pid_usuario, pid_institucion, pcomentario)=>{
     });
   });
   request.fail(function (jqXHR, textStatus) {
+  });
+};
 
+let registrar_puntuacion_usuario = (pid_usuario, pid_insti, pcalificacion)=>{
+  let request = $.ajax({
+    url: "http://localhost:4000/api/registrar_valoracion_usuarios",
+    method: "POST",
+    data: {
+      id_institucion:pid_insti,
+      id_usuario:pid_usuario,
+      comentario:pcomentario
+     },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json"
+  });
+  request.done(function(msg){
+    swal.fire({
+      type: 'success',
+      title: 'Puntuacion se ha registrado de manera exitosa',
+    });
+  });
+  request.fail(function (jqXHR, textStatus) {
+    swal.fire({
+      type: 'warning',
+      title: 'No se ha podido registrar la calificación',
+    });
   });
 };
 
@@ -276,4 +301,4 @@ function buscar_institucion(pid) {
     })
 
     return lugar;
-}
+};

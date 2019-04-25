@@ -143,7 +143,7 @@ let deshabilitar_cita = (pid) => {
         url: "http://localhost:4000/api/actualizar_cita",
         method: "POST",
         data: {
-          estado : "desactivo",
+          estado : "Desactivo",
            id: pid
              },
              
@@ -202,7 +202,7 @@ let deshabilitar_cita = (pid) => {
   
     });
   
-    request.fail(function (res) {
+    request.fail(function (res) { 
         swal.fire({
             type: 'error',
             title: 'Cita activada',
