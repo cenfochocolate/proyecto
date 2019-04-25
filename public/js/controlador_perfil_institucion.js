@@ -35,6 +35,14 @@ let utilesT = document.querySelector('#label_titulo');
 let text_comentario = document.querySelector('#ta_comentario');
 let btn_comentario = document.querySelector('#btn_comentario');
 
+//variables de las estrellas
+const cinco = document.querySelector('#cinco');
+const cuatro = document.querySelector('#cuatro');
+const tres = document.querySelector('#tres');
+const dos = document.querySelector('#dos');
+const uno = document.querySelector('#uno');
+const btn_estrellas = document.querySelector('#btn_estrellas');
+
 nombre_inistitucion.innerHTML = institucion['nombre_comercial'];
 referenciaH.innerHTML = institucion['refencia_historica'];
 imagen.src = institucion['url_foto'];
@@ -48,6 +56,7 @@ mostrar_noticias();
 // mostrar_contacto();
 mostrar_rs();
 mostrar_comentarios();
+validar_estrellas_usuarios();
 
 let validar_comentario = () =>{
   let error = false;
@@ -117,6 +126,77 @@ function mostrar_noticias(){
     }
   }
   };
+};
+
+function vaciarCheckboxes (){
+  if ((cinco).checked=true) {
+    (cuatro).checked=false;
+    (tres).checked=false;
+    (dos).checked=false;
+    (uno).checked=false;
+  } else if ((cuatro).checked=true) {
+    (cinco).checked=false;
+    (tres).checked=false;
+    (dos).checked=false;
+    (uno).checked=false;
+  } else if ((tres).checked=true) {
+    (cuatro).checked=false;
+    (cinco).checked=false;
+    (dos).checked=false;
+    (uno).checked=false;
+  } else if ((dos).checked=true) {
+    (cuatro).checked=false;
+    (tres).checked=false;
+    (cinco).checked=false;
+    (uno).checked=false;
+  } else if ((uno).checked=true) {
+    (cuatro).checked=false;
+    (tres).checked=false;
+    (dos).checked=false;
+    (cinco).checked=false;
+  };
+};
+
+function validar_estrellas_usuarios(){
+  let error = false;
+  if ((cinco).checked=true || (cuatro).checked=true || (tres).checked=true || (dos).checked=true || (uno).checked=true) {
+    error = false;
+  } else {
+    error=true;
+  }
+  return error;
+}
+
+function r_estrellas_usuarios () {
+  let estrellas = r_estrellas_usuarios;
+  let puntuacion = 0;
+  if (validar_estrellas_usuarios==false) {
+    if ((cinco).checked) {
+      puntuacion=cinco.value;
+    } else if ((cuatro).checked) {
+      puntuacion=cuatro.value;
+    } else if ((tres).checked) {
+      puntuacion=cinco.value;
+    } else if ((dos).checked) {
+      puntuacion=dos.value;
+    } else if ((uno).checked) {
+      puntuacion=uno.value;
+    };
+
+    let id_usuario = idr;
+    let id_insti=id_institucion;
+    let calificacion = puntuacion;
+    registrar_puntuacion_usuario(id_usuario, id_insti, calificacion);
+  }else{
+    swal.fire({
+      type: 'warning',
+      title: 'La puntuación no fue registrada',
+      text: 'Por favor seleccione una puntuación'
+    });
+  }
+
+
+
 };
 
 function mostrar_comentarios(){
