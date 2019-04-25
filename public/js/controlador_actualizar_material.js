@@ -19,7 +19,7 @@ let material= buscar_material(_id);
 let mostrar_datos = () =>{
 
 
-    input_nombre_institucion.value = material[0]['nombre'];
+    input_nombre_institucion.value = material[0]['nombre_institucion'];
     input_descripcion.value = material[0]['descripcion'];
   
     
@@ -58,8 +58,18 @@ let obtener_datos =() => {
     let nombre_institucion = input_nombre_institucion.value;
     let descripcion=input_descripcion.value;
 
-    registrar_materiales(nombre_institucion,descripcion)
-
+    Swal.fire({
+        title: '¿Está seguro que desea actualizar el material?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+        if (result.value) {
+    actualizar_material(nombre_institucion,descripcion, _id)
+        }
+    });
   }else{
     swal.fire({
         type: 'warning',

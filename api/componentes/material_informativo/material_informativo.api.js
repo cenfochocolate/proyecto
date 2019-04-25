@@ -55,7 +55,7 @@ module.exports.listar_materiales=(req, res)=>{
     )
 };
 module.exports.buscar_por_id = (req, res) => {
-    modelo_material.find({_id : req.body.id_material}).then(
+    model_material.find({_id : req.body.id_material}).then(
         function (material) {
             if (material) {
                 res.json(
@@ -76,7 +76,7 @@ module.exports.buscar_por_id = (req, res) => {
     )
 };
 module.exports.actualizar_material = function (req, res)  {
-    modelo_material.findByIdAndUpdate(req.body.id, {$set: req.body},
+    model_material.findByIdAndUpdate(req.body.id, {$set: req.body},
         function (error) {
             if (error) {
                 res.json(
@@ -98,3 +98,15 @@ module.exports.actualizar_material = function (req, res)  {
         );
     
 }
+module.exports.borrar = (req, res) =>{
+    model_material.findByIdAndDelete(req.body.id,
+        function(error){
+            if(error){
+                res.json({ success : false, msg: 'No se pudo eliminar.'});
+                
+            }else{
+                res.json({ success : true, msg: 'El material fue eliminado.'});
+            }
+        }
+    )
+};

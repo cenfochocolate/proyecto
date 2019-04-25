@@ -30,11 +30,11 @@ function mostrar_datos() {
         let celda_configuracion = fila.insertCell();
 
         let boton_editar = document.createElement('a');
-        boton_editar.textContent = 'Editar';
+        boton_editar.innerHTML ='<i class="fas fa-edit"></i>';
         boton_editar.href = `actualizar_pregunta.html?id_pregunta=${preguntas[i]['_id']}`
 
         celda_configuracion.appendChild(boton_editar);
-
+ 
 
 
 

@@ -64,9 +64,18 @@ let obtener_datos = () => {
         let respuestas = input_respuestas.value;
 
 
-
+        Swal.fire({
+            title: '¿Está seguro que desea actualizar la pregunta?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
         actualizar_pregunta(id_institucion,preguntas,respuestas, _id);
-
+            }
+        });
     } else {
         swal.fire({
             type: 'warning',
