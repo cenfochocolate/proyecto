@@ -23,7 +23,7 @@ module.exports.registrar = (req, res) =>{
       res.json(
         {
           success : true,
-          msj : `Se registró  satisfactoriamente el servicio adicional`
+          msj : `¡Se registró correctamente!`
         }
       );
     }
@@ -43,7 +43,7 @@ module.exports.listar_todos = (req, res) =>{
         res.json(
           {
             success: false,
-            sadicional: 'No hay noticias registradas'
+            sadicional: 'No se encontraron resultados'
           }
         )
       }
@@ -69,9 +69,9 @@ module.exports.actualizar = function(req, res){
   modelo_sadicional.findByIdAndUpdate(req.body.id, { $set: req.body },
       function (error){
           if(error){
-              res.json({success : false , msg : 'No se pudo actualizar los servicios adicionales '});
+              res.json({success : false , msg : `No se pudo actualizar.` });
           }else{
-              res.json({success: true , msg : 'Los servicio adicionales se actualizaron con éxito'});
+              res.json({success: true , msg : ''});
           }
       }
   
@@ -82,10 +82,10 @@ module.exports.borrar = (req, res) =>{
   modelo_sadicional.findByIdAndDelete(req.body.id,
       function(error){
           if(error){
-              res.json({ success : false, msg: 'No se pudo eliminar la cita.'});
+              res.json({ success : false, msg: 'No se pudo eliminar.'});
               
           }else{
-              res.json({ success : true, msg: 'La pregunta fue eliminada.'});
+              res.json({ success : true, msg: 'El servicio fue eliminado.'});
           }
       }
   )

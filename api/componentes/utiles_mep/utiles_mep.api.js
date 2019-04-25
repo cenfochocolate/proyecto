@@ -45,7 +45,7 @@ module.exports.listar_todos = (req, res) =>{
         res.json(
           {
             success : false,
-            utiles: 'No se encontraron utiles'
+            utiles: 'No se encontraron útiles'
           }
         )
       }
@@ -84,7 +84,7 @@ module.exports.borrar = (req, res) =>{
   modelo_util_mep.findByIdAndDelete(req.body.id,
       function(error){
           if(error){
-              res.json({ success : false, msg: 'No se pudo eliminar el util.'});
+              res.json({ success : false, msg: 'No se pudo eliminar.'});
               
           }else{
               res.json({ success : true, msg: 'El útil fue eliminado.'});

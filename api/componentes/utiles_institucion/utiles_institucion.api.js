@@ -24,7 +24,7 @@ module.exports.registrar = (req, res) =>{
       res.json(
         {
           success : true,
-          msj : `Se registró  satisfactoriamente el útil`
+          msj : `¡Se registró correctamente!`
         }
       );
     }
@@ -45,7 +45,7 @@ module.exports.listar_todos = (req, res) =>{
         res.json(
           {
             success: false,
-            utiles: 'No se encontraron utiles'
+            utiles: 'No se encontraron útiles'
           }
         )
       }
@@ -67,14 +67,28 @@ module.exports.buscar_por_id = function (req, res){
 
 };
 
+module.exports.actualizar = function(req, res){
+   
+  modelo_util_institucino.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg :  `No se pudo actualizar.`});
+          }else{
+              res.json({success: true , msg : ''});
+          }
+      }
+  
+  );
+}
+
 module.exports.borrar = (req, res) =>{
   modelo_util_institucino.findByIdAndDelete(req.body.id,
       function(error){
           if(error){
-              res.json({ success : false, msg: 'No se pudo eliminar el util.'});
+              res.json({ success : false, msg: 'No se pudo eliminar.'});
               
           }else{
-              res.json({ success : true, msg: 'El util fue eliminado.'});
+              res.json({ success : true, msg: 'El útil fue eliminado.'});
           }
       }
   )

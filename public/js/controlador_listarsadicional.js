@@ -3,37 +3,44 @@ const tabla = document.querySelector('#tbl_sadicional tbody');
 const inputFiltro = document.querySelector('#buscar_sadicional_institucion');
 const id_institucion = sessionStorage.getItem('id_lugar');
 
+
 let sadicional = listar_sadicional();
+
+
 
 mostrar_datos();
 
-inputFiltro.addEventListener('keyup' , mostrar_datos);
+inputFiltro.addEventListener('keyup', mostrar_datos);
 
-function mostrar_datos(){
+function mostrar_datos() {
   let sadicional = listar_sadicional();
   let filtro = inputFiltro.value;
-  tabla.innerHTML='';
+  tabla.innerHTML = '';
 
-  for(let i = 0; i < sadicional.length; i++){
-    if(sadicional[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
-      if(id_institucion == sadicional[i]['id_institucion']){
+  for (let i = 0; i < sadicional.length; i++) {
+
+    if (sadicional[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())) {
+
+      if (id_institucion == sadicional[i]['id_institucion']) {
+
         let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = sadicional[i]['nombre'];
         fila.insertCell().innerHTML = sadicional[i]['descripcion'];
         let imagen = document.createElement('img');
         imagen.classList.add('imagenTabla');
-        if(sadicional[i]['imagen']){
+        if (sadicional[i]['imagen']) {
           imagen.src = sadicional[i]['imagen'];
-        }else{
+        } else {
           imagen.src = './imgs/imgph.jpg';
         }
         fila.insertCell().appendChild(imagen);
+        fila.insertCell().innerHTML = sadicional[i]['estado'];
 
         fila.insertCell().innerHTML = sadicional[i]['estado'];
 
         let celda_configuracion = fila.insertCell();
-      
+
         let boton_editar = document.createElement('a');
         boton_editar.innerHTML ='<i class="fas fa-edit"></i>';
         boton_editar.href = `actualizar_servicio.html?id_servicio=${sadicional[i]['_id']}`;
@@ -87,30 +94,21 @@ function mostrar_datos(){
   };
 };
 
+        let celda_deshabilitar = fila.insertCell();
+        let boton_deshabilitar = document.createElement('a');
+        boton_deshabilitar.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        boton_deshabilitar.dataset.id = sadicional[i]['_id'];
+        boton_deshabilitar.addEventListener('click', confirmar_deshabilitar);
+        celda_deshabilitar.appendChild(boton_deshabilitar);
 
-function confirmar_borrado(){
-  let id= this.dataset.id;
-  Swal.fire({
-    title:'¿Está seguro que desea eliminar el servicio?',
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Sí, estoy seguro.'
-}).then((result)=>{
-  if(result.value){
-    borrar_servicio(id);
-    sadicional = listar_sadicional();
-    mostrar_datos();
-    Swal.fire({
-      title:'¡Servicio eliminada!',
-      text:'El servicio fue eliminado con éxito.',
-      type:'success'
-    })
-  }
-})
+        let celda_habilitar = fila.insertCell();
+        let boton_habilitar = document.createElement('a');
+        boton_habilitar.innerHTML = '<i class="fas fa-eye"></i>';
+        boton_habilitar.dataset.id = sadicional[i]['_id'];
+        boton_habilitar.addEventListener('click', confirmar_habilitar);
+        celda_habilitar.appendChild(boton_habilitar);
 
-};
+      } else {
 
 function confirmar_deshabilitar(){
   let id= this.dataset.id;

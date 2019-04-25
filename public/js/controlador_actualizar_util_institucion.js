@@ -28,13 +28,14 @@ if(util){
 }
 
 let obtener_datos = () =>{
+  
     let util = input_util.value;
     let descripcion = textarea_descripcion.value;
     let numero = input_numero.value;
     let nivel = select_nivel.value;
 
     Swal.fire({
-        title: 'Está seguro que desea actualizar el útil?',
+        title:  '¿Está seguro que desea actualizar?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

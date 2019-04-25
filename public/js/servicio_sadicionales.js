@@ -17,8 +17,7 @@ let registrar_sadicional = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
 
       swal.fire({
         type: 'success',
-        title: 'El servicio adicional se registro correctamente',
-        text: `El servicio adicional fue registrado`
+        title: '¡Registro correctamente!'
       });
     });
 
@@ -92,7 +91,7 @@ let actualizar_servicio = (pnombre, pdescripcion,pimagen, pid) =>{
        
         swal.fire({
             type : 'success',
-            title : 'Servicio actualizado con éxito',
+            title : '¡Servicio actualizado correctamente!',
             text : res.msg,
             onClose: () => {
                 window.location.href = 'listar_servicios_adicionales.html';
@@ -133,29 +132,32 @@ function borrar_servicio(pid){
   });
 };
 
-let deshabilitar_servicio = (pid) => {
+let habilitar_servicio = (pid) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_servicio",
+      url: "http://localhost:4000/api/actualizar_requisito",
       method: "POST",
       data: {
-        estado : "Desactivo",
-         id: pid
-           },
-           
+
+          estado: "Activo",
+          id: pid
+      },
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
+
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
-          title: 'Servicio deshabiitado correctamente',
+          title: '¡Activada correctamente!',
           text: res.msg,
           onClose: () => {
-            window.location.href = 'listar_citas.html';
+            window.location.href = 'listar_servicios_adicionales.html';
           }    
+
       });
 
   });
@@ -163,46 +165,48 @@ let deshabilitar_servicio = (pid) => {
   request.fail(function (res) {
       swal.fire({
           type: 'error',
-          title: 'Cita no deshabilitada',
+          title: 'Servicio no actualizado',
           text: res.msg
-         
+
       });
   });
 };
-
-let habilitar_servicio = (pid) => {
+let deshabilitar_servicio = (pid) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_servicio",
+      url: "http://localhost:4000/api/actualizar_requisito",
       method: "POST",
       data: {
-        estado : "Activo",
-         id: pid
-           },
-           
+
+          estado: "Desactivo",
+          id: pid
+      },
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
+
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
-          title: 'Cita activada correctamente',
+          title: '¡Deshabiitada correctamente!',
           text: res.msg,
           onClose: () => {
-            window.location.href = 'listar_citas.html';
+            window.location.href = 'listar_servicios_adicionales.html';
           }    
+
       });
 
   });
 
-  request.fail(function (res) { 
+  request.fail(function (res) {
       swal.fire({
           type: 'error',
-          title: 'Cita activada',
+          title: 'Servicio no actualizado',
           text: res.msg
-         
+
       });
   });
 };

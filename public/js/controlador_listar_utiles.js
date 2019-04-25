@@ -23,6 +23,8 @@ function mostrar_datos(){
       fila.insertCell().innerHTML = utiles[i]['descripcion'];
       fila.insertCell().innerHTML = utiles[i]['cantidad'];
       fila.insertCell().innerHTML = utiles[i]['nivel'];
+
+      fila.insertCell().innerHTML = utiles[i]['estado'];
       let celda_configuracion = fila.insertCell();
 
       // Creación del botón de editar
@@ -40,13 +42,31 @@ function mostrar_datos(){
       boton_eliminar.dataset.id= utiles[i]['_id'];
       boton_eliminar.addEventListener('click', confirmar_borrado);
        celda_eliminar.appendChild(boton_eliminar);
+
+       let celda_deshabilitar = fila.insertCell();
+       let boton_deshabilitar = document.createElement('a');
+       boton_deshabilitar.innerHTML = '<i class="fas fa-eye-slash"></i>';
+       boton_deshabilitar.dataset.id = utiles[i]['_id'];
+       boton_deshabilitar.addEventListener('click', confirmar_deshabilitar);
+       celda_deshabilitar.appendChild(boton_deshabilitar);
+ 
+       let celda_habilitar = fila.insertCell();
+       let boton_habilitar = document.createElement('a');
+       boton_habilitar.innerHTML = '<i class="fas fa-eye"></i>';
+       boton_habilitar.dataset.id = utiles[i]['_id'];
+       boton_habilitar.addEventListener('click', confirmar_habilitar);
+       celda_habilitar.appendChild(boton_habilitar);
+
     } else {
-      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel)) {
+      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel) && requisito[i]['estado'] == "Activo") {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = utiles[i]['util'];
         fila.insertCell().innerHTML = utiles[i]['descripcion'];
         fila.insertCell().innerHTML = utiles[i]['cantidad'];
         fila.insertCell().innerHTML = utiles[i]['nivel'];
+
+        fila.insertCell().innerHTML = utiles[i]['estado'];
+
         let celda_configuracion = fila.insertCell();
 
         // Creación del botón de editar
@@ -64,17 +84,33 @@ function mostrar_datos(){
          boton_eliminar.dataset.id= utiles[i]['_id'];
          boton_eliminar.addEventListener('click', confirmar_borrado);
           celda_eliminar.appendChild(boton_eliminar);
+
+          let celda_deshabilitar = fila.insertCell();
+
+        let boton_deshabilitar = document.createElement('a');
+        boton_deshabilitar.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        boton_deshabilitar.dataset.id = utiles[i]['_id'];
+        boton_deshabilitar.addEventListener('click', confirmar_deshabilitar);
+        celda_deshabilitar.appendChild(boton_deshabilitar);
+
+        let celda_habilitar = fila.insertCell();
+
+        let boton_habilitar = document.createElement('a');
+        boton_habilitar.innerHTML = '<i class="fas fa-eye"></i>';
+        boton_habilitar.dataset.id = utiles[i]['_id'];
+        boton_habilitar.addEventListener('click', confirmar_habilitar);
+        celda_habilitar.appendChild(boton_habilitar);
       }
     }
     
   }
 };
-
+mostrar_datos();
 
 function confirmar_borrado(){
   let id= this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea eliminar el util ?',
+    title:'¿Está seguro que desea eliminar el útil?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
@@ -87,12 +123,55 @@ function confirmar_borrado(){
     mostrar_datos();
     Swal.fire({
       title:'¡El util fue eliminado!',
-      text:'El util fue eliminado con éxito.',
+      text:'',
       type:'success'
     })
   }
 })
 
 };
-mostrar_datos();
- 
+
+function confirmar_deshabilitar() {
+  let id = this.dataset.id;
+  Swal.fire({
+      title: '¿Está seguro que desea deshabilitar?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, estoy seguro.'
+  }).then((result) => {
+      if (result.value) {
+        deshabilitar_utiles(id);
+          utiles = listar_utiles();
+          mostrar_datos();
+          Swal.fire({
+              title: '¡Deshabilitada con éxito!',
+              type: 'success'
+          })
+      }
+  })
+};
+
+
+function confirmar_habilitar() {
+  let id = this.dataset.id;
+  Swal.fire({
+      title: '¿Está seguro que desea habilitar?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, estoy seguro.'
+  }).then((result) => {
+      if (result.value) {
+        habilitar_utiles(id);
+          utiles = listar_utiles();
+          mostrar_datos();
+          Swal.fire({
+              title: '¡Habilitada con éxito!',
+              type: 'success'
+          })
+      }
+  })
+};

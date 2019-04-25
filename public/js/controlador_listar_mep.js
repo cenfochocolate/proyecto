@@ -109,7 +109,7 @@ mostrar_utiles_mep();
 function confirmar_borrado() {
   let id = this.dataset.id;
   Swal.fire({
-    title: '¿Está seguro que desea eliminar el util ?',
+    title: '¿Está seguro que desea eliminar el útil?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
