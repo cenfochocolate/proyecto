@@ -24,7 +24,7 @@ module.exports.registrar_utiles_mep = (req, res) =>{
       res.json(
         {
           success :true,
-          msj : `Se ha registrado satisfactoriamente`
+          msj : `¡Se registró correctamente!`
         }
       );
     }
@@ -71,9 +71,9 @@ module.exports.actualizar = function(req, res){
   modelo_util_mep.findByIdAndUpdate(req.body.id, { $set: req.body },
       function (error){
           if(error){
-              res.json({success : false , msg : 'No se pudo actualizar el util '});
+              res.json({success : false , msg : `No se pudo actualizar.` });
           }else{
-              res.json({success: true , msg : 'El util se actualizó con éxito'});
+              res.json({success: true , msg : ''});
           }
       }
   
@@ -87,7 +87,7 @@ module.exports.borrar = (req, res) =>{
               res.json({ success : false, msg: 'No se pudo eliminar el util.'});
               
           }else{
-              res.json({ success : true, msg: 'El util fue eliminado.'});
+              res.json({ success : true, msg: 'El útil fue eliminado.'});
           }
       }
   )

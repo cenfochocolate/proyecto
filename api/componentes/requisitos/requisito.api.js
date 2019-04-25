@@ -4,7 +4,7 @@ const requisito_model = require ('./requisito.model');
 module.exports.registrar = function (req,res){
     let nuevo_requisito = new requisito_model(
         {
-           
+            id_institucion:req.body.id_institucion,
             nivel : req.body.nivel,
             descripcion : req.body.descripcion,
             estado : 'Activo'
@@ -22,7 +22,7 @@ module.exports.registrar = function (req,res){
             res.json(
                 {
                     success : true,
-                    msg : `Se envió correctamente el registro`
+                    msg : `¡Se registró correctamente!`
                 }
             )
         }
@@ -78,14 +78,14 @@ module.exports.actualizar_requisito = function (req, res)  {
                 res.json(
                     {
                         success: false,
-                        msg: `No se pudo actualizar el requisito.`
+                        msg: `No se pudo actualizar.` 
                     }
                 );
             } else {
                 res.json(
                     {
                         success: true,
-                        msg: `Se actualizó correctamente el requisito.`
+                        msg: ``
                     }
                 );
             }
