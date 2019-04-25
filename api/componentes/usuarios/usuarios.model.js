@@ -32,7 +32,7 @@ let usuarioSchema = new mongoose.Schema(
     url_foto: { type: String, required: false },
     aprobada: { type: Boolean, default: false },
     estado: {type: String, required:true},
-    fecha:{type:Date  , required:true},
+    fecha:{type:Date  , required:false},
     contrasenna:{ type:String, required: true}
   }
 );
