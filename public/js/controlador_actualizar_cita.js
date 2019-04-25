@@ -102,7 +102,21 @@ let obtener_datos = () => {
         let date =  input_date.value;
         let time = input_time.value;
         
+        Swal.fire({
+            title: 'Está seguro que desea actualizar la cita?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
+            
         actualizar_cita(nombre,date, time, _id);
+    }
+})
+
+
 
     }else{
         swal.fire({
