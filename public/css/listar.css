@@ -23,29 +23,29 @@ img{
       background-color: #B82601 ;
     }
 
-    #tbl_idioma{
+    #tbl_idiomas{
       width: 40%;
       height: auto;
       margin-left: 30%;
       overflow-y: scroll;
       overflow-x: hidden;
       }
-      #tbl_idioma tbody{
+      #tbl_idiomas tbody{
         font-family: 'Roboto Slab', serif;
         border-style: solid;
         border-width: 1px;
         border-color: #2F7585;
         
       }
-      #tbl_idioma tbody a {
+      #tbl_idiomas tbody a {
         text-decoration: none;
         color: white;
       }
-      #tbl_idioma tbody a:hover{
+      #tbl_idiomas tbody a:hover{
         color: #c0392b;
         transition: all 300ms;
       }
-      #tbl_idioma{
+      #tbl_idiomas{
         margin: 10% auto;
         width: 80%;
         border-collapse: collapse;
