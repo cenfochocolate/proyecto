@@ -216,6 +216,103 @@ let registrar_rs = (pfacebook, pinstagram, ptwitter, pemail, pyoutube) =>{
     });
 };
 
+let deshabilitar_rs = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_rs",
+      method: "POST",
+      data: {
+        id_rs: pid,
+        estado : "Desactivo"
+
+           },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: 'red social deshabiitada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'red social no deshabilitado',
+          text: res.msg
+
+      });
+  });
+};
+
+function borrar_rs(pid){
+  $.ajax({
+      url: 'http://localhost:4000/api/borrar_rs',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+          id: pid
+      },
+      beforeSend: function beforeSend(){
+
+      },
+      success: function success(response){
+
+      },
+      error: function error(_error){
+          console.log("Request fail error: " + _error);
+
+      }
+  });
+};
+
+let habilitar_rs = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_rs",
+      method: "POST",
+      data: {
+        estado : "Activo",
+         id_rs: pid
+           },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: 'red social activada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'red social activada',
+          text: res.msg
+
+      });
+  });
+};
+
+
 let listar_rs = () => {
   let lista_rs = [];
 

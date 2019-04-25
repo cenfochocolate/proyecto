@@ -25,6 +25,7 @@ let registrar_institucion = (
     pweb,
     purl_archivo,
     purl_foto,
+    pfecha,
     pcontrasenna
 ) => {
 
@@ -56,6 +57,7 @@ let registrar_institucion = (
             web: pweb,
             url_archivo: purl_archivo,
             url_foto: purl_foto,
+            fecha: pfecha,
             contrasenna: pcontrasenna
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',

@@ -13,70 +13,52 @@ let id_institucion = sessionStorage.getItem('id_lugar');
 // let rs= buscar_rs(_id);
 let lista_rs = listar_rs();
 
-let mostrar_datos = () =>{
+    let get_param = (param) => {
+        let url_string = window.location.href;
+        let url = new URL(url_string);
+        let id = url.searchParams.get(param);
 
-    for(let i = 0; i < lista_rs.length; i++){
-      if(lista_rs[i]['id_institucion'].includes(id_institucion)){
-        input_facebook.value= lista_rs[i]['facebook'];
-        input_instagram.value= lista_rs[i]['instagram'];
-        input_twitter.value= lista_rs[i]['twitter'];
-        input_email.value= lista_rs[i]['email'];
-        input_youtube.value= lista_rs[i]['youtube']; 
-      }
-    }
+        return id;
+    };
 
-    
-    } 
+    let _id = get_param('id_rs');
+    console.log(_id)
+    let rs = buscar_rs(_id);
 
 
-
+    let mostrar_datos=() =>{
+      input_facebook.value = rs[0]['facebook'];
+      input_instagram.value = rs[0]['instagram']
+      input_twitter.value = rs[0]['twitter'];
+      input_email.value =rs[0]['email'];
+      input_youtube.value = rs[0]['youtube'];
+    };
 
 
 let validar = () => {
   let error = false;
 
-  if (input_facebook.value == '') {
+  if (input_facebook.value == '' && input_instagram.value == ''&& input_twitter.value == ''&& input_email.value == ''&& input_youtube.value == '') {
     error = true;
     input_facebook.classList.add('error_input');
+    input_instagram.classList.add('error_input');
+    input_twitter.classList.add('error_input');
+    input_email.classList.add('error_input');
+    input_youtube.classList.add('error_input');
   }else {
     input_facebook.classList.remove('error_input');
-  }
-
-  if(input_instagram.value == '') {
-    error = true;
-    input_instagram.classList.add('error_input');
-  }else {
     input_instagram.classList.remove('error_input');
-  }
-
-  if(input_twitter.value == '') {
-    error = true;
-    input_twitter.classList.add('error_input');
-  }else{
     input_twitter.classList.remove('error_input');
-  }
-
-  if(input_email.value == '') {
-    error = true;
-    input_email.classList.add('error_input');
-  }else{
     input_email.classList.remove('error_input');
-  }
-
-  if (input_youtube.value == '') {
-    error = true;
-    input_youtube.classList.add('error_input');
-  }else{
     input_youtube.classList.remove('error_input');
   }
-
   return error;
 };
 
 let obtener_datos = () => {
 
   if (validar() == false) {
-    let id = id_institucion;
+    let id = _id;
     let facebook = input_facebook.value;
     let instagram = input_instagram.value;
     let twitter = input_twitter.value;
@@ -94,6 +76,4 @@ let obtener_datos = () => {
 };
 
 btn_guardar.addEventListener('click', obtener_datos);
-
-
-  mostrar_datos();
+mostrar_datos();

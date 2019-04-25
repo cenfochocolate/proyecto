@@ -1,5 +1,19 @@
 /*estilos para pagina en genneral*/
 
+#capcha{
+  margin-left: 33%;
+  width: 35%;
+  background-color: #d9dce0;
+}
+
+#capcha input{
+  margin: 5px;
+}
+
+#capcha h5{
+  margin: 11px;
+}
+
 #seccion_formulario {
     /*border: 2px solid red;*/
     padding-top: 0px;
@@ -54,9 +68,12 @@ fieldset select{
 
 
 #mapa{
-  width: 60%;
+  width: 600px;
   margin-left: 20%;
   height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20%;
 }
 
 #mapa canvas{

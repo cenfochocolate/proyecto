@@ -9,7 +9,9 @@ body{
     width: 100%;
     height: auto;
   }
-
+  .days {
+    border: 5px solid red;
+  }
   header nav{
     background: #16a085;
     width: 80%;

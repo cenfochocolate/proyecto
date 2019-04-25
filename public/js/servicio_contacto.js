@@ -2,8 +2,8 @@
 
 
 let buscar_contacto = (id_contacto) => {
-    
-    let contacto = []; 
+
+    let contacto = [];
 
     let request = $.ajax({
         url: "http://localhost:4000/api/buscar_contacto/"+id_contacto,
@@ -17,7 +17,7 @@ let buscar_contacto = (id_contacto) => {
 
     request.done(function (res) {
         contacto= res.contacto;
-       
+
     });
     request.fail(function (jqXHR, textStatus) {
 
@@ -25,46 +25,46 @@ let buscar_contacto = (id_contacto) => {
     return contacto;
 };
 
-let actualizar_contacto = ( pid_institucion,pnombre, pidentificacion,  pdepartamento,  ptelefono, pcorreo, pextension, pimagen, pid) => {
-    let request = $.ajax({
-        url: "http://localhost:4000/api/actualizar_contacto",
-        method: "POST",
-        data: {
-            id_institucion:pid_institucion,
-            nombre: pnombre,
-            id: pidentificacion,
-            departamento : pdepartamento,
-            telefono : ptelefono,
-            correo : pcorreo,
-            extension : pextension,
-            imagen : pimagen,
-            _id: pid
-             },
-             
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json"
-    });
-    
+let actualizar_contacto = ( pnombre, pdepartamento,  ptelefono, pcorreo, pextension, pimagen, pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_contacto",
+      method: "POST",
+      data: {
+        nombre : pnombre,
+        departamento:pdepartamento,
+        telefono:ptelefono,
+        correo:pcorreo,
+        extension:pextension,
+        imagen:pimagen,
+         id: pid
+           },
 
-    request.done(function (res) {
-      
-        swal.fire({
-            type: 'success',
-            title: 'contacto actualizado correctamente',
-            text:res.msg
-           
-        });
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
 
-    });
+  request.done(function (res) {
 
-    request.fail(function (res) {
-        swal.fire({
-            type: 'error',
-            title: 'Contacto no actualizado',
-            text: res.msg
-           
-        });
-    });
+      swal.fire({
+          type: 'success',
+          title: 'Contacto actualizado correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'Contacto no actualizado',
+          text: res.msg
+
+      });
+  });
 };
 function borrar_contacto(pid){
     $.ajax({
@@ -87,22 +87,19 @@ function borrar_contacto(pid){
     });
 };
 
-let registrar_contacto = ( pid_institucion,pnombre, pidentificacion,  pdepartamento,  ptelefono, pcorreo, pextension, pimagen) => {
+let registrar_contacto = ( pid_institucion, pnombre, pid, pdepartamento, ptelefono, pcorreo, pextension, pimagen) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_contacto",
         method: "POST",
         data: {
          id_institucion:pid_institucion,
          nombre: pnombre,
-         identificacion: pidentificacion,
+         id: pid,
          departamento : pdepartamento,
          telefono : ptelefono,
          correo : pcorreo,
          extension : pextension,
          imagen : pimagen
-
-
-
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -134,35 +131,35 @@ let deshabilitar_contacto = (pid) => {
           estado : "Desactivo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Contacto deshabiitado correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'perfil_institucion.html';
-            }    
+            }
         });
-  
+
     });
-  
+
     request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Contacto no deshabilitado',
             text: res.msg
-           
+
         });
     });
   };
-  
+
   let habilitar_contacto = (pid) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_contacto",
@@ -171,31 +168,31 @@ let deshabilitar_contacto = (pid) => {
           estado : "Activo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Contacto activada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'perfil_institucion.html';
-            }    
+            }
         });
-  
+
     });
-  
-    request.fail(function (res) { 
+
+    request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Contacto activada',
             text: res.msg
-           
+
         });
     });
-  }; 
+  };

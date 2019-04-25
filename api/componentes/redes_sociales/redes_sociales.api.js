@@ -16,7 +16,7 @@ module.exports.registrar = (req, res) =>{
   nuevas_rs.save(function(error){
     if (error) {
       res.json(
-        { 
+        {
           success : false,
           msj : `No se han podido registrar las redes sociales, ha ocurrido el siguiente error ${error}`
         }
@@ -75,7 +75,7 @@ module.exports.buscar_por_id = (req, res) => {
   )
 };
 module.exports.actualizar_rs = function (req, res)  {
-  modelo_rs.update({id_institucion : req.body.id_institucion}, {$set: req.body},
+  modelo_rs.update({_id : req.body.id_rs}, {$set: req.body},
       function (error) {
           if (error) {
               res.json(
@@ -93,9 +93,9 @@ module.exports.actualizar_rs = function (req, res)  {
               );
           }
       }
-      
+
       );
-  
+
 }
 
 
@@ -104,7 +104,7 @@ module.exports.borrar = (req, res) =>{
       function(error){
           if(error){
               res.json({ success : false, msg: 'No se pudo eliminar.'});
-              
+
           }else{
               res.json({ success : true, msg: 'Fue eliminada.'});
           }

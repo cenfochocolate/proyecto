@@ -18,20 +18,24 @@ function mostrar_instituciones(){
     if (usuarios[i]['tipo'].includes('institucion') && usuarios[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())&& usuarios[i]['aprobada'] == false) {
       let fila = tabla.insertRow();
       let celdaNombre = fila.insertCell();
+      let fechaHoy = moment();
+      let fechaIns= usuarios[i]['fecha'];
+      let diferencia = fechaHoy.diff(fechaIns,"days");
 
+      console.log(diferencia);
       celdaNombre.innerHTML = usuarios[i]['nombre_comercial'];
       celdaNombre.classList.add('botonid');
       celdaNombre.addEventListener('click', function(){
 
       sessionStorage.setItem('id_lugar', usuarios[i]['_id']);
-      
+
       window.location.href = 'perfil_institucion.html'
         })
+      let celdaGrado = fila.insertCell();
+      celdaGrado.innerHTML = usuarios[i]['grado'];
 
-      fila.insertCell().innerHTML = usuarios[i]['grado'];
 
-
-
+      let celdaImagen = fila.insertCell();
       let imagen = document.createElement('img');
       imagen.classList.add('imagentablainstituciones');
       if (usuarios[i]['url_foto']) {
@@ -40,7 +44,7 @@ function mostrar_instituciones(){
         imagen.src = './imgs/imgph.jpg';
       }
 
-      fila.insertCell().appendChild(imagen);
+      celdaImagen.appendChild(imagen);
 
       let celda_aceptar = fila.insertCell();
       let boton_aceptar = document.createElement('a');
@@ -56,6 +60,19 @@ function mostrar_instituciones(){
       boton_eliminar.addEventListener('click', confirmar_eliminar);
       celda_eliminar.appendChild(boton_eliminar);
 
+      if(diferencia <= -3){
+        celdaNombre.classList.add('days');
+        celdaGrado.classList.add('days');
+        celdaImagen.classList.add('days');
+        celda_aceptar.classList.add('days');
+        celda_eliminar.classList.add('days');
+      }else{
+        celdaNombre.classList.remove('days');
+        celdaGrado.classList.remove('days');
+        celdaImagen.classList.remove('days');
+        celda_aceptar.classList.remove('days');
+        celda_eliminar.classList.remove('days');
+      }
 
     }
   };
@@ -105,4 +122,3 @@ function confirmar_eliminar(){
   }
 })
 };
-

@@ -108,7 +108,11 @@
     <div class="direccion">
       <h2>Dirección</h2>
       <p id="direccion"></p>
+      <div id="mapa">
+
+      </div>
     </div>
+
     <div class="contacto">
       <h2>Contacto</h2>
       <form class="frm_buscar" action="" method="post">
@@ -127,11 +131,11 @@
             <th>Correo:</th>
             <th>Extensión:</th>
             <th>Foto:</th>
-            <th>Estado</th>
-            <th id="editar">Editar:</th>
-            <th id="eliminar">Eliminar:</th>
-            <th id="deshab">Deshabilitar:</th>
-            <th id="hab">Habilitar</th>
+            <th id="estadoC">Estado</th>
+            <th id="editarC">Editar:</th>
+            <th id="eliminarC">Eliminar:</th>
+            <th id="deshabC">Deshabilitar:</th>
+            <th id="habC">Habilitar</th>
 
 
 
@@ -161,6 +165,11 @@
             <th><img src="imgs/twitter.png" alt=""></th>
             <th><img src="imgs/email.png" alt=""></th>
             <th><img src="imgs/yt.png" alt=""></th>
+            <th id="estadors">Estado</th>
+            <th id="editarrs">Editar</th>
+            <th id="eliminarrs">Eliminar</th>
+            <th id="deshabrs">Deshabilitar</th>
+            <th id="habrs">Habilitar</th>
           </tr>
         </thead>
         <tbody>
@@ -189,9 +198,6 @@
       <textarea name="name" id="ta_comentario" rows="8" cols="80"></textarea>
       <button type="button" id="btn_comentario" name="button">Registrar</button>
     </div>
-    <div class="btns_institucion">
-      <button type="button" id="btn_reporte">Generar reporte</button>
-    </div>
   </main>
   <footer>
     <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
@@ -199,9 +205,13 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
   <script src="js/servicio_perfil_institucion.js"></script>
   <script src="js/servicio_usuario.js"></script>
+  <script src="js/controlador_listar_mapa.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/controlador_perfil_institucion.js"></script>
+  <script src="js/controlador_listar_contacton.js"></script>
   <script src="js/controlador_cerrar_sesion.js"></script>
   <script src="js/controlador_validar_tusuario.js"></script>
 </body>

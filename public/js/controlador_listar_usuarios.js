@@ -3,14 +3,11 @@
 const tabla = document.querySelector('#tbl_usuarios tbody');
 const inputFiltro = document.querySelector ('#txtfitro');
 const slt_tusuario = document.querySelector('#slt_tipo_usuario');
-
 let usuarios = listar_instituciones();
-
 mostrar_usuarios();
 
 slt_tusuario.addEventListener('change', mostrar_usuarios);
 inputFiltro.addEventListener('keyup', mostrar_usuarios);
-
 
 function mostrar_usuarios(){
 	let usuarios = listar_instituciones();

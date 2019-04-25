@@ -43,6 +43,7 @@ module.exports.registrar = function (req, res) {
             url_foto: req.body.url_foto,
             aprobada: req.body.aprobada,
             estado: "Activo",
+            fecha: req.body.fecha,
             contrasenna: req.body.contrasenna
         }
     );

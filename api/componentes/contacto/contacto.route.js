@@ -34,7 +34,7 @@ router.route('/listar_contacto')
     router.route('/buscar_contacto/:id_contacto')
     .get(
         function (req, res) {
-            api_contacto.buscar_por_id(req, res); 
+            api_contacto.buscar_por_id(req, res);
         }
     )
     router.route('/borrar_contacto')
@@ -42,4 +42,4 @@ router.route('/listar_contacto')
         api_contacto.borrar(req, res);
     });
 
-module.exports = router; 
+module.exports = router;

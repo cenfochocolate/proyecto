@@ -2,7 +2,8 @@
 
 const tabla = document.querySelector('#tbl_contacto tbody');
 const inputFiltro = document.querySelector('#buscar_contacto');
-
+const id_institucion = sessionStorage.getItem('id_lugar');
+const idlog = sessionStorage.getItem('idu');
 
 let contacto = listar_contacto();
 
@@ -16,7 +17,7 @@ function mostrar_datos(){
   tabla.innerHTML='';
 
   for(let i = 0; i <contacto.length; i++){
-    if(contacto[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+    if(contacto[i]['nombre'].toLowerCase().includes(filtro.toLowerCase()) && id_institucion == contacto[i]['id_institucion']){
     let fila = tabla.insertRow();
 
       fila.insertCell().innerHTML = contacto[i]['nombre'];
@@ -39,14 +40,13 @@ function mostrar_datos(){
       let boton_editar = document.createElement('a');
       boton_editar.textContent ='Editar';
       boton_editar.href=`actualizar_contacto.html?id_contacto=${contacto[i]['_id']}`
-   
+
       celda_configuracion.appendChild(boton_editar);
-      
-  
+
+
       }
-  
+
     };
   };
-  
+
   mostrar_datos();
-  

@@ -68,9 +68,7 @@ module.exports.buscar_por_id = (req, res) => {
   )
 };
 module.exports.actualizar_contacto = function(req, res) {
-  modelo_contacto.findByIdAndUpdate(req.body._id, {
-      $set: req.body
-    },
+  modelo_contacto.update({_id : req.body.id}, {$set: req.body},
     function(error) {
       if (error) {
         res.json({
@@ -93,7 +91,7 @@ module.exports.borrar = (req, res) =>{
       function(error){
           if(error){
               res.json({ success : false, msg: 'No se pudo eliminar el contacto.'});
-              
+
           }else{
               res.json({ success : true, msg: 'El contacto fue eliminada.'});
           }

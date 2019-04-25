@@ -28,7 +28,9 @@ const input_documentos = '//TODO ';
 const input_contrasenna = document.querySelector('#txt_contrasenna');
 const btn_enviar = document.querySelector('#btn_enviar');
 const tc = sessionStorage.getItem('tipo_usuario');
-
+const capcha = document.querySelector('#checkbox_capcha');
+const div_capcha = document.querySelector('#capcha');
+const fechaRegistro = moment().format("YYYY-MM-DD");
 $(function validar_select(){ /*this.setMasks();
  DOM ready */
     $(input_tipo).change(function() {
@@ -324,6 +326,13 @@ let validar = () => {
           input_nhijos.classList.remove('error_input');
         }
 
+        if (capcha.checked) {
+          error = false;
+          div_capcha.classList.remove('error_input');
+        } else {
+          div_capcha.classList.add('error_input');
+        }
+
         //Aquí terminan las validaciones de los padres de familia
 
     }else{
@@ -335,6 +344,13 @@ let validar = () => {
             input_nombre.classList.add('error_input');
           } else {
             input_nombre.classList.remove('error_input');
+          }
+
+          if (input_historica.value=='') {
+            error=true;
+            input_historica.classList.add('error_input');
+          } else {
+            input_historica.classList.remove('error_input');
           }
 
           if (lst_provincia.options[lst_provincia.selectedIndex].value == 0) {
@@ -383,6 +399,13 @@ let validar = () => {
           input_nombre_comercial.classList.remove('error_input');
         }
 
+        if (input_identificacion.value==''){
+          error = true;
+          input_identificacion.classList.add('error_input');
+        }else {
+          input_identificacion.classList.remove('error_input');
+        }
+
         if (select_anios.value<1) {
           error=true;
           select_anios.classList.add('error_input');
@@ -410,7 +433,12 @@ let validar = () => {
         } else {
           input_fax.classList.remove('error_input');
         }
-
+        if (capcha.checked) {
+          error = false;
+          div_capcha.classList.remove('error_input');
+        } else {
+          div_capcha.classList.add('error_input');
+        }
     }
     return error;
 };
@@ -447,6 +475,7 @@ let registrar = () => {
         let latitud = ubicacion1[1];
         let url_mail = input_mail.value;
         let contrasenna =input_contrasenna.value;
+        let fecha = fechaRegistro;
         let telefono = input_telefono.value;
         let telefono_extencion = input_telefono_extencion.value;
         let fax = input_fax.value;
@@ -478,6 +507,7 @@ let registrar = () => {
           web,
           url_archivo,
           url_foto,
+          fecha,
           contrasenna
           );
       } else{

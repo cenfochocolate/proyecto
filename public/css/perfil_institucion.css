@@ -8,9 +8,9 @@
     height: 40px;
   }
 
-  fieldset select{
+  fieldset #slt_estrellas{
     color: #EFB819;
-  } 
+  }
   #menu_institucion a{
     color: white;
     font-family: 'Roboto Slab', serif;

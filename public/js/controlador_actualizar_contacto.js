@@ -1,7 +1,6 @@
 'use strict';
 
 const input_nombre = document.querySelector('#txt_nombre');
-const input_id = document.querySelector('#number_id');
 const input_departamento = document.querySelector('#txt_departamento');
 const input_telefono = document.querySelector('#number_telefono');
 const input_correo = document.querySelector('#email_correo');
@@ -26,9 +25,6 @@ let mostrar_datos = () =>{
 
 
     input_nombre.value = contacto[0]['nombre'];
-    input_id.value = contacto[0]['id'];
-    input_id.disabled = true;
-
     input_departamento.value = contacto[0]['departamento'];
     input_telefono.value = contacto[0]['telefono'];
     input_correo.value = contacto[0]['correo'];
@@ -37,11 +33,11 @@ let mostrar_datos = () =>{
     // ID de la imagen
     let idIMG = contacto[0]['imagen'].split('upload/')[1];
     img_contacto.src = 'http://res.cloudinary.com/cenfochocolate/image/upload/' + idIMG;
-   
-    
-    
 
-    } 
+
+
+
+    }
 
 
 if(contacto){
@@ -58,12 +54,6 @@ let validar = () => {
         input_nombre.classList.add('error_input');
     } else {
         input_nombre.classList.remove('error_input');
-    }
-    if (input_id.value == '') {
-        error = true;
-        input_id.classList.add('error_input');
-    } else {
-        input_id.classList.remove('error_input');
     }
     if (input_departamento.value == '') {
         error = true;
@@ -101,9 +91,7 @@ let obtener_datos = () => {
 
     if (validar() == false) {
         // Se ejecuta solo si la validación no da error
-        let id_institucion = id_ins;
         let nombre = input_nombre.value;
-        let id  = input_id.value;
         let departamento  = input_departamento.value;
         let telefono = input_telefono.value;
         let correo = input_correo.value;
@@ -112,7 +100,7 @@ let obtener_datos = () => {
 
 
 
-        actualizar_contacto(id_institucion,nombre, id, departamento, telefono, correo, extension, imagen,  _id);
+        actualizar_contacto(nombre,departamento, telefono, correo, extension, imagen,  _id);
     } else {
         swal.fire({
             type: 'warning',
