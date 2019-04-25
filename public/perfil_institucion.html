@@ -30,58 +30,6 @@
       <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
     </nav>
     <main>
-      <div id="menu_institucion">
-        <ul class = "nav">
-          <li><i class="fas fa-align-justify"></i>
-              <ul>
-                  <li><a href="perfil_institucion.html">Institución</a></li>
-                  <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-                  <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-                  <li><a id="lista_seleccionada_utiles" href="">Útiles</a></li>
-                  <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-                  <li><a href="listar_citas.html">Citas</a></li>
-                  <li><a href="lista_mensualidad.html">Mensualidad</a></li>
-              </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="titulo_institucion">
-        <h1 id="nombre"></h1>
-      </div>
-      <div class="img_institucion">
-        <img id= "imagen" src="" alt="">
-      </div>
-      <div class="historia">
-        <h2>Historia</h2>
-        <p id="rh"></p>
-      </div>
-      <div class="seccion_estrellas">
-        <h2>Calificaciones</h2>
-        <div class="usuarios">
-          <nav>
-            <input class="check" id="cinco" type="checkbox" name="" value="5">
-            <label class="star" for="cinco">★★★★★</label>
-          </nav>
-          <nav>
-            <input type="checkbox" id="cuatro" class="check" name="" value="4">
-            <label class="star" for="cinco">★★★★</label>
-          </nav>
-          <nav>
-            <input type="checkbox" name="" id="tres" class="check" value="3">
-            <label class="star" for="cinco">★★★</label>
-          </nav>
-          <nav>
-            <input type="checkbox" name="" value="2" id="dos" class="check">
-            <label class="star" for="cinco">★★</label>
-          </nav>
-          <nav>
-            <input type="checkbox" name="" value="1" id="uno" class="check">
-            <label class="star" for="cinco">★</label>
-          </nav>
-
-  </header>
-
-  <main>
     <div id="menu_institucion">
       <ul class="nav">
         <li><i class="fas fa-align-justify"></i>
@@ -89,7 +37,7 @@
             <li><a href="perfil_institucion.html">Institución</a></li>
             <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
             <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-            <li><a id="lista_seleccionada_utiles" href="">Útiles</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles.html">Útiles</a></li>
             <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
             <li><a href="listar_citas.html">Citas</a></li>
             <li><a href="lista_mensualidad.html">Mensualidad</a></li>
@@ -113,32 +61,27 @@
     <div class="seccion_estrellas">
       <h2>Calificaciones</h2>
       <div class="usuarios">
-        <nav>
-          <input class="check" type="checkbox" name="" value="5">
-          <label class="star" for="cinco">★★★★★</label>
-        </nav>
-        <nav>
-          <input type="checkbox" class="check" name="" value="4">
-          <label class="star" for="cinco">★★★★</label>
-        </nav>
-        <nav>
-          <input type="checkbox" name="" class="check" value="3">
-          <label class="star" for="cinco">★★★</label>
-        </nav>
-        <nav>
-          <input type="checkbox" name="" value="2" class="check">
-          <label class="star" for="cinco">★★</label>
-        </nav>
-        <nav>
-          <input type="checkbox" name="" value="1" class="check">
-          <label class="star" for="cinco">★</label>
-        </nav>
-
+        <fieldset>
+          <select class="" id="slt_estrellas" name="">
+            <option value="">Calificar</option>
+            <option class="estrellas" value="5">★★★★★</option>
+            <option class="estrellas" value="4">★★★★</option>
+            <option class="estrellas" value="3">★★★</option>
+            <option class="estrellas" value="2">★★</option>
+            <option class="estrellas" value="1">★</option>
+          </select>
+        </fieldset>
       </div>
       <div class="admin">
 
       </div>
       <button type="button" id="btn_estrellas" name="button">Registrar Calificación</button>
+    </div>
+    <div class="mostrar_calificaciones">
+      <h2>Promedio de calificaciones</h2>
+      <div class="" id="datos">
+
+      </div>
     </div>
     <div class="noticias">
       <h2>Noticias</h2>

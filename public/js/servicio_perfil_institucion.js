@@ -119,21 +119,21 @@ let deshabilitar_contacto = (pid) => {
         estado : "Desactivo",
          id: pid
            },
-           
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
           title: 'Contacto deshabiitado correctamente',
           text: res.msg,
           onClose: () => {
             window.location.href = 'perfil_institucion.html';
-          }    
+          }
       });
 
   });
@@ -143,7 +143,7 @@ let deshabilitar_contacto = (pid) => {
           type: 'error',
           title: 'Contacto no deshabilitado',
           text: res.msg
-         
+
       });
   });
 };
@@ -156,31 +156,31 @@ let habilitar_contacto = (pid) => {
         estado : "Activo",
          id: pid
            },
-           
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
           title: 'Contacto activado correctamente',
           text: res.msg,
           onClose: () => {
             window.location.href = 'perfil_institucion.html';
-          }    
+          }
       });
 
   });
 
-  request.fail(function (res) { 
+  request.fail(function (res) {
       swal.fire({
           type: 'error',
           title: 'contacto activada',
           text: res.msg
-         
+
       });
   });
 };
@@ -259,14 +259,14 @@ let registrar_comentario = (pid_usuario, pid_institucion, pcomentario)=>{
   });
 };
 
-let registrar_puntuacion_usuario = (pid_usuario, pid_insti, pcalificacion)=>{
+let registrar_estrellas = (pid_institucion, pid_user, pcalificacion)=>{
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_valoracion_usuarios",
     method: "POST",
     data: {
-      id_institucion:pid_insti,
-      id_usuario:pid_usuario,
-      comentario:pcomentario
+      id_institucion:pid_institucion,
+      id_usuario:pid_user,
+      calificacion:pcalificacion
      },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json"
@@ -283,6 +283,26 @@ let registrar_puntuacion_usuario = (pid_usuario, pid_insti, pcalificacion)=>{
       title: 'No se ha podido registrar la calificación',
     });
   });
+};
+
+let listar_datos_users =()=>{
+  let lista_valoraciones = [];
+  let request = $.ajax({
+    url: "http://localhost:4000/api/listar_calificaciones_usuario",
+    method: "GET",
+    data: {},
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async: false
+  });
+
+  request.done(function(res){
+    lista_valoraciones=res.estrellas_contactos;
+  });
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+  return lista_valoraciones;
 };
 
 let listar_comentarios = () =>{
@@ -393,7 +413,7 @@ function buscar_institucion(pid) {
 
     request.done(function (msg) {
         lugar = msg.institucion;
-    }) 
+    })
 
     return lugar;
 };

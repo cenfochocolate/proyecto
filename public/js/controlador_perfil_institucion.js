@@ -36,11 +36,7 @@ let text_comentario = document.querySelector('#ta_comentario');
 let btn_comentario = document.querySelector('#btn_comentario');
 
 //variables de las estrellas
-const cinco = document.querySelector('#cinco');
-const cuatro = document.querySelector('#cuatro');
-const tres = document.querySelector('#tres');
-const dos = document.querySelector('#dos');
-const uno = document.querySelector('#uno');
+const slt_estrellas = document.querySelector('#slt_estrellas');
 const btn_estrellas = document.querySelector('#btn_estrellas');
 
 nombre_inistitucion.innerHTML = institucion['nombre_comercial'];
@@ -56,7 +52,32 @@ mostrar_noticias();
 // mostrar_contacto();
 mostrar_rs();
 mostrar_comentarios();
-validar_estrellas_usuarios();
+
+let validar_estrellas = ()=>{
+  let error =false;
+  if (slt_estrellas.value == '') {
+    error=true;
+    slt_estrellas.classList.add('error_input');
+  } else {
+    error=false;
+  };
+  return error;
+};
+
+let obtener_estrellas =()=>{
+  if (validar_estrellas()== false) {
+    let id_insti = id_institucion;
+    let id_user = idr;
+    let calificacion = slt_estrellas.value;
+    registrar_estrellas(id_insti, id_user, calificacion);
+  } else {
+    swal.fire({
+      type: 'warning',
+      title: 'La calificación no pudo ser registrada',
+      text: 'Por favor revise los campos resaltados'
+    });
+  }
+};
 
 let validar_comentario = () =>{
   let error = false;
@@ -128,76 +149,11 @@ function mostrar_noticias(){
   };
 };
 
-function vaciarCheckboxes (){
-  if ((cinco).checked=true) {
-    (cuatro).checked=false;
-    (tres).checked=false;
-    (dos).checked=false;
-    (uno).checked=false;
-  } else if ((cuatro).checked=true) {
-    (cinco).checked=false;
-    (tres).checked=false;
-    (dos).checked=false;
-    (uno).checked=false;
-  } else if ((tres).checked=true) {
-    (cuatro).checked=false;
-    (cinco).checked=false;
-    (dos).checked=false;
-    (uno).checked=false;
-  } else if ((dos).checked=true) {
-    (cuatro).checked=false;
-    (tres).checked=false;
-    (cinco).checked=false;
-    (uno).checked=false;
-  } else if ((uno).checked=true) {
-    (cuatro).checked=false;
-    (tres).checked=false;
-    (dos).checked=false;
-    (cinco).checked=false;
-  };
-};
-
-function validar_estrellas_usuarios(){
-  let error = false;
-  if ((cinco).checked=true || (cuatro).checked=true || (tres).checked=true || (dos).checked=true || (uno).checked=true) {
-    error = false;
-  } else {
-    error=true;
-  }
-  return error;
-}
-
-function r_estrellas_usuarios () {
-  let estrellas = r_estrellas_usuarios;
-  let puntuacion = 0;
-  if (validar_estrellas_usuarios==false) {
-    if ((cinco).checked) {
-      puntuacion=cinco.value;
-    } else if ((cuatro).checked) {
-      puntuacion=cuatro.value;
-    } else if ((tres).checked) {
-      puntuacion=cinco.value;
-    } else if ((dos).checked) {
-      puntuacion=dos.value;
-    } else if ((uno).checked) {
-      puntuacion=uno.value;
-    };
-
-    let id_usuario = idr;
-    let id_insti=id_institucion;
-    let calificacion = puntuacion;
-    registrar_puntuacion_usuario(id_usuario, id_insti, calificacion);
-  }else{
-    swal.fire({
-      type: 'warning',
-      title: 'La puntuación no fue registrada',
-      text: 'Por favor seleccione una puntuación'
-    });
-  }
-
-
+function mostrar_datos_user(){
+  let valoraciones = listar_datos_users();
 
 };
+
 
 function mostrar_comentarios(){
 
@@ -274,27 +230,27 @@ function mostrar_datos(){
       boton_eliminar.dataset.id= contacto[i]['_id'];
       boton_eliminar.addEventListener('click', confirmar_borrado);
       celda_eliminar.appendChild(boton_eliminar);
-      
+
       let celda_deshabilitar = fila.insertCell();
          let boton_deshabilitar = document.createElement('a');
          boton_deshabilitar.innerHTML= '<i class="fas fa-eye-slash"></i>';
          boton_deshabilitar.dataset.id = contacto[i]['_id'];
          boton_deshabilitar.addEventListener('click', confirmar_deshabilitar);
          celda_deshabilitar.appendChild(boton_deshabilitar);
-   
+
          let celda_habilitar = fila.insertCell();
          let boton_habilitar = document.createElement('a');
          boton_habilitar.innerHTML= '<i class="fas fa-eye"></i>';
          boton_habilitar.dataset.id =contacto[i]['_id'];
          boton_habilitar.addEventListener('click', confirmar_habilitar);
          celda_habilitar.appendChild(boton_habilitar);
-   
+
       }else{
        if (contacto[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())&&contacto[i]['id_institucion'] == institucion && contacto[i]['estado'] == "Activo"){
-   
+
          let fila = tabla.insertRow();
-   
-        
+
+
       fila.insertCell().innerHTML = contacto[i]['nombre'];
       fila.insertCell().innerHTML = contacto[i]['departamento'];
       fila.insertCell().innerHTML = contacto[i]['telefono'];
@@ -310,7 +266,7 @@ function mostrar_datos(){
       fila.insertCell().appendChild(imagen);
       fila.insertCell().innerHTML = contacto[i]['estado'];
    };
-   
+
    }
    }
    };
@@ -335,7 +291,7 @@ function mostrar_datos(){
        })
      }
    })
-   
+
    };
    function confirmar_deshabilitar(){
      let id= this.dataset.id;
@@ -358,8 +314,8 @@ function mostrar_datos(){
      }
    })
    };
-   
-   
+
+
    function confirmar_habilitar(){
      let id= this.dataset.id;
      Swal.fire({
@@ -382,8 +338,8 @@ function mostrar_datos(){
    })
    };
    mostrar_datos();
-   
-    
+
+
 
 
 
@@ -409,9 +365,9 @@ function mostrar_datos(){
 
                 celda_configuracion.appendChild(boton_editar);
 
-                
+
         }
- 
+
       };
   };
 
@@ -432,7 +388,7 @@ function mostrar_datos(){
   let obtener_datos=()=>{
     if (validar()==false) {
       let preferencia = slt_utiles.value;
-      pref_util.href = preferencia; 
+      pref_util.href = preferencia;
       registrar_pref(preferencia);
 
     } else {
@@ -444,5 +400,6 @@ function mostrar_datos(){
     }
   };
 
+  btn_estrellas.addEventListener('click', obtener_estrellas);
   btn_registrar.addEventListener('click', obtener_datos);
   btn_comentario.addEventListener('click',obtener_comentario);

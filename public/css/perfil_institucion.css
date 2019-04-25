@@ -8,7 +8,9 @@
     height: 40px;
   }
 
-
+  fieldset select{
+    color: #EFB819;
+  } 
   #menu_institucion a{
     color: white;
     font-family: 'Roboto Slab', serif;
