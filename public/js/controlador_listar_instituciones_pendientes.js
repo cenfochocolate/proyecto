@@ -60,7 +60,7 @@ function mostrar_instituciones(){
       boton_eliminar.addEventListener('click', confirmar_eliminar);
       celda_eliminar.appendChild(boton_eliminar);
 
-      if(diferencia <= -3){
+      if(diferencia >= 3){
         celdaNombre.classList.add('days');
         celdaGrado.classList.add('days');
         celdaImagen.classList.add('days');
