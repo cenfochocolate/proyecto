@@ -1,9 +1,10 @@
 'use strict';
-let registar_requisito = (pnivel, pdescripcion) => {
+let registar_requisito = (pid, pnivel, pdescripcion) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_requisito",
         method: "POST",
         data: {
+            id_institucion: pid,
             nivel: pnivel,
             descripcion: pdescripcion,
             estado: "Activo"
@@ -13,10 +14,9 @@ let registar_requisito = (pnivel, pdescripcion) => {
     });
     request.done(function (res) {
 
-        swal.fire({ 
+        swal.fire({
             type: 'success',
-            title: 'Su registro se envio correctamente ' ,
-            text: `El nivel deseado en la institucion es ${pnivel} con la descripcion de ${pdescripcion}`
+            title: '¡Registro correctamente!'
         });
 
     });
@@ -99,12 +99,12 @@ let actualizar_requisito = (pnivel, pdescripcion, pid) => {
 
         swal.fire({
             type: 'success',
-            title: 'Requisito actualizado correctamente',
-            text : res.msg,
-            onClose: () =>{
-                window.location.href ='listar_requisitos.html';
+            title: '¡Requisito actualizado correctamente!',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'listar_requisitos.html';
             }
-              
+
         });
 
     });
@@ -119,7 +119,7 @@ let actualizar_requisito = (pnivel, pdescripcion, pid) => {
     });
 };
 
-function borrar_requisito(pid){
+function borrar_requisito(pid) {
     $.ajax({
         url: 'http://localhost:4000/api/borrar_requisito',
         method: 'POST',
@@ -127,15 +127,93 @@ function borrar_requisito(pid){
         data: {
             id: pid
         },
-        beforeSend: function beforeSend(){
+        beforeSend: function beforeSend() {
 
         },
-        success: function success(response){
+        success: function success(response) {
 
         },
-        error: function error(_error){
+        error: function error(_error) {
             console.log("Request fail error: " + _error);
 
         }
+    });
+};
+let habilitar_requisito = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_requisito",
+        method: "POST",
+        data: {
+
+            estado: "Activo",
+            id: pid
+        },
+
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: '¡Activada correctamente!',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'listar_requisitos.html';
+            }
+
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Requisito no actualizado',
+            text: res.msg
+
+        });
+    });
+};
+let deshabilitar_requisito = (pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_requisito",
+        method: "POST",
+        data: {
+
+            estado: "Desactivo",
+            id: pid
+        },
+
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: '¡Deshabiitada correctamente!',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'listar_requisitos.html';
+            }
+
+        });
+
+    });
+
+    request.fail(function (res) {
+        swal.fire({
+            type: 'error',
+            title: 'Requisito no actualizado',
+            text: res.msg
+
+        });
     });
 };

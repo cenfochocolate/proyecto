@@ -31,7 +31,11 @@ let obtener_datos = () =>{
     let nivel = select_nivel.value;
 
     Swal.fire({
+<<<<<<< HEAD
+        title: '¿Está seguro que desea actualizar?',
+=======
         title: '¿Está seguro que desea actualizar el útil?',
+>>>>>>> master
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
