@@ -129,3 +129,78 @@ let buscar_idioma = (id_idioma) => {
             }
         });
       };
+
+      let deshabilitar_idioma = (pid) => {
+        let request = $.ajax({
+            url: "http://localhost:4000/api/actualizar_idioma",
+            method: "POST",
+            data: {
+              estado : "Desactivo",
+               id: pid
+                 },
+                 
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        });
+      
+        request.done(function (res) {
+          
+            swal.fire({
+                type: 'success',
+                title: 'Cita deshabiitada correctamente',
+                text: res.msg,
+                onClose: () => {
+                  window.location.href = 'listar_idioma.html';
+                }    
+            });
+      
+        });
+      
+        request.fail(function (res) {
+            swal.fire({
+                type: 'error',
+                title: 'Cita no deshabilitada',
+                text: res.msg
+               
+            });
+        });
+      };
+
+      let habilitar_idioma = (pid) => {
+        let request = $.ajax({
+            url: "http://localhost:4000/api/actualizar_idioma",
+            method: "POST",
+            data: {
+              estado : "Activo",
+               id: pid
+                 },
+                 
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            async: false
+        });
+      
+        request.done(function (res) {
+          
+            swal.fire({
+                type: 'success',
+                title: 'Cita activada correctamente',
+                text: res.msg,
+                onClose: () => {
+                  window.location.href = 'listar_idioma.html';
+                }    
+            });
+      
+        });
+      
+        request.fail(function (res) { 
+            swal.fire({
+                type: 'error',
+                title: 'Cita activada',
+                text: res.msg
+               
+            });
+        });
+      };
+    
