@@ -43,8 +43,8 @@ function obtenerDatos(){
         let idioma=input_idioma.value;
         let codigo_iso= sltcodigo.selectedOptions[0].textContent;
         let imagen=imgbandera.src;
-
-        registra_idiomas(idioma,codigo_iso,imagen)
+       
+        registra_idiomas(idioma,codigo_iso,imagen,)
         swal.fire({
             type: 'success',
             title: 'El registro se correctamente',

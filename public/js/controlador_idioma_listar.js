@@ -49,5 +49,28 @@ let mostrar_datos = () => {
 
 
 }
+function confirmar_borrado(){
+    let id= this.dataset.id;
+    Swal.fire({
+      title:'¿Está seguro que desea eliminar el idioma?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, estoy seguro.'
+  }).then((result)=>{
+    if(result.value){
+        borrar_idioma(id);
+      idiomas=listar_idiomas();
+      mostrar_datos();
+      Swal.fire({
+        title:'¡Servicio eliminada!',
+        text:'El idioma fue eliminado con éxito.',
+        type:'success'
+      })
+    }
+  })
+  
+  };
 mostrar_datos();     
 input_filtro.addEventListener('keyup',mostrar_datos);

@@ -36,4 +36,9 @@ router.route('/buscar_idioma/:id_idioma')
         api_idiomas.buscar_por_id(req, res);
     }
 );
+
+router.route('/borrar_idioma')
+    .post(function(req, res){
+        api_idiomas.borrar(req, res);
+    });
 module.exports=router;

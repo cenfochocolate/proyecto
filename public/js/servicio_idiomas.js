@@ -1,5 +1,5 @@
 'use strict';
-let registra_idiomas=(pidioma,pcodigo_iso,pimagen)=>{
+let registra_idiomas=(pidioma,pcodigo_iso,pimagen,)=>{
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_idiomas",
         method: "POST",
@@ -109,3 +109,23 @@ let buscar_idioma = (id_idioma) => {
     
     };    
     
+    function borrar_idioma(pid){
+        $.ajax({
+            url: 'http://localhost:4000/api/borrar_idioma',
+            method: 'POST',
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            data: {
+                id: pid
+            },
+            beforeSend: function beforeSend(){
+      
+            },
+            success: function success(response){
+      
+            },
+            error: function error(_error){
+                console.log("Request fail error: " + _error);
+      
+            }
+        });
+      };
