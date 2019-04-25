@@ -33,6 +33,16 @@ let mostrar_datos = () => {
        boton_editar.href = `actualizar_idioma.html?id_idioma=${idiomas[i]['_id']}`;
 
        celda_configuracion.appendChild(boton_editar);
+
+       let celda_eliminar = fila.insertCell();
+
+       let boton_eliminar = document.createElement('a');
+       boton_eliminar.href= '#';
+       boton_eliminar.innerHTML= 'Eliminar';
+       boton_eliminar.dataset.id= idiomas[i]['_id'];
+       boton_eliminar.addEventListener('click', confirmar_borrado);
+       celda_eliminar.appendChild(boton_eliminar);
+
     }    
     }
     
