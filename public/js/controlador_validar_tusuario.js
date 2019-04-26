@@ -3,7 +3,16 @@ let paneldec = document.querySelector('#panel');
 let perf = document.querySelector('#perfil');
 let id = sessionStorage.getItem('idu');
 let idi = sessionStorage.getItem('id_lugar');
+let citas = document.querySelector('#citas');
 
+function validarCitas(){
+
+  if(id == idi){
+    citas.href="listar_citas.html";
+  }else{
+    citas.href="registrar_citas.html";
+  }
+}
 function validarhref(){
   if(input_tipo == 'institucion'){
     sessionStorage.setItem('id_lugar', id);
@@ -37,3 +46,4 @@ function validarInicio() {
 validarSesion();
 validarInicio();
 perf.addEventListener('click', validarhref);
+validarCitas();

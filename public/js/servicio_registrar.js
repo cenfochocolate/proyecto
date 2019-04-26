@@ -127,7 +127,7 @@ let registrar_citas = (pid_institucion, pnombre, ptime, pdate) => {
       type: 'success',
       title: 'Cita registrada correctamente',
       onClose: () => {
-        window.location.href = 'listar_citas.html';
+        window.location.href = 'perfil_institucion.html';
       }
     });
 
