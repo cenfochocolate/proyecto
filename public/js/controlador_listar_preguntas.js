@@ -8,7 +8,24 @@ const eliminar = document.querySelector('#eliminar');
 const deshabilitar = document.querySelector('#deshab');
 const habilitar = document.querySelector('#hab');
 const log = sessionStorage.getItem('idu');
+const boton = document.querySelector('#btn_listar');
+const estado = document.querySelector('#estado');
 
+if(id_institucion == log){
+  boton.classList.remove('hideInput');
+  estado.classList.remove('hideInput');
+  editar.classList.remove('hideInput');
+  eliminar.classList.remove('hideInput');
+  habilitar.classList.remove('hideInput');
+  deshabilitar.classList.remove('hideInput');
+}else{
+  boton.classList.add('hideInput');
+  estado.classList.add('hideInput');
+  editar.classList.add('hideInput');
+  eliminar.classList.add('hideInput');
+  habilitar.classList.add('hideInput');
+  deshabilitar.classList.add('hideInput');
+}
 
 mostrar_datos();
 
@@ -20,8 +37,7 @@ function mostrar_datos() {
   tabla.innerHTML = '';
 
   for (let i = 0; i < preguntas.length; i++) {
-    if (id_institucion == preguntas[i]['id_institucion']) {
-      if (preguntas[i]['preguntas'].toLowerCase().includes(filtro.toLowerCase())) {
+      if (preguntas[i]['preguntas'].toLowerCase().includes(filtro.toLowerCase())&& preguntas[i]['id_institucion']== id_institucion && id_institucion == log) {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = preguntas[i]['preguntas'];
         fila.insertCell().innerHTML = preguntas[i]['respuestas'];
@@ -64,19 +80,19 @@ function mostrar_datos() {
         celda_habilitar.appendChild(boton_habilitar);
 
       } else {
-        if (preguntas[i]['preguntas'].toLowerCase().includes(filtro.toLowerCase()) && preguntas[i]['id_institucion'] == institucion && preguntas[i]['estado'] == "Activo") {
+        if (preguntas[i]['preguntas'].toLowerCase().includes(filtro.toLowerCase()) && preguntas[i]['id_institucion'] == id_institucion && preguntas[i]['estado'] == "Activo") {
 
           let fila = tabla.insertRow();
 
           fila.insertCell().innerHTML = preguntas[i]['preguntas'];
           fila.insertCell().innerHTML = preguntas[i]['respuestas'];
-          fila.insertCell().innerHTML = preguntas[i]['estado'];
 
 
-        };
+        
+        }
 
       }
-    }
+    
   };
   function confirmar_borrado() {
     let id = this.dataset.id;

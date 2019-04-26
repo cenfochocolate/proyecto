@@ -6,6 +6,7 @@ const model_material = require('./material_informativo.model')
 module.exports.registrar = (req, res)=>{
 let nuevo_material = new model_material(
     {
+    id_institucion : req.body.id_institucion,
      nombre_institucion: req.body.nombre_institucion,
      descripcion : req.body.descripcion,
      estado: 'Activo'

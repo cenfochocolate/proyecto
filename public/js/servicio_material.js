@@ -1,12 +1,12 @@
 'use stric';
 
 
-let registrar_materiales = (pnombre_institucion, pdescripcion) => {
+let registrar_materiales = (pid_institucion, pnombre_institucion, pdescripcion) => {
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_materiales",
     method: "POST",
     data: {
-
+      id_institucion : pid_institucion,
       nombre_institucion: pnombre_institucion,
       descripcion: pdescripcion
 

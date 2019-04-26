@@ -18,7 +18,10 @@ let registrar_noticia = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
 
     swal.fire({
         type: 'success',
-        title: 'Noticia registrada'
+        title: 'Noticia registrada',
+        onClose: () => {
+          window.location.href = 'perfil_institucion.html';
+        }
 
     });
 
@@ -118,8 +121,10 @@ let registrar_contacto = (pid_institucion, pnombre, pidentificacion, pdepartamen
 
         swal.fire({
             type: 'success',
-            title: 'Contacto registrado'
-
+            title: 'Contacto registrado',
+            onClose: () => {
+              window.location.href = 'perfil_institucion.html';
+            }
         });
 
     });
@@ -226,7 +231,10 @@ let registrar_rs = (pfacebook, pinstagram, ptwitter, pemail, pyoutube) =>{
       swal.fire({
         type: 'success',
         title: 'Registro realizado satisfactoriamente',
-        text: `Se han registrado las siguientes direcciones de corro ${pfacebook} ${pinstagram} ${ptwitter} ${pemail} ${pyoutube}`
+        text: `Se han registrado las siguientes direcciones de corro ${pfacebook} ${pinstagram} ${ptwitter} ${pemail} ${pyoutube}`,
+        onClose: () => {
+          window.location.href = 'perfil_institucion.html';
+        }
       });
     });
 
@@ -536,7 +544,7 @@ let registrar_pref=(pid, pslt_utiles)=>{
       swal.fire({
         type: 'success',
         title: 'Registro realizado satisfactoriamente',
-        text: `Hola, en su perfil se mostrará la lista de utiles de ${pslt_utiles}`
+        text: `Hola, en su perfil se mostrará la lista seleccionada`
       });
     });
 

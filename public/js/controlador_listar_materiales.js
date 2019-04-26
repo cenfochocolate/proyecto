@@ -8,7 +8,8 @@ const eliminar = document.querySelector('#eliminar');
 const deshabilitar = document.querySelector('#deshab');
 const habilitar = document.querySelector('#hab');
 const botonr = document.querySelector('#btn_registrar');
-const log = sessionStorage.getItem('idu')
+const log = sessionStorage.getItem('idu');
+const estado = document.querySelector('#estado');
 
 let material = listar_materiales();
 if(institucion == log){
@@ -17,6 +18,7 @@ if(institucion == log){
   deshabilitar.classList.remove('hideInput');
   habilitar.classList.remove('hideInput');
   botonr.classList.remove('hideInput');
+  estado.classList.remove('hideInput');
   
   }else{
     editar.classList.add('hideInput');
@@ -24,6 +26,8 @@ if(institucion == log){
   deshabilitar.classList.add('hideInput');
   habilitar.classList.add('hideInput');
   botonr.classList.add('hideInput');
+  estado.classList.add('hideInput');
+  
   }
 mostrar_datos();
 
@@ -36,7 +40,8 @@ function mostrar_datos() {
     tabla.innerHTML = '';
 
     for (let i = 0; i < material.length; i++) {
-        if (material[i]['nombre_institucion'].toLowerCase().includes(filtro.toLowerCase())) {
+      if (material[i]['nombre_institucion'].toLowerCase().includes(filtro.toLowerCase()) && material[i]['id_institucion'] == institucion && institucion == log) {
+
 
             let fila = tabla.insertRow();
 
@@ -83,7 +88,7 @@ function mostrar_datos() {
     
           fila.insertCell().innerHTML = material[i]['nombre_institucion'];
           fila.insertCell().innerHTML = material[i]['descripcion'];
-          fila.insertCell().innerHTML = material[i]['estado'];
+        
    
         }
         }

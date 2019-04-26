@@ -4,10 +4,31 @@ const tabla = document.querySelector('#tbl_utiles tbody');
 const inputFiltro = document.querySelector('#buscar_util');
 const select_nivel = document.querySelector('#filtrar_util');
 const id_inst = sessionStorage.getItem('id_institucion');
-const tipo = sessionStorage.getItem('tipo');
-
+const tipo = sessionStorage.getItem('tipo_usuario');
+const boton = document.querySelector('#btn_registrar_nuevo');
+const estado = document.querySelector('#estado');
+const editar = document.querySelector('#editar');
+const habilitar = document.querySelector('#hab');
+const eliminar = document.querySelector('#eliminar');
+const deshabilitar = document.querySelector('#deshab');
+const menu = document.querySelector('#menu_institucion');
 if(tipo == "admin"){
-  
+  boton.classList.remove('hideInput');
+  estado.classList.remove('hideInput');
+  editar.classList.remove('hideInput');
+  habilitar.classList.remove('hideInput');
+  eliminar.classList.remove('hideInput');
+  deshabilitar.classList.remove('hideInput');
+  menu.classList.add('hideInput');
+
+}else{
+  boton.classList.add('hideInput');
+  boton.classList.add('hideInput');
+  estado.classList.add('hideInput');
+  editar.classList.add('hideInput');
+  habilitar.classList.add('hideInput');
+  eliminar.classList.add('hideInput');
+  deshabilitar.classList.add('hideInput');
 }
 
 
@@ -25,7 +46,7 @@ function mostrar_utiles_mep() {
   tabla.innerHTML = '';
 
   for (let i = 0; i < utiles.length; i++) {
-    if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && nivel == "null" && utiles[i]['estado'] == "Activo") {
+    if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && nivel == "null"  && tipo == "admin") {
       let fila = tabla.insertRow();
       fila.insertCell().innerHTML = utiles[i]['util'];
       fila.insertCell().innerHTML = utiles[i]['descripcion'];
@@ -66,7 +87,7 @@ function mostrar_utiles_mep() {
       celda_habilitar.appendChild(boton_habilitar);
 
     } else {
-      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel) && utiles[i]['estado'] == "Activo" ) {
+      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel)  &&tipo == "admin" ) {
 
         let fila = tabla.insertRow();
 
@@ -107,6 +128,24 @@ function mostrar_utiles_mep() {
         boton_habilitar.dataset.id = utiles[i]['_id'];
         boton_habilitar.addEventListener('click', confirmar_habilitar);
         celda_habilitar.appendChild(boton_habilitar);
+      }else{
+        if(utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && nivel == "null"  &&utiles[i]['estado'] == "Activo"){
+          let fila = tabla.insertRow();
+
+          fila.insertCell().innerHTML = utiles[i]['util'];
+          fila.insertCell().innerHTML = utiles[i]['descripcion'];
+          fila.insertCell().innerHTML = utiles[i]['cantidad'];
+          fila.insertCell().innerHTML = utiles[i]['nivel'];
+        }else{
+          if(utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel)  && utiles[i]['estado'] == "Activo"){
+            let fila = tabla.insertRow();
+
+            fila.insertCell().innerHTML = utiles[i]['util'];
+            fila.insertCell().innerHTML = utiles[i]['descripcion'];
+            fila.insertCell().innerHTML = utiles[i]['cantidad'];
+            fila.insertCell().innerHTML = utiles[i]['nivel'];
+          }
+        }
       }
     }
   }

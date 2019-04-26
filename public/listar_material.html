@@ -14,18 +14,15 @@
 
 <body>
   <header>
-    <img src="imgs/Banner_1.jpg" id="img_banner" alt="">
-    <div class="lista_material">
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
     <nav>
       <a href="inicio.html">Inicio</a>
       <a href="listar_instituciones.html">Instituciones</a>
-      <a href="top_10_instituciones.html">Rankings</a>
-      <img src="imgs/logoalfred.png" id="logo" alt="">
+      <img src="imgs/logo.png" id="logo" alt="">
       <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
-      <img src="imgs/img_perfil.png" class="header_derecha" href=".html">
-      <a href="panel_control.html" class="header_derecha">Panel de Control</a>
+      <a href="" id="perfil" class="header_derecha">Perfil</a>
+      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
     </nav>
-    </div>
 
   </header>
 
@@ -70,9 +67,9 @@
     <table id="tbl_material">
       <thead>
         <tr>
-          <th>Nombre de la Institucion</th>
+          <th>Nombre</th>
           <th>Descripción</th> 
-          <th>Estado</th>
+          <th id= "estado">Estado</th>
           <th id="editar">Editar</th>
           <th id="eliminar">Eliminar</th>
           <th id="deshab">Deshabilitar</th>

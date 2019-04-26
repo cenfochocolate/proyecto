@@ -3,7 +3,7 @@
 const input_nombre_institucion =document.querySelector('#txt_nombre_institucion');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_enviar = document.querySelector('#btn_registrar');
-
+const id_ins = sessionStorage.getItem('id_lugar');
 let validar=()=>{
     let error=false;
 
@@ -29,8 +29,8 @@ let obtener_datos =() => {
 
     let nombre_institucion = input_nombre_institucion.value;
     let descripcion=input_descripcion.value;
-
-    registrar_materiales(nombre_institucion,descripcion)
+    let id_institucion = id_ins;
+    registrar_materiales(id_institucion, nombre_institucion,descripcion)
 
   }else{
     swal.fire({
