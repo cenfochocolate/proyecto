@@ -63,17 +63,17 @@ let buscar_noticia = (id_noticia) => {
 
   request.done(function (res) {
       noticia = res.noticia;
-    
+
   });
 
   request.fail(function (jqXHR, textStatus) {
-    
+
   });
   return noticia;
- 
-}; 
 
-let  actualizar_noticia = (pnombre, pdescripcion, pimagen, pid) =>{
+};
+
+let  actualizar_noticia = (pid,pnombre, pdescripcion, pimagen) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizar_noticia',
       method : "POST",
@@ -84,19 +84,19 @@ let  actualizar_noticia = (pnombre, pdescripcion, pimagen, pid) =>{
           id : pid
       },
       dataType : "json",
-      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
   });
 
   request.done(function(res){
-      
-     
+
+
       swal.fire({
           type : 'success',
           title : 'Noticia fue  actualizada con éxito',
           text : res.msg,
           onClose: () => {
-              window.location.href = 'listar_noticias.html';
-            }    
+              window.location.href = 'perfil_institucion.html';
+            }
       });
 
   });

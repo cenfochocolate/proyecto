@@ -17,8 +17,8 @@ const slt_utiles = document.querySelector('#slt_utiles');
 const btn_registrar = document.querySelector('#btn_pref_utiles');
 const pref_util = document.querySelector('#lista_seleccionada_utiles');
 const tabla = document.querySelector('#tbl_redes_sociales');
-const tablaNoticias = document.querySelector('#tbl_noticias tbody');
-let noticias = listar_noticias();
+
+
 //botones del perfil
 let registrarNoticia = document.querySelector('#btn_registrar_noticia');
 let registrarRS = document.querySelector('#add');
@@ -45,7 +45,7 @@ descripcion.innerHTML = institucion['direccion'];
 
 validarRegistrar();
 validarComentario();
-mostrar_noticias();
+
 // mostrar_contacto();
 mostrar_rs();
 mostrar_comentarios();
@@ -131,30 +131,8 @@ function validarComentario() {
     text_comentario.classList.add('hideInput');
   }
 };
-input_Filtro.addEventListener('keyup', mostrar_noticias);
 
-function mostrar_noticias() {
-  let noticias = listar_noticias();
-  let filtro = input_Filtro.value;
-  tablaNoticias.innerHTML = '';
-  for (let i = 0; i < noticias.length; i++) {
-    if (id_institucion == noticias[i]['id_institucion']) {
-      if (noticias[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())) {
-        let fila = tablaNoticias.insertRow();
-        fila.insertCell().innerHTML = noticias[i]['nombre'];
-        fila.insertCell().innerHTML = noticias[i]['descripcion'];
-        let imagen = document.createElement('img');
-        imagen.classList.add('imagentablaNoticias');
-        if (noticias[i]['imagen']) {
-          imagen.src = noticias[i]['imagen'];
-        } else {
-          imagen.src = './imgs/imgph.jpg';
-        }
-        fila.insertCell().appendChild(imagen);
-      }
-    }
-  };
-};
+
 
 function mostrar_datos_user() {
   let valoraciones = listar_datos_users();

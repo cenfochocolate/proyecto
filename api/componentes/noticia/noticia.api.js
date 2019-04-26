@@ -51,7 +51,7 @@ module.exports.listar_todos = (req, res) =>{
   )
 };
 module.exports.buscar_por_id = function (req, res){
-  modelo_noticia.find({_id : req.body.id_noticia}).then(
+  modelo_noticia.find({_id : req.body.id}).then(
       function(noticia){
           if(noticia){
               res.json({success: true, noticia : noticia});
@@ -64,7 +64,7 @@ module.exports.buscar_por_id = function (req, res){
 
 
 module.exports.actualizar = function(req, res){
-   
+
   modelo_noticia.findByIdAndUpdate(req.body.id, { $set: req.body },
       function (error){
           if(error){
@@ -81,11 +81,10 @@ module.exports.borrar = (req, res) =>{
       function(error){
           if(error){
               res.json({ success : false, msg: 'No se pudo eliminar la noticia.'});
-              
+
           }else{
               res.json({ success : true, msg: 'La noticia fue eliminada.'});
           }
       }
   )
 };
-

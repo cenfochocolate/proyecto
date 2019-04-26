@@ -3,6 +3,14 @@
 const tabla = document.querySelector('#tbl_utiles tbody');
 const inputFiltro = document.querySelector('#buscar_util');
 const select_nivel = document.querySelector('#filtrar_util');
+const id_inst = sessionStorage.getItem('id_institucion');
+const tipo = sessionStorage.getItem('tipo');
+
+if(tipo == "admin"){
+  
+}
+
+
 let utiles = listar_utiles_mep();
 
 mostrar_utiles_mep();
@@ -17,7 +25,7 @@ function mostrar_utiles_mep() {
   tabla.innerHTML = '';
 
   for (let i = 0; i < utiles.length; i++) {
-    if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && nivel == "null") {
+    if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && nivel == "null" && utiles[i]['estado'] == "Activo") {
       let fila = tabla.insertRow();
       fila.insertCell().innerHTML = utiles[i]['util'];
       fila.insertCell().innerHTML = utiles[i]['descripcion'];
@@ -58,7 +66,7 @@ function mostrar_utiles_mep() {
       celda_habilitar.appendChild(boton_habilitar);
 
     } else {
-      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel) && requisito[i]['estado'] == "Activo") {
+      if (utiles[i]['util'].toLowerCase().includes(filtro.toLowerCase()) && utiles[i]['nivel'].includes(nivel) && utiles[i]['estado'] == "Activo" ) {
 
         let fila = tabla.insertRow();
 

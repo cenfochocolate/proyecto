@@ -52,7 +52,7 @@ module.exports.listar_todos = (req, res) =>{
 };
 
 module.exports.buscar_por_id = function (req, res){
-  modelo_sadicional.find({_id : req.body.id_servicio}).then(
+  modelo_sadicional.find({_id : req.body.id}).then(
       function(servicio){
           if(servicio){
               res.json({success: true, servicio : servicio});
@@ -65,7 +65,7 @@ module.exports.buscar_por_id = function (req, res){
 
 };
 module.exports.actualizar = function(req, res){
-   
+
   modelo_sadicional.findByIdAndUpdate(req.body.id, { $set: req.body },
       function (error){
           if(error){
@@ -74,7 +74,7 @@ module.exports.actualizar = function(req, res){
               res.json({success: true , msg : ''});
           }
       }
-  
+
   );
 }
 
@@ -83,7 +83,7 @@ module.exports.borrar = (req, res) =>{
       function(error){
           if(error){
               res.json({ success : false, msg: 'No se pudo eliminar.'});
-              
+
           }else{
               res.json({ success : true, msg: 'El servicio fue eliminado.'});
           }

@@ -5,6 +5,7 @@ const editar = document.querySelector('#editar');
 const eliminar = document.querySelector('#eliminar');
 const deshabilitar = document.querySelector('#deshab');
 const habilitar = document.querySelector('#hab');
+const estado = document.querySelector('#estado');
 const botonr = document.querySelector('#btn_listar');
 const log = sessionStorage.getItem('idu');
 
@@ -16,13 +17,14 @@ if (institucion == log) {
   deshabilitar.classList.remove('hideInput');
   habilitar.classList.remove('hideInput');
   botonr.classList.remove('hideInput');
-
+  estado.classList.remove('hideInput');
 } else {
   editar.classList.add('hideInput');
   eliminar.classList.add('hideInput');
   deshabilitar.classList.add('hideInput');
   habilitar.classList.add('hideInput');
   botonr.classList.add('hideInput');
+  estado.classList.add('hideInput');
 }
 
 
@@ -78,7 +80,6 @@ function mostrar_datos() {
         let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = pcomercial[i]['pcomercial'];
-        fila.insertCell().innerHTML = pcomercial[i]['estado'];
 
       }
 

@@ -47,11 +47,11 @@ let listar_sadicional = () => {
     return lista_sadicional;
 };
 
-let buscar_servicio = (id_servicio) => {
+let buscar_servicio = (id) => {
   let servicio = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_servicio/"+ id_servicio,
+    url: "http://localhost:4000/api/buscar_servicio/"+ id,
     method: "GET",
     data: {
     },
@@ -62,14 +62,14 @@ let buscar_servicio = (id_servicio) => {
 
   request.done(function (res) {
     servicio = res.servicio;
-    
+
   });
 
   request.fail(function (jqXHR, textStatus) {
-    
+
   });
   return servicio;
- 
+
 };
 let actualizar_servicio = (pnombre, pdescripcion,pimagen, pid) =>{
     let request = $.ajax({
@@ -79,23 +79,22 @@ let actualizar_servicio = (pnombre, pdescripcion,pimagen, pid) =>{
             nombre : pnombre,
             descripcion : pdescripcion,
             imagen : pimagen,
-            
             id : pid
         },
         dataType : "json",
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 
     request.done(function(res){
-        
-       
+
+
         swal.fire({
             type : 'success',
             title : '¡Servicio actualizado correctamente!',
             text : res.msg,
             onClose: () => {
                 window.location.href = 'listar_servicios_adicionales.html';
-              }    
+              }
         });
 
     });
@@ -134,7 +133,7 @@ function borrar_servicio(pid){
 
 let habilitar_servicio = (pid) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_requisito",
+      url: "http://localhost:4000/api/actualizar_servicio",
       method: "POST",
       data: {
 
@@ -156,7 +155,7 @@ let habilitar_servicio = (pid) => {
           text: res.msg,
           onClose: () => {
             window.location.href = 'listar_servicios_adicionales.html';
-          }    
+          }
 
       });
 
@@ -173,7 +172,7 @@ let habilitar_servicio = (pid) => {
 };
 let deshabilitar_servicio = (pid) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_requisito",
+      url: "http://localhost:4000/api/actualizar_servicio",
       method: "POST",
       data: {
 
@@ -195,7 +194,7 @@ let deshabilitar_servicio = (pid) => {
           text: res.msg,
           onClose: () => {
             window.location.href = 'listar_servicios_adicionales.html';
-          }    
+          }
 
       });
 

@@ -4,8 +4,8 @@ const express = require('express');
 const router = express.Router();
 const api_sadicional = require('./sadicional.api');
 
-router.param('id_servicio', function(req, res, next, id_servicio){
-  req.body.id_servicio = id_servicio;
+router.param('id', function(req, res, next, id){
+  req.body.id = id;
   next();
 });
 
@@ -31,7 +31,7 @@ router.route('/registrar_sadicional')
       }
     );
 
-    router.route('/buscar_servicio/:id_servicio')
+    router.route('/buscar_servicio/:id')
 .get(
     function(req , res){
         api_sadicional.buscar_por_id(req, res);

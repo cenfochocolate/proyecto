@@ -12,13 +12,13 @@ let get_param = (param) => {
 };
 
 let _id = get_param('id_servicio');
-
+console.log(_id);
 let servicio = buscar_servicio(_id);
-
+console.log(servicio);
 let mostrar_datos = () =>{
     input_nombre.value=servicio[0]['nombre'];
     input_descripcion.value=servicio[0]['descripcion'];
-    
+
     let idIMG = servicio[0]['imagen'].split('upload/')[1];
     img_sadicional.src = 'http://res.cloudinary.com/cenfochocolate/image/upload/' + idIMG;
 
@@ -33,7 +33,7 @@ let obtener_datos = () =>{
     let imagen=img_sadicional.src;
 
     Swal.fire({
-        title: '¿Está seguro que desea actualizar?',,
+        title: '¿Está seguro que desea actualizar?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

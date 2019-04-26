@@ -32,7 +32,7 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
             sessionStorage.setItem('conectado', msg.success);
             sessionStorage.setItem('tipo_usuario', msg.tipo);
             sessionStorage.setItem('idu', msg._id);
-            sessionStorage.setItem('distritol', msg.distrito)
+            sessionStorage.setItem('provincial', msg.provincia);
             window.location = "inicio.html";
 
 
@@ -41,7 +41,7 @@ let validar_inicio_sesion = (pcorreo, pcontrasenia) => {
               type: 'error',
               title: '¡Algo salio mal!',
               text: 'Revise sus datos o pongase en contacto con el admin'
-             
+
           });
 
           }

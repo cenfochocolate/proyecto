@@ -50,14 +50,15 @@ module.exports.registrar = function (req, res) {
 
     usuarioModel.findOne(
         {
-            identificacion: req.body.identificacion
+            correo: req.body.correo,
+
         }
     ).then(
         function (usuarios) {
             if (usuarios) {
                 res.json({
                     success: false,
-                    msj: 'La cédula ya se encuentra registrada'
+                    msj: 'El correo ya se encuentra registrado'
                 });
             } else {
                 const codigo_registro = Math.trunc(Math.random() * (0, 999999));
@@ -160,7 +161,7 @@ module.exports.validar = function (req, res) {
                     success: true,
                     tipo: usuario.tipo,
                     _id: usuario._id,
-                    distrito: usuario.distrito
+                    provincia: usuario.provincia
 
                 });
             } else {

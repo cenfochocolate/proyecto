@@ -2,7 +2,7 @@
 
 const tabla = document.querySelector('#tbl_ubicacion tbody');
 const inputFiltro= document.querySelector('#buscar_institucion');
-const distrito = sessionStorage.getItem('distritol');
+const provincia = sessionStorage.getItem('provincial');
 let usuarios = listar_instituciones();
 
 mostrar_instituciones();
@@ -15,7 +15,7 @@ function mostrar_instituciones(){
   tabla.innerHTML='';
 
   for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i]['tipo'].includes('institucion') && usuarios[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['distrito'].includes(distrito) ) {
+    if (usuarios[i]['tipo'].includes('institucion') && usuarios[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase()) && usuarios[i]['provincia'].includes(provincia) ) {
       let fila = tabla.insertRow();
       let celdaNombre = fila.insertCell();
 

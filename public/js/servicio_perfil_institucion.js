@@ -186,7 +186,6 @@ let habilitar_contacto = (pid) => {
 };
 
 
-
 let registrar_rs = (pfacebook, pinstagram, ptwitter, pemail, pyoutube) =>{
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_redes_sociales",
@@ -214,6 +213,83 @@ let registrar_rs = (pfacebook, pinstagram, ptwitter, pemail, pyoutube) =>{
     request.fail(function( jqXHR, textStatus ) {
 
     });
+};
+
+let deshabilitar_noticias = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_noticia",
+      method: "POST",
+      data: {
+        id: pid,
+        estado : "Desactivo"
+
+           },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: 'noticia deshabiitada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'noticia no deshabilitada',
+          text: res.msg
+
+      });
+  });
+};
+
+
+let habilitar_noticias = (pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_noticia",
+      method: "POST",
+      data: {
+        id: pid,
+        estado : "Activo"
+
+           },
+
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: 'noticia habiitada correctamente',
+          text: res.msg,
+          onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
+      });
+
+  });
+
+  request.fail(function (res) {
+      swal.fire({
+          type: 'error',
+          title: 'noticia no habilitada',
+          text: res.msg
+
+      });
+  });
 };
 
 let deshabilitar_rs = (pid) => {
