@@ -175,7 +175,7 @@
   #tbl_instituciones tbody{
 	font-family: 'Roboto Slab', serif;
 	border-style: solid;
-	border-width: 5px;
+	border-width: 1px;
 	border-color: #2F7585;
   }
   #tbl_instituciones tbody a {
@@ -192,6 +192,7 @@
 	border-collapse: collapse;
 	display:block;
 	overflow-y: scroll;
+	overflow-x: hidden;
   
   }
 #tbl_ubicacion thead{

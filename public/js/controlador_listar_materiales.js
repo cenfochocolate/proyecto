@@ -2,8 +2,29 @@
 
 let tabla = document.querySelector('#tbl_material tbody');
 const inputFiltro = document.querySelector('#buscar_material');
+const institucion = sessionStorage.getItem('id_lugar');
+const editar = document.querySelector('#editar');
+const eliminar = document.querySelector('#eliminar');
+const deshabilitar = document.querySelector('#deshab');
+const habilitar = document.querySelector('#hab');
+const botonr = document.querySelector('#btn_registrar');
+const log = sessionStorage.getItem('idu')
 
 let material = listar_materiales();
+if(institucion == log){
+  editar.classList.remove('hideInput');
+  eliminar.classList.remove('hideInput');
+  deshabilitar.classList.remove('hideInput');
+  habilitar.classList.remove('hideInput');
+  botonr.classList.remove('hideInput');
+  
+  }else{
+    editar.classList.add('hideInput');
+  eliminar.classList.add('hideInput');
+  deshabilitar.classList.add('hideInput');
+  habilitar.classList.add('hideInput');
+  botonr.classList.add('hideInput');
+  }
 mostrar_datos();
 
 inputFiltro.addEventListener('keyup', mostrar_datos);
