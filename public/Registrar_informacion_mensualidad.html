@@ -2,103 +2,98 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
+  <meta charset="utf-8">
+  <title>Alfred</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/registrar_mensualidad.css">
-    
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/registrar_mensualidad.css">
+
 </head>
 
 <body>
-    <header>
-        <img src="imgs/banner_1.jpg" id="img_banner" alt="">
-        <div class="menu_1_registro_mensualidad">
-            <nav>
-                <a href="inicio.html">Inicio</a>
-                <a href="listar_instituciones.html">Instituciones</a>
-                <a href="top_10_instituciones.html">Rankings</a>
-                <img src="imgs/logo.png" id="logo" alt="">
-                <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
-                <a href="" id="perfil" class="header_derecha">Perfil</a>
-                <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
-            </nav>
-        </div>
+  <header>
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
+    <div class="menu_1_registro_mensualidad">
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="listar_instituciones.html">Instituciones</a>
+        <a href="top_10_instituciones.html">Rankings</a>
+        <img src="imgs/logo.png" id="logo" alt="">
+        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
+        <a href="" id="perfil" class="header_derecha">Perfil</a>
+        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+      </nav>
+    </div>
 
-    </header>
+  </header>
 
-    <main>
-        <div id="menu_institucion">
-            <ul class="nav">
-                <li><i class="fas fa-align-justify"></i>
-                    <ul>
-                        <li><a href="perfil_institucion.html">Institución</a></li>
-                        <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-                        <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-                        <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
-                        <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-                        <li><a href="listar_citas.html">Citas</a></li>
-                        <li><a href="lista_mensualidad.html">Mensualidad</a></li>
-                        <li><a href="lista_precio_matricula.html">Precio</a></li>
-                        <li><a href="listar_requisitos.html">Requisito</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+  <main>
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
+            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+            <li><a href="lista_precio_matricula.html">Precio</a></li>
+            <li><a href="listar_requisitos.html">Requisito</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-        <form class="columna_derecha" id="frm_mensualidad">
+    <form class="columna_derecha" id="frm_mensualidad">
 
-            <div id="titulo">
-                <h2>Registrar Información de Mensualidad </h2>
-            </div>
-            <div class="registro_mensualidad">
-                <fieldset>
-                    <label for="Categorias">Grado:</label>
-                    <select class="input_registrar" id="txt_grado">
+      <div id="titulo">
+        <h2>Registrar Información de Mensualidad </h2>
+      </div>
+      <div class="registro_mensualidad">
+        <fieldset>
+          <label for="Categorias">Grado:</label>
+          <select class="input_registrar" id="txt_grado">
 
-                        <option value="">Escoja un grado</option>
-                        <option value="Escuela">Escuela</option>
-                        <option value="Colegio">Colegio</option>
+            <option value="">Escoja un grado</option>
+            <option value="Escuela">Escuela</option>
+            <option value="Colegio">Colegio</option>
 
-                    </select>
-                </fieldset>
-            </div>
-            <div id="institucion">
-                <label for="txt_institucion">Institución:</label>
-                <input name="txt_institucion" id="txt_institucion" placeholder="Ej. Luis Dobles Segreda"></input>
-            </div>
+          </select>
+        </fieldset>
+      </div>
+      <div id="institucion">
+        <label for="txt_institucion">Institución:</label>
+        <input name="txt_institucion" id="txt_institucion" placeholder="Ej. Luis Dobles Segreda"></input>
+      </div>
 
-            <div id="info">
-                <label for="txt_info">Descripción:</label>
-                <input name="txt_info" id="txt_info" placeholder="Ej. Tiene un mensualida de 5 mil colones"></input>
-            </div>
+      <div id="info">
+        <label for="txt_info">Descripción:</label>
+        <input name="txt_info" id="txt_info" placeholder="Ej. Tiene un mensualida de 5 mil colones"></input>
+      </div>
 
-            <div id="btn_registro_mensualidad">
-                <button type="button" id="btn_registrar">Registrar</button>
-            </div>
+      <div id="btn_registro_mensualidad">
+        <button type="button" id="btn_registrar">Registrar</button>
+      </div>
 
-        </form>
-        <div id="btn_listar_mensualidad">
-            <button type="button" id="btn_listar" onclick=" location.href='lista_mensualidad.html'">Ver lista</button>
-        </div>
-    </main>
-    <footer>
-        <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    </form>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    <script src="js/servicio_mensualidad.js"></script>
-    <script src="js/controlador_mensualidad.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_validar_tusuario.js"></script>
+  <script src="js/servicio_mensualidad.js"></script>
+  <script src="js/controlador_mensualidad.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
 
 </body>
 

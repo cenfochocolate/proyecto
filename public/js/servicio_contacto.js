@@ -110,8 +110,10 @@ let registrar_contacto = ( pid_institucion, pnombre, pid, pdepartamento, ptelefo
 
         swal.fire({
             type: 'success',
-            title: 'Contacto registrado'
-
+            title: 'Contacto registrado',
+            onClose: () => {
+              window.location.href = 'perfil_institucion.html';
+            }
         });
 
     });

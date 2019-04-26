@@ -23,7 +23,7 @@ let listar_citas = () => {
     return lista_cita;
 };
 let buscar_cita = (id_cita) => {
-    
+
     let cita = [];
 
     let request = $.ajax({
@@ -38,7 +38,7 @@ let buscar_cita = (id_cita) => {
 
     request.done(function (res) {
    cita= res.cita;
-       
+
     });
     request.fail(function (jqXHR, textStatus) {
 
@@ -56,19 +56,19 @@ let actualizar_cita = (pnombre, ptime, pdate, pid) => {
            time: ptime,
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
-    
+
 
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Cita actualizada correctamente',
             text:res.msg
-           
+
         });
 
     });
@@ -78,7 +78,7 @@ let actualizar_cita = (pnombre, ptime, pdate, pid) => {
             type: 'error',
             title: 'Cita no actualizada',
             text: res.msg
-           
+
         });
     });
 };
@@ -126,7 +126,9 @@ let registrar_citas = (pid_institucion,pnombre, ptime, pdate) => {
         swal.fire({
             type: 'success',
             title: 'Cita registrada correctamente'
-
+            onClose: () => {
+              window.location.href = 'listar_citas.html';
+            }
         });
 
     });
@@ -146,35 +148,35 @@ let deshabilitar_cita = (pid) => {
           estado : "Desactivo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Cita deshabiitada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_citas.html';
-            }    
+            }
         });
-  
+
     });
-  
+
     request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Cita no deshabilitada',
             text: res.msg
-           
+
         });
     });
   };
-  
+
   let habilitar_cita = (pid) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_cita",
@@ -183,31 +185,31 @@ let deshabilitar_cita = (pid) => {
           estado : "Activo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Cita activada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_citas.html';
-            }    
+            }
         });
-  
+
     });
-  
-    request.fail(function (res) { 
+
+    request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Cita activada',
             text: res.msg
-           
+
         });
     });
   };
