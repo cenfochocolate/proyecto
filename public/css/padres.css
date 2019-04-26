@@ -17,11 +17,19 @@
   display:block;
   overflow-y: scroll;
   overflow-x: hidden;
-  border: 1px solid green;
+  border: 1px solid #16a085;
 }
 
+#tbl_usuarios tbody{
+  background-color: #FFF;
+}
+
+
+#txt_filtro{
+  width: 200px;
+}
 #filtro{
-  width: 400px;
+  width: 250px;
   height: auto;
   font-family: 'Roboto Slab', serif;
   float: left;
@@ -29,7 +37,7 @@
 }
 
 .slt_tipo_usuario{
-  width: 500px;
+  width: 400px;
   height: auto;
   font-family: 'Roboto Slab', serif;
   float: right;
@@ -40,10 +48,11 @@
   width: 250px;
 }
 
+
+
 thead{
-    background: green;
+    background:#062F4F;
     color:white;
-border: 1px solid green;
 }
 th, td, tr{
     width:400px;
