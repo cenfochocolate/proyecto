@@ -22,10 +22,10 @@ let mostrar_datos = () =>{
     input_nombre.value = cita[0]['nombre'];
     input_date.value = cita[0]['time'];
     input_time.value = cita[0]['date'];
-    
-    
 
-    } 
+
+
+    }
 
 
 if(cita){
@@ -40,8 +40,8 @@ if(cita){
 let validar = () => {
     let date = new Date(input_date.value).getDay();
     let error = false;
-    
-   
+
+
 
 
     if (input_nombre.value == '') {
@@ -50,10 +50,10 @@ let validar = () => {
     } else {
         input_nombre.classList.remove('error_input');
     }
-    
 
 
-   
+
+
     if(input_date <= new Date() || input_date=="Invalid Date"){
         error = true;
         input_date.classList.add('error_input');
@@ -62,16 +62,16 @@ let validar = () => {
         input_date.classList.remove('error_input');
     }
 
-    
+
     if(date  == '5' || date == '6'){
         error = true;
         input_date.classList.add('error_input');
-       
-      
+
+
     } else {
     input_date.classList.remove('error_input');
    }
-    
+
 
 
 
@@ -82,26 +82,26 @@ let validar = () => {
     } else {
         input_time.classList.remove('error_input');
     }
-    
-    
-   
+
+
+
     return error;
 
 };
-    
-    
-   
+
+
+
 
 
 let obtener_datos = () => {
     if (validar() == false) {
-  
-    
- 
+
+
+
         let nombre = input_nombre.value;
         let date =  input_date.value;
         let time = input_time.value;
-        
+
         Swal.fire({
             title: 'Está seguro que desea actualizar la cita?',
             type: 'warning',
@@ -111,7 +111,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-            
+
         actualizar_cita(nombre,date, time, _id);
     }
 })
@@ -125,9 +125,9 @@ let obtener_datos = () => {
           text: 'Por favor revise los campos resaltados'
         });
       }
-    
 
-   
+
+
 };
 
 boton_actualizar.addEventListener('click', obtener_datos);

@@ -18,12 +18,6 @@ let validar = () => {
 
 
 
-    if(tipo == 'padre'){
-      error= false;
-    }else{
-      error= true;
-    }
-
     if (input_nombre.value == '') {
         error = true;
         input_nombre.classList.add('error_input');
@@ -86,8 +80,9 @@ let obtener_datos = () => {
         let date =  input_date.value;
         let time = input_time.value;
         let id_institucion = id_ins;
+        let tipo_u = tipo;
 
-        registrar_citas(id_institucion,nombre,date, time);
+        registrar_citas(id_institucion,nombre,date, time,tipo_u);
 
     } else {
         swal.fire({
