@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
+
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
 
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -15,64 +16,69 @@
   <link rel="stylesheet" href="css/perfil_institucion.css">
   <link rel="stylesheet" href="css/registrarpc.css">
 
-  </head>
-  <body>
-    <header>
-      <img src="imgs/banner_1.jpg" id="img_banner" alt="">
-      <div class="menu_1_registro_pag_comercial">
+</head>
+
+<body>
+  <header>
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
+    <div class="menu_1_registro_pag_comercial">
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
-        <a href="top_10_instituciones.html">Rankings</a>
         <img src="imgs/logo.png" id="logo" alt="">
-        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
         <a href="" id="perfil" class="header_derecha">Perfil</a>
         <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
       </nav>
-      </div>
+    </div>
     </div>
 
-    </header>
-    <main>
-      <div id="menu_institucion">
-        <ul class="nav">
-          <li><i class="fas fa-align-justify"></i>
-            <ul>
-              <li><a href="perfil_institucion.html">Institución</a></li>
-              <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-              <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-              <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
-              <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-              <li><a href="listar_citas.html">Citas</a></li>
-              <li><a href="lista_mensualidad.html">Mensualidad</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <nav id="submenu">
-        <h1 id="titulo">Registrar página comercial</h1>
-      </nav>
+  </header>
+  <main>
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
+            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+            <li><a href="lista_precio_matricula.html">Precio</a></li>
+            <li><a href="listar_requisitos.html">Requisito</a></li>
+            <li><a href="listar_material.html">Material</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <nav id="submenu">
+      <h1 id="titulo">Registrar página comercial</h1>
+    </nav>
 
-    <form id= "frm_registrar">
+    <form id="frm_registrar">
       <div class="pag_comercial">
         <label for="txt_paginac">Pagina comercial</label>
         <input type="text" id="txt_paginac">
       </div>
       <div id="btn_registro_pag">
-      <button type="button"id="btn_guardar">Guardar</button>
-    </div>
+        <button type="button" id="btn_guardar">Guardar</button>
+      </div>
     </form>
     <div id="btn_registro_pag">
   </main>
-    <footer>
-        <p>Chocolate copyright 2019. Cenfotec. Todos los derechos reservados</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/serviciopc.js"></script>
-    <script src="js/controlador_registrarpc.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_validar_tusuario.js"></script>
+  <footer>
+    <p>Chocolate copyright 2019. Cenfotec. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/serviciopc.js"></script>
+  <script src="js/controlador_registrarpc.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
 
-  </body>
-  </html>
+</body>
+
+</html>
