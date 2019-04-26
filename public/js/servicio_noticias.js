@@ -1,3 +1,5 @@
+'use strict';
+
 let registrar_noticia = (pid,pnombre,pdescripcion,pimagen) =>{
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_noticia",
@@ -18,7 +20,10 @@ let registrar_noticia = (pid,pnombre,pdescripcion,pimagen) =>{
       swal.fire({
         type: 'success',
         title: 'La noticia se registro correctamente',
-        text: `La noticia fue registrada`
+        text: `La noticia fue registrada`,
+        onClose: () => {
+            window.location.href = 'perfil_institucion.html';
+          }
       });
     });
 

@@ -15,10 +15,31 @@
   height: 400px;
   border-collapse: collapse;
   display:block;
-  overflow-y: scroll; 
+  overflow-y: scroll;
   overflow-x: hidden;
   border: 1px solid green;
 }
+
+#filtro{
+  width: 400px;
+  height: auto;
+  font-family: 'Roboto Slab', serif;
+  float: left;
+  margin-left: 10%;
+}
+
+.slt_tipo_usuario{
+  width: 500px;
+  height: auto;
+  font-family: 'Roboto Slab', serif;
+  float: right;
+  margin-right: 10%;
+}
+
+.slt_tipo_usuario select{
+  width: 250px;
+}
+
 thead{
     background: green;
     color:white;

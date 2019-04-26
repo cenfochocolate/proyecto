@@ -17,7 +17,10 @@ let registrar_sadicional = (pid_institucion,pnombre,pdescripcion,pimagen) =>{
 
       swal.fire({
         type: 'success',
-        title: '¡Registro correctamente!'
+        title: '¡Registro correctamente!',
+        onClose: () =>{
+            window.location.href ='listar_servicios_adicionales.html';
+        }
       });
     });
 

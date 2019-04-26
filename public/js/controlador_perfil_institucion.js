@@ -11,6 +11,7 @@ let imagen = document.querySelector('#imagen');
 let nombre_inistitucion = document.querySelector('#nombre');
 let institucion = buscar_institucion(id_institucion);
 let descripcion = document.querySelector('#direccion');
+
 //tablas de registro
 const input_Filtro = document.querySelector('#buscar_noticia_institucion');
 const slt_utiles = document.querySelector('#slt_utiles');
@@ -49,6 +50,7 @@ validarComentario();
 // mostrar_contacto();
 mostrar_rs();
 mostrar_comentarios();
+
 
 let validar_estrellas = () => {
   let error = false;
@@ -148,28 +150,28 @@ function mostrar_comentarios() {
   let usuariosFiltrados = [];
 
   const div_comentario = document.querySelector('#seccion_comentarios');
-      for (let i = 0; i < todos_coment.length; i++) {
-        comentario_filtrados.push(todos_coment[i]);
-        for (let j = 0; j < todosLosUsuarios.length; j++) {
-          if (comentario_filtrados[i]['id_usuario'] == todosLosUsuarios[j]['_id'] && comentario_filtrados[i]['id_institucion'] == id_institucion) {
-            usuariosFiltrados.push(todosLosUsuarios[j]);
-            let div = document.createElement('div');
-            div.classList.add('comentario');
+  for (let i = 0; i < todos_coment.length; i++) {
+    comentario_filtrados.push(todos_coment[i]);
+    for (let j = 0; j < todosLosUsuarios.length; j++) {
+      if (comentario_filtrados[i]['id_usuario'] == todosLosUsuarios[j]['_id'] && comentario_filtrados[i]['id_institucion'] == id_institucion) {
+        usuariosFiltrados.push(todosLosUsuarios[j]);
+        let div = document.createElement('div');
+        div.classList.add('comentario');
 
-            let img = document.createElement('img');
-            img.src = todosLosUsuarios[j]['url_foto'];
-            let nombre = document.createElement('h4');
-            nombre.innerHTML = todosLosUsuarios[j]['nombre'];
-            let comen = document.createElement('p');
-            comen.innerHTML = comentario_filtrados[i]['comentario'];
+        let img = document.createElement('img');
+        img.src = todosLosUsuarios[j]['url_foto'];
+        let nombre = document.createElement('h4');
+        nombre.innerHTML = todosLosUsuarios[j]['nombre'];
+        let comen = document.createElement('p');
+        comen.innerHTML = comentario_filtrados[i]['comentario'];
 
-            div.appendChild(img);
-            div.appendChild(nombre);
-            div.appendChild(comen);
-            div_comentario.appendChild(div);
-          }
-        };
-      };
+        div.appendChild(img);
+        div.appendChild(nombre);
+        div.appendChild(comen);
+        div_comentario.appendChild(div);
+      }
+    };
+  };
 
 };
 

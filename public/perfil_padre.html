@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/perfil_padre.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  </head>
-  <body>
-    <header>
-      <img src="imgs/banner_1.jpg" id="img_banner" alt="">
-      <nav>
-        <a href="inicio.html">Inicio</a>
-        <a href="listar_instituciones.html">Instituciones</a>
-        <a href="top_10_instituciones.html">Rankings</a>
-        <img src="imgs/logo.png" id="logo" alt="">
-        <a class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
-        <a href="" id="perfil" class="header_derecha">Perfil</a>
-        <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
-      </nav>
 
-    </header>
-    <main>
-      <img id="img_padre" alt="">
-      <nav>
-        <h2>Nombre: </h2>
-        <div class="nombre">
-          <h4 id="nombre_padre"></h4>
-          <h4 id="primer_apellido"></h4>
-          <h4 id="segundo_apellido"></h4>
-        </div>
-      </nav>
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/perfil_padre.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
 
-      <div class="">
-        <h2>Cantida de hijos:</h2>
-        <h3 id="cantidad_de_hijos"></h3>
+<body>
+  <header>
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="listar_instituciones.html">Instituciones</a>
+      <a href="top_10_instituciones.html">Rankings</a>
+      <img src="imgs/logo.png" id="logo" alt="">
+      <a class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
+      <a href="" id="perfil" class="header_derecha">Perfil</a>
+      <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
+    </nav>
+
+  </header>
+  <main>
+    <img id="img_padre" alt="">
+    <nav>
+      <h2>Nombre: </h2>
+      <div class="nombre">
+        <h4 id="nombre_padre"></h4>
+        <h4 id="primer_apellido"></h4>
+        <h4 id="segundo_apellido"></h4>
       </div>
+    </nav>
 
-      <div class="">
-        <h2>Número de télefono:</h2>
-        <h3 id="num_telefono"></h3>
-      </div>
+    <div class="">
+      <h2>Cantida de hijos:</h2>
+      <h3 id="cantidad_de_hijos"></h3>
+    </div>
 
-      <div class="">
-        <h2>Correo:</h2>
-        <h3 id="email"></h3>
-      </div>
+    <div class="">
+      <h2>Número de télefono:</h2>
+      <h3 id="num_telefono"></h3>
+    </div>
 
-      <div class="">
-        <h2>Dirección</h2>
-        <h3 id="direccion"></h3>
-      </div>
-      <div class="btn_modificar_perfil">
+    <div class="">
+      <h2>Correo:</h2>
+      <h3 id="email"></h3>
+    </div>
+
+    <div class="">
+      <h2>Dirección</h2>
+      <h3 id="direccion"></h3>
+    </div>
+    <div class="btn_modificar_perfil">
       <button type="button" id="btn_modificar" onclick="location.href='modificar_perfil_padre.html'" name="button">Modificar Perfil</button>
-      </div>
+    </div>
 
-    </main>
-    <footer>
-      <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-    </footer>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-    <script src="js/servicio_perfil_padre.js"></script>
-    <script src="js/controlador_perfil_padres.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_validar_tusuario.js"></script>
+  </main>
+  <footer>
+    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_perfil_padre.js"></script>
+  <script src="js/controlador_perfil_padres.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
 
 
-  </body>
-  </body>
+</body>
+</body>
+
 </html>

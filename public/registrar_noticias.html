@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Alfred</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alfred</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
@@ -14,85 +14,81 @@
   <link rel="stylesheet" href="css/registrarn.css">
 
 
-  </head>
-  <body>
-    <header>
-      <img src="imgs/banner_1.jpg" id="img_banner" alt="">
-      <div class="menu_1_registro_noticias">
+</head>
+
+<body>
+  <header>
+    <img src="imgs/banner_1.jpg" id="img_banner" alt="">
+    <div class="menu_1_registro_noticias">
       <nav>
         <a href="inicio.html">Inicio</a>
         <a href="listar_instituciones.html">Instituciones</a>
         <a href="top_10_instituciones.html">Rankings</a>
         <img src="imgs/logo.png" id="logo" alt="">
-        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion" ></i></a>
+        <a href="#" class="header_derecha"><i class="fas fa-sign-out-alt" id="cerrar_sesion"></i></a>
         <a href="" id="perfil" class="header_derecha">Perfil</a>
         <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
       </nav>
-      </div>
-
-    </header>
-      <main>
-        <div id="menu_institucion">
-          <ul class="nav">
-            <li><i class="fas fa-align-justify"></i>
-              <ul>
-                <li><a href="perfil_institucion.html">Institución</a></li>
-                <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-                <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-                <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
-                <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-                <li><a href="listar_citas.html">Citas</a></li>
-                <li><a href="lista_mensualidad.html">Mensualidad</a></li>
-                <li><a href="lista_precio_matricula.html">Precio</a></li>
-                <li><a href="listar_requisitos.html">Requisito</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      <nav id="submenu">
-        <h1 id="titulo">Registrar Noticia</h1>
-      </nav>
-
-    <form id= "frm_registrar">
-      <div class="nombre_noticia">
-      <div class="nombre_noticias">
-        <label for="txt_nombre">Nombre</label>
-        <input type="text" id="txt_nombre">
-      </div>
-      <div class="descripcion_noticias">
-        <label for="txt_descripcion">Descripción</label>
-        <textarea id="txt_descripcion"></textarea>
-      </div>
-      <div class="img_noticias">
-        <figure class="image_holder">
-        <img src="imgs/imgph.jpg" alt="Seleccionar imagen" id="previewimg">
-        </figure>
-        <button type="button"id="btn_img">Subir imagen</button>
-      </div>
-      <div id="btn_registro_noticias">
-      <button type="button"id="btn_guardar">Guardar</button>
     </div>
-    </form>
-    <div id="btn_listar_noticias">
-        <button type="button" id="btn_listar" onclick=" location.href='listar_noticias.html'">Ver lista</button>
-      </div>
 
+  </header>
+  <main>
+    <div id="menu_institucion">
+      <ul class="nav">
+        <li><i class="fas fa-align-justify"></i>
+          <ul>
+            <li><a href="perfil_institucion.html">Institución</a></li>
+            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+            <li><a id="lista_seleccionada_utiles" href="listar_utiles_mep.html">Útiles</a></li>
+            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="listar_citas.html">Citas</a></li>
+            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+            <li><a href="lista_precio_matricula.html">Precio</a></li>
+            <li><a href="listar_requisitos.html">Requisito</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <nav id="submenu">
+      <h1 id="titulo">Registrar Noticia</h1>
+    </nav>
+
+    <form id="frm_registrar">
+      <div class="nombre_noticia">
+        <div class="nombre_noticias">
+          <label for="txt_nombre">Nombre</label>
+          <input type="text" id="txt_nombre">
+        </div>
+        <div class="descripcion_noticias">
+          <label for="txt_descripcion">Descripción</label>
+          <textarea id="txt_descripcion"></textarea>
+        </div>
+        <div class="img_noticias">
+          <figure class="image_holder">
+            <img src="imgs/imgph.jpg" alt="Seleccionar imagen" id="previewimg">
+          </figure>
+          <button type="button" id="btn_img">Subir imagen</button>
+        </div>
+        <div id="btn_registro_noticias">
+          <button type="button" id="btn_guardar">Guardar</button>
+        </div>
   </main>
-    <footer>
-        <p>© Chocolate copyright
-        2019
-        Cenfotec
-        Todos los derechos reservados</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_perfil_institucion.js"></script>
-    <script src="js/controlador_registrarn.js"></script>
-    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/servicio_imagen_noticias.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_validar_tusuario.js"></script>
+  <footer>
+    <p>© Chocolate copyright2019
+      Cenfotec
+      Todos los derechos reservados</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/servicio_perfil_institucion.js"></script>
+  <script src="js/controlador_registrarn.js"></script>
+  <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+  <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script src="js/servicio_imagen_noticias.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_validar_tusuario.js"></script>
 
-  </body>
-  </html>
+</body>
+
+</html>

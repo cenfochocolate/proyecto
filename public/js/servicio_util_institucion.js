@@ -21,7 +21,10 @@ let registrar_util = (pid_institucion, putil, pdescripcion, pnumero, pnivel) =>{
       swal.fire({
         type: 'success',
         title: '¡Registro correctamente!',
-        text: ``
+        text: `Se ha registrado el útil`,
+        onClose: () => {
+            window.location.href = 'listar_utiles.html';
+          }
       });
     });
 
@@ -68,11 +71,11 @@ let buscar_utiles = (id) => {
 
   request.done(function (res) {
     util= res.util;
-    
+
   });
 
   request.fail(function (jqXHR, textStatus) {
-    
+
   });
   return util;
 };
@@ -89,19 +92,19 @@ let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
           id : pid
       },
       dataType : "json",
-      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
   });
 
   request.done(function(res){
-      
-     
+
+
       swal.fire({
           type : 'success',
           title : '¡Útil actualizado correctamente!',
           text : res.msg,
           onClose: () => {
               window.location.href = 'listar_utiles.html';
-            }    
+            }
       });
 
   });
@@ -161,7 +164,7 @@ let habilitar_utiles = (pid) => {
           text: res.msg,
           onClose: () => {
             window.location.href = 'listar_utiles.html';
-          }   
+          }
 
       });
 
@@ -200,7 +203,7 @@ let deshabilitar_utiles = (pid) => {
           text: res.msg,
           onClose: () => {
             window.location.href = 'listar_utiles.html';
-          }   
+          }
 
       });
 

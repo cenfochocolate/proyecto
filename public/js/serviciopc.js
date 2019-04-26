@@ -16,7 +16,10 @@ let registrar_paginacomercial = (pid_institucion, ppagina_comercial) => {
 
     swal.fire({
       type: 'success',
-      title: '¡Registro correctamente!'
+      title: '¡Registro correctamente!',
+      onClose: () => {
+        window.location.href = 'listar_pagina_comercial.html';
+      }
     });
   });
 
@@ -145,21 +148,21 @@ let deshabilitar_pagina = (pid) => {
         estado : "Desactivo",
          id: pid
            },
-           
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
           title: '¡Deshabiitada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
-          }    
+          }
       });
 
   });
@@ -169,7 +172,7 @@ let deshabilitar_pagina = (pid) => {
           type: 'error',
           title: 'Página no deshabilitada',
           text: res.msg
-         
+
       });
   });
 };
@@ -182,21 +185,21 @@ let habilitar_pagina = (pid) => {
         estado : "Activo",
          id: pid
            },
-           
+
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       dataType: "json",
       async: false
   });
 
   request.done(function (res) {
-    
+
       swal.fire({
           type: 'success',
           title: '¡Activada correctamente!',
           text: res.msg,
           onClose: () => {
             window.location.href = 'lista_mensualidad.html';
-          }    
+          }
       });
 
   });
@@ -206,7 +209,7 @@ let habilitar_pagina = (pid) => {
           type: 'error',
           title: '¡Página  no activada!',
           text: res.msg
-         
+
       });
   });
 };

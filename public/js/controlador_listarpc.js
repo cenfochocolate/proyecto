@@ -34,7 +34,7 @@ function mostrar_datos() {
   for (let i = 0; i < pcomercial.length; i++) {
     let pcomercial = listar_pcomercial();
 
-    if ( pcomercial[i]['id_institucion'] == institucion && institucion == log) {
+    if (pcomercial[i]['id_institucion'] == institucion && institucion == log) {
 
       let fila = tabla.insertRow();
 
@@ -86,6 +86,7 @@ function mostrar_datos() {
     };
   }
 };
+
 function confirmar_borrado() {
   let id = this.dataset.id;
   Swal.fire({
@@ -108,49 +109,49 @@ function confirmar_borrado() {
   })
 };
 
-function confirmar_deshabilitar(){
-  let id= this.dataset.id;
+function confirmar_deshabilitar() {
+  let id = this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea deshabilitar?',
+    title: '¿Está seguro que desea deshabilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Sí, estoy seguro.'
-}).then((result)=>{
-  if(result.value){
-   deshabilitar_pagina(id);
-   pcomercial = listar_pcomercial();
-    mostrar_datos();
-    Swal.fire({
-      title:'¡Deshabilitada con éxito!',
-      type:'success'
-    })
-  }
-})
+  }).then((result) => {
+    if (result.value) {
+      deshabilitar_pagina(id);
+      pcomercial = listar_pcomercial();
+      mostrar_datos();
+      Swal.fire({
+        title: '¡Deshabilitada con éxito!',
+        type: 'success'
+      })
+    }
+  })
 };
 
 
-function confirmar_habilitar(){
-  let id= this.dataset.id;
+function confirmar_habilitar() {
+  let id = this.dataset.id;
   Swal.fire({
-    title:'¿Está seguro que desea habilitar?',
+    title: '¿Está seguro que desea habilitar?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Sí, estoy seguro.'
-}).then((result)=>{
-  if(result.value){
-   habilitar_pagina(id);
-   pcomercial = listar_pcomercial();
-    mostrar_datos();
-    Swal.fire({
-      title:'¡Habilitada con éxito!',
-      type:'success'
-    })
-  }
-})
+  }).then((result) => {
+    if (result.value) {
+      habilitar_pagina(id);
+      pcomercial = listar_pcomercial();
+      mostrar_datos();
+      Swal.fire({
+        title: '¡Habilitada con éxito!',
+        type: 'success'
+      })
+    }
+  })
 };
 
 mostrar_datos();

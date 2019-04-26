@@ -17,14 +17,14 @@ let listar_preguntas = () => {
     lista_preguntas= res.preguntas;
 
     });
-    request.fail(function (jqXHR, textStatus) { 
+    request.fail(function (jqXHR, textStatus) {
 
     });
     return lista_preguntas;
 };
 
 let buscar_pregunta = (id_pregunta) => {
-    
+
     let preguntas  = [];
 
     let request = $.ajax({
@@ -39,13 +39,13 @@ let buscar_pregunta = (id_pregunta) => {
 
     request.done(function (res) {
    preguntas= res.preguntas;
-       
+
     });
     request.fail(function (jqXHR, textStatus) {
 
     });
     return preguntas;
-}; 
+};
 
 let actualizar_pregunta = (pid_institucion,ppreguntas, prespuestas, pid) => {
     let request = $.ajax({
@@ -57,19 +57,21 @@ let actualizar_pregunta = (pid_institucion,ppreguntas, prespuestas, pid) => {
             respuestas: prespuestas,
             id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
-    
+
 
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Pregunta actualizada correctamente',
-            text:res.msg
-           
+            text:res.msg,
+            onClose: () =>{
+                window.location.href ='listar_preguntas_frecuentes.html';
+            }
         });
 
     });
@@ -79,7 +81,7 @@ let actualizar_pregunta = (pid_institucion,ppreguntas, prespuestas, pid) => {
             type: 'error',
             title: 'Pregunta no actualizada',
             text: res.msg
-           
+
         });
     });
 };
@@ -126,7 +128,10 @@ let registrar_preguntas = (pid_institucion,ppreguntas, prespuestas) => {
 
         swal.fire({
             type: 'success',
-            title: 'Pregunta registrada'
+            title: 'Pregunta registrada',
+            onClose: () =>{
+                window.location.href ='listar_preguntas_frecuentes.html';
+            }
 
         });
 
@@ -147,35 +152,35 @@ let deshabilitar_pregunta = (pid) => {
           estado : "Desactivo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Deshabiitada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_preguntas_frecuentes.html';
-            }    
+            }
         });
-  
+
     });
-  
+
     request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Pregunta no deshabilitada',
             text: res.msg
-           
+
         });
     });
   };
-  
+
   let habilitar_pregunta = (pid) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_pregunta",
@@ -184,32 +189,31 @@ let deshabilitar_pregunta = (pid) => {
           estado : "Activo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: 'Pregunta activada correctamente',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_preguntas_frecuentes.html';
-            }    
+            }
         });
-  
+
     });
-  
-    request.fail(function (res) { 
+
+    request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'activada',
             text: res.msg
-           
+
         });
     });
   };
- 

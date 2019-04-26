@@ -19,9 +19,9 @@ function registrar_mensualidad(pid, pgrado, pinstitucion, pdescripcion, ) {
 
     swal.fire({
       type: 'success',
-      title: '¡Registro correctamente!'
+      title: '¡Registro correctamente!',
       onClose: () => {
-        window.location.href = 'listar_idioma.html';
+        window.location.href = 'lista_mensualidad.html';
       }
     });
 

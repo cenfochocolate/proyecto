@@ -2,7 +2,8 @@ let latitud = '0';
 let longitud = '0';
 
 function listar_mapa(plongitud, platitud){
-  latitud = platitud;
+  let usuarios = listar_instituciones();
+  latitud = usuarios;
   longitud = plongitud;
 
   let map = new mapboxgl.Map({

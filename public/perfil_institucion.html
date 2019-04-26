@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Tangerine" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="shortcut icon" type="image/x-icon" href="imgs/logo.png">
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/perfil_institucion.css">
@@ -30,196 +29,190 @@
       <a href="panel_control.html" class="hideInput" id="panel">Panel de Control</a>
     </nav>
     <main>
-    <div id="menu_institucion">
-      <ul class="nav">
-        <li><i class="fas fa-align-justify"></i>
-          <ul>
-            <li><a href="perfil_institucion.html">Institución</a></li>
-            <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
-            <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
-            <li><a id="lista_seleccionada_utiles" href="listar_utiles.html">Útiles</a></li>
-            <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
-            <li><a href="listar_citas.html">Citas</a></li>
-            <li><a href="lista_mensualidad.html">Mensualidad</a></li>
-            <li><a href="lista_precio_matricula.html">Precio</a></li>
-            <li><a href="listar_requisitos.html">Requisito</a></li>
-            <li><a href="listar_material.html">Material</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="titulo_institucion">
-      <h1 id="nombre"></h1>
-    </div>
-    <div class="img_institucion">
-      <img id="imagen" src="" alt="">
-    </div>
-    <div class="historia">
-      <h2>Historia</h2>
-      <p id="rh"></p>
-    </div>
-    <div class="seccion_estrellas">
-      <h2>Calificaciones</h2>
-      <div class="usuarios">
-        <fieldset>
-          <select class="" id="slt_estrellas" name="">
-            <option value="">Calificar</option>
-            <option class="estrellas" value="5">★★★★★</option>
-            <option class="estrellas" value="4">★★★★</option>
-            <option class="estrellas" value="3">★★★</option>
-            <option class="estrellas" value="2">★★</option>
-            <option class="estrellas" value="1">★</option>
-          </select>
-        </fieldset>
+      <div id="menu_institucion">
+        <ul class="nav">
+          <li><i class="fas fa-align-justify"></i>
+            <ul>
+              <li><a href="perfil_institucion.html">Institución</a></li>
+              <li><a href="listar_pagina_comercial.html">Página comercial</a></li>
+              <li><a href="listar_servicios_adicionales.html">Servicios adicionales</a></li>
+              <li><a id="lista_seleccionada_utiles" href="listar_utiles.html">Útiles</a></li>
+              <li><a href="listar_preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+              <li><a href="listar_citas.html">Citas</a></li>
+              <li><a href="lista_mensualidad.html">Mensualidad</a></li>
+              <li><a href="lista_precio_matricula.html">Precio</a></li>
+              <li><a href="listar_requisitos.html">Requisito</a></li>
+              <li><a href="listar_material.html">Material</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <div class="admin">
-
+      <div class="titulo_institucion">
+        <h1 id="nombre"></h1>
       </div>
-      <button type="button" id="btn_estrellas" name="button">Registrar Calificación</button>
-    </div>
-    <div class="mostrar_calificaciones">
-      <h2>Promedio de calificaciones</h2>
-      <div class="" id="datos">
-
+      <div class="img_institucion">
+        <img id="imagen" src="" alt="">
       </div>
-    </div>
-    <div class="noticias">
-      <h2>Noticias</h2>
-      <form class="frm_buscar" action="" method="post">
-        <div class="buscar_noticia">
-          <label for="buscar_noticia_institucion">Buscar:</label>
-          <input type="search" name="buscar_noticia" id="buscar_noticia_institucion" placeholder="Ej. Becas" value="">
+      <div class="historia">
+        <h2>Historia</h2>
+        <p id="rh"></p>
+      </div>
+      <div class="seccion_estrellas">
+        <h2>Calificaciones</h2>
+        <div class="usuarios">
+          <fieldset>
+            <select class="" id="slt_estrellas" name="">
+              <option value="">Calificar</option>
+              <option class="estrellas" value="5">★★★★★</option>
+              <option class="estrellas" value="4">★★★★</option>
+              <option class="estrellas" value="3">★★★</option>
+              <option class="estrellas" value="2">★★</option>
+              <option class="estrellas" value="1">★</option>
+            </select>
+          </fieldset>
         </div>
-      </form>
-      <table id="tbl_noticias">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Imágen </th>
-            <th id="estadon">Estado </th>
-            <th id="editarn">Editar </th>
-            <th id="eliminarn">Eliminar</th>
-            <th id="habilitarn">Habilitar </th>
-            <th id="deshabilitarn">Deshabilitar </th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <button type="button" id="btn_registrar_noticia" onclick=" location.href='registrar_noticias.html' "
-        name="button">Registrar nueva noticia</button>
-    </div>
-    <div class="direccion">
-      <h2>Dirección</h2>
-      <p id="direccion"></p>
-      <div id="mapa">
+        <div class="admin">
+
+        </div>
+        <button type="button" id="btn_estrellas" name="button">Registrar Calificación</button>
+      </div>
+      <div class="mostrar_calificaciones">
+        <h2>Promedio de calificaciones</h2>
+        <div class="" id="datos">
+
+        </div>
+      </div>
+      <div class="noticias">
+        <h2>Noticias</h2>
+        <form class="frm_buscar" action="" method="post">
+          <div class="buscar_noticia">
+            <label for="buscar_noticia_institucion">Buscar:</label>
+            <input type="search" name="buscar_noticia" id="buscar_noticia_institucion" placeholder="Ej. Becas" value="">
+          </div>
+        </form>
+        <table id="tbl_noticias">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Imágen </th>
+              <th id="estadon">Estado </th>
+              <th id="editarn">Editar </th>
+              <th id="eliminarn">Eliminar</th>
+              <th id="habilitarn">Habilitar </th>
+              <th id="deshabilitarn">Deshabilitar </th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <button type="button" id="btn_registrar_noticia" onclick=" location.href='registrar_noticias.html' " name="button">Registrar nueva noticia</button>
+      </div>
+      <div class="direccion">
+        <h2>Dirección</h2>
+        <p id="direccion"></p>
+        <div id="mapa">
+
+        </div>
+      </div>
+
+      <div class="contacto">
+        <h2>Contacto</h2>
+        <form class="frm_buscar" action="" method="post">
+          <div class="buscar_contacto">
+            <label for="buscar_contacto">Buscar:</label>
+            <input type="search" name="buscar_contacto" id="buscar_contacto" value="">
+          </div>
+        </form>
+        <table id="tbl_contacto">
+          <thead>
+            <tr>
+
+              <th> Nombre:</th>
+              <th>Departamento:</th>
+              <th>Teléfono:</th>
+              <th>Correo:</th>
+              <th>Extensión:</th>
+              <th>Foto:</th>
+              <th id="estadoC">Estado</th>
+              <th id="editarC">Editar:</th>
+              <th id="eliminarC">Eliminar:</th>
+              <th id="deshabC">Deshabilitar:</th>
+              <th id="habC">Habilitar</th>
+
+
+
+
+            </tr>
+          </thead>
+          <tbody>
+
+
+          </tbody>
+        </table>
+
+
 
       </div>
-    </div>
+      <button type="button" id="btn_registrarContacto" onclick=" location.href='registrar_contacto.html'">Registrar</button>
+      <div class="redes_sociales">
+        <h3>Redes Sociales</h3>
+        <a class="opciones" href="registro_rs.html"><i class="fas fa-plus-square" id="add" href="registro_rs.html"></i></a>
+        <table id="tbl_redes_sociales">
+          <thead>
+            <tr>
+              <th><img src="imgs/facebook.png" alt=""></th>
+              <th><img src="imgs/ig.png" alt=""></th>
+              <th><img src="imgs/twitter.png" alt=""></th>
+              <th><img src="imgs/email.png" alt=""></th>
+              <th><img src="imgs/yt.png" alt=""></th>
+              <th id="estadors">Estado</th>
+              <th id="editarrs">Editar</th>
+              <th id="eliminarrs">Eliminar</th>
+              <th id="deshabrs">Deshabilitar</th>
+              <th id="habrs">Habilitar</th>
+            </tr>
+          </thead>
+          <tbody>
 
-    <div class="contacto">
-      <h2>Contacto</h2>
-      <form class="frm_buscar" action="" method="post">
-        <div class="buscar_contacto">
-          <label for="buscar_contacto">Buscar:</label>
-          <input type="search" name="buscar_contacto" id="buscar_contacto" value="">
-        </div>
-      </form>
-      <table id="tbl_contacto">
-        <thead>
-          <tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="slt_lista_utiles">
+        <form class="frm" method="post">
+          <label id="label_titulo" for="slt_utiles">¿Qué lista de útiles desea mostrar?</label>
+          <fieldset>
+            <select class="select" id="slt_utiles">
+              <option value="null">Seleccione una lista</option>
+              <option class="inst_slt_btn" value="listar_utiles_mep.html">Útiles MEP</option>
+              <option class="inst_slt_btn" value="listar_utiles.html">Útiles Personales</option>
+            </select>
+          </fieldset>
+          <button type="button" id="btn_pref_utiles" name="button">Registrar</button>
+        </form>
+      </div>
+      <div class="comentarios" id="seccion_comentarios">
+        <h2>Comentarios</h2>
 
-            <th> Nombre:</th>
-            <th>Departamento:</th>
-            <th>Teléfono:</th>
-            <th>Correo:</th>
-            <th>Extensión:</th>
-            <th>Foto:</th>
-            <th id="estadoC">Estado</th>
-            <th id="editarC">Editar:</th>
-            <th id="eliminarC">Eliminar:</th>
-            <th id="deshabC">Deshabilitar:</th>
-            <th id="habC">Habilitar</th>
-
-
-
-
-          </tr>
-        </thead>
-        <tbody>
-
-
-        </tbody>
-      </table>
-
-
-
-    </div>
-    <button type="button" id="btn_registrarContacto"
-      onclick=" location.href='registrar_contacto.html'">Registrar</button>
-    <div class="redes_sociales">
-      <h3>Redes Sociales</h3>
-      <a class="opciones" href="registro_rs.html"><i class="fas fa-plus-square" id="add"
-          href="registro_rs.html"></i></a>
-      <table id="tbl_redes_sociales">
-        <thead>
-          <tr>
-            <th><img src="imgs/facebook.png" alt=""></th>
-            <th><img src="imgs/ig.png" alt=""></th>
-            <th><img src="imgs/twitter.png" alt=""></th>
-            <th><img src="imgs/email.png" alt=""></th>
-            <th><img src="imgs/yt.png" alt=""></th>
-            <th id="estadors">Estado</th>
-            <th id="editarrs">Editar</th>
-            <th id="eliminarrs">Eliminar</th>
-            <th id="deshabrs">Deshabilitar</th>
-            <th id="habrs">Habilitar</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-    </div>
-    <div class="slt_lista_utiles">
-      <form class="frm" method="post">
-        <label id="label_titulo" for="slt_utiles">¿Qué lista de útiles desea mostrar?</label>
-        <fieldset>
-          <select class="select" id="slt_utiles">
-            <option value="null">Seleccione una lista</option>
-            <option class="inst_slt_btn" value="listar_utiles_mep.html">Útiles MEP</option>
-            <option class="inst_slt_btn" value="listar_utiles.html">Útiles Personales</option>
-          </select>
-        </fieldset>
-        <button type="button" id="btn_pref_utiles" name="button">Registrar</button>
-      </form>
-    </div>
-    <div class="comentarios" id="seccion_comentarios">
-      <h2>Comentarios</h2>
-
-    </div>
-    <div class="registrar_comentario">
-      <textarea name="name" id="ta_comentario" rows="8" cols="80"></textarea>
-      <button type="button" id="btn_comentario" name="button">Registrar</button>
-    </div>
-  </main>
-  <footer>
-    <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-  <script src="js/servicio_perfil_institucion.js"></script>
-  <script src="js/servicio_usuario.js"></script>
-  <script src="js/controlador_listar_mapa.js"></script>
-  <script src="js/map.js"></script>
-  <script src="js/controlador_perfil_institucion.js"></script>
-  <script src="js/controlador_listar_noticias.js"></script>
-  <script src="js/controlador_listar_contacton.js"></script>
-  <script src="js/controlador_cerrar_sesion.js"></script>
-  <script src="js/controlador_validar_tusuario.js"></script>
+      </div>
+      <div class="registrar_comentario">
+        <textarea name="name" id="ta_comentario" rows="8" cols="80"></textarea>
+        <button type="button" id="btn_comentario" name="button">Registrar</button>
+      </div>
+    </main>
+    <footer>
+      <p>© Copyright 2018. Alfred. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="js/servicio_perfil_institucion.js"></script>
+    <script src="js/servicio_usuario.js"></script>
+    <script src="js/controlador_perfil_institucion.js"></script>
+    <script src="js/controlador_listar_noticias.js"></script>
+    <script src="js/controlador_listar_contacton.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_validar_tusuario.js"></script>
 </body>
 
 </html>

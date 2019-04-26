@@ -48,7 +48,7 @@ function mostrar_instituciones(){
 
       let celda_aceptar = fila.insertCell();
       let boton_aceptar = document.createElement('a');
-      boton_aceptar.innerHTML= '<i class="fas fa-trash-alt"></i>';
+      boton_aceptar.innerHTML= '<i class="fas fa-check"></i>';
       boton_aceptar.dataset.id= usuarios[i]['_id'];
       boton_aceptar.addEventListener('click', confirmar_aceptar);
       celda_aceptar.appendChild(boton_aceptar);

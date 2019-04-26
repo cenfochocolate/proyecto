@@ -16,7 +16,10 @@ let registar_requisito = (pid, pnivel, pdescripcion) => {
 
         swal.fire({
             type: 'success',
-            title: '¡Registro correctamente!'
+            title: '¡Registro correctamente!',
+            onClose: () => {
+  window.location.href = 'listar_requisitos.html';
+}
         });
 
     });

@@ -12,12 +12,12 @@ let registrar_evaluacion = (pnombre, pcalificacion) =>{
     });
     request.done(function (msg) {
 
-        swal.fire({ 
+        swal.fire({
             type: 'success',
             title: '¡Registro correctamente!'
         });
 
-        console.log('guardo bien');  
+        console.log('guardo bien');
         // no retorma mensaje
     });
 
@@ -26,10 +26,13 @@ let registrar_evaluacion = (pnombre, pcalificacion) =>{
         swal.fire({
             type: 'error',
             title: 'Proceso no realizado',
-            text: res.msg
+            text: res.msg,
+            onClose: () => {
+              window.location.href = 'listar_criterio.html';
+            }    
         });
 
-        console.log(textStatus);  
+        console.log(textStatus);
     });
 };
 
@@ -59,7 +62,7 @@ let listar_evaluacion = () => {
 };
 
 let buscar_criterio = (id_criterio) => {
-    
+
     let evaluacion  = [];
 
     let request = $.ajax({
@@ -74,7 +77,7 @@ let buscar_criterio = (id_criterio) => {
 
     request.done(function (res) {
         evaluacion = res.evaluacion;
-       
+
     });
     request.fail(function (jqXHR, textStatus) {
 
@@ -87,18 +90,18 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
         url: "http://localhost:4000/api/actualizar_criterio",
         method: "POST",
         data: {
-    
+
             nombre: pnombre,
             calificacion: pcalificacion,
             id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        dataType: "json", 
+        dataType: "json",
         async: false
     });
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: '¡Actualizada correctamente!',
@@ -113,7 +116,7 @@ let actualizar_criterio = (pnombre, pcalificacion, pid) => {
             type: 'error',
             title: 'Evalucion no actualizada',
             text: res.msg
-           
+
         });
     });
 };
@@ -148,35 +151,35 @@ let deshabilitar_criterio = (pid) => {
           estado : "Desactivo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title: '¡Deshabiitada correctamente!',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_criterio.html';
-            }    
+            }
         });
-  
+
     });
-  
+
     request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Evaluación no deshabilitada',
             text: res.msg
-           
+
         });
     });
   };
-  
+
   let habilitar_criterio = (pid) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_criterio",
@@ -185,31 +188,31 @@ let deshabilitar_criterio = (pid) => {
           estado : "Activo",
            id: pid
              },
-             
+
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
         async: false
     });
-  
+
     request.done(function (res) {
-      
+
         swal.fire({
             type: 'success',
             title:'¡Activada correctamente!',
             text: res.msg,
             onClose: () => {
               window.location.href = 'listar_criterio.html';
-            }    
+            }
         });
-  
+
     });
-  
+
     request.fail(function (res) {
         swal.fire({
             type: 'error',
             title: 'Evaluación no activada',
             text: res.msg
-           
+
         });
     });
   };
