@@ -8,25 +8,24 @@ const eliminar = document.querySelector('#eliminar');
 const deshabilitar = document.querySelector('#deshab');
 const habilitar = document.querySelector('#hab');
 const log = sessionStorage.getItem('idu');
+const botonr = document.querySelector('#btn_registrar_cita');
 
 
-
-  
 
 inputFiltro.addEventListener('keyup' , mostrar_datos);
 
 let cita = listar_citas();
 
 function mostrar_datos(){
-       
+
         let filtro = inputFiltro.value;
         tabla.innerHTML='';
-       
+
         for(let i = 0; i <cita.length; i++){
           if(cita[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
-           
+
           let fila = tabla.insertRow();
-    
+
         fila.insertCell().innerHTML = cita[i]['nombre'];
    fila.insertCell().innerHTML = cita[i]['date'];
    fila.insertCell().innerHTML = cita[i]['time'];
@@ -49,7 +48,7 @@ function mostrar_datos(){
    boton_eliminar.dataset.id= cita[i]['_id'];
    boton_eliminar.addEventListener('click', confirmar_borrado);
    celda_eliminar.appendChild(boton_eliminar);
-   
+
    let celda_deshabilitar = fila.insertCell();
       let boton_deshabilitar = document.createElement('a');
       boton_deshabilitar.innerHTML= '<i class="fas fa-eye-slash"></i>';
@@ -71,7 +70,7 @@ function mostrar_datos(){
 
       fila.insertCell().innerHTML = cita[i]['nombre'];
       fila.insertCell().innerHTML = cita[i]['date'];
-      fila.insertCell().innerHTML = cita[i]['time']; 
+      fila.insertCell().innerHTML = cita[i]['time'];
       fila.insertCell().innerHTML = cita[i]['estado'];
 
 };

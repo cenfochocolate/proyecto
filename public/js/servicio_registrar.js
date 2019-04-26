@@ -125,7 +125,7 @@ let registrar_citas = (pid_institucion, pnombre, ptime, pdate) => {
 
     swal.fire({
       type: 'success',
-      title: 'Cita registrada correctamente'
+      title: 'Cita registrada correctamente',
       onClose: () => {
         window.location.href = 'listar_citas.html';
       }
