@@ -18,6 +18,7 @@
 
 
 		}
+	
 
 		main p{
 			font-size: 20px;
@@ -40,7 +41,7 @@
 			list-style:none;
 		}
 
-		.nav {
+		#menu_institucion .nav {
 			padding: 25px;
 			float:right;
 			background-color:#16a085;
@@ -214,4 +215,42 @@
   #tbl_ubicacion tbody a:hover{
 	color: #c0392b;
 	transition: all 300ms;
-  }
+	}
+	
+	#menu_panel{
+		width: 200px;
+		height: 100%;
+		display: flow-root;
+		overflow: hidden;
+		position: fixed;
+	}
+	#menu_panel .nav {
+		width: 100%;
+		height: 70px;
+		
+	}
+	#menu_panel .nav ul{
+		display: flex;
+		
+	}
+	#menu_panel ul a{
+	display: block;
+	background-color: black;
+	opacity: .5;
+	text-align: center;
+	list-style: none;
+	
+	}
+	#menu_panel ul li a{
+		color: white;
+		display: block;
+		line-height: 70px;
+		padding: 0 20px;
+		box-sizing: border-box;
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: .5s;
+	}
+	#menu_panel ul li a:hover{
+		background-color: #16a085;
+	}
