@@ -42,10 +42,67 @@ function mostrar_instituciones(){
 
       fila.insertCell().appendChild(imagen);
 
+      let celda_aceptar = fila.insertCell();
+      let boton_aceptar = document.createElement('a');
+      boton_aceptar.innerHTML= '<i class="fas fa-trash-alt"></i>';
+      boton_aceptar.dataset.id= usuarios[i]['_id'];
+      boton_aceptar.addEventListener('click', confirmar_aceptar);
+      celda_aceptar.appendChild(boton_aceptar);
+
+      let celda_eliminar = fila.insertCell();
+      let boton_eliminar = document.createElement('a');
+      boton_eliminar.innerHTML= '<i class="fas fa-trash-alt"></i>';
+      boton_eliminar.dataset.id= usuarios[i]['_id'];
+      boton_eliminar.addEventListener('click', confirmar_eliminar);
+      celda_eliminar.appendChild(boton_eliminar);
 
 
     }
   };
 };
 
-mostrar_instituciones();
+function confirmar_aceptar(){
+  let id= this.dataset.id;
+  Swal.fire({
+    title:'¿Está seguro que desea aceptar la institución?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, estoy seguro.'
+}).then((result)=>{
+  if(result.value){
+    aceptar_institucion(id);
+    usuarios = listar_instituciones();
+    mostrar_instituciones();
+    Swal.fire({
+      title:'¡institucion aceptada!',
+      text:'La institucion fue aceptada con éxito.',
+      type:'success'
+    })
+  }
+})
+};
+function confirmar_eliminar(){
+  let id= this.dataset.id;
+  Swal.fire({
+    title:'¿Está seguro que desea denegar la institución?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, estoy seguro.'
+}).then((result)=>{
+  if(result.value){
+    eliminar_institucion(id);
+    usuarios = listar_instituciones();
+    mostrar_instituciones();
+    Swal.fire({
+      title:'¡institucion denegada!',
+      text:'La institucion fue denegada con éxito.',
+      type:'success'
+    })
+  }
+})
+};
+
