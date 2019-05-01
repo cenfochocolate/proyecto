@@ -76,7 +76,7 @@ let buscar_utile = (id_utiles) => {
   return util;
 };
 
-let actualizar_inmueble = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
+let actualizar_utiles = ( putil, pdescripcion, pnumero,pnivel, pid) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizar_utiles',
       method : "POST",
